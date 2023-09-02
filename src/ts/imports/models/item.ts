@@ -7,8 +7,10 @@ export class mintItem {
      */
     version?: number = 0;
     priority?: number = 0;
+	price?: number = 0;
 	level?: number = 0;
 	size?: number = 0;
+	num?: number = 0;
     centered?: boolean = false;
     disabled?: boolean = false;
     private?: boolean = false;
@@ -22,6 +24,7 @@ export class mintItem {
     title?: string;
     subtitle?: string;
     description?: string;
+	category?: string;
     logo?: mintItem;
     icon?: string;
     position?: string;
@@ -42,6 +45,7 @@ export class mintItem {
     attr?: {[key: string]: string} = {};
     params?: {[key: string]: string} = {};
     options?: {[key: string]: string} = {};
+	lists?: {[key: string]: string[]} = {};
 
     /**
      * Item lists

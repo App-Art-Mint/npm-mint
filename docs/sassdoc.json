@@ -2161,7 +2161,7 @@
       "value": "text-decoration: none;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    overflow: hidden;\n    transition: color css-var(delay-default),\n                background-color css-var(delay-default),\n                border-color css-var(delay-default);",
       "line": {
         "start": 13,
-        "end": 127
+        "end": 163
       }
     },
     "access": "public",
@@ -2181,11 +2181,11 @@
     },
     "context": {
       "type": "css",
-      "name": "#{class(btn)},\n#{class(pill)}",
+      "name": "#{class(btn)},\n#{class(btn-group)},\n#{class(pill)}",
       "value": "display: inline-block;\n    border-radius: $pill-radius;\n    color: css-var($btn-fore);\n    background: css-var($btn-back);\n    border: $border-width solid css-var($btn-border);\n    text-align: center;\n\n    @include break(xs) {\n        width: auto;\n    }\n\n    @include states(hover, focus, active) {\n        color: css-var($btn-fore-hover);\n        background: css-var($btn-border);\n\n\t\ti {\n\t\t\tcolor: inherit !important;\n\t\t}\n    }\n\n    &#{class(alt)} {\n        color: css-var($btn-border);\n        background: css-var($btn-back-alt);\n\n        @include states(hover, focus, active) {\n            color: css-var($btn-fore-alt-hover);\n            background: css-var($btn-back-alt-hover);\n            border-color: css-var($btn-back-alt-hover);\n        }\n    }",
       "line": {
-        "start": 25,
-        "end": 127
+        "start": 26,
+        "end": 163
       }
     },
     "access": "public",
@@ -2200,16 +2200,64 @@
   {
     "description": "Default buttons\n",
     "commentRange": {
-      "start": 58,
-      "end": 58
+      "start": 59,
+      "end": 59
     },
     "context": {
       "type": "css",
       "name": "#{class(btn)}",
-      "value": "padding: $btn-padding-v $btn-padding-h + $btn-padding-adjust;\n\n\t&-icon {\n\t\tdisplay: block;\n\t\ttext-align: center;\n\n\t\t@include states(hover, focus, active) {\n\t\t\ti {\n\t\t\t\tcolor: css-var($btn-back-alt-hover);\n\t\t\t}\n\t\t}\n\n\t\t@include break(xs) {\n\t\t\tdisplay: inline-block;\n\t\t}\n\n\t\ti {\n\t\t\tmargin: 0 !important;\n\t\t\tcolor: css-var($btn-border);\n\t\t\tfont-size: 4rem;\n\n\t\t\t&::before {\n\t\t\t\ttransition: color css-var(delay-default);\n\t\t\t}\n\t\t}\n\t}",
+      "value": "padding: $btn-padding-v $btn-padding-h + $btn-padding-adjust;\n\n\t/// Icon buttons\n\t&-icon {\n\t\tdisplay: block;\n\t\ttext-align: center;\n\n\t\t@include states(hover, focus, active) {\n\t\t\ti {\n\t\t\t\tcolor: css-var($btn-back-alt-hover);\n\t\t\t}\n\t\t}\n\n\t\t@include break(xs) {\n\t\t\tdisplay: inline-block;\n\t\t}\n\n\t\ti {\n\t\t\tmargin: 0 !important;\n\t\t\tcolor: css-var($btn-border);\n\t\t\tfont-size: 4rem;\n\n\t\t\t&::before {\n\t\t\t\ttransition: color css-var(delay-default);\n\t\t\t}\n\t\t}\n\t}\n\n\t/// Button groups\n\t&-group {\n\t\tdisplay: flex;\n\t\tpadding: 0;\n\t\ttransition: all css-var(delay-default);\n\n\t\tbutton {\n\t\t\twidth: 100%;\n\t\t\tborder: none;\n\t\t\tcolor: inherit;\n\t\t\tbackground: transparent;\n\n\t\t\t&:first-child {\n\t\t\t\tpadding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;\n\t\t\t\tborder-top-left-radius: $pill-radius;\n\t\t\t\tborder-bottom-left-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&:last-child {\n\t\t\t\tpadding: $btn-padding-v $btn-padding-h $btn-padding-v 0;\n\t\t\t\tborder-top-right-radius: $pill-radius;\n\t\t\t\tborder-bottom-right-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&[disabled] {\n\t\t\t\tpointer-events: none;\n\t\t\t}\n\n\t\t\t@include states(hover, focus, active) {\n\t\t\t\tbackground: css-var(brand-5);\n\t\t\t}\n\t\t}\n\t}",
       "line": {
-        "start": 59,
-        "end": 127
+        "start": 60,
+        "end": 163
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_buttons.scss",
+      "name": "_buttons.scss"
+    }
+  },
+  {
+    "description": "Icon buttons\n",
+    "commentRange": {
+      "start": 63,
+      "end": 63
+    },
+    "context": {
+      "type": "css",
+      "name": "&-icon",
+      "value": "display: block;\n\t\ttext-align: center;\n\n\t\t@include states(hover, focus, active) {\n\t\t\ti {\n\t\t\t\tcolor: css-var($btn-back-alt-hover);\n\t\t\t}\n\t\t}\n\n\t\t@include break(xs) {\n\t\t\tdisplay: inline-block;\n\t\t}\n\n\t\ti {\n\t\t\tmargin: 0 !important;\n\t\t\tcolor: css-var($btn-border);\n\t\t\tfont-size: 4rem;\n\n\t\t\t&::before {\n\t\t\t\ttransition: color css-var(delay-default);\n\t\t\t}\n\t\t}",
+      "line": {
+        "start": 64,
+        "end": 163
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_buttons.scss",
+      "name": "_buttons.scss"
+    }
+  },
+  {
+    "description": "Button groups\n",
+    "commentRange": {
+      "start": 89,
+      "end": 89
+    },
+    "context": {
+      "type": "css",
+      "name": "&-group",
+      "value": "display: flex;\n\t\tpadding: 0;\n\t\ttransition: all css-var(delay-default);\n\n\t\tbutton {\n\t\t\twidth: 100%;\n\t\t\tborder: none;\n\t\t\tcolor: inherit;\n\t\t\tbackground: transparent;\n\n\t\t\t&:first-child {\n\t\t\t\tpadding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;\n\t\t\t\tborder-top-left-radius: $pill-radius;\n\t\t\t\tborder-bottom-left-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&:last-child {\n\t\t\t\tpadding: $btn-padding-v $btn-padding-h $btn-padding-v 0;\n\t\t\t\tborder-top-right-radius: $pill-radius;\n\t\t\t\tborder-bottom-right-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&[disabled] {\n\t\t\t\tpointer-events: none;\n\t\t\t}\n\n\t\t\t@include states(hover, focus, active) {\n\t\t\t\tbackground: css-var(brand-5);\n\t\t\t}\n\t\t}",
+      "line": {
+        "start": 90,
+        "end": 163
       }
     },
     "access": "public",
@@ -2224,16 +2272,16 @@
   {
     "description": "Pill buttons\n",
     "commentRange": {
-      "start": 88,
-      "end": 88
+      "start": 124,
+      "end": 124
     },
     "context": {
       "type": "css",
       "name": "#{class(pill)}",
       "value": "min-width: 5rem;\n    padding: 0 $btn-padding-adjust;\n    line-height: 2;",
       "line": {
-        "start": 89,
-        "end": 127
+        "start": 125,
+        "end": 163
       }
     },
     "access": "public",
@@ -2248,16 +2296,16 @@
   {
     "description": "A list of buttons\n",
     "commentRange": {
-      "start": 95,
-      "end": 95
+      "start": 131,
+      "end": 131
     },
     "context": {
       "type": "css",
       "name": "#{class(buttons)}",
       "value": "@include flex-util();\n\n    & > * {\n        width: 100%;\n        margin: 0.5rem 0;\n\n        #{class(btn)}, #{class(pill)} {\n            display: block;\n        }\n\n        @include break(xs) {\n            width: auto;\n            margin: 0.5rem;\n        }\n    }\n\n    #{class(buttons)} {\n        #{class(pill)} {\n            width: 100%;\n        }\n    }",
       "line": {
-        "start": 96,
-        "end": 127
+        "start": 132,
+        "end": 163
       }
     },
     "access": "public",
@@ -2272,16 +2320,16 @@
   {
     "description": "Buttons within a paragraph\n",
     "commentRange": {
-      "start": 120,
-      "end": 120
+      "start": 156,
+      "end": 156
     },
     "context": {
       "type": "css",
       "name": "p",
       "value": "#{class(pill)} {\n        line-height: 1.5rem;\n        vertical-align: middle;\n    }",
       "line": {
-        "start": 121,
-        "end": 127
+        "start": 157,
+        "end": 163
       }
     },
     "access": "public",
@@ -2656,7 +2704,7 @@
       "value": "/// Global Colors\n    /// Brands\n    @include css-var(bitcoin, $bitcoin);\n    @include css-var(ethereum, $ethereum);\n    @include css-var(venmo, $venmo);\n    @include css-var(facebook, $facebook);\n\t@include css-var(twitter, $twitter);\n    @include css-var(youtube, $youtube);\n    @include css-var(apple, $apple);\n\t@include css-var(apple-music, $apple-music);\n    @include css-var(spotify, $spotify);\n\t@include css-var(soundcloud, $soundcloud);\n\t@include css-var(bandcamp, $bandcamp);\n    @include css-var(amazon-0, $amazon-0);\n    @include css-var(amazon-1, $amazon-1);\n    @include css-var(napster-0, $napster-0);\n    @include css-var(napster-1, $napster-1);\n    @include css-var(google-play-0, $google-play-0);\n    @include css-var(google-play-1, $google-play-1);\n    @include css-var(google-play-2, $google-play-2);\n    @include css-var(instagram-0, $instagram-0);\n    @include css-var(instagram-1, $instagram-1);\n    @include css-var(instagram-2, $instagram-2);\n    @include css-var(instagram-3, $instagram-3);\n    @include css-var(instagram-4, $instagram-4);\n    @include css-var(instagram-5, $instagram-5);\n    @include css-var(instagram-6, $instagram-6);\n\n    /// Application Colors\n    @include shades('black', $black, lighten);\n    @include shades('white', $white, darken);\n    @include shades(glow, $trans-light, darken, 7, 10%, true);\n    @include shades(shadow, $trans-dark, darken, 7, 10%, true);\n\n    @include shades(brand, $brand);\n    @include shades(accent, $accent);\n    @include shades(success, $success);\n    @include shades(danger, $danger);\n    @include shades(warning, $warning);\n    @include shades(info, $info);",
       "line": {
         "start": 11,
-        "end": 160
+        "end": 165
       }
     },
     "access": "public",
@@ -2748,7 +2796,7 @@
       "value": "@if ($theme-default == light) {\n        @include light-theme;\n    } @else {\n        @include dark-theme;\n    }",
       "line": {
         "start": 67,
-        "end": 160
+        "end": 165
       }
     },
     "access": "public",
@@ -2763,16 +2811,16 @@
   {
     "description": "https://codepen.io/thomasrye/pen/VaRoYv\n",
     "commentRange": {
-      "start": 100,
-      "end": 100
+      "start": 105,
+      "end": 105
     },
     "context": {
       "type": "css",
       "name": "background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);\n\t\t\t}\n\t\t}\n\t}\n\n    @include states(hover, focus, active)",
       "value": "color: css-var(accent-0);\n\n\t\t.fa-facebook, .fa-square-facebook {\n\t\t\tcolor: css-var(facebook);\n\t\t}\n\n        .fa-instagram {\n\t\t\t&::after {\n\t\t\t\topacity: 1;\n\t\t\t}\n\t\t}\n\n\t\t.fa-twitter {\n\t\t\tcolor: css-var(twitter);\n\t\t}\n\n\t\t.fa-youtube {\n            color: css-var(youtube);\n        }\n\n\t\t.fa-spotify {\n\t\t\tcolor: css-var(spotify);\n\t\t}\n\n\t\t.fa-apple {\n\t\t\tcolor: css-var(apple-music);\n\t\t}\n\n\t\t.fa-soundcloud {\n\t\t\tcolor: css-var(soundcloud);\n\t\t}\n\n\t\t.fa-bandcamp {\n\t\t\tcolor: css-var(bandcamp);\n\t\t}\n\n\t\t.fa-github {\n            color: css-var(white-1);\n        }\n\n        .fa-bitcoin {\n            color: css-var(bitcoin);\n        }\n\n        .fa-ethereum {\n            color: css-var(ethereum);\n        }\n\n        .fa-vimeo {\n            color: css-var(venmo);\n        }",
       "line": {
-        "start": 106,
-        "end": 160
+        "start": 111,
+        "end": 165
       }
     },
     "access": "public",

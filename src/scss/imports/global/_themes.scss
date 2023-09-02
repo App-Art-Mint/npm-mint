@@ -82,6 +82,11 @@
     color: css-var(fore);
 }
 
+#{class(success)} {
+	background-color: css-var(success-2);
+	border-color: css-var(success-4);
+}
+
 a {
     color: css-var(brand);
 

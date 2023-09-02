@@ -22,6 +22,7 @@
 
 /// Regular buttons
 #{class(btn)},
+#{class(btn-group)},
 #{class(pill)} {
     display: inline-block;
     border-radius: $pill-radius;
@@ -59,6 +60,7 @@
 #{class(btn)} {
     padding: $btn-padding-v $btn-padding-h + $btn-padding-adjust;
 
+	/// Icon buttons
 	&-icon {
 		display: block;
 		text-align: center;
@@ -80,6 +82,40 @@
 
 			&::before {
 				transition: color css-var(delay-default);
+			}
+		}
+	}
+
+	/// Button groups
+	&-group {
+		display: flex;
+		padding: 0;
+		transition: all css-var(delay-default);
+
+		button {
+			width: 100%;
+			border: none;
+			color: inherit;
+			background: transparent;
+
+			&:first-child {
+				padding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;
+				border-top-left-radius: $pill-radius;
+				border-bottom-left-radius: $pill-radius;
+			}
+
+			&:last-child {
+				padding: $btn-padding-v $btn-padding-h $btn-padding-v 0;
+				border-top-right-radius: $pill-radius;
+				border-bottom-right-radius: $pill-radius;
+			}
+
+			&[disabled] {
+				pointer-events: none;
+			}
+
+			@include states(hover, focus, active) {
+				background: css-var(brand-5);
 			}
 		}
 	}
