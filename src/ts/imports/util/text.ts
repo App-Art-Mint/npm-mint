@@ -14,5 +14,14 @@ export abstract class mintText {
             $warning.css('font-size', fontSize + 'px');
         }
     }*/
+
+	/**
+	 * Generate a slug from a string
+	 * @param str - The string to slugify
+	 * @returns The slugified string
+	 */
+	static slug (str: string) : string {
+		return str.toLowerCase().replace(/\W+/g, '-').replace(/^-+|-+$/g, '');
+	}
 };
 export default mintText;
