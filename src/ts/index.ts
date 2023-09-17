@@ -1,6 +1,6 @@
 /**
  * A library for building responsive web applications.
- * 
+ *
  * @packageDocumentation
  */
 
@@ -21,6 +21,7 @@ export { mintItem } from './imports/models/item';
 export { mintDisplay } from './imports/util/display';
 export { mintEvent } from './imports/util/event';
 export { mintIcon } from './imports/util/icon';
+export { mintList } from './imports/util/list';
 export { mintMath } from './imports/util/math';
 export { mintObject } from './imports/util/object';
 export { mintText } from './imports/util/text';
