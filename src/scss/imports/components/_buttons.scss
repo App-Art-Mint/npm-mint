@@ -123,9 +123,13 @@
 
 /// Pill buttons
 #{class(pill)} {
-    min-width: 5rem;
     padding: 0 $btn-padding-adjust;
     line-height: 2;
+}
+a, button {
+	&#{class(pill)} {
+		min-width: 5rem;
+	}
 }
 
 /// A list of buttons
@@ -151,6 +155,18 @@
             width: 100%;
         }
     }
+}
+
+#{class(grid)}#{class('3')},
+#{class(grid)}#{class('4')} {
+	#{class(buttons)} {
+		& > * {
+			@include break(xs) {
+				width: 100%;
+				margin: 0.5rem 0;
+			}
+		}
+	}
 }
 
 /// Buttons within a paragraph
