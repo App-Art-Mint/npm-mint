@@ -160,3 +160,43 @@
 		}
 	}
 }
+
+#{class(grid)}#{class('3')},
+#{class(grid)}#{class('4')} {
+	#{class(card)} {
+		flex-direction: column !important;
+
+		&>#{class(image)},
+		&>mint-image #{class(image)} {
+			overflow: hidden;
+
+			@include break(sm) {
+				width: 100%;
+			}
+
+			&+#{class(content)} {
+				@include break(sm) {
+					width: 100%;
+				}
+			}
+		}
+
+		#{class(content)} {
+			height: 100%;
+		}
+
+		#{class(title)} {
+			@include break(xs) {
+				flex-direction: column;
+			}
+		}
+
+		#{class(buttons)} {
+			align-items: flex-end;
+
+			#{class(btn)} {
+				width: 100%;
+			}
+		}
+	}
+}
