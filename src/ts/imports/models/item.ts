@@ -25,6 +25,7 @@ export class mintItem {
 	subtitle?: string;
 	description?: string;
 	category?: string;
+	type?: string;
 	unit?: string;
 	logo?: mintItem;
 	icon?: string;

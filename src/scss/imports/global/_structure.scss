@@ -46,6 +46,8 @@
 }
 
 section {
+	width: 100%;
+
     &#{class(smaller)} {
         margin-left: auto;
         margin-right: auto;
