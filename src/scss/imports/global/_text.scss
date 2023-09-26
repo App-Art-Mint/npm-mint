@@ -24,6 +24,14 @@ p {
 @include headers () {
     font-family: $font-secondary, $font-secondary-backups;
     line-height: 1;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 @each $tag in map-keys($font-size-mobile) {

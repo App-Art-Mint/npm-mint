@@ -9,18 +9,19 @@
 
 /// All buttons
 #{class(btn)},
-#{class(pill)},
-#{class(btn-icon)} {
+#{class(btn-icon)},
+#{class(pill)} {
+	max-width: 100%;
 	text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+	user-select: none;
     transition: color css-var(delay-default),
                 background-color css-var(delay-default),
                 border-color css-var(delay-default);
 }
 
-/// Regular buttons
 #{class(btn)},
 #{class(btn-group)},
 #{class(pill)} {
@@ -44,7 +45,17 @@
 		}
     }
 
-    &#{class(alt)} {
+    &#{class(reverse)} {
+		color: css-var($btn-fore-hover);
+		background: css-var($btn-border);
+
+		@include states(hover, focus, active) {
+			color: css-var($btn-fore);
+    		background: css-var($btn-back);
+		}
+	}
+
+	&#{class(alt)} {
         color: css-var($btn-border);
         background: css-var($btn-back-alt);
 
@@ -53,6 +64,18 @@
             background: css-var($btn-back-alt-hover);
             border-color: css-var($btn-back-alt-hover);
         }
+
+		&#{class(reverse)} {
+			color: css-var($btn-fore-alt-hover);
+			background: css-var($btn-back-alt-hover);
+			border-color: css-var($btn-back-alt-hover);
+
+			@include states(hover, focus, active) {
+				color: css-var($btn-border);
+				background: css-var($btn-back-alt);
+				border-color: css-var($btn-back-alt);
+			}
+		}
     }
 }
 
@@ -126,10 +149,18 @@
     padding: 0 $btn-padding-adjust;
     line-height: 2;
 }
+
 a, button {
 	&#{class(pill)} {
 		min-width: 5rem;
 	}
+}
+
+p {
+    #{class(pill)}, #{class(btn)} {
+        line-height: 1.5rem;
+        vertical-align: middle;
+    }
 }
 
 /// A list of buttons
@@ -167,12 +198,4 @@ a, button {
 			}
 		}
 	}
-}
-
-/// Buttons within a paragraph
-p {
-    #{class(pill)} {
-        line-height: 1.5rem;
-        vertical-align: middle;
-    }
 }

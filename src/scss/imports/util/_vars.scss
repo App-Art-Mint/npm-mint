@@ -98,6 +98,9 @@ $shadow-size: 0 0 2rem -0.5rem !default;
 $image-shadow-size: 0.5rem !default;
 
 /// Buttons
+$link-color: brand !default;
+$link-color-hover: accent-0 !default;
+
 $menu-bar-height: 0.4rem !default;
 $menu-bar-width: $menu-bar-height * 8 !default;
 $menu-btn-height: $menu-bar-height * 8 !default;

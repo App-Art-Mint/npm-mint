@@ -31,6 +31,10 @@
 				text-align: center;
 			}
 		}
+
+		#{class(buttons)} {
+			justify-content: center;
+		}
 	}
 
 	&#{class(stagger)} {
@@ -105,6 +109,7 @@
 		padding: $card-padding;
 		background: css-var($card-bg-color);
 		width: 100%;
+		overflow: hidden;
 
 		&> * {
 			margin-top: 0;
