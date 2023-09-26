@@ -88,7 +88,8 @@
 }
 
 a {
-    color: css-var(brand);
+    color: css-var($link-color);
+	transition: color css-var(delay-default);
 
 	.fa-instagram {
 		position: relative;
@@ -109,7 +110,7 @@ a {
 	}
 
     @include states(hover, focus, active) {
-        color: css-var(accent-0);
+        color: css-var($link-color-hover);
 
 		.fa-facebook, .fa-square-facebook {
 			color: css-var(facebook);

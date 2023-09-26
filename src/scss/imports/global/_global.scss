@@ -64,8 +64,14 @@ a {
         white-space: nowrap;
     }
 
-    i:last-child {
-        margin-left: 0.25rem;
+    i {
+		&:first-child {
+			margin-right: 0.25rem;
+		}
+
+		&:last-child {
+        	margin-left: 0.25rem;
+		}
     }
 }
 
