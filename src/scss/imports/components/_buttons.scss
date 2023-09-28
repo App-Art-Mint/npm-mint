@@ -166,6 +166,7 @@ p {
 /// A list of buttons
 #{class(buttons)} {
     @include flex-util();
+	gap: 1rem;
 
     & > * {
         width: 100%;
@@ -180,6 +181,10 @@ p {
             margin: 0.5rem;
         }
     }
+
+	&#{class('even')} {
+		justify-content: space-evenly;
+	}
 
     #{class(buttons)} {
         #{class(pill)} {
