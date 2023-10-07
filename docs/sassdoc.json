@@ -2161,7 +2161,7 @@
       "value": "max-width: 100%;\n\ttext-decoration: none;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    overflow: hidden;\n\tuser-select: none;\n    transition: color css-var(delay-default),\n                background-color css-var(delay-default),\n                border-color css-var(delay-default);",
       "line": {
         "start": 13,
-        "end": 207
+        "end": 205
       }
     },
     "access": "public",
@@ -2185,7 +2185,7 @@
       "value": "padding: $btn-padding-v $btn-padding-h + $btn-padding-adjust;\n\n\t/// Icon buttons\n\t&-icon {\n\t\tdisplay: block;\n\t\ttext-align: center;\n\n\t\t@include states(hover, focus, active) {\n\t\t\ti {\n\t\t\t\tcolor: css-var($btn-back-alt-hover);\n\t\t\t}\n\t\t}\n\n\t\t@include break(xs) {\n\t\t\tdisplay: inline-block;\n\t\t}\n\n\t\ti {\n\t\t\tmargin: 0 !important;\n\t\t\tcolor: css-var($btn-border);\n\t\t\tfont-size: 4rem;\n\n\t\t\t&::before {\n\t\t\t\ttransition: color css-var(delay-default);\n\t\t\t}\n\t\t}\n\t}\n\n\t/// Button groups\n\t&-group {\n\t\tdisplay: flex;\n\t\tpadding: 0;\n\t\ttransition: all css-var(delay-default);\n\n\t\tbutton {\n\t\t\twidth: 100%;\n\t\t\tborder: none;\n\t\t\tcolor: inherit;\n\t\t\tbackground: transparent;\n\n\t\t\t&:first-child {\n\t\t\t\tpadding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;\n\t\t\t\tborder-top-left-radius: $pill-radius;\n\t\t\t\tborder-bottom-left-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&:last-child {\n\t\t\t\tpadding: $btn-padding-v $btn-padding-h $btn-padding-v 0;\n\t\t\t\tborder-top-right-radius: $pill-radius;\n\t\t\t\tborder-bottom-right-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&[disabled] {\n\t\t\t\tpointer-events: none;\n\t\t\t}\n\n\t\t\t@include states(hover, focus, active) {\n\t\t\t\tbackground: css-var(brand-5);\n\t\t\t}\n\t\t}\n\t}",
       "line": {
         "start": 83,
-        "end": 207
+        "end": 205
       }
     },
     "access": "public",
@@ -2209,7 +2209,7 @@
       "value": "display: block;\n\t\ttext-align: center;\n\n\t\t@include states(hover, focus, active) {\n\t\t\ti {\n\t\t\t\tcolor: css-var($btn-back-alt-hover);\n\t\t\t}\n\t\t}\n\n\t\t@include break(xs) {\n\t\t\tdisplay: inline-block;\n\t\t}\n\n\t\ti {\n\t\t\tmargin: 0 !important;\n\t\t\tcolor: css-var($btn-border);\n\t\t\tfont-size: 4rem;\n\n\t\t\t&::before {\n\t\t\t\ttransition: color css-var(delay-default);\n\t\t\t}\n\t\t}",
       "line": {
         "start": 87,
-        "end": 207
+        "end": 205
       }
     },
     "access": "public",
@@ -2233,7 +2233,7 @@
       "value": "display: flex;\n\t\tpadding: 0;\n\t\ttransition: all css-var(delay-default);\n\n\t\tbutton {\n\t\t\twidth: 100%;\n\t\t\tborder: none;\n\t\t\tcolor: inherit;\n\t\t\tbackground: transparent;\n\n\t\t\t&:first-child {\n\t\t\t\tpadding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;\n\t\t\t\tborder-top-left-radius: $pill-radius;\n\t\t\t\tborder-bottom-left-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&:last-child {\n\t\t\t\tpadding: $btn-padding-v $btn-padding-h $btn-padding-v 0;\n\t\t\t\tborder-top-right-radius: $pill-radius;\n\t\t\t\tborder-bottom-right-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&[disabled] {\n\t\t\t\tpointer-events: none;\n\t\t\t}\n\n\t\t\t@include states(hover, focus, active) {\n\t\t\t\tbackground: css-var(brand-5);\n\t\t\t}\n\t\t}",
       "line": {
         "start": 113,
-        "end": 207
+        "end": 205
       }
     },
     "access": "public",
@@ -2257,7 +2257,7 @@
       "value": "padding: 0 $btn-padding-adjust;\n    line-height: 2;",
       "line": {
         "start": 148,
-        "end": 207
+        "end": 205
       }
     },
     "access": "public",
@@ -2278,10 +2278,10 @@
     "context": {
       "type": "css",
       "name": "#{class(buttons)}",
-      "value": "@include flex-util();\n\tgap: 1rem;\n\n    & > * {\n        width: 100%;\n        margin: 0.5rem 0;\n\n        #{class(btn)}, #{class(pill)} {\n            display: block;\n        }\n\n        @include break(xs) {\n            width: auto;\n            margin: 0.5rem;\n        }\n    }\n\n\t&#{class('even')} {\n\t\tjustify-content: space-evenly;\n\t}\n\n    #{class(buttons)} {\n        #{class(pill)} {\n            width: 100%;\n        }\n    }",
+      "value": "@include flex-util();\n\tgap: 1rem;\n\n    & > * {\n        width: 100%;\n\n        #{class(btn)}, #{class(pill)} {\n            display: block;\n        }\n\n        @include break(xs) {\n            width: auto;\n        }\n    }\n\n\t&#{class('even')} {\n\t\tjustify-content: space-evenly;\n\t}\n\n    #{class(buttons)} {\n        #{class(pill)} {\n            width: 100%;\n        }\n    }",
       "line": {
         "start": 167,
-        "end": 207
+        "end": 205
       }
     },
     "access": "public",

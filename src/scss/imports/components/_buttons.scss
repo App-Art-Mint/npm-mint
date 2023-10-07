@@ -170,7 +170,6 @@ p {
 
     & > * {
         width: 100%;
-        margin: 0.5rem 0;
 
         #{class(btn)}, #{class(pill)} {
             display: block;
@@ -178,7 +177,6 @@ p {
 
         @include break(xs) {
             width: auto;
-            margin: 0.5rem;
         }
     }
 
