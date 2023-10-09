@@ -16,20 +16,21 @@
 		position: relative;
 		min-height: 75vh;
 
-		iframe {
+		iframe, video {
 			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
 			border: none;
+			object-fit: cover;
 			pointer-events: none;
 		}
 
 		&#{class(overflow)} {
 			overflow: hidden;
 
-			iframe {
+			iframe, video {
 				top: -10%;
 				left: -10%;
 				width: 120%;
