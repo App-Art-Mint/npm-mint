@@ -1,5 +1,7 @@
 /**
  * A generic item
+ * @note - this class must be convertable with JSON
+ *       - only add strings, numbers, booleans, arrays, and objects
  */
 export class mintItem {
 	/**
@@ -31,7 +33,7 @@ export class mintItem {
 	icon?: string;
 	position?: string;
 	transform?: string;
-	date?: Date;
+	date?: string;
 
 	/**
 	 * Item links
