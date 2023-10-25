@@ -11,24 +11,46 @@
 #{class(embed)} {
 	&-bg {
 		display: flex;
-		align-items: center;
+		flex-direction: column;
+		align-items: flex-end;
 		justify-content: center;
+		gap: 2rem;
 		position: relative;
-		min-height: 100vh;
+
+		@include break(lg) {
+			flex-direction: row;
+			min-height: 100vh;
+			margin-bottom: 15%;
+		}
+
+		& > section {
+			@include break(lg) {
+				margin-bottom: -15%;
+			}
+		}
 
 		iframe, video {
-			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
-			border: none;
 			object-fit: cover;
 			pointer-events: none;
+
+			@include break(lg) {
+				position: absolute;
+			}
 		}
 
 		&#{class(overflow)} {
 			overflow: hidden;
+			margin-bottom: 0;
+
+			& > section {
+				@include break(lg) {
+					margin-bottom: 0;
+				}
+			}
 
 			iframe, video {
 				top: -10%;
