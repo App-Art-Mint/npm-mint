@@ -39,20 +39,19 @@
 
 	&#{class(stagger)} {
 		position: relative;
+		width: calc(100% + $card-padding * 2);
 
 		@include break(sm) {
-			flex-direction: row-reverse;
+			flex-direction: row;
 			border-radius: 0;
 			box-shadow: none;
 			overflow: visible;
 
 			&>#{class(image)},
 			&>mint-image #{class(image)} {
-				position: absolute;
-				top: 0;
-				left: 0;
 				width: 50%;
-				height: calc(100% - 3rem);
+				height: fit-content;
+				margin-right: $card-padding * -2;
 				border-radius: $card-radius;
 				box-shadow: $card-shadow-size #{css-var($card-shadow-color)};
 
@@ -63,7 +62,8 @@
 			}
 
 			&>#{class(content)} {
-				width: calc(50% + $card-padding * 2);
+				width: 50%;
+				height: fit-content;
 				margin-top: $card-padding * 2;
 				border-radius: $card-radius;
 				box-shadow: $card-shadow-size #{css-var($card-shadow-color)};
@@ -72,13 +72,13 @@
 
 		&#{class(reverse)} {
 			@include break(sm) {
-				flex-direction: row;
+				flex-direction: row-reverse;
+			}
 
-				&>#{class(image)},
-				&>mint-image #{class(image)} {
-					left: auto;
-					right: 0;
-				}
+			&>#{class(image)},
+			&>mint-image #{class(image)} {
+				margin-right: $card-padding * 2;
+				margin-left: $card-padding * -2;
 			}
 		}
 	}
