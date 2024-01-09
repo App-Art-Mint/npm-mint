@@ -2,16 +2,16 @@
   {
     "description": "Prefixes the provided string with the library name if it isn't already\n",
     "commentRange": {
-      "start": 144,
-      "end": 151
+      "start": 148,
+      "end": 155
     },
     "context": {
       "type": "function",
       "name": "prefix",
-      "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The prefix function requires a string value.';\n\t}\n\n\t$base: string.to-lower-case($base\n\t);\n\n@if (string.index($base, $pre) !=1) {\n\t$base: $pre +$base;\n}\n\n@return $base;\n",
+      "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The prefix function requires a string value.';\n\t}\n\n\t$base: string.to-lower-case($base);\n\n\t@if (string.index($base, $pre) != 1) {\n\t\t$base: #{$pre}#{$base};\n\t}\n\n\t@return $base;\n",
       "line": {
-        "start": 152,
-        "end": 165
+        "start": 156,
+        "end": 168
       }
     },
     "group": [
@@ -59,10 +59,10 @@
         "context": {
           "type": "function",
           "name": "css-prefix",
-          "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The css-prefix function requires a string value.';\n\t}\n\n\t@while (string.index($base, $dash)==1) {\n\t\t$base: string.slice($base, 2);\n\t}\n\n\t@return $dash +$dash +prefix($base);\n",
+          "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The css-prefix function requires a string value.';\n\t}\n\n\t@while (string.index($base, $dash) == 1) {\n\t\t$base: string.slice($base, 2);\n\t}\n\n\t@return #{$dash}#{$dash}#{prefix($base)};\n",
           "line": {
-            "start": 175,
-            "end": 185
+            "start": 178,
+            "end": 188
           }
         }
       },
@@ -71,10 +71,10 @@
         "context": {
           "type": "function",
           "name": "class",
-          "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The class function requires a string value.';\n\t}\n\n\t@return $dot +prefix($base);\n",
+          "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The class function requires a string value.';\n\t}\n\n\t@return #{$dot}#{prefix($base)};\n",
           "line": {
-            "start": 227,
-            "end": 233
+            "start": 230,
+            "end": 236
           }
         }
       },
@@ -83,10 +83,10 @@
         "context": {
           "type": "function",
           "name": "id",
-          "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The id function requires a string value.';\n\t}\n\n\t@if (type-of($op) !='string') {\n\t\t@error 'The controls function requires a string value for param 2.';\n\t}\n\n\t@if not($op =='=' or $op =='~=' or $op =='|=' or $op =='^=' or $op =='$=' or $op =='*=') {\n\t\t@error 'The controls function requires a valid attribute comparison operator for param 2.';\n\t}\n\n\t@if ($op =='=') {\n\t\t@return $hash +prefix($base);\n\t}\n\n\t@return '[id'+$op +prefix($base)+']';\n",
+          "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The id function requires a string value.';\n\t}\n\n\t@if (type-of($op) != 'string') {\n\t\t@error 'The controls function requires a string value for param 2.';\n\t}\n\n\t@if not($op == '=' or $op == '~=' or $op == '|=' or $op == '^=' or $op == '$=' or $op == '*=') {\n\t\t@error 'The controls function requires a valid attribute comparison operator for param 2.';\n\t}\n\n\t@if ($op == '=') {\n\t\t@return #{$hash}#{prefix($base)};\n\t}\n\n\t@return '[id#{$op}#{prefix($base)}]';\n",
           "line": {
-            "start": 244,
-            "end": 262
+            "start": 247,
+            "end": 265
           }
         }
       },
@@ -95,10 +95,10 @@
         "context": {
           "type": "function",
           "name": "id",
-          "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The id function requires a string value.';\n\t}\n\n\t@if (type-of($op) !='string') {\n\t\t@error 'The controls function requires a string value for param 2.';\n\t}\n\n\t@if not($op =='=' or $op =='~=' or $op =='|=' or $op =='^=' or $op =='$=' or $op =='*=') {\n\t\t@error 'The controls function requires a valid attribute comparison operator for param 2.';\n\t}\n\n\t@if ($op =='=') {\n\t\t@return $hash +prefix($base);\n\t}\n\n\t@return '[id'+$op +prefix($base)+']';\n",
+          "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The id function requires a string value.';\n\t}\n\n\t@if (type-of($op) != 'string') {\n\t\t@error 'The controls function requires a string value for param 2.';\n\t}\n\n\t@if not($op == '=' or $op == '~=' or $op == '|=' or $op == '^=' or $op == '$=' or $op == '*=') {\n\t\t@error 'The controls function requires a valid attribute comparison operator for param 2.';\n\t}\n\n\t@if ($op == '=') {\n\t\t@return #{$hash}#{prefix($base)};\n\t}\n\n\t@return '[id#{$op}#{prefix($base)}]';\n",
           "line": {
-            "start": 244,
-            "end": 262
+            "start": 247,
+            "end": 265
           }
         }
       },
@@ -107,10 +107,10 @@
         "context": {
           "type": "function",
           "name": "controls",
-          "code": "\n\t@if (type-of($id) !='string') {\n\t\t@error 'The controls function requires a string value for param 1.';\n\t}\n\n\t@if (type-of($op) !='string') {\n\t\t@error 'The controls function requires a string value for param 2.';\n\t}\n\n\t@if not($op =='=' or $op =='~=' or $op =='|=' or $op =='^=' or $op =='$=' or $op =='*=') {\n\t\t@error 'The controls function requires a valid attribute comparison operator for param 2.';\n\t}\n\n\t@return '[aria-controls'+$op +prefix($id)+']';\n",
+          "code": "\n\t@if (type-of($id) != 'string') {\n\t\t@error 'The controls function requires a string value for param 1.';\n\t}\n\n\t@if (type-of($op) != 'string') {\n\t\t@error 'The controls function requires a string value for param 2.';\n\t}\n\n\t@if not($op == '=' or $op == '~=' or $op == '|=' or $op == '^=' or $op == '$=' or $op == '*=') {\n\t\t@error 'The controls function requires a valid attribute comparison operator for param 2.';\n\t}\n\n\t@return '[aria-controls#{$op}#{prefix($id)}]';\n",
           "line": {
-            "start": 273,
-            "end": 287
+            "start": 276,
+            "end": 290
           }
         }
       }
@@ -119,16 +119,16 @@
   {
     "description": "Prefixes the provided string with two dashes and the library name if it isn't already\n",
     "commentRange": {
-      "start": 167,
-      "end": 174
+      "start": 170,
+      "end": 177
     },
     "context": {
       "type": "function",
       "name": "css-prefix",
-      "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The css-prefix function requires a string value.';\n\t}\n\n\t@while (string.index($base, $dash)==1) {\n\t\t$base: string.slice($base, 2);\n\t}\n\n\t@return $dash +$dash +prefix($base);\n",
+      "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The css-prefix function requires a string value.';\n\t}\n\n\t@while (string.index($base, $dash) == 1) {\n\t\t$base: string.slice($base, 2);\n\t}\n\n\t@return #{$dash}#{$dash}#{prefix($base)};\n",
       "line": {
-        "start": 175,
-        "end": 185
+        "start": 178,
+        "end": 188
       }
     },
     "group": [
@@ -184,10 +184,10 @@
         "context": {
           "type": "function",
           "name": "css-var",
-          "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The css-var function requires a string value.';\n\t}\n\n\t@return var(css-prefix($base));\n",
+          "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The css-var function requires a string value.';\n\t}\n\n\t@return var(css-prefix($base));\n",
           "line": {
-            "start": 195,
-            "end": 201
+            "start": 198,
+            "end": 204
           }
         }
       },
@@ -198,8 +198,8 @@
           "name": "css-var",
           "code": "\n\t#{css-prefix($key)}: #{$val};\n",
           "line": {
-            "start": 453,
-            "end": 455
+            "start": 456,
+            "end": 458
           }
         }
       }
@@ -208,16 +208,16 @@
   {
     "description": "Creates a CSS-var call for the prefixed `$base`\n",
     "commentRange": {
-      "start": 187,
-      "end": 194
+      "start": 190,
+      "end": 197
     },
     "context": {
       "type": "function",
       "name": "css-var",
-      "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The css-var function requires a string value.';\n\t}\n\n\t@return var(css-prefix($base));\n",
+      "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The css-var function requires a string value.';\n\t}\n\n\t@return var(css-prefix($base));\n",
       "line": {
-        "start": 195,
-        "end": 201
+        "start": 198,
+        "end": 204
       }
     },
     "group": [
@@ -263,8 +263,8 @@
           "name": "css-var-ref",
           "code": "\n\t@include css-var($key1, css-var($key2));\n",
           "line": {
-            "start": 466,
-            "end": 468
+            "start": 469,
+            "end": 471
           }
         }
       }
@@ -273,16 +273,16 @@
   {
     "description": "Negates a provided CSS-selector\n",
     "commentRange": {
-      "start": 203,
-      "end": 210
+      "start": 206,
+      "end": 213
     },
     "context": {
       "type": "function",
       "name": "neg",
-      "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The neg function requires a string value.';\n\t}\n\n\t@return ':not('+$base +')';\n",
+      "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The neg function requires a string value.';\n\t}\n\n\t@return ':not(#{$base})';\n",
       "line": {
-        "start": 211,
-        "end": 217
+        "start": 214,
+        "end": 220
       }
     },
     "group": [
@@ -319,16 +319,16 @@
   {
     "description": "Creates a class selector with the library prefix\n",
     "commentRange": {
-      "start": 219,
-      "end": 226
+      "start": 222,
+      "end": 229
     },
     "context": {
       "type": "function",
       "name": "class",
-      "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The class function requires a string value.';\n\t}\n\n\t@return $dot +prefix($base);\n",
+      "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The class function requires a string value.';\n\t}\n\n\t@return #{$dot}#{prefix($base)};\n",
       "line": {
-        "start": 227,
-        "end": 233
+        "start": 230,
+        "end": 236
       }
     },
     "group": [
@@ -378,8 +378,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 765,
-            "end": 792
+            "start": 768,
+            "end": 795
           }
         }
       },
@@ -390,8 +390,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 765,
-            "end": 792
+            "start": 768,
+            "end": 795
           }
         }
       },
@@ -402,8 +402,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 765,
-            "end": 792
+            "start": 768,
+            "end": 795
           }
         }
       },
@@ -414,8 +414,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 765,
-            "end": 792
+            "start": 768,
+            "end": 795
           }
         }
       },
@@ -426,8 +426,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 765,
-            "end": 792
+            "start": 768,
+            "end": 795
           }
         }
       },
@@ -438,8 +438,8 @@
           "name": "headers",
           "code": "\n\t@for $i from 1 through 6 {\n\t\th#{$i},\n\t\t#{class(h#{$i})\n\t}\n\n\t\t{\n\t\t@content;\n\t}\n}\n",
           "line": {
-            "start": 798,
-            "end": 808
+            "start": 801,
+            "end": 811
           }
         }
       },
@@ -448,10 +448,10 @@
         "context": {
           "type": "mixin",
           "name": "states",
-          "code": "\n\t@each $state in $states {\n\t\t@if (type-of($state) !='string') {\n\t\t\t@error 'The states mixin requires a string for each state argument.';\n\t\t}\n\n\t\t@if not($state =='hover' or $state =='focus' or $state =='active' or $state =='visited' or $state =='disabled') {\n\t\t\t@error 'The states mixin requires a string of \"hover\", \"focus\", \"active\", \"visited\", or \"disabled\" for each state argument.';\n\t\t}\n\t}\n\n\t@if (index($states, 'hover') !=null) {\n\t\t&:hover {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'focus') !=null) {\n\t\t&:focus {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'active') !=null) {\n\n\t\t&:active,\n\t\t&#{class(active)} {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'visited') !=null) {\n\t\t&:visited {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'disabled') !=null) {\n\t\t&:disabled {\n\t\t\t@content;\n\t\t}\n\t}\n",
+          "code": "\n\t@each $state in $states {\n\t\t@if (type-of($state) != 'string') {\n\t\t\t@error 'The states mixin requires a string for each state argument.';\n\t\t}\n\n\t\t@if not($state == 'hover' or $state == 'focus' or $state == 'active' or $state == 'visited' or $state == 'disabled') {\n\t\t\t@error 'The states mixin requires a string of \"hover\", \"focus\", \"active\", \"visited\", or \"disabled\" for each state argument.';\n\t\t}\n\t}\n\n\t@if (index($states, 'hover') != null) {\n\t\t&:hover {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'focus') != null) {\n\t\t&:focus {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'active') != null) {\n\n\t\t&:active,\n\t\t&#{class(active)} {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'visited') != null) {\n\t\t&:visited {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'disabled') != null) {\n\t\t&:disabled {\n\t\t\t@content;\n\t\t}\n\t}\n",
           "line": {
-            "start": 717,
-            "end": 759
+            "start": 720,
+            "end": 762
           }
         }
       },
@@ -460,10 +460,10 @@
         "context": {
           "type": "mixin",
           "name": "animation",
-          "code": "\n\t$animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n\t$this: map.get($animations, &);\n\t$animation: '';\n\n\t& {\n\t\t@each $item in $this {\n\t\t\t@if (list.index($this, $item) !=1) {\n\t\t\t\t$animation: #{$animation},\n\t\t\t\t;\n\t\t\t}\n\n\t\t\t$animation: #{$animation}#{$item};\n\t\t}\n\n\t\tanimation: $animation;\n\n\t\t@each $name,\n\t\t$items in $animations {\n\t\t\t&#{class($name)} {\n\t\t\t\tanimation: $animation;\n\t\t\t}\n\t\t}\n\t}\n",
+          "code": "\n\t$animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n\t$this: map.get($animations, &);\n\t$animation: '';\n\n\t& {\n\t\t@each $item in $this {\n\t\t\t@if (list.index($this, $item) != 1) {\n\t\t\t\t$animation: #{$animation},\n\t\t\t\t;\n\t\t\t}\n\n\t\t\t$animation: #{$animation}#{$item};\n\t\t}\n\n\t\tanimation: $animation;\n\n\t\t@each $name,\n\t\t$items in $animations {\n\t\t\t&#{class($name)} {\n\t\t\t\tanimation: $animation;\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 842,
-            "end": 866
+            "start": 845,
+            "end": 869
           }
         }
       }
@@ -472,16 +472,16 @@
   {
     "description": "Creates an id selector with the library prefix\n",
     "commentRange": {
-      "start": 235,
-      "end": 243
+      "start": 238,
+      "end": 246
     },
     "context": {
       "type": "function",
       "name": "id",
-      "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The id function requires a string value.';\n\t}\n\n\t@if (type-of($op) !='string') {\n\t\t@error 'The controls function requires a string value for param 2.';\n\t}\n\n\t@if not($op =='=' or $op =='~=' or $op =='|=' or $op =='^=' or $op =='$=' or $op =='*=') {\n\t\t@error 'The controls function requires a valid attribute comparison operator for param 2.';\n\t}\n\n\t@if ($op =='=') {\n\t\t@return $hash +prefix($base);\n\t}\n\n\t@return '[id'+$op +prefix($base)+']';\n",
+      "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The id function requires a string value.';\n\t}\n\n\t@if (type-of($op) != 'string') {\n\t\t@error 'The controls function requires a string value for param 2.';\n\t}\n\n\t@if not($op == '=' or $op == '~=' or $op == '|=' or $op == '^=' or $op == '$=' or $op == '*=') {\n\t\t@error 'The controls function requires a valid attribute comparison operator for param 2.';\n\t}\n\n\t@if ($op == '=') {\n\t\t@return #{$hash}#{prefix($base)};\n\t}\n\n\t@return '[id#{$op}#{prefix($base)}]';\n",
       "line": {
-        "start": 244,
-        "end": 262
+        "start": 247,
+        "end": 265
       }
     },
     "group": [
@@ -538,16 +538,16 @@
   {
     "description": "Creates an aria-controls selector with the library prefix\n",
     "commentRange": {
-      "start": 264,
-      "end": 272
+      "start": 267,
+      "end": 275
     },
     "context": {
       "type": "function",
       "name": "controls",
-      "code": "\n\t@if (type-of($id) !='string') {\n\t\t@error 'The controls function requires a string value for param 1.';\n\t}\n\n\t@if (type-of($op) !='string') {\n\t\t@error 'The controls function requires a string value for param 2.';\n\t}\n\n\t@if not($op =='=' or $op =='~=' or $op =='|=' or $op =='^=' or $op =='$=' or $op =='*=') {\n\t\t@error 'The controls function requires a valid attribute comparison operator for param 2.';\n\t}\n\n\t@return '[aria-controls'+$op +prefix($id)+']';\n",
+      "code": "\n\t@if (type-of($id) != 'string') {\n\t\t@error 'The controls function requires a string value for param 1.';\n\t}\n\n\t@if (type-of($op) != 'string') {\n\t\t@error 'The controls function requires a string value for param 2.';\n\t}\n\n\t@if not($op == '=' or $op == '~=' or $op == '|=' or $op == '^=' or $op == '$=' or $op == '*=') {\n\t\t@error 'The controls function requires a valid attribute comparison operator for param 2.';\n\t}\n\n\t@return '[aria-controls#{$op}#{prefix($id)}]';\n",
       "line": {
-        "start": 273,
-        "end": 287
+        "start": 276,
+        "end": 290
       }
     },
     "group": [
@@ -596,16 +596,16 @@
   {
     "description": "Creates an aria-expanded selector\n",
     "commentRange": {
-      "start": 289,
-      "end": 296
+      "start": 292,
+      "end": 299
     },
     "context": {
       "type": "function",
       "name": "expanded",
-      "code": "\n\t@if (type-of($bool)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The expanded function requires a boolean value.';\n\t\t}\n\t}\n\n\t@else if (type-of($bool) !='bool') {\n\t\t@error 'The expanded function requires a boolean value.';\n\t}\n\n\t@return '[aria-expanded='+$bool +']';\n",
+      "code": "\n\t@if (type-of($bool) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The expanded function requires a boolean value.';\n\t\t}\n\t}\n\n\t@else if (type-of($bool) != 'bool') {\n\t\t@error 'The expanded function requires a boolean value.';\n\t}\n\n\t@return '[aria-expanded=#{$bool}]';\n",
       "line": {
-        "start": 297,
-        "end": 311
+        "start": 300,
+        "end": 314
       }
     },
     "group": [
@@ -642,16 +642,16 @@
   {
     "description": "Creates an aria-hidden selector\n",
     "commentRange": {
-      "start": 313,
-      "end": 320
+      "start": 316,
+      "end": 323
     },
     "context": {
       "type": "function",
       "name": "hidden",
-      "code": "\n\t@if (type-of($bool)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The hidden function requires a boolean value. Received: '+$bool;\n\t\t}\n\t}\n\n\t@else if (type-of($bool) !='bool') {\n\t\t@error 'The hidden function requires a boolean value. Received: '+$bool;\n\t}\n\n\t@return '[aria-hidden='+$bool +']';\n",
+      "code": "\n\t@if (type-of($bool) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The hidden function requires a boolean value. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($bool) !='bool') {\n\t\t@error 'The hidden function requires a boolean value. Received: #{$bool}';\n\t}\n\n\t@return '[aria-hidden=#{$bool}]';\n",
       "line": {
-        "start": 321,
-        "end": 335
+        "start": 324,
+        "end": 338
       }
     },
     "group": [
@@ -678,7 +678,7 @@
     "access": "public",
     "require": [],
     "throw": [
-      "The hidden function requires a boolean value. Received: "
+      "The hidden function requires a boolean value. Received: #{$bool}"
     ],
     "file": {
       "path": "imports/util/_util.scss",
@@ -688,16 +688,16 @@
   {
     "description": "Converts a number to ms\n",
     "commentRange": {
-      "start": 337,
-      "end": 344
+      "start": 340,
+      "end": 347
     },
     "context": {
       "type": "function",
       "name": "ms",
-      "code": "\n\t@if (type-of($val) !='number') {\n\t\t@error 'The ms function requires a number value.';\n\t}\n\n\t@return $val * 1ms;\n",
+      "code": "\n\t@if (type-of($val) != 'number') {\n\t\t@error 'The ms function requires a number value.';\n\t}\n\n\t@return $val * 1ms;\n",
       "line": {
-        "start": 345,
-        "end": 351
+        "start": 348,
+        "end": 354
       }
     },
     "group": [
@@ -738,8 +738,8 @@
           "name": "delay",
           "code": "\n\t@if not(map-has-key($delay, $key)) {\n\t\t@error 'The delay function requires one of the following values: #{map-keys($delay)}';\n\t}\n\n\t@return ms(map-get($delay, $key));\n",
           "line": {
-            "start": 420,
-            "end": 426
+            "start": 423,
+            "end": 429
           }
         }
       }
@@ -748,16 +748,16 @@
   {
     "description": "Converts a number to px\n",
     "commentRange": {
-      "start": 353,
-      "end": 360
+      "start": 356,
+      "end": 363
     },
     "context": {
       "type": "function",
       "name": "px",
-      "code": "\n\t@if (type-of($val) !='number') {\n\t\t@error 'The px function requires a number value.';\n\t}\n\n\t@return $val * 1px;\n",
+      "code": "\n\t@if (type-of($val) != 'number') {\n\t\t@error 'The px function requires a number value.';\n\t}\n\n\t@return $val * 1px;\n",
       "line": {
-        "start": 361,
-        "end": 367
+        "start": 364,
+        "end": 370
       }
     },
     "group": [
@@ -798,8 +798,8 @@
           "name": "break",
           "code": "\n\t@if not(map-has-key($break, $key)) {\n\t\t@error 'The break function requires one of the following values: #{map-keys($break)}';\n\t}\n\n\t@return px(map-get($break, $key));\n",
           "line": {
-            "start": 436,
-            "end": 442
+            "start": 439,
+            "end": 445
           }
         }
       }
@@ -808,16 +808,16 @@
   {
     "description": "Removes the unit from the given value\n",
     "commentRange": {
-      "start": 369,
-      "end": 376
+      "start": 372,
+      "end": 379
     },
     "context": {
       "type": "function",
       "name": "strip-unit",
-      "code": "\n\t@if (type-of($val) !='number') {\n\t\t@error 'The strip-unit function requires a number value.';\n\t}\n\n\t@return math.div($val, $val * 0 + 1);\n",
+      "code": "\n\t@if (type-of($val) != 'number') {\n\t\t@error 'The strip-unit function requires a number value.';\n\t}\n\n\t@return math.div($val, $val * 0 + 1);\n",
       "line": {
-        "start": 377,
-        "end": 383
+        "start": 380,
+        "end": 386
       }
     },
     "group": [
@@ -856,10 +856,10 @@
         "context": {
           "type": "function",
           "name": "percent",
-          "code": "\n\t@if (type-of($dividend) !='number' or type-of($divisor) !='number' or type-of($padding) !='number') {\n\t\t@error 'The percent function requires number parameters.';\n\t}\n\n\t@if ($divisor ==0) {\n\t\t@error 'The percent function requires a non-zero value for param 2.';\n\t}\n\n\t@if (strip-unit($padding) !=0) {\n\t\t@return calc((($dividend * 100%) - $padding) / $divisor)+'%';\n\t}\n\n\t@return math.div($dividend * 100%, $divisor);\n",
+          "code": "\n\t@if (type-of($dividend) != 'number' or type-of($divisor) != 'number' or type-of($padding) != 'number') {\n\t\t@error 'The percent function requires number parameters.';\n\t}\n\n\t@if ($divisor == 0) {\n\t\t@error 'The percent function requires a non-zero value for param 2.';\n\t}\n\n\t@if (strip-unit($padding) != 0) {\n\t\t@return #{calc((($dividend * 100%) - $padding) / $divisor)}#{'%'};\n\t}\n\n\t@return math.div($dividend * 100%, $divisor);\n",
           "line": {
-            "start": 396,
-            "end": 410
+            "start": 399,
+            "end": 413
           }
         }
       },
@@ -868,10 +868,10 @@
         "context": {
           "type": "mixin",
           "name": "fluid",
-          "code": "\n\t$u1: unit($min-vw);\n\t$u2: unit($max-vw);\n\t$u3: unit($min-size);\n\t$u4: unit($max-size);\n\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The fluid mixin requires a string for the $prop argument.';\n\t}\n\n\t@if not(type-of($u1)=='string' and type-of($u2)=='string' and type-of($u3)=='string' and type-of($u4)=='string') {\n\t\t@error 'The fluid mixin requires numbers for the width and size arguments.';\n\t}\n\n\t@if not($u1 ==$u2 and $u1 ==$u3 and $u1 ==$u4) {\n\t\t@error 'The fluid mixin requires width and size arguments with the same units.';\n\t}\n\n\t// See if you can get rid of this wrapping & selector\n\t& {\n\t\t#{$prop}: $min-size;\n\n\t\t@media (min-width: $min-vw) {\n\t\t\t#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));\n\t\t}\n\n\t\t@media (min-width: $max-vw) {\n\t\t\t#{$prop}: $max-size;\n\t\t}\n\t}\n",
+          "code": "\n\t$u1: unit($min-vw);\n\t$u2: unit($max-vw);\n\t$u3: unit($min-size);\n\t$u4: unit($max-size);\n\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The fluid mixin requires a string for the $prop argument.';\n\t}\n\n\t@if not(type-of($u1) == 'string' and type-of($u2) == 'string' and type-of($u3) == 'string' and type-of($u4) == 'string') {\n\t\t@error 'The fluid mixin requires numbers for the width and size arguments.';\n\t}\n\n\t@if not($u1 == $u2 and $u1 == $u3 and $u1 == $u4) {\n\t\t@error 'The fluid mixin requires width and size arguments with the same units.';\n\t}\n\n\t// See if you can get rid of this wrapping & selector\n\t& {\n\t\t#{$prop}: $min-size;\n\n\t\t@media (min-width: $min-vw) {\n\t\t\t#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));\n\t\t}\n\n\t\t@media (min-width: $max-vw) {\n\t\t\t#{$prop}: $max-size;\n\t\t}\n\t}\n",
           "line": {
-            "start": 586,
-            "end": 616
+            "start": 589,
+            "end": 619
           }
         }
       },
@@ -880,10 +880,10 @@
         "context": {
           "type": "mixin",
           "name": "fluid",
-          "code": "\n\t$u1: unit($min-vw);\n\t$u2: unit($max-vw);\n\t$u3: unit($min-size);\n\t$u4: unit($max-size);\n\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The fluid mixin requires a string for the $prop argument.';\n\t}\n\n\t@if not(type-of($u1)=='string' and type-of($u2)=='string' and type-of($u3)=='string' and type-of($u4)=='string') {\n\t\t@error 'The fluid mixin requires numbers for the width and size arguments.';\n\t}\n\n\t@if not($u1 ==$u2 and $u1 ==$u3 and $u1 ==$u4) {\n\t\t@error 'The fluid mixin requires width and size arguments with the same units.';\n\t}\n\n\t// See if you can get rid of this wrapping & selector\n\t& {\n\t\t#{$prop}: $min-size;\n\n\t\t@media (min-width: $min-vw) {\n\t\t\t#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));\n\t\t}\n\n\t\t@media (min-width: $max-vw) {\n\t\t\t#{$prop}: $max-size;\n\t\t}\n\t}\n",
+          "code": "\n\t$u1: unit($min-vw);\n\t$u2: unit($max-vw);\n\t$u3: unit($min-size);\n\t$u4: unit($max-size);\n\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The fluid mixin requires a string for the $prop argument.';\n\t}\n\n\t@if not(type-of($u1) == 'string' and type-of($u2) == 'string' and type-of($u3) == 'string' and type-of($u4) == 'string') {\n\t\t@error 'The fluid mixin requires numbers for the width and size arguments.';\n\t}\n\n\t@if not($u1 == $u2 and $u1 == $u3 and $u1 == $u4) {\n\t\t@error 'The fluid mixin requires width and size arguments with the same units.';\n\t}\n\n\t// See if you can get rid of this wrapping & selector\n\t& {\n\t\t#{$prop}: $min-size;\n\n\t\t@media (min-width: $min-vw) {\n\t\t\t#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));\n\t\t}\n\n\t\t@media (min-width: $max-vw) {\n\t\t\t#{$prop}: $max-size;\n\t\t}\n\t}\n",
           "line": {
-            "start": 586,
-            "end": 616
+            "start": 589,
+            "end": 619
           }
         }
       }
@@ -892,16 +892,16 @@
   {
     "description": "Returns the percentage of the given values\n",
     "commentRange": {
-      "start": 385,
-      "end": 395
+      "start": 388,
+      "end": 398
     },
     "context": {
       "type": "function",
       "name": "percent",
-      "code": "\n\t@if (type-of($dividend) !='number' or type-of($divisor) !='number' or type-of($padding) !='number') {\n\t\t@error 'The percent function requires number parameters.';\n\t}\n\n\t@if ($divisor ==0) {\n\t\t@error 'The percent function requires a non-zero value for param 2.';\n\t}\n\n\t@if (strip-unit($padding) !=0) {\n\t\t@return calc((($dividend * 100%) - $padding) / $divisor)+'%';\n\t}\n\n\t@return math.div($dividend * 100%, $divisor);\n",
+      "code": "\n\t@if (type-of($dividend) != 'number' or type-of($divisor) != 'number' or type-of($padding) != 'number') {\n\t\t@error 'The percent function requires number parameters.';\n\t}\n\n\t@if ($divisor == 0) {\n\t\t@error 'The percent function requires a non-zero value for param 2.';\n\t}\n\n\t@if (strip-unit($padding) != 0) {\n\t\t@return #{calc((($dividend * 100%) - $padding) / $divisor)}#{'%'};\n\t}\n\n\t@return math.div($dividend * 100%, $divisor);\n",
       "line": {
-        "start": 396,
-        "end": 410
+        "start": 399,
+        "end": 413
       }
     },
     "group": [
@@ -949,16 +949,16 @@
   {
     "description": "Returns the requested delay value as ms\n",
     "commentRange": {
-      "start": 412,
-      "end": 419
+      "start": 415,
+      "end": 422
     },
     "context": {
       "type": "function",
       "name": "delay",
       "code": "\n\t@if not(map-has-key($delay, $key)) {\n\t\t@error 'The delay function requires one of the following values: #{map-keys($delay)}';\n\t}\n\n\t@return ms(map-get($delay, $key));\n",
       "line": {
-        "start": 420,
-        "end": 426
+        "start": 423,
+        "end": 429
       }
     },
     "group": [
@@ -1012,16 +1012,16 @@
   {
     "description": "Returns the requested breakpoint value as px\n",
     "commentRange": {
-      "start": 428,
-      "end": 435
+      "start": 431,
+      "end": 438
     },
     "context": {
       "type": "function",
       "name": "break",
       "code": "\n\t@if not(map-has-key($break, $key)) {\n\t\t@error 'The break function requires one of the following values: #{map-keys($break)}';\n\t}\n\n\t@return px(map-get($break, $key));\n",
       "line": {
-        "start": 436,
-        "end": 442
+        "start": 439,
+        "end": 445
       }
     },
     "group": [
@@ -1077,10 +1077,10 @@
         "context": {
           "type": "mixin",
           "name": "break",
-          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max)=='null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
+          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max) == 'null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
           "line": {
-            "start": 481,
-            "end": 497
+            "start": 484,
+            "end": 500
           }
         }
       },
@@ -1089,10 +1089,10 @@
         "context": {
           "type": "mixin",
           "name": "break",
-          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max)=='null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
+          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max) == 'null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
           "line": {
-            "start": 481,
-            "end": 497
+            "start": 484,
+            "end": 500
           }
         }
       },
@@ -1101,10 +1101,10 @@
         "context": {
           "type": "mixin",
           "name": "break",
-          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max)=='null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
+          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max) == 'null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
           "line": {
-            "start": 481,
-            "end": 497
+            "start": 484,
+            "end": 500
           }
         }
       }
@@ -1119,11 +1119,11 @@
     "context": {
       "type": "variable",
       "name": "delay",
-      "value": "(\n\tinstant: $delay-base + $delay-step * 0,\n\tfast: $delay-base + $delay-step * 1,\n\tmed-fast: $delay-base + $delay-step * 2,\n\tdefault: $delay-base + $delay-step * 3,\n\tmed-slow: $delay-base + $delay-step * 4,\n\tslow: $delay-base + $delay-step * 5)",
+      "value": "(\n\tinstant: $delay-base + $delay-step * 0,\n\tfast: $delay-base + $delay-step * 1,\n\tmed-fast: $delay-base + $delay-step * 2,\n\tdefault: $delay-base + $delay-step * 3,\n\tmed-slow: $delay-base + $delay-step * 4,\n\tslow: $delay-base + $delay-step * 5\n)",
       "scope": "default",
       "line": {
         "start": 109,
-        "end": 115
+        "end": 116
       }
     },
     "group": [
@@ -1180,8 +1180,8 @@
           "name": "delay",
           "code": "\n\t@if not(map-has-key($delay, $key)) {\n\t\t@error 'The delay function requires one of the following values: #{map-keys($delay)}';\n\t}\n\n\t@return ms(map-get($delay, $key));\n",
           "line": {
-            "start": 420,
-            "end": 426
+            "start": 423,
+            "end": 429
           }
         }
       },
@@ -1192,8 +1192,8 @@
           "name": "delay",
           "code": "\n\t@if not(map-has-key($delay, $key)) {\n\t\t@error 'The delay function requires one of the following values: #{map-keys($delay)}';\n\t}\n\n\t@return ms(map-get($delay, $key));\n",
           "line": {
-            "start": 420,
-            "end": 426
+            "start": 423,
+            "end": 429
           }
         }
       },
@@ -1204,8 +1204,8 @@
           "name": "delay",
           "code": "\n\t@if not(map-has-key($delay, $key)) {\n\t\t@error 'The delay function requires one of the following values: #{map-keys($delay)}';\n\t}\n\n\t@return ms(map-get($delay, $key));\n",
           "line": {
-            "start": 420,
-            "end": 426
+            "start": 423,
+            "end": 429
           }
         }
       }
@@ -1214,17 +1214,17 @@
   {
     "description": "Breakpoint variables\n",
     "commentRange": {
-      "start": 117,
-      "end": 123
+      "start": 118,
+      "end": 124
     },
     "context": {
       "type": "variable",
       "name": "break",
-      "value": "(\n\txs: 480,\n\tsm: 768,\n\tmd: 1024,\n\tlg: 1200,\n\txl: 1440)",
+      "value": "(\n\txs: 480,\n\tsm: 768,\n\tmd: 1024,\n\tlg: 1200,\n\txl: 1440\n)",
       "scope": "default",
       "line": {
-        "start": 124,
-        "end": 129
+        "start": 125,
+        "end": 131
       }
     },
     "group": [
@@ -1275,8 +1275,8 @@
           "name": "break",
           "code": "\n\t@if not(map-has-key($break, $key)) {\n\t\t@error 'The break function requires one of the following values: #{map-keys($break)}';\n\t}\n\n\t@return px(map-get($break, $key));\n",
           "line": {
-            "start": 436,
-            "end": 442
+            "start": 439,
+            "end": 445
           }
         }
       },
@@ -1287,8 +1287,8 @@
           "name": "break",
           "code": "\n\t@if not(map-has-key($break, $key)) {\n\t\t@error 'The break function requires one of the following values: #{map-keys($break)}';\n\t}\n\n\t@return px(map-get($break, $key));\n",
           "line": {
-            "start": 436,
-            "end": 442
+            "start": 439,
+            "end": 445
           }
         }
       },
@@ -1299,8 +1299,8 @@
           "name": "break",
           "code": "\n\t@if not(map-has-key($break, $key)) {\n\t\t@error 'The break function requires one of the following values: #{map-keys($break)}';\n\t}\n\n\t@return px(map-get($break, $key));\n",
           "line": {
-            "start": 436,
-            "end": 442
+            "start": 439,
+            "end": 445
           }
         }
       },
@@ -1309,10 +1309,10 @@
         "context": {
           "type": "mixin",
           "name": "break",
-          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max)=='null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
+          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max) == 'null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
           "line": {
-            "start": 481,
-            "end": 497
+            "start": 484,
+            "end": 500
           }
         }
       },
@@ -1321,10 +1321,10 @@
         "context": {
           "type": "mixin",
           "name": "break",
-          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max)=='null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
+          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max) == 'null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
           "line": {
-            "start": 481,
-            "end": 497
+            "start": 484,
+            "end": 500
           }
         }
       },
@@ -1333,10 +1333,10 @@
         "context": {
           "type": "mixin",
           "name": "break",
-          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max)=='null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
+          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max) == 'null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
           "line": {
-            "start": 481,
-            "end": 497
+            "start": 484,
+            "end": 500
           }
         }
       },
@@ -1345,10 +1345,10 @@
         "context": {
           "type": "mixin",
           "name": "break",
-          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max)=='null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
+          "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max) == 'null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
           "line": {
-            "start": 481,
-            "end": 497
+            "start": 484,
+            "end": 500
           }
         }
       },
@@ -1359,8 +1359,8 @@
           "name": "break-util",
           "code": "\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The break-util mixin requires a string for the $prop argument.';\n\t}\n\n\t& {\n\t\t#{$prop}: #{$val};\n\n\t\t@each $key,\n\t\t$width in $break {\n\t\t\t&-#{$key} {\n\t\t\t\t#{$prop}: #{$none};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$val};\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t&-to-#{$key} {\n\t\t\t\t#{$prop}: #{$val};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$none};\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 537,
-            "end": 564
+            "start": 540,
+            "end": 567
           }
         }
       }
@@ -1369,16 +1369,16 @@
   {
     "description": "Creates a prefixed CSS var definition\n",
     "commentRange": {
-      "start": 444,
-      "end": 452
+      "start": 447,
+      "end": 455
     },
     "context": {
       "type": "mixin",
       "name": "css-var",
       "code": "\n\t#{css-prefix($key)}: #{$val};\n",
       "line": {
-        "start": 453,
-        "end": 455
+        "start": 456,
+        "end": 458
       }
     },
     "group": [
@@ -1423,8 +1423,8 @@
           "name": "css-var-ref",
           "code": "\n\t@include css-var($key1, css-var($key2));\n",
           "line": {
-            "start": 466,
-            "end": 468
+            "start": 469,
+            "end": 471
           }
         }
       },
@@ -1433,10 +1433,10 @@
         "context": {
           "type": "mixin",
           "name": "shades",
-          "code": "\n\t@if (type-of($name) !='string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) !='color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type ==lighten or $type ==darken or $type ==both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) !='number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) !='bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
+          "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 628,
-            "end": 714
+            "start": 631,
+            "end": 717
           }
         }
       },
@@ -1445,10 +1445,10 @@
         "context": {
           "type": "mixin",
           "name": "shades",
-          "code": "\n\t@if (type-of($name) !='string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) !='color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type ==lighten or $type ==darken or $type ==both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) !='number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) !='bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
+          "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 628,
-            "end": 714
+            "start": 631,
+            "end": 717
           }
         }
       },
@@ -1457,10 +1457,10 @@
         "context": {
           "type": "mixin",
           "name": "shades",
-          "code": "\n\t@if (type-of($name) !='string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) !='color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type ==lighten or $type ==darken or $type ==both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) !='number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) !='bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
+          "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 628,
-            "end": 714
+            "start": 631,
+            "end": 717
           }
         }
       },
@@ -1469,10 +1469,10 @@
         "context": {
           "type": "mixin",
           "name": "shades",
-          "code": "\n\t@if (type-of($name) !='string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) !='color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type ==lighten or $type ==darken or $type ==both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) !='number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) !='bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
+          "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 628,
-            "end": 714
+            "start": 631,
+            "end": 717
           }
         }
       },
@@ -1481,10 +1481,10 @@
         "context": {
           "type": "mixin",
           "name": "shades",
-          "code": "\n\t@if (type-of($name) !='string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) !='color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type ==lighten or $type ==darken or $type ==both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) !='number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) !='bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
+          "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 628,
-            "end": 714
+            "start": 631,
+            "end": 717
           }
         }
       },
@@ -1493,10 +1493,10 @@
         "context": {
           "type": "mixin",
           "name": "shades",
-          "code": "\n\t@if (type-of($name) !='string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) !='color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type ==lighten or $type ==darken or $type ==both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) !='number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) !='bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
+          "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 628,
-            "end": 714
+            "start": 631,
+            "end": 717
           }
         }
       },
@@ -1505,10 +1505,10 @@
         "context": {
           "type": "mixin",
           "name": "shades",
-          "code": "\n\t@if (type-of($name) !='string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) !='color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type ==lighten or $type ==darken or $type ==both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) !='number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) !='bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
+          "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 628,
-            "end": 714
+            "start": 631,
+            "end": 717
           }
         }
       },
@@ -1517,10 +1517,10 @@
         "context": {
           "type": "mixin",
           "name": "shades",
-          "code": "\n\t@if (type-of($name) !='string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) !='color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type ==lighten or $type ==darken or $type ==both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) !='number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) !='bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
+          "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 628,
-            "end": 714
+            "start": 631,
+            "end": 717
           }
         }
       },
@@ -1529,10 +1529,10 @@
         "context": {
           "type": "mixin",
           "name": "shades",
-          "code": "\n\t@if (type-of($name) !='string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) !='color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type ==lighten or $type ==darken or $type ==both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) !='number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) !='bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
+          "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 628,
-            "end": 714
+            "start": 631,
+            "end": 717
           }
         }
       },
@@ -1541,10 +1541,10 @@
         "context": {
           "type": "mixin",
           "name": "shades",
-          "code": "\n\t@if (type-of($name) !='string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) !='color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type ==lighten or $type ==darken or $type ==both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) !='number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) !='bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
+          "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 628,
-            "end": 714
+            "start": 631,
+            "end": 717
           }
         }
       },
@@ -1553,10 +1553,10 @@
         "context": {
           "type": "mixin",
           "name": "shades",
-          "code": "\n\t@if (type-of($name) !='string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) !='color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type ==lighten or $type ==darken or $type ==both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) !='number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) !='bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
+          "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 628,
-            "end": 714
+            "start": 631,
+            "end": 717
           }
         }
       },
@@ -1613,16 +1613,16 @@
   {
     "description": "Creates a prefixed CSS var reference\n",
     "commentRange": {
-      "start": 457,
-      "end": 465
+      "start": 460,
+      "end": 468
     },
     "context": {
       "type": "mixin",
       "name": "css-var-ref",
       "code": "\n\t@include css-var($key1, css-var($key2));\n",
       "line": {
-        "start": 466,
-        "end": 468
+        "start": 469,
+        "end": 471
       }
     },
     "group": [
@@ -1667,16 +1667,16 @@
   {
     "description": "Wraps the provided content in a media query\n",
     "commentRange": {
-      "start": 470,
-      "end": 480
+      "start": 473,
+      "end": 483
     },
     "context": {
       "type": "mixin",
       "name": "break",
-      "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max)=='null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
+      "code": "\n\t@if not(map-has-key($break, $min) and (type-of($max) == 'null' or map-has-key($break, $max))) {\n\t\t@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';\n\t}\n\n\t@if (map-has-key($break, $max)) {\n\t\t@media (min-width: break($min)) and (max-width: break($max)) {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@else {\n\t\t@media (min-width: break($min)) {\n\t\t\t@content;\n\t\t}\n\t}\n",
       "line": {
-        "start": 481,
-        "end": 497
+        "start": 484,
+        "end": 500
       }
     },
     "group": [
@@ -1749,8 +1749,8 @@
           "name": "break-util",
           "code": "\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The break-util mixin requires a string for the $prop argument.';\n\t}\n\n\t& {\n\t\t#{$prop}: #{$val};\n\n\t\t@each $key,\n\t\t$width in $break {\n\t\t\t&-#{$key} {\n\t\t\t\t#{$prop}: #{$none};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$val};\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t&-to-#{$key} {\n\t\t\t\t#{$prop}: #{$val};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$none};\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 537,
-            "end": 564
+            "start": 540,
+            "end": 567
           }
         }
       },
@@ -1761,8 +1761,8 @@
           "name": "break-util",
           "code": "\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The break-util mixin requires a string for the $prop argument.';\n\t}\n\n\t& {\n\t\t#{$prop}: #{$val};\n\n\t\t@each $key,\n\t\t$width in $break {\n\t\t\t&-#{$key} {\n\t\t\t\t#{$prop}: #{$none};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$val};\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t&-to-#{$key} {\n\t\t\t\t#{$prop}: #{$val};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$none};\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 537,
-            "end": 564
+            "start": 540,
+            "end": 567
           }
         }
       }
@@ -1771,16 +1771,16 @@
   {
     "description": "Creates utility selectors for a given property at each breakpoint\n",
     "commentRange": {
-      "start": 499,
-      "end": 536
+      "start": 502,
+      "end": 539
     },
     "context": {
       "type": "mixin",
       "name": "break-util",
       "code": "\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The break-util mixin requires a string for the $prop argument.';\n\t}\n\n\t& {\n\t\t#{$prop}: #{$val};\n\n\t\t@each $key,\n\t\t$width in $break {\n\t\t\t&-#{$key} {\n\t\t\t\t#{$prop}: #{$none};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$val};\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t&-to-#{$key} {\n\t\t\t\t#{$prop}: #{$val};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$none};\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n",
       "line": {
-        "start": 537,
-        "end": 564
+        "start": 540,
+        "end": 567
       }
     },
     "group": [
@@ -1841,16 +1841,16 @@
   {
     "description": "Generates a property with a fluid value between specified screen sizes\n",
     "commentRange": {
-      "start": 566,
-      "end": 585
+      "start": 569,
+      "end": 588
     },
     "context": {
       "type": "mixin",
       "name": "fluid",
-      "code": "\n\t$u1: unit($min-vw);\n\t$u2: unit($max-vw);\n\t$u3: unit($min-size);\n\t$u4: unit($max-size);\n\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The fluid mixin requires a string for the $prop argument.';\n\t}\n\n\t@if not(type-of($u1)=='string' and type-of($u2)=='string' and type-of($u3)=='string' and type-of($u4)=='string') {\n\t\t@error 'The fluid mixin requires numbers for the width and size arguments.';\n\t}\n\n\t@if not($u1 ==$u2 and $u1 ==$u3 and $u1 ==$u4) {\n\t\t@error 'The fluid mixin requires width and size arguments with the same units.';\n\t}\n\n\t// See if you can get rid of this wrapping & selector\n\t& {\n\t\t#{$prop}: $min-size;\n\n\t\t@media (min-width: $min-vw) {\n\t\t\t#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));\n\t\t}\n\n\t\t@media (min-width: $max-vw) {\n\t\t\t#{$prop}: $max-size;\n\t\t}\n\t}\n",
+      "code": "\n\t$u1: unit($min-vw);\n\t$u2: unit($max-vw);\n\t$u3: unit($min-size);\n\t$u4: unit($max-size);\n\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The fluid mixin requires a string for the $prop argument.';\n\t}\n\n\t@if not(type-of($u1) == 'string' and type-of($u2) == 'string' and type-of($u3) == 'string' and type-of($u4) == 'string') {\n\t\t@error 'The fluid mixin requires numbers for the width and size arguments.';\n\t}\n\n\t@if not($u1 == $u2 and $u1 == $u3 and $u1 == $u4) {\n\t\t@error 'The fluid mixin requires width and size arguments with the same units.';\n\t}\n\n\t// See if you can get rid of this wrapping & selector\n\t& {\n\t\t#{$prop}: $min-size;\n\n\t\t@media (min-width: $min-vw) {\n\t\t\t#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));\n\t\t}\n\n\t\t@media (min-width: $max-vw) {\n\t\t\t#{$prop}: $max-size;\n\t\t}\n\t}\n",
       "line": {
-        "start": 586,
-        "end": 616
+        "start": 589,
+        "end": 619
       }
     },
     "group": [
@@ -1915,16 +1915,16 @@
   {
     "description": "Generates css varibles for lighter, darker, or both variations\n",
     "commentRange": {
-      "start": 618,
-      "end": 627
+      "start": 621,
+      "end": 630
     },
     "context": {
       "type": "mixin",
       "name": "shades",
-      "code": "\n\t@if (type-of($name) !='string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) !='color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type ==lighten or $type ==darken or $type ==both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) !='number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha)=='string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool =='true' or $bool =='false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) !='bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type ==lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type ==both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light +1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
+      "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
       "line": {
-        "start": 628,
-        "end": 714
+        "start": 631,
+        "end": 717
       }
     },
     "group": [
@@ -2015,7 +2015,7 @@
       "The shades mixin requires a color for the $color argument.",
       "The shades mixin requires a string of ",
       "The shades mixin requires a number for the $number argument.",
-      "The shades mixin requires a boolean value for the $alpha argument. Received: "
+      "The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}"
     ],
     "file": {
       "path": "imports/util/_util.scss",
@@ -2025,16 +2025,16 @@
   {
     "description": "Generates flex utility classes\n",
     "commentRange": {
-      "start": 761,
-      "end": 764
+      "start": 764,
+      "end": 767
     },
     "context": {
       "type": "mixin",
       "name": "flex-util",
       "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
       "line": {
-        "start": 765,
-        "end": 792
+        "start": 768,
+        "end": 795
       }
     },
     "group": [
@@ -2071,16 +2071,16 @@
   {
     "description": "Selector for all headers\n",
     "commentRange": {
-      "start": 794,
-      "end": 797
+      "start": 797,
+      "end": 800
     },
     "context": {
       "type": "mixin",
       "name": "headers",
       "code": "\n\t@for $i from 1 through 6 {\n\t\th#{$i},\n\t\t#{class(h#{$i})\n\t}\n\n\t\t{\n\t\t@content;\n\t}\n}\n",
       "line": {
-        "start": 798,
-        "end": 808
+        "start": 801,
+        "end": 811
       }
     },
     "group": [
@@ -2102,16 +2102,16 @@
   {
     "description": "Background clip text\n",
     "commentRange": {
-      "start": 811,
-      "end": 814
+      "start": 814,
+      "end": 817
     },
     "context": {
       "type": "mixin",
       "name": "background-clip",
       "code": "\n\tcolor: $color;\n\n\t@supports (-webkit-background-clip: text) and (-webkit-text-fill-color: transparent) {\n\t\tbackground: $color;\n\t\t@content;\n\t\tbackground-clip: text;\n\t\t-webkit-background-clip: text;\n\t\t-webkit-text-fill-color: transparent;\n\t}\n",
       "line": {
-        "start": 815,
-        "end": 825
+        "start": 818,
+        "end": 828
       }
     },
     "group": [
@@ -2296,16 +2296,16 @@
   {
     "description": "Card Styles\n",
     "commentRange": {
-      "start": 10,
-      "end": 10
+      "start": 11,
+      "end": 11
     },
     "context": {
       "type": "css",
       "name": "#{class(card)}",
-      "value": "display: flex;\n\tflex-direction: column;\n\theight: 100%;\n\tmargin: 0;\n\tborder-radius: $card-radius;\n\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\toverflow: hidden;\n\n\t@include break(sm) {\n\t\tflex-direction: row;\n\n\t\t&#{class(reverse)} {\n\t\t\tflex-direction: row-reverse;\n\t\t}\n\t}\n\n\t&#{class(center)} {\n\t\t#{class(content)} {\n\t\t\t& > * {\n\t\t\t\ttext-align: center;\n\t\t\t}\n\t\t}\n\n\t\t#{class(buttons)} {\n\t\t\tjustify-content: center;\n\t\t}\n\t}\n\n\t&#{class(stagger)} {\n\t\tposition: relative;\n\t\twidth: calc(100% + $card-padding * 2);\n\n\t\t@include break(sm) {\n\t\t\tflex-direction: row;\n\t\t\tborder-radius: 0;\n\t\t\tbox-shadow: none;\n\t\t\toverflow: visible;\n\n\t\t\t&>#{class(image)},\n\t\t\t&>mint-image #{class(image)} {\n\t\t\t\twidth: 50%;\n\t\t\t\theight: fit-content;\n\t\t\t\tmargin-right: $card-padding * -2;\n\t\t\t\tborder-radius: $card-radius;\n\t\t\t\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\n\t\t\t\timg {\n\t\t\t\t\theight: 100%;\n\t\t\t\t\tobject-fit: cover;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t&>#{class(content)} {\n\t\t\t\twidth: 50%;\n\t\t\t\theight: fit-content;\n\t\t\t\tmargin-top: $card-padding * 2;\n\t\t\t\tborder-radius: $card-radius;\n\t\t\t\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\t\t\t}\n\t\t}\n\n\t\t&#{class(reverse)} {\n\t\t\t@include break(sm) {\n\t\t\t\tflex-direction: row-reverse;\n\t\t\t}\n\n\t\t\t&>#{class(image)},\n\t\t\t&>mint-image #{class(image)} {\n\t\t\t\tmargin-right: $card-padding * 2;\n\t\t\t\tmargin-left: $card-padding * -2;\n\t\t\t}\n\t\t}\n\t}\n\n\t&>#{class(image)}:only-child,\n\t&>mint-image:only-child #{class(image)} {\n\t\twidth: 100%;\n\t}\n\n\t&>#{class(image)},\n\t&>mint-image #{class(image)} {\n\t\toverflow: hidden;\n\n\t\t@include break(sm) {\n\t\t\twidth: 50%;\n\t\t}\n\n\t\t&+#{class(content)} {\n\t\t\t@include break(sm) {\n\t\t\t\twidth: 50%;\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(content)} {\n\t\tdisplay: grid;\n\t\tgap: $grid-gap / 2;\n\t\tpadding: $card-padding;\n\t\tbackground: css-var($card-bg-color);\n\t\twidth: 100%;\n\t\toverflow: hidden;\n\n\t\t&> * {\n\t\t\tmargin-top: 0;\n\t\t\tmargin-bottom: 0;\n\t\t}\n\t}\n\n\t#{class(title)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\theight: fit-content;\n\t\tgap: $card-padding;\n\n\t\t@include break(xs) {\n\t\t\tflex-direction: row;\n\t\t}\n\n\t\t&:only-child {\n\t\t\theight: 100%;\n\t\t}\n\n\t\t&>#{class(image)},\n\t\t&>mint-image {\n\t\t\twidth: 100%;\n\t\t\theight: 100%;\n\t\t\tmax-width: $card-logo-size;\n\t\t\tmax-height: $card-logo-size;\n\n\t\t\timg {\n\t\t\t\tdisplay: block;\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 100%;\n\t\t\t}\n\t\t}\n\n\t\ti {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tmin-width: $card-logo-size;\n\t\t\tmax-width: $card-logo-size;\n\t\t\tfont-size: calc($card-logo-size - 1rem);\n\t\t}\n\n\t\t&>div {\n\t\t\twidth: 100%;\n\n\t\t\t&>* {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t}\n\t}",
+      "value": "display: flex;\n\tflex-direction: column;\n\theight: 100%;\n\tmargin: 0;\n\tborder-radius: $card-radius;\n\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\toverflow: hidden;\n\n\t@include break(sm) {\n\t\tflex-direction: row;\n\n\t\t&#{class(reverse)} {\n\t\t\tflex-direction: row-reverse;\n\t\t}\n\t}\n\n\t&#{class(center)} {\n\t\t#{class(content)} {\n\t\t\t& > * {\n\t\t\t\ttext-align: center;\n\t\t\t}\n\t\t}\n\n\t\t#{class(buttons)} {\n\t\t\tjustify-content: center;\n\t\t}\n\t}\n\n\t&#{class(stagger)} {\n\t\tposition: relative;\n\t\twidth: 100%;\n\n\t\t@include break(sm) {\n\t\t\tflex-direction: row;\n\t\t\twidth: calc(100% + $card-padding * 2);\n\t\t\tborder-radius: 0;\n\t\t\tbox-shadow: none;\n\t\t\toverflow: visible;\n\n\t\t\t& > #{class(image)},\n\t\t\t& > mint-image #{class(image)} {\n\t\t\t\twidth: 50%;\n\t\t\t\theight: fit-content;\n\t\t\t\tmargin-right: $card-padding * -2;\n\t\t\t\tborder-radius: $card-radius;\n\t\t\t\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\n\t\t\t\timg {\n\t\t\t\t\theight: 100%;\n\t\t\t\t\tobject-fit: cover;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t& > #{class(content)} {\n\t\t\t\twidth: 50%;\n\t\t\t\theight: fit-content;\n\t\t\t\tmargin-top: $card-padding * 2;\n\t\t\t\tborder-radius: $card-radius;\n\t\t\t\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\t\t\t}\n\t\t}\n\n\t\t&#{class(reverse)} {\n\t\t\t@include break(sm) {\n\t\t\t\tflex-direction: row-reverse;\n\n\t\t\t\t& > #{class(image)},\n\t\t\t\t& > mint-image #{class(image)} {\n\t\t\t\t\tmargin-right: $card-padding * 2;\n\t\t\t\t\tmargin-left: $card-padding * -2;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t& > #{class(image)}:only-child,\n\t& > mint-image:only-child #{class(image)} {\n\t\twidth: 100%;\n\t}\n\n\t& > #{class(image)},\n\t& > mint-image #{class(image)} {\n\t\toverflow: hidden;\n\n\t\t@include break(sm) {\n\t\t\twidth: 50%;\n\t\t}\n\n\t\t&+#{class(content)} {\n\t\t\t@include break(sm) {\n\t\t\t\twidth: 50%;\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(content)} {\n\t\tdisplay: grid;\n\t\tgap: math.div($grid-gap, 2);\n\t\tpadding: $card-padding;\n\t\tbackground: css-var($card-bg-color);\n\t\twidth: 100%;\n\t\toverflow: hidden;\n\n\t\t& > * {\n\t\t\tmargin-top: 0;\n\t\t\tmargin-bottom: 0;\n\t\t}\n\t}\n\n\t#{class(title)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\theight: fit-content;\n\t\tgap: $card-padding;\n\n\t\t@include break(xs) {\n\t\t\tflex-direction: row;\n\t\t}\n\n\t\t&:only-child {\n\t\t\theight: 100%;\n\t\t}\n\n\t\t& > #{class(image)},\n\t\t& > mint-image {\n\t\t\twidth: 100%;\n\t\t\theight: 100%;\n\t\t\tmax-width: $card-logo-size;\n\t\t\tmax-height: $card-logo-size;\n\n\t\t\timg {\n\t\t\t\tdisplay: block;\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 100%;\n\t\t\t}\n\t\t}\n\n\t\ti {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tmin-width: $card-logo-size;\n\t\t\tmax-width: $card-logo-size;\n\t\t\tfont-size: calc($card-logo-size - 1rem);\n\t\t}\n\n\t\t& > div {\n\t\t\twidth: 100%;\n\n\t\t\t& > * {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t}\n\t}",
       "line": {
-        "start": 11,
-        "end": 208
+        "start": 12,
+        "end": 210
       }
     },
     "access": "public",
@@ -2541,8 +2541,8 @@
           "name": "break-util",
           "code": "\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The break-util mixin requires a string for the $prop argument.';\n\t}\n\n\t& {\n\t\t#{$prop}: #{$val};\n\n\t\t@each $key,\n\t\t$width in $break {\n\t\t\t&-#{$key} {\n\t\t\t\t#{$prop}: #{$none};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$val};\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t&-to-#{$key} {\n\t\t\t\t#{$prop}: #{$val};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$none};\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 537,
-            "end": 564
+            "start": 540,
+            "end": 567
           }
         }
       }
@@ -2787,16 +2787,16 @@
   {
     "description": "TODO: Document this\n",
     "commentRange": {
-      "start": 716,
-      "end": 716
+      "start": 719,
+      "end": 719
     },
     "context": {
       "type": "mixin",
       "name": "states",
-      "code": "\n\t@each $state in $states {\n\t\t@if (type-of($state) !='string') {\n\t\t\t@error 'The states mixin requires a string for each state argument.';\n\t\t}\n\n\t\t@if not($state =='hover' or $state =='focus' or $state =='active' or $state =='visited' or $state =='disabled') {\n\t\t\t@error 'The states mixin requires a string of \"hover\", \"focus\", \"active\", \"visited\", or \"disabled\" for each state argument.';\n\t\t}\n\t}\n\n\t@if (index($states, 'hover') !=null) {\n\t\t&:hover {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'focus') !=null) {\n\t\t&:focus {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'active') !=null) {\n\n\t\t&:active,\n\t\t&#{class(active)} {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'visited') !=null) {\n\t\t&:visited {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'disabled') !=null) {\n\t\t&:disabled {\n\t\t\t@content;\n\t\t}\n\t}\n",
+      "code": "\n\t@each $state in $states {\n\t\t@if (type-of($state) != 'string') {\n\t\t\t@error 'The states mixin requires a string for each state argument.';\n\t\t}\n\n\t\t@if not($state == 'hover' or $state == 'focus' or $state == 'active' or $state == 'visited' or $state == 'disabled') {\n\t\t\t@error 'The states mixin requires a string of \"hover\", \"focus\", \"active\", \"visited\", or \"disabled\" for each state argument.';\n\t\t}\n\t}\n\n\t@if (index($states, 'hover') != null) {\n\t\t&:hover {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'focus') != null) {\n\t\t&:focus {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'active') != null) {\n\n\t\t&:active,\n\t\t&#{class(active)} {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'visited') != null) {\n\t\t&:visited {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'disabled') != null) {\n\t\t&:disabled {\n\t\t\t@content;\n\t\t}\n\t}\n",
       "line": {
-        "start": 717,
-        "end": 759
+        "start": 720,
+        "end": 762
       }
     },
     "access": "public",
@@ -2822,16 +2822,16 @@
   {
     "description": "Mixins\nRegister an animation\n",
     "commentRange": {
-      "start": 840,
-      "end": 841
+      "start": 843,
+      "end": 844
     },
     "context": {
       "type": "mixin",
       "name": "animation",
-      "code": "\n\t$animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n\t$this: map.get($animations, &);\n\t$animation: '';\n\n\t& {\n\t\t@each $item in $this {\n\t\t\t@if (list.index($this, $item) !=1) {\n\t\t\t\t$animation: #{$animation},\n\t\t\t\t;\n\t\t\t}\n\n\t\t\t$animation: #{$animation}#{$item};\n\t\t}\n\n\t\tanimation: $animation;\n\n\t\t@each $name,\n\t\t$items in $animations {\n\t\t\t&#{class($name)} {\n\t\t\t\tanimation: $animation;\n\t\t\t}\n\t\t}\n\t}\n",
+      "code": "\n\t$animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n\t$this: map.get($animations, &);\n\t$animation: '';\n\n\t& {\n\t\t@each $item in $this {\n\t\t\t@if (list.index($this, $item) != 1) {\n\t\t\t\t$animation: #{$animation},\n\t\t\t\t;\n\t\t\t}\n\n\t\t\t$animation: #{$animation}#{$item};\n\t\t}\n\n\t\tanimation: $animation;\n\n\t\t@each $name,\n\t\t$items in $animations {\n\t\t\t&#{class($name)} {\n\t\t\t\tanimation: $animation;\n\t\t\t}\n\t\t}\n\t}\n",
       "line": {
-        "start": 842,
-        "end": 866
+        "start": 845,
+        "end": 869
       }
     },
     "access": "public",
@@ -2852,16 +2852,16 @@
   {
     "description": "Register a transition\n",
     "commentRange": {
-      "start": 868,
-      "end": 868
+      "start": 871,
+      "end": 871
     },
     "context": {
       "type": "mixin",
       "name": "transition",
       "code": "\n\t$transitions: map-merge($transitions, ($name: $transition));\n",
       "line": {
-        "start": 869,
-        "end": 871
+        "start": 872,
+        "end": 874
       }
     },
     "access": "public",
@@ -3186,7 +3186,7 @@
       "value": "Number",
       "line": {
         "start": 103,
-        "end": 872
+        "end": 875
       }
     },
     "author": [
@@ -3258,10 +3258,10 @@
         "context": {
           "type": "function",
           "name": "css-prefix",
-          "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The css-prefix function requires a string value.';\n\t}\n\n\t@while (string.index($base, $dash)==1) {\n\t\t$base: string.slice($base, 2);\n\t}\n\n\t@return $dash +$dash +prefix($base);\n",
+          "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The css-prefix function requires a string value.';\n\t}\n\n\t@while (string.index($base, $dash) == 1) {\n\t\t$base: string.slice($base, 2);\n\t}\n\n\t@return #{$dash}#{$dash}#{prefix($base)};\n",
           "line": {
-            "start": 175,
-            "end": 185
+            "start": 178,
+            "end": 188
           }
         }
       },
@@ -3270,10 +3270,10 @@
         "context": {
           "type": "function",
           "name": "css-prefix",
-          "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The css-prefix function requires a string value.';\n\t}\n\n\t@while (string.index($base, $dash)==1) {\n\t\t$base: string.slice($base, 2);\n\t}\n\n\t@return $dash +$dash +prefix($base);\n",
+          "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The css-prefix function requires a string value.';\n\t}\n\n\t@while (string.index($base, $dash) == 1) {\n\t\t$base: string.slice($base, 2);\n\t}\n\n\t@return #{$dash}#{$dash}#{prefix($base)};\n",
           "line": {
-            "start": 175,
-            "end": 185
+            "start": 178,
+            "end": 188
           }
         }
       },
@@ -3282,10 +3282,10 @@
         "context": {
           "type": "function",
           "name": "css-prefix",
-          "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The css-prefix function requires a string value.';\n\t}\n\n\t@while (string.index($base, $dash)==1) {\n\t\t$base: string.slice($base, 2);\n\t}\n\n\t@return $dash +$dash +prefix($base);\n",
+          "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The css-prefix function requires a string value.';\n\t}\n\n\t@while (string.index($base, $dash) == 1) {\n\t\t$base: string.slice($base, 2);\n\t}\n\n\t@return #{$dash}#{$dash}#{prefix($base)};\n",
           "line": {
-            "start": 175,
-            "end": 185
+            "start": 178,
+            "end": 188
           }
         }
       }
@@ -3322,10 +3322,10 @@
         "context": {
           "type": "function",
           "name": "prefix",
-          "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The prefix function requires a string value.';\n\t}\n\n\t$base: string.to-lower-case($base\n\t);\n\n@if (string.index($base, $pre) !=1) {\n\t$base: $pre +$base;\n}\n\n@return $base;\n",
+          "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The prefix function requires a string value.';\n\t}\n\n\t$base: string.to-lower-case($base);\n\n\t@if (string.index($base, $pre) != 1) {\n\t\t$base: #{$pre}#{$base};\n\t}\n\n\t@return $base;\n",
           "line": {
-            "start": 152,
-            "end": 165
+            "start": 156,
+            "end": 168
           }
         }
       },
@@ -3334,10 +3334,10 @@
         "context": {
           "type": "function",
           "name": "prefix",
-          "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The prefix function requires a string value.';\n\t}\n\n\t$base: string.to-lower-case($base\n\t);\n\n@if (string.index($base, $pre) !=1) {\n\t$base: $pre +$base;\n}\n\n@return $base;\n",
+          "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The prefix function requires a string value.';\n\t}\n\n\t$base: string.to-lower-case($base);\n\n\t@if (string.index($base, $pre) != 1) {\n\t\t$base: #{$pre}#{$base};\n\t}\n\n\t@return $base;\n",
           "line": {
-            "start": 152,
-            "end": 165
+            "start": 156,
+            "end": 168
           }
         }
       }
@@ -3374,10 +3374,10 @@
         "context": {
           "type": "function",
           "name": "class",
-          "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The class function requires a string value.';\n\t}\n\n\t@return $dot +prefix($base);\n",
+          "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The class function requires a string value.';\n\t}\n\n\t@return #{$dot}#{prefix($base)};\n",
           "line": {
-            "start": 227,
-            "end": 233
+            "start": 230,
+            "end": 236
           }
         }
       }
@@ -3414,10 +3414,10 @@
         "context": {
           "type": "function",
           "name": "id",
-          "code": "\n\t@if (type-of($base) !='string') {\n\t\t@error 'The id function requires a string value.';\n\t}\n\n\t@if (type-of($op) !='string') {\n\t\t@error 'The controls function requires a string value for param 2.';\n\t}\n\n\t@if not($op =='=' or $op =='~=' or $op =='|=' or $op =='^=' or $op =='$=' or $op =='*=') {\n\t\t@error 'The controls function requires a valid attribute comparison operator for param 2.';\n\t}\n\n\t@if ($op =='=') {\n\t\t@return $hash +prefix($base);\n\t}\n\n\t@return '[id'+$op +prefix($base)+']';\n",
+          "code": "\n\t@if (type-of($base) != 'string') {\n\t\t@error 'The id function requires a string value.';\n\t}\n\n\t@if (type-of($op) != 'string') {\n\t\t@error 'The controls function requires a string value for param 2.';\n\t}\n\n\t@if not($op == '=' or $op == '~=' or $op == '|=' or $op == '^=' or $op == '$=' or $op == '*=') {\n\t\t@error 'The controls function requires a valid attribute comparison operator for param 2.';\n\t}\n\n\t@if ($op == '=') {\n\t\t@return #{$hash}#{prefix($base)};\n\t}\n\n\t@return '[id#{$op}#{prefix($base)}]';\n",
           "line": {
-            "start": 244,
-            "end": 262
+            "start": 247,
+            "end": 265
           }
         }
       }
@@ -3764,8 +3764,8 @@
   {
     "description": "True if Bootstrap5 is used in the project\n",
     "commentRange": {
-      "start": 131,
-      "end": 133
+      "start": 133,
+      "end": 135
     },
     "context": {
       "type": "variable",
@@ -3773,8 +3773,8 @@
       "value": "false",
       "scope": "default",
       "line": {
-        "start": 134,
-        "end": 134
+        "start": 136,
+        "end": 136
       }
     },
     "group": [
