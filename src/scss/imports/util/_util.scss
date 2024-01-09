@@ -112,7 +112,8 @@ $delay: (
 	med-fast: $delay-base + $delay-step * 2,
 	default: $delay-base + $delay-step * 3,
 	med-slow: $delay-base + $delay-step * 4,
-	slow: $delay-base + $delay-step * 5) !default;
+	slow: $delay-base + $delay-step * 5
+) !default;
 
 /// Breakpoint variables
 /// @group Maps
@@ -126,7 +127,8 @@ $break: (
 	sm: 768,
 	md: 1024,
 	lg: 1200,
-	xl: 1440) !default;
+	xl: 1440
+) !default;
 
 /// True if Bootstrap5 is used in the project
 /// @group Variables
@@ -134,11 +136,13 @@ $break: (
 $bootstrap5: false !default;
 
 @if ($bootstrap5) {
-	$break: (sm: 576,
+	$break: (
+		sm: 576,
 		md: 768,
 		lg: 992,
 		xl: 1200,
-		xxl: 1400) !default;
+		xxl: 1400
+	) !default;
 }
 
 /// Prefixes the provided string with the library name if it isn't already
@@ -150,18 +154,17 @@ $bootstrap5: false !default;
 /// @param {String} $base - the string to be prefixed
 /// @return {String} - a prefixed string
 @function prefix ($base) {
-	@if (type-of($base) !='string') {
+	@if (type-of($base) != 'string') {
 		@error 'The prefix function requires a string value.';
 	}
 
-	$base: string.to-lower-case($base
-	);
+	$base: string.to-lower-case($base);
 
-@if (string.index($base, $pre) !=1) {
-	$base: $pre +$base;
-}
+	@if (string.index($base, $pre) != 1) {
+		$base: #{$pre}#{$base};
+	}
 
-@return $base;
+	@return $base;
 }
 
 /// Prefixes the provided string with two dashes and the library name if it isn't already
@@ -173,15 +176,15 @@ $bootstrap5: false !default;
 /// @param {String} $base - the string to be prefixed
 /// @return {String} - a prefixed string
 @function css-prefix ($base) {
-	@if (type-of($base) !='string') {
+	@if (type-of($base) != 'string') {
 		@error 'The css-prefix function requires a string value.';
 	}
 
-	@while (string.index($base, $dash)==1) {
+	@while (string.index($base, $dash) == 1) {
 		$base: string.slice($base, 2);
 	}
 
-	@return $dash +$dash +prefix($base);
+	@return #{$dash}#{$dash}#{prefix($base)};
 }
 
 /// Creates a CSS-var call for the prefixed `$base`
@@ -193,7 +196,7 @@ $bootstrap5: false !default;
 /// @param {String} $base - the CSS-var to create a call for
 /// @return {String} - a CSS-var call
 @function css-var ($base) {
-	@if (type-of($base) !='string') {
+	@if (type-of($base) != 'string') {
 		@error 'The css-var function requires a string value.';
 	}
 
@@ -209,11 +212,11 @@ $bootstrap5: false !default;
 /// @param {String} $base - the CSS-selector to negate
 /// @return {String} - a negated CSS-selector
 @function neg ($base) {
-	@if (type-of($base) !='string') {
+	@if (type-of($base) != 'string') {
 		@error 'The neg function requires a string value.';
 	}
 
-	@return ':not('+$base +')';
+	@return ':not(#{$base})';
 }
 
 /// Creates a class selector with the library prefix
@@ -225,11 +228,11 @@ $bootstrap5: false !default;
 /// @param {String} $base - the name of the class
 /// @return {String} - a class selector
 @function class($base) {
-	@if (type-of($base) !='string') {
+	@if (type-of($base) != 'string') {
 		@error 'The class function requires a string value.';
 	}
 
-	@return $dot +prefix($base);
+	@return #{$dot}#{prefix($base)};
 }
 
 /// Creates an id selector with the library prefix
@@ -242,23 +245,23 @@ $bootstrap5: false !default;
 /// @param {String} $op - the comparison operator
 /// @return {String} - an id selector
 @function id ($base, $op: '=') {
-	@if (type-of($base) !='string') {
+	@if (type-of($base) != 'string') {
 		@error 'The id function requires a string value.';
 	}
 
-	@if (type-of($op) !='string') {
+	@if (type-of($op) != 'string') {
 		@error 'The controls function requires a string value for param 2.';
 	}
 
-	@if not($op =='=' or $op =='~=' or $op =='|=' or $op =='^=' or $op =='$=' or $op =='*=') {
+	@if not($op == '=' or $op == '~=' or $op == '|=' or $op == '^=' or $op == '$=' or $op == '*=') {
 		@error 'The controls function requires a valid attribute comparison operator for param 2.';
 	}
 
-	@if ($op =='=') {
-		@return $hash +prefix($base);
+	@if ($op == '=') {
+		@return #{$hash}#{prefix($base)};
 	}
 
-	@return '[id'+$op +prefix($base)+']';
+	@return '[id#{$op}#{prefix($base)}]';
 }
 
 /// Creates an aria-controls selector with the library prefix
@@ -271,19 +274,19 @@ $bootstrap5: false !default;
 /// @param {String} $op - the comparison operator
 /// @return {String} - an aria-controls selector
 @function controls ($id, $op: '=') {
-	@if (type-of($id) !='string') {
+	@if (type-of($id) != 'string') {
 		@error 'The controls function requires a string value for param 1.';
 	}
 
-	@if (type-of($op) !='string') {
+	@if (type-of($op) != 'string') {
 		@error 'The controls function requires a string value for param 2.';
 	}
 
-	@if not($op =='=' or $op =='~=' or $op =='|=' or $op =='^=' or $op =='$=' or $op =='*=') {
+	@if not($op == '=' or $op == '~=' or $op == '|=' or $op == '^=' or $op == '$=' or $op == '*=') {
 		@error 'The controls function requires a valid attribute comparison operator for param 2.';
 	}
 
-	@return '[aria-controls'+$op +prefix($id)+']';
+	@return '[aria-controls#{$op}#{prefix($id)}]';
 }
 
 /// Creates an aria-expanded selector
@@ -295,19 +298,19 @@ $bootstrap5: false !default;
 /// @param {Bool} $bool - the value of the selector
 /// @return {String} - an aria-expanded selector
 @function expanded ($bool) {
-	@if (type-of($bool)=='string') {
+	@if (type-of($bool) == 'string') {
 		$bool: string.to-lower-case($bool);
 
-		@if not($bool =='true' or $bool =='false') {
+		@if not($bool == 'true' or $bool == 'false') {
 			@error 'The expanded function requires a boolean value.';
 		}
 	}
 
-	@else if (type-of($bool) !='bool') {
+	@else if (type-of($bool) != 'bool') {
 		@error 'The expanded function requires a boolean value.';
 	}
 
-	@return '[aria-expanded='+$bool +']';
+	@return '[aria-expanded=#{$bool}]';
 }
 
 /// Creates an aria-hidden selector
@@ -319,19 +322,19 @@ $bootstrap5: false !default;
 /// @param {Bool} $bool - the value of the selector
 /// @return {String} - an aria-hidden selector
 @function hidden ($bool) {
-	@if (type-of($bool)=='string') {
+	@if (type-of($bool) == 'string') {
 		$bool: string.to-lower-case($bool);
 
-		@if not($bool =='true' or $bool =='false') {
-			@error 'The hidden function requires a boolean value. Received: '+$bool;
+		@if not($bool == 'true' or $bool == 'false') {
+			@error 'The hidden function requires a boolean value. Received: #{$bool}';
 		}
 	}
 
 	@else if (type-of($bool) !='bool') {
-		@error 'The hidden function requires a boolean value. Received: '+$bool;
+		@error 'The hidden function requires a boolean value. Received: #{$bool}';
 	}
 
-	@return '[aria-hidden='+$bool +']';
+	@return '[aria-hidden=#{$bool}]';
 }
 
 /// Converts a number to ms
@@ -343,7 +346,7 @@ $bootstrap5: false !default;
 /// @param {Number} $val - the number of ms to return
 /// @return {Number} the number as ms
 @function ms ($val) {
-	@if (type-of($val) !='number') {
+	@if (type-of($val) != 'number') {
 		@error 'The ms function requires a number value.';
 	}
 
@@ -359,7 +362,7 @@ $bootstrap5: false !default;
 /// @param {Number} $val - the number of px to return
 /// @return {Number} - the number as px
 @function px ($val) {
-	@if (type-of($val) !='number') {
+	@if (type-of($val) != 'number') {
 		@error 'The px function requires a number value.';
 	}
 
@@ -375,7 +378,7 @@ $bootstrap5: false !default;
 /// @param {Number} $val - the value to strip
 /// @return {Number} - the number without units
 @function strip-unit($val) {
-	@if (type-of($val) !='number') {
+	@if (type-of($val) != 'number') {
 		@error 'The strip-unit function requires a number value.';
 	}
 
@@ -394,16 +397,16 @@ $bootstrap5: false !default;
 /// @throws {Error} - if the values are not numbers
 /// @throws {Error} - if the divisor is 0
 @function percent($dividend, $divisor, $padding: 0) {
-	@if (type-of($dividend) !='number' or type-of($divisor) !='number' or type-of($padding) !='number') {
+	@if (type-of($dividend) != 'number' or type-of($divisor) != 'number' or type-of($padding) != 'number') {
 		@error 'The percent function requires number parameters.';
 	}
 
-	@if ($divisor ==0) {
+	@if ($divisor == 0) {
 		@error 'The percent function requires a non-zero value for param 2.';
 	}
 
-	@if (strip-unit($padding) !=0) {
-		@return calc((($dividend * 100%) - $padding) / $divisor)+'%';
+	@if (strip-unit($padding) != 0) {
+		@return #{calc((($dividend * 100%) - $padding) / $divisor)}#{'%'};
 	}
 
 	@return math.div($dividend * 100%, $divisor);
@@ -479,7 +482,7 @@ $bootstrap5: false !default;
 /// @param {String} $max - the key of the breakpoint to use with max-width
 /// @output the provided content wrapped in a media query
 @mixin break ($min, $max: null) {
-	@if not(map-has-key($break, $min) and (type-of($max)=='null' or map-has-key($break, $max))) {
+	@if not(map-has-key($break, $min) and (type-of($max) == 'null' or map-has-key($break, $max))) {
 		@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';
 	}
 
@@ -593,11 +596,11 @@ $bootstrap5: false !default;
 		@error 'The fluid mixin requires a string for the $prop argument.';
 	}
 
-	@if not(type-of($u1)=='string' and type-of($u2)=='string' and type-of($u3)=='string' and type-of($u4)=='string') {
+	@if not(type-of($u1) == 'string' and type-of($u2) == 'string' and type-of($u3) == 'string' and type-of($u4) == 'string') {
 		@error 'The fluid mixin requires numbers for the width and size arguments.';
 	}
 
-	@if not($u1 ==$u2 and $u1 ==$u3 and $u1 ==$u4) {
+	@if not($u1 == $u2 and $u1 == $u3 and $u1 == $u4) {
 		@error 'The fluid mixin requires width and size arguments with the same units.';
 	}
 
@@ -626,50 +629,50 @@ $bootstrap5: false !default;
 /// @param {Boolean} $alpha - whether to generate alpha variations
 /// @output css variables for different shades of the source color
 @mixin shades ($name, $color, $type: both, $number: 7, $amount: 10%, $alpha: false) {
-	@if (type-of($name) !='string') {
+	@if (type-of($name) != 'string') {
 		@error 'The shades mixin requires a string for the $name argument.';
 	}
 
-	@if (type-of($color) !='color') {
+	@if (type-of($color) != 'color') {
 		@error 'The shades mixin requires a color for the $color argument.';
 	}
 
-	@if not($type ==lighten or $type ==darken or $type ==both) {
+	@if not($type == lighten or $type == darken or $type == both) {
 		@error 'The shades mixin requires a string of "lighten", "darken", or "both" for the $type argument.';
 	}
 
-	@if (type-of($number) !='number') {
+	@if (type-of($number) != 'number') {
 		@error 'The shades mixin requires a number for the $number argument.';
 	}
 
-	@if (type-of($alpha)=='string') {
+	@if (type-of($alpha) == 'string') {
 		$bool: string.to-lower-case($bool);
 
-		@if not($bool =='true' or $bool =='false') {
-			@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;
+		@if not($bool == 'true' or $bool == 'false') {
+			@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';
 		}
 	}
 
-	@else if (type-of($alpha) !='bool') {
-		@error 'The shades mixin requires a boolean value for the $alpha argument. Received: '+$bool;
+	@else if (type-of($alpha) != 'bool') {
+		@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';
 	}
 
 	@include css-var(#{$name}, $color);
 
 	@if ($alpha) {
-		@if ($type ==lighten) {
+		@if ($type == lighten) {
 			@for $i from 0 through $number - 1 {
 				@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));
 			}
 		}
 
-		@else if ($type ==darken) {
+		@else if ($type == darken) {
 			@for $i from 0 through $number - 1 {
 				@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));
 			}
 		}
 
-		@else if ($type ==both) {
+		@else if ($type == both) {
 			$num-light: floor(math.div($number, 2));
 
 			@for $i from 0 through $num-light - 1 {
@@ -678,26 +681,26 @@ $bootstrap5: false !default;
 
 			@include css-var(#{$name}-#{$num-light}, $color);
 
-			@for $i from $num-light +1 through $number - 1 {
+			@for $i from $num-light + 1 through $number - 1 {
 				@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));
 			}
 		}
 	}
 
 	@else {
-		@if ($type ==lighten) {
+		@if ($type == lighten) {
 			@for $i from 0 through $number - 1 {
 				@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));
 			}
 		}
 
-		@else if ($type ==darken) {
+		@else if ($type == darken) {
 			@for $i from 0 through $number - 1 {
 				@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));
 			}
 		}
 
-		@else if ($type ==both) {
+		@else if ($type == both) {
 			$num-light: floor(math.div($number, 2));
 
 			@for $i from 0 through $num-light - 1 {
@@ -706,7 +709,7 @@ $bootstrap5: false !default;
 
 			@include css-var(#{$name}-#{$num-light}, $color);
 
-			@for $i from $num-light +1 through $number - 1 {
+			@for $i from $num-light + 1 through $number - 1 {
 				@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));
 			}
 		}
@@ -716,28 +719,28 @@ $bootstrap5: false !default;
 /// TODO: Document this
 @mixin states ($states...) {
 	@each $state in $states {
-		@if (type-of($state) !='string') {
+		@if (type-of($state) != 'string') {
 			@error 'The states mixin requires a string for each state argument.';
 		}
 
-		@if not($state =='hover' or $state =='focus' or $state =='active' or $state =='visited' or $state =='disabled') {
+		@if not($state == 'hover' or $state == 'focus' or $state == 'active' or $state == 'visited' or $state == 'disabled') {
 			@error 'The states mixin requires a string of "hover", "focus", "active", "visited", or "disabled" for each state argument.';
 		}
 	}
 
-	@if (index($states, 'hover') !=null) {
+	@if (index($states, 'hover') != null) {
 		&:hover {
 			@content;
 		}
 	}
 
-	@if (index($states, 'focus') !=null) {
+	@if (index($states, 'focus') != null) {
 		&:focus {
 			@content;
 		}
 	}
 
-	@if (index($states, 'active') !=null) {
+	@if (index($states, 'active') != null) {
 
 		&:active,
 		&#{class(active)} {
@@ -745,13 +748,13 @@ $bootstrap5: false !default;
 		}
 	}
 
-	@if (index($states, 'visited') !=null) {
+	@if (index($states, 'visited') != null) {
 		&:visited {
 			@content;
 		}
 	}
 
-	@if (index($states, 'disabled') !=null) {
+	@if (index($states, 'disabled') != null) {
 		&:disabled {
 			@content;
 		}
@@ -846,7 +849,7 @@ $transitions: (
 
 	& {
 		@each $item in $this {
-			@if (list.index($this, $item) !=1) {
+			@if (list.index($this, $item) != 1) {
 				$animation: #{$animation},
 				;
 			}
