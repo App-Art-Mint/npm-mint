@@ -1,3 +1,3 @@
 # npm-mint
-Front-end TS/SCSS framework of App/Art Mint
+Front-end TS/SCSS framework of App Art Mint LLC
 
