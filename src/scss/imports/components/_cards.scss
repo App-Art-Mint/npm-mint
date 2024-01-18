@@ -108,6 +108,7 @@
 	#{class(content)} {
 		display: grid;
 		gap: math.div($grid-gap, 2);
+		position: relative;
 		padding: $card-padding;
 		background: css-var($card-bg-color);
 		width: 100%;
