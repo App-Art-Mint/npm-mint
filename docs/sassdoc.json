@@ -2632,7 +2632,7 @@
       "value": "font-family: $font-primary, $font-backups;\n    font-size: 1rem;\n\n    @include break(md) {\n        font-size: 1.125rem;\n    }",
       "line": {
         "start": 11,
-        "end": 51
+        "end": 55
       }
     },
     "access": "public",
