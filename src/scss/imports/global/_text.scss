@@ -47,8 +47,4 @@ p {
 
 #{class(upper)} {
 	text-transform: uppercase;
-
-    &::before, &::after {
-        content: ' ';
-    }
 }
