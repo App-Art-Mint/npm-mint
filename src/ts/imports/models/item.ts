@@ -13,6 +13,9 @@ export class mintItem {
 	level?: number = 0;
 	size?: number = 0;
 	num?: number = 0;
+	width?: number = 0;
+	height?: number = 0;
+
 	centered?: boolean = false;
 	disabled?: boolean = false;
 	private?: boolean = false;
