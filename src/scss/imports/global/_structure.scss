@@ -204,6 +204,10 @@ section {
             grid-template-columns: repeat(4, 1fr);
         }
     }
+
+    #{class(portrait)} {
+        grid-row: span 2;
+    }
 }
 
 #{class(fit)} {
