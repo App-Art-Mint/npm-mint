@@ -9,9 +9,8 @@
 
 /// A basic image
 #{class(image)} {
-    min-height: 1px;
 
-	/// A placeholder image warning
+    /// A placeholder image warning
     &#{class(error)} {
         &::after {
             content: '❌ Image failed to load. This is a placeholder.';

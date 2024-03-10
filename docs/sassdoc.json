@@ -2422,10 +2422,10 @@
     "context": {
       "type": "css",
       "name": "#{class(image)}",
-      "value": "min-height: 1px;\n\n\t/// A placeholder image warning\n    &#{class(error)} {\n        &::after {\n            content: '❌ Image failed to load. This is a placeholder.';\n            position: absolute;\n            bottom: 0;\n            left: 0;\n            width: 100%;\n            padding: 0 $image-shadow-size $image-shadow-size $image-shadow-size;\n            background: css-var($shadow-color);\n            box-shadow: 0 0 $image-shadow-size $image-shadow-size css-var($shadow-color);\n            text-align: center;\n        }\n    }\n\n    img {\n        display: block;\n    }",
+      "value": "/// A placeholder image warning\n    &#{class(error)} {\n        &::after {\n            content: '❌ Image failed to load. This is a placeholder.';\n            position: absolute;\n            bottom: 0;\n            left: 0;\n            width: 100%;\n            padding: 0 $image-shadow-size $image-shadow-size $image-shadow-size;\n            background: css-var($shadow-color);\n            box-shadow: 0 0 $image-shadow-size $image-shadow-size css-var($shadow-color);\n            text-align: center;\n        }\n    }\n\n    img {\n        display: block;\n    }",
       "line": {
         "start": 11,
-        "end": 39
+        "end": 38
       }
     },
     "access": "public",
@@ -2440,16 +2440,16 @@
   {
     "description": "A placeholder image warning\n",
     "commentRange": {
-      "start": 14,
-      "end": 14
+      "start": 13,
+      "end": 13
     },
     "context": {
       "type": "css",
       "name": "&#{class(error)}",
       "value": "&::after {\n            content: '❌ Image failed to load. This is a placeholder.';\n            position: absolute;\n            bottom: 0;\n            left: 0;\n            width: 100%;\n            padding: 0 $image-shadow-size $image-shadow-size $image-shadow-size;\n            background: css-var($shadow-color);\n            box-shadow: 0 0 $image-shadow-size $image-shadow-size css-var($shadow-color);\n            text-align: center;\n        }",
       "line": {
-        "start": 15,
-        "end": 39
+        "start": 14,
+        "end": 38
       }
     },
     "access": "public",
@@ -2464,16 +2464,16 @@
   {
     "description": "Banner images\n",
     "commentRange": {
-      "start": 34,
-      "end": 34
+      "start": 33,
+      "end": 33
     },
     "context": {
       "type": "css",
       "name": "#{class(banner)}",
       "value": "position: relative;\n\twidth: 100%;",
       "line": {
-        "start": 35,
-        "end": 39
+        "start": 34,
+        "end": 38
       }
     },
     "access": "public",
@@ -2560,7 +2560,7 @@
       "value": "&, &::before, &::after {\n        box-sizing: border-box;\n    }",
       "line": {
         "start": 5,
-        "end": 123
+        "end": 124
       }
     },
     "access": "public",
