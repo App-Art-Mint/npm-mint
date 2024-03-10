@@ -9,6 +9,7 @@
 
 /// A basic image
 #{class(image)} {
+    min-height: 1px;
 
 	/// A placeholder image warning
     &#{class(error)} {
