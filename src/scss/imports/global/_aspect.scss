@@ -9,19 +9,24 @@
 @use '../util' as *;
 
 /// Aspect Ratios
-$width: 16;
-$height: 9;
-#{class($width + '-' + $height)} {
+#{class(aspect)} {
 	position: relative;
 	height: 0;
-	padding-top: math.div($height, $width) * 100%;
 	overflow: hidden;
 
-	iframe {
+	iframe, video {
 		position: absolute !important;
-		top: 0 !important;
-		left: 0 !important;
+		top: 50% !important;
+		left: 50% !important;
+		transform: translate(-50%, -50%) !important;
 		width: 100% !important;
 		height: 100% !important;
 	}
+}
+
+$width: 16;
+$height: 9;
+#{class($width + '-' + $height)} {
+	@extend #{class(aspect)};
+	padding-top: math.div($height, $width) * 100%;
 }
