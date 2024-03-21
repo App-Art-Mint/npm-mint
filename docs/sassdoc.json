@@ -1823,10 +1823,6 @@
       },
       {
         "type": "variable",
-        "name": "width"
-      },
-      {
-        "type": "variable",
         "name": "break"
       }
     ],
@@ -2516,13 +2512,12 @@
       "end": 11
     },
     "context": {
-      "type": "variable",
-      "name": "width",
-      "value": "16",
-      "scope": "private",
+      "type": "css",
+      "name": "#{class(aspect)}",
+      "value": "position: relative;\n\theight: 0;\n\toverflow: hidden;\n\n\tiframe, video {\n\t\tposition: absolute !important;\n\t\ttop: 50% !important;\n\t\tleft: 50% !important;\n\t\ttransform: translate(-50%, -50%) !important;\n\t\twidth: 100% !important;\n\t\theight: 100% !important;\n\t}",
       "line": {
         "start": 12,
-        "end": 12
+        "end": 33
       }
     },
     "access": "public",
@@ -2532,21 +2527,7 @@
     "file": {
       "path": "imports/global/_aspect.scss",
       "name": "_aspect.scss"
-    },
-    "usedBy": [
-      {
-        "description": "Creates utility selectors for a given property at each breakpoint\n",
-        "context": {
-          "type": "mixin",
-          "name": "break-util",
-          "code": "\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The break-util mixin requires a string for the $prop argument.';\n\t}\n\n\t& {\n\t\t#{$prop}: #{$val};\n\n\t\t@each $key,\n\t\t$width in $break {\n\t\t\t&-#{$key} {\n\t\t\t\t#{$prop}: #{$none};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$val};\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t&-to-#{$key} {\n\t\t\t\t#{$prop}: #{$val};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$none};\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n",
-          "line": {
-            "start": 540,
-            "end": 567
-          }
-        }
-      }
-    ]
+    }
   },
   {
     "description": "Global styles\n",
