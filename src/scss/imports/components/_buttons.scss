@@ -33,7 +33,7 @@
     text-align: center;
 
     @include break(xs) {
-        width: auto;
+        width: fit-content;
     }
 
     @include states(hover, focus, active) {
