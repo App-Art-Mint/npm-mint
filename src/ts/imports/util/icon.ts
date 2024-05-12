@@ -11,16 +11,18 @@ export abstract class mintIcon {
      * Default icons
      */
     static icons: {[key: string]: string} = {
-        'a[href^="http"]': 'fas fa-up-right-from-square',
         'a[href^="mailto:"]': 'far fa-envelope',
         'a[href^="tel:"]': 'fas fa-phone-flip',
-        'a[href^="sms:"]': 'far fa-message'
+        'a[href^="sms:"]': 'far fa-message',
+        'a[href^="https://maps"]': 'fas fa-map-location-dot',
+        'a[href^="http"]': 'fas fa-up-right-from-square'
     };
 
     /**
      * Appends the given icon to the given selector if there is not already an icon appended
      */
     static append (icon: string, selector: string): void {
+        console.log('mintIcon.append', icon, selector);
         let items: NodeListOf<HTMLElement> = document.querySelectorAll(selector);
         items.forEach((item: HTMLElement) => {
             let iconElement: HTMLElement = document.createElement('i');
@@ -43,6 +45,8 @@ export abstract class mintIcon {
             ...this.icons,
             ...icons
         }, [false]);
+
+        console.log('mintIcon.update', activeIcons);
 
         Object.keys(activeIcons).forEach((selector: string) => {
             this.append(activeIcons[selector], selector);
