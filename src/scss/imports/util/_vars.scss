@@ -1,5 +1,5 @@
-/// vars.scss - Global variables
-/// @author App/Art Mint
+/// _vars.scss - Global variables
+/// @author App Art Mint LLC
 ///
 /// @group Vars
 @charset 'utf-8';
@@ -56,6 +56,7 @@ $font-primary: sans-serif !default;
 $font-secondary: serif !default;
 $font-backups: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
 $font-secondary-backups: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+$font-height: 1.25 !default;
 
 /// Font Sizes
 $font-size-mobile: (
@@ -115,7 +116,10 @@ $btn-fore: fore !default;
 $btn-fore-alt: $btn-fore !default;
 $btn-fore-hover: back !default;
 $btn-fore-alt-hover: $btn-fore-hover !default;
-$btn-back: brand-5 !default;
+$btn-back: brand-2 !default;
+@if ($theme-default == dark) {
+    $btn-back: brand-5;
+}
 $btn-back-alt: trans !default;
 $btn-back-alt-hover: accent-2 !default;
 $btn-border: brand-3 !default;
@@ -132,3 +136,19 @@ $card-radius: $border-radius !default;
 $card-shadow-color: $shadow-color !default;
 $card-shadow-size: $shadow-size !default;
 $card-logo-size: 4rem !default;
+
+/// Texture
+$texture-padding: 1rem !default;
+
+$texture-bg: null !default;
+$texture-bg-size: cover !default;
+$texture-bg-position: center !default;
+$texture-blend: null !default;
+$texture-opacity: 1 !default;
+
+$texture-border-width: 1.25rem !default;
+$texture-border-type: solid !default;
+$texture-border-color: null !default;
+$texture-border-image: null !default;
+$texture-border-slice: 42 42 !default;
+$texture-border-repeat: round !default;

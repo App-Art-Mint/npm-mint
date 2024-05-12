@@ -1,7 +1,7 @@
 /// text.scss - Text styles
-/// @author App/Art Mint
+/// @author App Art Mint LLC
 ///
-/// @group Animations
+/// @group Text
 @charset 'utf-8';
 
 /// Imports
@@ -18,7 +18,7 @@ html, body {
 }
 
 p {
-    line-height: 1.75;
+    line-height: $font-height;
 }
 
 @include headers () {

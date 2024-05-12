@@ -1,0 +1,78 @@
+/// _texture.scss - Texture styles
+/// @author App Art Mint LLC
+///
+/// @group Texture
+@charset 'utf-8';
+
+/// Imports
+@use '../util' as *;
+
+/// Texture Mixin
+@mixin mint-texture () {
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        opacity: $texture-opacity;
+        background-image: url($texture-bg);
+        background-size: $texture-bg-size;
+        background-position: $texture-bg-position;
+        @if ($texture-blend) {
+            mix-blend-mode: $texture-blend;
+        }
+    }
+
+    & > * {
+        position: relative;
+        z-index: 10;
+    }
+}
+
+/// Border Mixin
+@mixin mint-border () {
+	padding: $texture-padding + $texture-border-width;
+	border-image-source: url($texture-border-image);
+	border-image-slice: $texture-border-slice;
+	border-image-repeat: #{$texture-border-repeat};
+	border-image-width: $texture-border-width;
+	border-style: $texture-border-type;
+}
+
+/// Texture Styles
+#{class(texture)} {
+    @if $texture-bg {
+        @include mint-texture();
+    }
+}
+
+/// Border Styles
+#{class(border)} {
+    @extend #{class(texture)};
+    @if $texture-border-image {
+        @include mint-border();
+    } @else if $texture-border-color {
+        border: $texture-border-width $texture-border-type css-var($texture-border-color);
+    }
+}
+
+#{class(frame)} {
+    @extend #{class(border)};
+    @if $texture-border-image {
+        padding: $texture-border-width;
+    } @else if $texture-border-color {
+        padding: 0;
+    }
+    
+}
+
+#{class(card)} {
+	#{class(content)} {
+		@extend #{class(border)};
+	}
+}

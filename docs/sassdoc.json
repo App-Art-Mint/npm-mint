@@ -2589,7 +2589,7 @@
       "value": "@include break-util(padding, 1rem, 0);",
       "line": {
         "start": 5,
-        "end": 219
+        "end": 229
       }
     },
     "access": "public",
@@ -2623,6 +2623,109 @@
     "file": {
       "path": "imports/global/_text.scss",
       "name": "_text.scss"
+    }
+  },
+  {
+    "description": "Texture Mixin\n",
+    "commentRange": {
+      "start": 10,
+      "end": 10
+    },
+    "context": {
+      "type": "mixin",
+      "name": "mint-texture",
+      "code": "\n    position: relative;\n    \n    &::before {\n        content: '';\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        pointer-events: none;\n        opacity: $texture-opacity;\n        background-image: url($texture-bg);\n        background-size: $texture-bg-size;\n        background-position: $texture-bg-position;\n        @if ($texture-blend) {\n            mix-blend-mode: $texture-blend;\n        }\n    }\n\n    & > * {\n        position: relative;\n        z-index: 10;\n    }\n",
+      "line": {
+        "start": 11,
+        "end": 35
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "require": [],
+    "file": {
+      "path": "imports/global/_texture.scss",
+      "name": "_texture.scss"
+    }
+  },
+  {
+    "description": "Border Mixin\n",
+    "commentRange": {
+      "start": 37,
+      "end": 37
+    },
+    "context": {
+      "type": "mixin",
+      "name": "mint-border",
+      "code": "\n\tpadding: $texture-padding + $texture-border-width;\n\tborder-image-source: url($texture-border-image);\n\tborder-image-slice: $texture-border-slice;\n\tborder-image-repeat: #{$texture-border-repeat};\n\tborder-image-width: $texture-border-width;\n\tborder-style: $texture-border-type;\n",
+      "line": {
+        "start": 38,
+        "end": 45
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "require": [
+      {
+        "type": "variable",
+        "name": "texture-padding"
+      }
+    ],
+    "file": {
+      "path": "imports/global/_texture.scss",
+      "name": "_texture.scss"
+    }
+  },
+  {
+    "description": "Texture Styles\n",
+    "commentRange": {
+      "start": 47,
+      "end": 47
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(texture)}",
+      "value": "@if $texture-bg {\n        @include mint-texture();\n    }",
+      "line": {
+        "start": 48,
+        "end": 79
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/global/_texture.scss",
+      "name": "_texture.scss"
+    }
+  },
+  {
+    "description": "Border Styles\n",
+    "commentRange": {
+      "start": 54,
+      "end": 54
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(border)}",
+      "value": "@extend #{class(texture)};\n    @if $texture-border-image {\n        @include mint-border();\n    } @else if $texture-border-color {\n        border: $texture-border-width $texture-border-type css-var($texture-border-color);\n    }",
+      "line": {
+        "start": 55,
+        "end": 79
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/global/_texture.scss",
+      "name": "_texture.scss"
     }
   },
   {
@@ -2933,8 +3036,8 @@
   {
     "description": "Font Sizes\n",
     "commentRange": {
-      "start": 60,
-      "end": 60
+      "start": 61,
+      "end": 61
     },
     "context": {
       "type": "variable",
@@ -2942,8 +3045,8 @@
       "value": "(\n    h1: 2.5rem,\n    h2: 2rem,\n    h3: 1.75rem,\n    h4: 1.5rem,\n    h5: 1.25rem,\n    h6: 1.125rem,\n    p: 1rem,\n)",
       "scope": "default",
       "line": {
-        "start": 61,
-        "end": 69
+        "start": 62,
+        "end": 70
       }
     },
     "access": "public",
@@ -2958,8 +3061,8 @@
   {
     "description": "Structure\n",
     "commentRange": {
-      "start": 80,
-      "end": 80
+      "start": 81,
+      "end": 81
     },
     "context": {
       "type": "variable",
@@ -2967,8 +3070,8 @@
       "value": "2rem",
       "scope": "default",
       "line": {
-        "start": 81,
-        "end": 81
+        "start": 82,
+        "end": 82
       }
     },
     "access": "public",
@@ -2983,8 +3086,8 @@
   {
     "description": "Default theme\n",
     "commentRange": {
-      "start": 83,
-      "end": 83
+      "start": 84,
+      "end": 84
     },
     "context": {
       "type": "variable",
@@ -2992,8 +3095,8 @@
       "value": "light",
       "scope": "default",
       "line": {
-        "start": 84,
-        "end": 84
+        "start": 85,
+        "end": 85
       }
     },
     "access": "public",
@@ -3008,8 +3111,8 @@
   {
     "description": "Outline width\n",
     "commentRange": {
-      "start": 86,
-      "end": 86
+      "start": 87,
+      "end": 87
     },
     "context": {
       "type": "variable",
@@ -3017,8 +3120,8 @@
       "value": "0.125rem",
       "scope": "default",
       "line": {
-        "start": 87,
-        "end": 87
+        "start": 88,
+        "end": 88
       }
     },
     "access": "public",
@@ -3033,8 +3136,8 @@
   {
     "description": "Header\n",
     "commentRange": {
-      "start": 90,
-      "end": 90
+      "start": 91,
+      "end": 91
     },
     "context": {
       "type": "variable",
@@ -3042,8 +3145,8 @@
       "value": "4rem",
       "scope": "default",
       "line": {
-        "start": 91,
-        "end": 91
+        "start": 92,
+        "end": 92
       }
     },
     "access": "public",
@@ -3058,8 +3161,8 @@
   {
     "description": "Default Shadows\n",
     "commentRange": {
-      "start": 93,
-      "end": 93
+      "start": 94,
+      "end": 94
     },
     "context": {
       "type": "variable",
@@ -3067,8 +3170,8 @@
       "value": "glow-2",
       "scope": "default",
       "line": {
-        "start": 94,
-        "end": 94
+        "start": 95,
+        "end": 95
       }
     },
     "access": "public",
@@ -3083,8 +3186,8 @@
   {
     "description": "Images\n",
     "commentRange": {
-      "start": 97,
-      "end": 97
+      "start": 98,
+      "end": 98
     },
     "context": {
       "type": "variable",
@@ -3092,8 +3195,8 @@
       "value": "0.5rem",
       "scope": "default",
       "line": {
-        "start": 98,
-        "end": 98
+        "start": 99,
+        "end": 99
       }
     },
     "access": "public",
@@ -3108,8 +3211,8 @@
   {
     "description": "Buttons\n",
     "commentRange": {
-      "start": 100,
-      "end": 100
+      "start": 101,
+      "end": 101
     },
     "context": {
       "type": "variable",
@@ -3117,8 +3220,8 @@
       "value": "brand",
       "scope": "default",
       "line": {
-        "start": 101,
-        "end": 101
+        "start": 102,
+        "end": 102
       }
     },
     "access": "public",
@@ -3133,8 +3236,8 @@
   {
     "description": "Cards\n",
     "commentRange": {
-      "start": 128,
-      "end": 128
+      "start": 132,
+      "end": 132
     },
     "context": {
       "type": "variable",
@@ -3142,8 +3245,8 @@
       "value": "black-2",
       "scope": "default",
       "line": {
-        "start": 129,
-        "end": 129
+        "start": 133,
+        "end": 133
       }
     },
     "access": "public",
@@ -3156,7 +3259,46 @@
     }
   },
   {
-    "description": "util.scss - Variables, Functions, and Mixins to import elsewhere\n",
+    "description": "Texture\n",
+    "commentRange": {
+      "start": 140,
+      "end": 140
+    },
+    "context": {
+      "type": "variable",
+      "name": "texture-padding",
+      "value": "1rem",
+      "scope": "default",
+      "line": {
+        "start": 141,
+        "end": 141
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/util/_vars.scss",
+      "name": "_vars.scss"
+    },
+    "usedBy": [
+      {
+        "description": "Border Mixin\n",
+        "context": {
+          "type": "mixin",
+          "name": "mint-border",
+          "code": "\n\tpadding: $texture-padding + $texture-border-width;\n\tborder-image-source: url($texture-border-image);\n\tborder-image-slice: $texture-border-slice;\n\tborder-image-repeat: #{$texture-border-repeat};\n\tborder-image-width: $texture-border-width;\n\tborder-style: $texture-border-type;\n",
+          "line": {
+            "start": 38,
+            "end": 45
+          }
+        }
+      }
+    ]
+  },
+  {
+    "description": "_util.scss - Variables, Functions, and Mixins to import elsewhere\n",
     "commentRange": {
       "start": 1,
       "end": 4
@@ -3171,7 +3313,7 @@
       }
     },
     "author": [
-      "App/Art Mint"
+      "App Art Mint LLC"
     ],
     "group": [
       "util"
