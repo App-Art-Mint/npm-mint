@@ -3,7 +3,6 @@
  */
 export abstract class mintText {
 	/*static fitContainer () {
-		console.log('hellooo');
 		let $warning: JQuery<HTMLElement> = $(warningSelector);
 		$warning.css({
 			overflow: 'scroll',
