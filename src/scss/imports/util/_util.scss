@@ -566,6 +566,126 @@ $bootstrap5: false !default;
 	}
 }
 
+/// Creates utility selectors for a box model property
+/// @group Mixins
+/// 
+/// @example scss - box-util mixin
+///    @include box-util(margin, 1rem, 0);    // ->   & {
+/// 
+@mixin box-util ($prop, $val) {
+	@if (type-of($prop) != 'string') {
+		@error 'The box-util mixin requires a string for the $prop argument.';
+	}
+
+	&-auto {
+		#{$prop}-left: auto;
+		#{$prop}-right: auto;
+
+		&-v {
+			#{$prop}: $val auto;
+
+			@for $i from 0 through 6 {
+				&#{$i} {
+					#{$prop}: $val * $i auto;
+				}
+			}
+		}
+
+		&-t {
+			#{$prop}-top: $val;
+			#{$prop}-left: auto;
+			#{$prop}-right: auto;
+
+			@for $i from 0 through 6 {
+				&#{$i} {
+					#{$prop}-top: $val * $i;
+					#{$prop}-left: auto;
+					#{$prop}-right: auto;
+				}
+			}
+		}
+
+		&-b {
+			#{$prop}-bottom: $val;
+			#{$prop}-left: auto;
+			#{$prop}-right: auto;
+
+			@for $i from 0 through 6 {
+				&#{$i} {
+					#{$prop}-bottom: $val * $i;
+					#{$prop}-left: auto;
+					#{$prop}-right: auto;
+				}
+			}
+		}
+	}
+
+	&-v {
+		#{$prop}-top: $val;
+		#{$prop}-bottom: $val;
+
+		@for $i from 0 through 6 {
+			&#{$i} {
+				#{$prop}-top: $val * $i;
+				#{$prop}-bottom: $val * $i;
+			}
+		}
+	}
+
+	&-t {
+		#{$prop}-top: $val;
+
+		@for $i from 0 through 6 {
+			&#{$i} {
+				#{$prop}-top: $val * $i;
+			}
+		}
+	}
+
+	&-b {
+		#{$prop}-bottom: $val;
+
+		@for $i from 0 through 6 {
+			&#{$i} {
+				#{$prop}-bottom: $val * $i;
+			}
+		}
+	}
+
+	&-h {
+		#{$prop}-left: $val;
+		#{$prop}-right: $val;
+
+		@for $i from 0 through 6 {
+			&#{$i} {
+				#{$prop}-left: $val * $i;
+				#{$prop}-right: $val * $i;
+			}
+		}
+	}
+
+	&-l {
+		#{$prop}-left: $val;
+
+		@for $i from 0 through 6 {
+			&#{$i} {
+				#{$prop}-left: $val * $i;
+			}
+		}
+	}
+
+	&-r {
+		#{$prop}-right: $val;
+
+		@for $i from 0 through 6 {
+			&#{$i} {
+				#{$prop}-right: $val * $i;
+			}
+		}
+	}
+}
+
+
 /// Generates a property with a fluid value between specified screen sizes
 /// @group Mixins
 ///

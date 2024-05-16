@@ -66,7 +66,9 @@ nav {
 
 a {
     &[href^='mailto:'], &[href^='tel:'], &[href^='sms:'] {
-        white-space: nowrap;
+        @include break (xs) {
+            white-space: nowrap;
+        }
     }
 
     i {
