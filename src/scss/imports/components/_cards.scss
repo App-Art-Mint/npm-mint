@@ -107,7 +107,8 @@
 	}
 
 	#{class(content)} {
-		display: grid;
+		display: flex;
+		flex-direction: column;
 		gap: math.div($grid-gap, 2);
 		position: relative;
 		padding: $card-padding;
