@@ -3252,7 +3252,7 @@
     "context": {
       "type": "variable",
       "name": "link-color",
-      "value": "brand",
+      "value": "brand-4",
       "scope": "default",
       "line": {
         "start": 102,
@@ -3271,8 +3271,8 @@
   {
     "description": "Cards\n",
     "commentRange": {
-      "start": 132,
-      "end": 132
+      "start": 134,
+      "end": 134
     },
     "context": {
       "type": "variable",
@@ -3280,8 +3280,8 @@
       "value": "black-2",
       "scope": "default",
       "line": {
-        "start": 133,
-        "end": 133
+        "start": 135,
+        "end": 135
       }
     },
     "access": "public",
@@ -3296,8 +3296,8 @@
   {
     "description": "Texture\n",
     "commentRange": {
-      "start": 140,
-      "end": 140
+      "start": 142,
+      "end": 142
     },
     "context": {
       "type": "variable",
@@ -3305,8 +3305,8 @@
       "value": "1rem",
       "scope": "default",
       "line": {
-        "start": 141,
-        "end": 141
+        "start": 143,
+        "end": 143
       }
     },
     "access": "public",
