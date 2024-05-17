@@ -116,7 +116,7 @@ $btn-fore: fore !default;
 $btn-fore-alt: $btn-fore !default;
 $btn-fore-hover: back !default;
 $btn-fore-alt-hover: $btn-fore-hover !default;
-$btn-back: brand-2 !default;
+$btn-back: brand-1 !default;
 @if ($theme-default == dark) {
     $btn-back: brand-5;
 }
