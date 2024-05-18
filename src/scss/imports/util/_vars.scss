@@ -4,6 +4,9 @@
 /// @group Vars
 @charset 'utf-8';
 
+/// Default theme
+$theme-default: light !default;
+
 /// Global Colors
 $bitcoin: #FF9900;
 $ethereum: #3C3C3D;
@@ -48,9 +51,6 @@ $info: $brand !default;
 $fore: lighten($black, 10%) !default;
 $back: darken($white, 10%) !default;
 
-$header-bg: brand-4 !default;
-$header-fg: back !default;
-
 /// Fonts
 $font-primary: sans-serif !default;
 $font-secondary: serif !default;
@@ -81,15 +81,19 @@ $font-size-desktop: (
 /// Structure
 $grid-gap: 2rem !default;
 
-/// Default theme
-$theme-default: light !default;
-
 /// Outline width
 $border-width: 0.125rem !default;
 $border-radius: 1rem !default;
 
 /// Header
 $header-height: 4rem !default;
+$header-bg: brand-2 !default;
+$header-fg: fore !default;
+
+@if ($theme-default == dark) {
+    $header-bg: brand-4;
+    $header-fg: back;
+}
 
 /// Default Shadows
 $shadow-color: glow-2 !default;
@@ -116,14 +120,14 @@ $btn-fore: fore !default;
 $btn-fore-alt: $btn-fore !default;
 $btn-fore-hover: back !default;
 $btn-fore-alt-hover: $btn-fore-hover !default;
-$btn-back: brand-1 !default;
-$btn-border: brand-5 !default;
+$btn-back: brand-2 !default;
+$btn-border: brand-4 !default;
 @if ($theme-default == dark) {
-    $btn-back: brand-5;
-    $btn-border: brand-1;
+    $btn-back: brand-2;
+    $btn-border: brand-4;
 }
 $btn-back-alt: trans !default;
-$btn-back-alt-hover: accent-3 !default;
+$btn-back-alt-hover: accent-2 !default;
 
 $btn-padding-v: 0.5rem !default;
 $btn-padding-h: 1rem !default;

@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App Art Mint LLC",
-  "version": "0.12.5",
+  "version": "0.12.6",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [

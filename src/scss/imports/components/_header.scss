@@ -17,55 +17,21 @@
 
 /// Header Styles
 #{id(header)} {
-    display: flex;
-    flex-direction: column;
     position: relative;
     width: 100%;
     color: css-var(header-fg);
     background-color: css-var(header-bg);
     z-index: 10000;
+    height: css-var(header-height);
+    //padding: 0 calc(css-var(header-height) / 2);
 
-    &#{class(js)} {
-        align-items: center;
-        flex-direction: row;
-        height: css-var(header-height);
-        //padding: 0 calc(css-var(header-height) / 2);
-
-        #{controls(wrapper)} {
-            display: inline-block;
-        }
-
-        #{$has-controls + neg(controls(wrapper))} {
-            & + ul {
-                display: flex;
-                flex-direction: column;
-                height: 0;
-                overflow: hidden;
-                transition: height css-var(delay-default), margin css-var(delay-default);
-            }
-
-            &#{$has-expanded + neg(expanded(true))} {
-                & + ul {
-                    margin: 0;
-                }
-            }
-        }
-
-        &#{class(fixed)} {
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
-
-        #{id(wrapper)} {
-            background: css-var(bg);
-            transition-duration: css-var(delay-default);
-            transition-property: top, right, bottom, left;
-            overflow: auto;
-        }
+    &#{class(fixed)} {
+        position: fixed;
+        top: 0;
+        left: 0;
     }
 
-    &.mint-right {
+    &#{class(right)} {
         #{id(wrapper)} {
             top: css-var(header-height);
             right: -100%;
@@ -77,7 +43,7 @@
         }
     }
 
-    &.mint-bottom {
+    &#{class(bottom)} {
         #{id(wrapper)} {
             top: unset;
             bottom: -100%;
@@ -88,7 +54,7 @@
         }
     }
 
-    &.mint-left {
+    &#{class(left)} {
         #{id(wrapper)} {
             top: css-var(header-height);
             left: -100%;
@@ -150,7 +116,7 @@
     }
 
     #{controls(wrapper)} {
-        display: none;
+        display: inline-block;
         position: relative;
         padding: $menu-btn-padding;
         width: $menu-bar-width + $menu-btn-padding * 2;
@@ -159,6 +125,7 @@
         border-radius: $border-radius;
         background: css-var($menu-btn-color);
         box-shadow: $menu-btn-shadow-size css-var($menu-btn-shadow-color);
+        z-index: 1000;
 
         #{class(menu-icon)} {
             top: 50%;
@@ -207,11 +174,26 @@
         left: 0;
         width: 100%;
         height: calc(100vh - css-var(header-height));
-        transition: none;
         z-index: -2;
+        background: css-var(header-bg);
+        transition-duration: css-var(delay-default);
+        transition-property: top, right, bottom, left;
+        overflow: auto;
 
         &#{class(open)} {
             top: css-var(header-height);
+        }
+
+        nav {
+            height: 100%;
+            background: css-var(back);
+            overflow: auto;
+            background-repeat: repeat;
+        }
+
+        a, button {
+            font-family: $font-secondary, $font-backups !important;
+            font-size: 4em;
         }
     }
 
@@ -240,4 +222,27 @@
             cursor: pointer;
         }
     }
+
+    #{$has-controls + neg(controls(wrapper))} {
+        & + ul {
+            display: flex;
+            flex-direction: column;
+            height: 0;
+            overflow: hidden;
+            transition: height css-var(delay-default), margin css-var(delay-default);
+        }
+
+        &#{$has-expanded + neg(expanded(true))} {
+            & + ul {
+                margin: 0;
+            }
+        }
+    }
+}
+
+#{id(navbar)} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
 }
