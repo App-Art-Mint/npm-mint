@@ -36,7 +36,7 @@ export class mintHeader {
      * Adds elements to {@link el | `this.el`}
      */
     attachElements () : void {
-        this.el.body = document.querySelector('body');
+        this.el.html = document.querySelector('html');
         this.el.header = document.getElementById(mintSelectors.getId('header'));
         this.el.mobileButton = this.el.header?.querySelector(mintSelectors.controls(mintSelectors.getId('wrapper'))) || null;
         this.el.wrapper = document.getElementById(mintSelectors.getId('wrapper'));
@@ -93,14 +93,14 @@ export class mintHeader {
                 });
             }
             setTimeout(() => {
-                if (this.el.body) {
-                    this.el.body.style.overflow = 'hidden';
+                if (this.el.html) {
+                    this.el.html.style.overflow = 'hidden';
                 }
             }, mintSettings.from === mintSide.Left ? mintSettings.delay.default : mintSettings.delay.instant);
             this.el.wrapper?.classList.add(mintSelectors.getClass('open'));
         } else {
-            if (this.el.body) {
-                this.el.body.style.overflow = 'auto';
+            if (this.el.html) {
+                this.el.html.style.overflow = 'auto';
             }
             this.el.wrapper?.classList.remove(mintSelectors.getClass('open'));
             this.closeAllMenus();
