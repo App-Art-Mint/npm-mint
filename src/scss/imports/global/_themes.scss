@@ -9,77 +9,79 @@
 
 /// Global theme
 :root {
-    /// Global Colors
-    /// Brands
-    @include css-var(bitcoin, $bitcoin);
-    @include css-var(ethereum, $ethereum);
-    @include css-var(venmo, $venmo);
-    @include css-var(facebook, $facebook);
+	/// Global Colors
+	/// Brands
+	@include css-var(bitcoin, $bitcoin);
+	@include css-var(ethereum, $ethereum);
+	@include css-var(venmo, $venmo);
+	@include css-var(facebook, $facebook);
 	@include css-var(twitter, $twitter);
-    @include css-var(youtube, $youtube);
-    @include css-var(apple, $apple);
+	@include css-var(youtube, $youtube);
+	@include css-var(apple, $apple);
 	@include css-var(apple-music, $apple-music);
-    @include css-var(spotify, $spotify);
+	@include css-var(spotify, $spotify);
 	@include css-var(soundcloud, $soundcloud);
 	@include css-var(bandcamp, $bandcamp);
-    @include css-var(amazon-0, $amazon-0);
-    @include css-var(amazon-1, $amazon-1);
-    @include css-var(napster-0, $napster-0);
-    @include css-var(napster-1, $napster-1);
-    @include css-var(google-play-0, $google-play-0);
-    @include css-var(google-play-1, $google-play-1);
-    @include css-var(google-play-2, $google-play-2);
-    @include css-var(instagram-0, $instagram-0);
-    @include css-var(instagram-1, $instagram-1);
-    @include css-var(instagram-2, $instagram-2);
-    @include css-var(instagram-3, $instagram-3);
-    @include css-var(instagram-4, $instagram-4);
-    @include css-var(instagram-5, $instagram-5);
-    @include css-var(instagram-6, $instagram-6);
+	@include css-var(amazon-0, $amazon-0);
+	@include css-var(amazon-1, $amazon-1);
+	@include css-var(napster-0, $napster-0);
+	@include css-var(napster-1, $napster-1);
+	@include css-var(google-play-0, $google-play-0);
+	@include css-var(google-play-1, $google-play-1);
+	@include css-var(google-play-2, $google-play-2);
+	@include css-var(instagram-0, $instagram-0);
+	@include css-var(instagram-1, $instagram-1);
+	@include css-var(instagram-2, $instagram-2);
+	@include css-var(instagram-3, $instagram-3);
+	@include css-var(instagram-4, $instagram-4);
+	@include css-var(instagram-5, $instagram-5);
+	@include css-var(instagram-6, $instagram-6);
 
-    /// Application Colors
-    @include shades('black', $black, lighten);
-    @include shades('white', $white, darken);
-    @include shades(glow, $trans-light, darken, 7, 10%, true);
-    @include shades(shadow, $trans-dark, darken, 7, 10%, true);
+	/// Application Colors
+	@include shades('black', $black, lighten);
+	@include shades('white', $white, darken);
+	@include shades(glow, $trans-light, darken, 7, 10%, true);
+	@include shades(shadow, $trans-dark, darken, 7, 10%, true);
 
-    @include shades(brand, $brand);
-    @include shades(accent, $accent);
-    @include shades(success, $success);
-    @include shades(danger, $danger);
-    @include shades(warning, $warning);
-    @include shades(info, $info);
+	@include shades(brand, $brand);
+	@include shades(accent, $accent);
+	@include shades(success, $success);
+	@include shades(danger, $danger);
+	@include shades(warning, $warning);
+	@include shades(info, $info);
 }
 
 /// Light theme
 @mixin light-theme {
-    @include css-var(fore, $fore);
-    @include css-var(back, $back);
+	@include css-var(fore, $fore);
+	@include css-var(back, $back);
 }
 
 /// Dark theme
 @mixin dark-theme {
-    @include css-var(fore, $back);
-    @include css-var(back, $fore);
+	@include css-var(fore, $back);
+	@include css-var(back, $fore);
 }
 
 /// Apply themes
 :root {
-    @if ($theme-default == light) {
-        @include light-theme;
-    } @else {
-        @include dark-theme;
-    }
+	@if ($theme-default ==light) {
+		@include light-theme;
+	}
+
+	@else {
+		@include dark-theme;
+	}
 }
 
 #{class(dark)} {
-    @include dark-theme;
-    color: css-var(fore);
+	@include dark-theme;
+	color: css-var(fore);
 }
 
 #{class(light)} {
-    @include light-theme;
-    color: css-var(fore);
+	@include light-theme;
+	color: css-var(fore);
 }
 
 #{class(success)} {
@@ -88,8 +90,9 @@
 }
 
 a {
-    color: css-var($link-color);
-	transition: color css-var(delay-default);
+	color: css-var($link-color);
+	transition-duration: css-var(delay-default);
+	transition-property: color, background-color;
 
 	.fa-instagram {
 		position: relative;
@@ -99,7 +102,7 @@ a {
 			position: absolute;
 			top: 50%;
 			left: 50%;
-            transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
 			opacity: 0;
 			transition: opacity css-var(delay-default);
 
@@ -110,14 +113,15 @@ a {
 		}
 	}
 
-    @include states(hover, focus, active) {
-        color: css-var($link-color-hover);
+	@include states(hover, focus, active) {
+		color: css-var($link-color-hover);
 
-		.fa-facebook, .fa-square-facebook {
+		.fa-facebook,
+		.fa-square-facebook {
 			color: css-var(facebook);
 		}
 
-        .fa-instagram {
+		.fa-instagram {
 			&::after {
 				opacity: 1;
 			}
@@ -128,8 +132,8 @@ a {
 		}
 
 		.fa-youtube {
-            color: css-var(youtube);
-        }
+			color: css-var(youtube);
+		}
 
 		.fa-spotify {
 			color: css-var(spotify);
@@ -148,19 +152,19 @@ a {
 		}
 
 		.fa-github {
-            color: css-var(white-1);
-        }
+			color: css-var(white-1);
+		}
 
-        .fa-bitcoin {
-            color: css-var(bitcoin);
-        }
+		.fa-bitcoin {
+			color: css-var(bitcoin);
+		}
 
-        .fa-ethereum {
-            color: css-var(ethereum);
-        }
+		.fa-ethereum {
+			color: css-var(ethereum);
+		}
 
-        .fa-vimeo {
-            color: css-var(venmo);
-        }
-    }
+		.fa-vimeo {
+			color: css-var(venmo);
+		}
+	}
 }

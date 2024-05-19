@@ -3,96 +3,121 @@
 
 /// Global styles
 * {
-    &, &::before, &::after {
-        box-sizing: border-box;
-    }
+
+	&,
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
 }
 
-html, body {
-    color: css-var(fore);
-    background-color: css-var(back);
-    overflow-x: hidden;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    word-break: break-word;
+html,
+body {
+	color: css-var(fore);
+	background-color: css-var(back);
+	overflow-x: hidden;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	word-break: break-word;
 
-    @include break(xs) {
-        word-break: initial;
-    }
+	@include break(xs) {
+		word-break: initial;
+	}
+}
+
+body {
+	&#{class(fixed)} {
+		#{id(header)} {
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+
+		main {
+			min-height: 100vh;
+			padding-top: css-var(header-height);
+		}
+	}
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    min-height: calc(100vh - css-var(header-height));
-    z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	min-height: calc(100vh - css-var(header-height));
+	z-index: 1000;
 
-    & > router-outlet {
-        & + * {
-            width: 100%;
-            flex-grow: 1;
-        }
-    }
+	&>router-outlet {
+		&+* {
+			width: 100%;
+			flex-grow: 1;
+		}
+	}
 
-    router-outlet {
-        flex-grow: 0;
-    }
+	router-outlet {
+		flex-grow: 0;
+	}
 }
 
 app-root {
-    display: block;
+	display: block;
 }
 
 nav {
-    a {
-        display: block;
-        text-decoration: none;
-    }
+	a {
+		display: block;
+		text-decoration: none;
+	}
 
-    ul {
-        display: flex;
-        margin: 0;
-        padding: 0;
-        list-style: none;
+	ul {
+		display: flex;
+		margin: 0;
+		padding: 0;
+		list-style: none;
 
-        & > li > ul {
-            flex-direction: column;
-        }
-    }
+		&>li>ul {
+			flex-direction: column;
+		}
+	}
 }
 
 a {
-    &[href^='mailto:'], &[href^='tel:'], &[href^='sms:'] {
-        @include break (xs) {
-            white-space: nowrap;
-        }
-    }
 
-    i {
+	&[href^='mailto:'],
+	&[href^='tel:'],
+	&[href^='sms:'] {
+		@include break (xs) {
+			white-space: nowrap;
+		}
+	}
+
+	i {
 		&:first-child {
 			margin-right: 0.25rem;
 		}
 
 		&:last-child {
-        	margin-left: 0.25rem;
+			margin-left: 0.25rem;
 		}
-    }
+	}
 }
 
-button, a[routerLink] {
-    cursor: pointer;
+button,
+a[routerLink] {
+	cursor: pointer;
 }
 
-a, button {
-    font-size: inherit;
+a,
+button {
+	font-size: inherit;
 }
 
-img, video {
-    width: 100%;
-    height: auto;
+img,
+video {
+	width: 100%;
+	height: auto;
 }
 
 iframe {
@@ -100,26 +125,26 @@ iframe {
 }
 
 #{class(glow)} {
-    box-shadow: 0 0 2rem -0.5rem css-var(glow-2);
+	box-shadow: 0 0 2rem -0.5rem css-var(glow-2);
 }
 
 #{class(noglow)} {
-    box-shadow: none !important;
+	box-shadow: none !important;
 }
 
 #{class(sr-only)} {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    border: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	border: 0 !important;
 }
 
 #{class(list)} {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
