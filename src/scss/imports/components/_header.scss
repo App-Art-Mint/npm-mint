@@ -10,239 +10,271 @@
 
 /// CSS Variables
 :root {
-    @include css-var(header-height, $header-height);
-    @include css-var-ref(header-bg, $header-bg);
-    @include css-var-ref(header-fg, $header-fg);
+	@include css-var(header-height, $header-height);
+	@include css-var-ref(header-bg, $header-bg);
+	@include css-var-ref(header-fg, $header-fg);
 }
 
 /// Header Styles
 #{id(header)} {
-    position: relative;
-    width: 100%;
-    color: css-var(header-fg);
-    background-color: css-var(header-bg);
-    z-index: 10000;
-    height: css-var(header-height);
-    //padding: 0 calc(css-var(header-height) / 2);
+	position: relative;
+	width: 100%;
+	color: css-var(header-fg);
+	background-color: css-var(header-bg);
+	z-index: 10000;
+	height: css-var(header-height);
+	//padding: 0 calc(css-var(header-height) / 2);
 
-    &#{class(fixed)} {
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
+	&#{class(right)} {
+		#{id(wrapper)} {
+			top: css-var(header-height);
+			right: -100%;
+			left: unset;
 
-    &#{class(right)} {
-        #{id(wrapper)} {
-            top: css-var(header-height);
-            right: -100%;
-            left: unset;
+			&#{class(open)} {
+				right: 0;
+			}
+		}
+	}
 
-            &#{class(open)} {
-                right: 0;
-            }
-        }
-    }
+	&#{class(bottom)} {
+		#{id(wrapper)} {
+			top: unset;
+			bottom: -100%;
 
-    &#{class(bottom)} {
-        #{id(wrapper)} {
-            top: unset;
-            bottom: -100%;
+			&#{class(open)} {
+				bottom: 0;
+			}
+		}
+	}
 
-            &#{class(open)} {
-                bottom: 0;
-            }
-        }
-    }
+	&#{class(left)} {
+		#{id(wrapper)} {
+			top: css-var(header-height);
+			left: -100%;
 
-    &#{class(left)} {
-        #{id(wrapper)} {
-            top: css-var(header-height);
-            left: -100%;
+			&#{class(open)} {
+				left: 0;
+			}
+		}
+	}
 
-            &#{class(open)} {
-                left: 0;
-            }
-        }
-    }
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: css-var(header-height);
+		background: css-var(header-bg);
+		z-index: -1;
+	}
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: css-var(header-height);
-        background: css-var(header-bg);
-        z-index: -1;
-    }
+	nav {
+		&>ul {
+			display: flex;
+			flex-direction: column;
+		}
+	}
 
-    nav {
-        & > ul {
-            display: flex;
-            flex-direction: column;
-        }
-    }
+	ul {
+		list-style: none;
+		margin-top: 0;
+		margin-bottom: 1rem;
+		padding-left: 0;
+	}
 
-    ul {
-        list-style: none;
-        margin-top: 0;
-        margin-bottom: 1rem;
-        padding-left: 0;
-    }
+	a,
+	button {
+		width: 100%;
+		margin: 0;
+		border: 0;
+		color: css-var(fore);
+		background: css-var(trans);
 
-    a, button {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        margin: 0;
-        border: 0;
-        color: css-var(header-fg);
-        background: css-var(trans);
-    }
+		@include states(hover, focus) {
+			color: css-var(back);
+		}
+	}
 
-    h1 {
-        display: flex;
-        white-space: nowrap;
-        margin: 0;
-    }
+	h1 {
+		display: flex;
+		white-space: nowrap;
+		margin: 0;
+	}
 
-    #{class(logo)} {
-        text-decoration: none;
+	#{class(logo)} {
+		text-decoration: none;
 		width: auto;
 
-        img {
-            max-width: css-var(header-height);
-        }
-    }
+		img {
+			max-width: css-var(header-height);
+		}
+	}
 
-    #{controls(wrapper)} {
-        display: inline-block;
-        position: relative;
-        padding: $menu-btn-padding;
-        width: $menu-bar-width + $menu-btn-padding * 2;
-        height: $menu-btn-height + $menu-btn-padding * 2;
-        margin-left: auto;
-        border-radius: $border-radius;
-        background: css-var($menu-btn-color);
-        box-shadow: $menu-btn-shadow-size css-var($menu-btn-shadow-color);
-        z-index: 1000;
+	#{controls(wrapper)} {
+		display: inline-block;
+		position: relative;
+		padding: $menu-btn-padding;
+		width: $menu-bar-width + $menu-btn-padding * 2;
+		height: $menu-btn-height + $menu-btn-padding * 2;
+		margin-left: auto;
+		border-radius: $border-radius;
+		background: css-var($menu-btn-color);
+		box-shadow: $menu-btn-shadow-size css-var($menu-btn-shadow-color);
+		z-index: 1000;
 
-        #{class(menu-icon)} {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+		#{class(menu-icon)} {
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 
-            &, &::before, &::after {
-                content: '';
-                display: block;
-                position: absolute;
-                left: 50%;
-                height: $menu-bar-height;
-                width: $menu-bar-width;
-                background-color: css-var($menu-bar-color);
-                transition: delay(default);
-            }
+			&,
+			&::before,
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 50%;
+				height: $menu-bar-height;
+				width: $menu-bar-width;
+				background-color: css-var($menu-bar-color);
+				transition: delay(default);
+			}
 
-            &::before {
-                transform: translate(-50%, -200%);
-            }
+			&::before {
+				transform: translate(-50%, -200%);
+			}
 
-            &::after {
-                transform: translate(-50%, 200%);
-            }
-        }
+			&::after {
+				transform: translate(-50%, 200%);
+			}
+		}
 
-        &#{expanded(true)} {
-            #{class(menu-icon)} {
-                background: transparent;
-                &::before {
-                    transform: translate(-50%, 0) rotate(45deg);
-                }
+		&#{expanded(true)} {
+			#{class(menu-icon)} {
+				background: transparent;
 
-                &::after {
-                    transform: translate(-50%, 0) rotate(-45deg);
-                }
-            }
-        }
-    }
+				&::before {
+					transform: translate(-50%, 0) rotate(45deg);
+				}
 
-    #{id(wrapper)} {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - css-var(header-height));
-        z-index: -2;
-        background: css-var(header-bg);
-        transition-duration: css-var(delay-default);
-        transition-property: top, right, bottom, left;
-        overflow: auto;
+				&::after {
+					transform: translate(-50%, 0) rotate(-45deg);
+				}
+			}
+		}
+	}
 
-        &#{class(open)} {
-            top: css-var(header-height);
-        }
+	#{id(wrapper)} {
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height: calc(100vh - css-var(header-height));
+		z-index: -2;
+		background: css-var(header-bg);
+		transition-duration: css-var(delay-default);
+		transition-property: top, right, bottom, left;
+		overflow: auto;
 
-        nav {
-            height: 100%;
-            background: css-var(back);
-            overflow: auto;
-            background-repeat: repeat;
-        }
+		&#{class(open)} {
+			top: css-var(header-height);
+		}
 
-        a, button {
-            font-family: $font-secondary, $font-backups !important;
-            font-size: 4em;
-        }
-    }
+		nav {
+			height: 100%;
+			background: css-var(back);
+			overflow: auto;
+			background-repeat: repeat;
 
-    #{id(widgets)} {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: css-var(header-height);
-    }
+			&> :last-child {
+				margin-bottom: 0;
+			}
+		}
 
-    #{class(dropdown)} {
-        background: css-var(header-bg);
+		a,
+		button {
+			font-family: $font-secondary, $font-backups !important;
+			font-size: 3em;
+			padding: 0.5rem;
+			text-align: center;
 
-        button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: css-var(header-height);
-            height: css-var(header-height);
-            padding: calc(css-var(header-height) / 2);
-        }
+			@include break(xs) {
+				font-size: 4em;
+			}
 
-        li {
-            padding: calc(css-var(header-height) / 2);
-            line-height: 1;
-            cursor: pointer;
-        }
-    }
+			@include states(hover, focus) {
+				background-color: css-var(shadow-5);
+			}
 
-    #{$has-controls + neg(controls(wrapper))} {
-        & + ul {
-            display: flex;
-            flex-direction: column;
-            height: 0;
-            overflow: hidden;
-            transition: height css-var(delay-default), margin css-var(delay-default);
-        }
+			@include states(active) {
+				text-decoration: underline;
+			}
+		}
 
-        &#{$has-expanded + neg(expanded(true))} {
-            & + ul {
-                margin: 0;
-            }
-        }
-    }
+		ul {
+			li {
+				&:last-child {
+					margin-bottom: 0;
+
+					ul {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+
+	#{id(widgets)} {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: css-var(header-height);
+	}
+
+	#{class(dropdown)} {
+		background: css-var(header-bg);
+
+		button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-width: css-var(header-height);
+			height: css-var(header-height);
+			padding: calc(css-var(header-height) / 2);
+		}
+
+		li {
+			padding: calc(css-var(header-height) / 2);
+			line-height: 1;
+			cursor: pointer;
+		}
+	}
+
+	#{$has-controls + neg(controls(wrapper))} {
+		&+ul {
+			display: flex;
+			flex-direction: column;
+			height: 0;
+			overflow: hidden;
+			transition: height css-var(delay-default), margin css-var(delay-default);
+		}
+
+		&#{$has-expanded + neg(expanded(true))} {
+			&+ul {
+				margin: 0;
+			}
+		}
+	}
 }
 
 #{id(navbar)} {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-direction: row;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-direction: row;
+	height: 100%;
 }
