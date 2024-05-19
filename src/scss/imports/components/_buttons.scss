@@ -77,6 +77,19 @@
 			}
 		}
     }
+
+	/// Fix for browsers injecting their own tel links
+	a {
+		color: inherit;
+	
+		&:hover {
+			color: inherit;
+		}
+	
+		i {
+			display: none;
+		}
+	}
 }
 
 /// Default buttons
