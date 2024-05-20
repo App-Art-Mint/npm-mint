@@ -103,6 +103,14 @@
 		margin: 0;
 	}
 
+	#{id(navbar)} {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex-direction: row;
+		height: 100%;
+	}
+
 	#{class(logo)} {
 		text-decoration: none;
 		width: auto;
@@ -174,6 +182,7 @@
 		left: 0;
 		width: 100%;
 		height: calc(100vh - css-var(header-height));
+		height: calc(100dvh - css-var(header-height));
 		z-index: -2;
 		background: css-var(header-bg);
 		transition-duration: css-var(delay-default);
@@ -269,12 +278,4 @@
 			}
 		}
 	}
-}
-
-#{id(navbar)} {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	flex-direction: row;
-	height: 100%;
 }
