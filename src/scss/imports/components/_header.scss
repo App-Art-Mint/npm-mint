@@ -199,8 +199,24 @@
 			overflow: auto;
 			background-repeat: repeat;
 
+			@include break(xl) {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
 			&> :last-child {
 				margin-bottom: 0;
+			}
+
+			&>ul {
+				@include break(xl) {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					align-items: center;
+					justify-content: space-evenly;
+				}
 			}
 		}
 
