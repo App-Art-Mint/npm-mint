@@ -12,6 +12,11 @@ import mintSettings from '../util/settings';
  */
 export class mintHeader {
     /**
+     * Last-logged window width
+     */
+    lastWidth: number = mintUtil.windowWidth();
+
+    /**
      * Frequently-referenced elements
      */
     el: {[key: string]: HTMLElement | null} = {};
@@ -46,7 +51,7 @@ export class mintHeader {
      * Adds events to the dom
      */
     attachEvents () : void {
-        window.addEventListener('resize', mintUtil.throttleEvent(this.eHandleResize.bind(this), mintSettings.delay.default, { trailing: false }));
+        //window.addEventListener('resize', mintUtil.throttleEvent(this.eHandleResize.bind(this), mintSettings.delay.default, { trailing: false }));
         window.addEventListener('scroll', mintUtil.throttleEvent(this.eHandleScroll.bind(this), mintSettings.delay.default, { trailing: false }));
 
         let focusables: NodeListOf<HTMLElement> | undefined = this.el.header?.querySelectorAll(mintSelectors.focusable),
@@ -216,8 +221,12 @@ export class mintHeader {
     /**
      * Closes the mobile menu when the window resizes
      */
-    eHandleResize () : void {
-        this.setMobileMenu();
+    eHandleResize (e: Event) : void {
+        console.log(e, window.innerWidth, mintUtil.windowWidth(), this.lastWidth);
+        if (mintUtil.windowWidth() !== this.lastWidth) {
+            this.setMobileMenu();
+        }
+        this.lastWidth = mintUtil.windowWidth();
     }
 
     /**

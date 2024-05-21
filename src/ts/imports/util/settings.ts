@@ -39,7 +39,7 @@ export abstract class mintSettings {
     /**
     * Whether the navbar is fixed or not
     */
-     static fixed?: boolean;
+    static fixed?: boolean;
 
     /**
      * Update the provided settings variables
@@ -63,6 +63,14 @@ export abstract class mintSettings {
             if (Object.values(settings.delay).reduce((prev: any, next: any) => prev && typeof next === 'number', true)) {
                 this.delay = {...this.delay, ...settings.delay};
             }
+        }
+
+        if (typeof settings.from === 'number') {
+            this.setFrom(settings.from);
+        }
+
+        if (typeof settings.fixed === 'boolean') {
+            this.setFixed(settings.fixed);
         }
     }
 
