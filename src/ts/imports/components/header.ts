@@ -30,10 +30,11 @@ export class mintHeader {
             fixed: true
         };
         mintSettings.set({ ...defaultSettings, ...settings });
+        
         this.attachElements();
         this.attachEvents();
-        this.enableJavascript();
-
+        this.addClasses();
+        
         this.setMobileMenu();
     }
 
@@ -42,6 +43,7 @@ export class mintHeader {
      */
     attachElements () : void {
         this.el.html = document.querySelector('html');
+        this.el.body = document.querySelector('body');
         this.el.header = document.getElementById(mintSelectors.getId('header'));
         this.el.mobileButton = this.el.header?.querySelector(mintSelectors.controls(mintSelectors.getId('wrapper'))) || null;
         this.el.wrapper = document.getElementById(mintSelectors.getId('wrapper'));
@@ -70,10 +72,10 @@ export class mintHeader {
     }
 
     /**
-     * Adds classes that inform the styles that javascript is enabled
+     * Adds classes that inform the styles 
      */
-    enableJavascript () : void {
-        this.el.header?.classList.add(mintSelectors.getClass('js'));
+    addClasses () : void {
+        this.el.body?.classList.add(mintSelectors.getClass('fixed'));
     }
 
     /**
@@ -222,7 +224,8 @@ export class mintHeader {
      * Closes the mobile menu when the window resizes
      */
     eHandleResize (e: Event) : void {
-        console.log(e, window.innerWidth, mintUtil.windowWidth(), this.lastWidth);
+        //console.log(e, window.innerWidth, mintUtil.windowWidth(), this.lastWidth);
+        // Also check if resized from mobile to desktop
         if (mintUtil.windowWidth() !== this.lastWidth) {
             this.setMobileMenu();
         }

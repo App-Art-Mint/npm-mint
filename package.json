@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App Art Mint LLC",
-  "version": "0.12.12",
+  "version": "0.12.13",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [
@@ -62,7 +62,8 @@
     "build:sassdoc": "sassdoc $npm_package_config_dirs_src/$npm_package_config_dirs_scss -p > $npm_package_config_dirs_doc/sassdoc.json",
     "serve": "webpack serve --config $npm_package_config_webpack",
     "watch": "npm run build -- --watch",
-    "test": "echo '\nRun tests here!\n'"
+    "test": "echo '\nRun tests here!\n'",
+    "relink": "npm r -g @appartmint/mint && npm link"
   },
   "devDependencies": {
     "@appartmint/config": "^0.6.5",
