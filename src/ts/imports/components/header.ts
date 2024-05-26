@@ -75,7 +75,9 @@ export class mintHeader {
      * Adds classes that inform the styles 
      */
     addClasses () : void {
-        this.el.body?.classList.add(mintSelectors.getClass('fixed'));
+        if (mintSettings.fixed) {
+            this.el.body?.classList.add(mintSelectors.getClass('fixed'));
+        }
     }
 
     /**
