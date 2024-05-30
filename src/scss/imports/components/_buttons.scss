@@ -178,8 +178,15 @@ p {
 
 /// A list of buttons
 #{class(buttons)} {
-    @include flex-util();
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
 	gap: 1rem;
+
+	@include break(xs) {
+		justify-content: flex-start;
+	}
 
     & > * {
         width: 100%;
@@ -192,10 +199,6 @@ p {
             width: auto;
         }
     }
-
-	&#{class('even')} {
-		justify-content: space-evenly;
-	}
 
     #{class(buttons)} {
         #{class(pill)} {
