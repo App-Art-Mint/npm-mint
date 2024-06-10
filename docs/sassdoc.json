@@ -378,8 +378,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 888,
-            "end": 915
+            "start": 890,
+            "end": 917
           }
         }
       },
@@ -390,8 +390,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 888,
-            "end": 915
+            "start": 890,
+            "end": 917
           }
         }
       },
@@ -402,8 +402,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 888,
-            "end": 915
+            "start": 890,
+            "end": 917
           }
         }
       },
@@ -414,8 +414,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 888,
-            "end": 915
+            "start": 890,
+            "end": 917
           }
         }
       },
@@ -426,8 +426,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 888,
-            "end": 915
+            "start": 890,
+            "end": 917
           }
         }
       },
@@ -438,8 +438,8 @@
           "name": "headers",
           "code": "\n\t@for $i from 1 through 6 {\n\t\th#{$i},\n\t\t#{class(h#{$i})\n\t}\n\n\t\t{\n\t\t@content;\n\t}\n}\n",
           "line": {
-            "start": 921,
-            "end": 931
+            "start": 923,
+            "end": 933
           }
         }
       },
@@ -448,10 +448,10 @@
         "context": {
           "type": "mixin",
           "name": "states",
-          "code": "\n\t@each $state in $states {\n\t\t@if (type-of($state) != 'string') {\n\t\t\t@error 'The states mixin requires a string for each state argument.';\n\t\t}\n\n\t\t@if not($state == 'hover' or $state == 'focus' or $state == 'active' or $state == 'visited' or $state == 'disabled') {\n\t\t\t@error 'The states mixin requires a string of \"hover\", \"focus\", \"active\", \"visited\", or \"disabled\" for each state argument.';\n\t\t}\n\t}\n\n\t@if (index($states, 'hover') != null) {\n\t\t&:hover {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'focus') != null) {\n\t\t&:focus {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'active') != null) {\n\n\t\t&:active,\n\t\t&#{class(active)} {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'visited') != null) {\n\t\t&:visited {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'disabled') != null) {\n\t\t&:disabled {\n\t\t\t@content;\n\t\t}\n\t}\n",
+          "code": "\n\t@each $state in $states {\n\t\t@if (type-of($state) != 'string') {\n\t\t\t@error 'The states mixin requires a string for each state argument.';\n\t\t}\n\t}\n\n\t@if (index($states, 'hover') != null) {\n\t\t&:hover {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'focus') != null) {\n\t\t&:focus-visible {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'active') != null) {\n\n\t\t&:active,\n\t\t&#{class(active)} {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'visited') != null) {\n\t\t&:visited {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'disabled') != null) {\n\t\t&:disabled {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'expanded') != null) {\n\t\t&#{expanded(true)} {\n\t\t\t@content;\n\t\t}\n\t}\n",
           "line": {
             "start": 840,
-            "end": 882
+            "end": 884
           }
         }
       },
@@ -462,8 +462,8 @@
           "name": "animation",
           "code": "\n\t$animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n\t$this: map.get($animations, &);\n\t$animation: '';\n\n\t& {\n\t\t@each $item in $this {\n\t\t\t@if (list.index($this, $item) != 1) {\n\t\t\t\t$animation: #{$animation},\n\t\t\t\t;\n\t\t\t}\n\n\t\t\t$animation: #{$animation}#{$item};\n\t\t}\n\n\t\tanimation: $animation;\n\n\t\t@each $name,\n\t\t$items in $animations {\n\t\t\t&#{class($name)} {\n\t\t\t\tanimation: $animation;\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 965,
-            "end": 989
+            "start": 967,
+            "end": 991
           }
         }
       }
@@ -637,7 +637,21 @@
     "file": {
       "path": "imports/util/_util.scss",
       "name": "_util.scss"
-    }
+    },
+    "usedBy": [
+      {
+        "description": "TODO: Document this\n",
+        "context": {
+          "type": "mixin",
+          "name": "states",
+          "code": "\n\t@each $state in $states {\n\t\t@if (type-of($state) != 'string') {\n\t\t\t@error 'The states mixin requires a string for each state argument.';\n\t\t}\n\t}\n\n\t@if (index($states, 'hover') != null) {\n\t\t&:hover {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'focus') != null) {\n\t\t&:focus-visible {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'active') != null) {\n\n\t\t&:active,\n\t\t&#{class(active)} {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'visited') != null) {\n\t\t&:visited {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'disabled') != null) {\n\t\t&:disabled {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'expanded') != null) {\n\t\t&#{expanded(true)} {\n\t\t\t@content;\n\t\t}\n\t}\n",
+          "line": {
+            "start": 840,
+            "end": 884
+          }
+        }
+      }
+    ]
   },
   {
     "description": "Creates an aria-hidden selector\n",
@@ -2056,16 +2070,16 @@
   {
     "description": "Generates flex utility classes\n",
     "commentRange": {
-      "start": 884,
-      "end": 887
+      "start": 886,
+      "end": 889
     },
     "context": {
       "type": "mixin",
       "name": "flex-util",
       "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
       "line": {
-        "start": 888,
-        "end": 915
+        "start": 890,
+        "end": 917
       }
     },
     "group": [
@@ -2102,16 +2116,16 @@
   {
     "description": "Selector for all headers\n",
     "commentRange": {
-      "start": 917,
-      "end": 920
+      "start": 919,
+      "end": 922
     },
     "context": {
       "type": "mixin",
       "name": "headers",
       "code": "\n\t@for $i from 1 through 6 {\n\t\th#{$i},\n\t\t#{class(h#{$i})\n\t}\n\n\t\t{\n\t\t@content;\n\t}\n}\n",
       "line": {
-        "start": 921,
-        "end": 931
+        "start": 923,
+        "end": 933
       }
     },
     "group": [
@@ -2133,16 +2147,16 @@
   {
     "description": "Background clip text\n",
     "commentRange": {
-      "start": 934,
-      "end": 937
+      "start": 936,
+      "end": 939
     },
     "context": {
       "type": "mixin",
       "name": "background-clip",
       "code": "\n\tcolor: $color;\n\n\t@supports (-webkit-background-clip: text) and (-webkit-text-fill-color: transparent) {\n\t\tbackground: $color;\n\t\t@content;\n\t\tbackground-clip: text;\n\t\t-webkit-background-clip: text;\n\t\t-webkit-text-fill-color: transparent;\n\t}\n",
       "line": {
-        "start": 938,
-        "end": 948
+        "start": 940,
+        "end": 950
       }
     },
     "group": [
@@ -2357,7 +2371,7 @@
     "context": {
       "type": "css",
       "name": "#{class(card)}",
-      "value": "display: flex;\n\tflex-direction: column;\n\theight: 100%;\n\tmax-width: 100%;\n\tmargin: 0;\n\tborder-radius: $card-radius;\n\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\toverflow: hidden;\n\n\t@include break(sm) {\n\t\tflex-direction: row;\n\n\t\t&#{class(reverse)} {\n\t\t\tflex-direction: row-reverse;\n\t\t}\n\t}\n\n\t&#{class(center)} {\n\t\t#{class(content)} {\n\t\t\t& > * {\n\t\t\t\ttext-align: center;\n\t\t\t}\n\t\t}\n\n\t\t#{class(buttons)} {\n\t\t\tjustify-content: center;\n\t\t}\n\t}\n\n\t&#{class(stagger)} {\n\t\tposition: relative;\n\t\twidth: 100%;\n\n\t\t@include break(sm) {\n\t\t\tflex-direction: row;\n\t\t\twidth: calc(100% + $card-padding * 2);\n\t\t\tborder-radius: 0;\n\t\t\tbox-shadow: none;\n\t\t\toverflow: visible;\n\n\t\t\t& > #{class(image)},\n\t\t\t& > mint-image #{class(image)} {\n\t\t\t\twidth: 50%;\n\t\t\t\theight: fit-content;\n\t\t\t\tmargin-right: $card-padding * -2;\n\t\t\t\tborder-radius: $card-radius;\n\t\t\t\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\n\t\t\t\timg {\n\t\t\t\t\theight: 100%;\n\t\t\t\t\tobject-fit: cover;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t& > #{class(content)} {\n\t\t\t\twidth: 50%;\n\t\t\t\theight: fit-content;\n\t\t\t\tmargin-top: $card-padding * 2;\n\t\t\t\tborder-radius: $card-radius;\n\t\t\t\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\t\t\t}\n\t\t}\n\n\t\t&#{class(reverse)} {\n\t\t\t@include break(sm) {\n\t\t\t\tflex-direction: row-reverse;\n\n\t\t\t\t& > #{class(image)},\n\t\t\t\t& > mint-image #{class(image)} {\n\t\t\t\t\tmargin-right: $card-padding * 2;\n\t\t\t\t\tmargin-left: $card-padding * -2;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t& > #{class(image)}:only-child,\n\t& > mint-image:only-child #{class(image)} {\n\t\twidth: 100%;\n\t}\n\n\t& > #{class(image)},\n\t& > mint-image #{class(image)} {\n\t\toverflow: hidden;\n\n\t\t@include break(sm) {\n\t\t\twidth: 50%;\n\t\t}\n\n\t\t&+#{class(content)} {\n\t\t\t@include break(sm) {\n\t\t\t\twidth: 50%;\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(content)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tgap: math.div($grid-gap, 2);\n\t\tposition: relative;\n\t\tpadding: $card-padding;\n\t\tbackground: css-var($card-bg-color);\n\t\twidth: 100%;\n\t\toverflow: hidden;\n\n\t\t& > * {\n\t\t\tmargin-top: 0;\n\t\t\tmargin-bottom: 0;\n\t\t}\n\t}\n\n\t#{class(title)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\theight: fit-content;\n\t\tgap: $card-padding;\n\n\t\t@include break(xs) {\n\t\t\tflex-direction: row;\n\t\t}\n\n\t\t&:only-child {\n\t\t\theight: 100%;\n\t\t}\n\n\t\t& > #{class(image)},\n\t\t& > mint-image #{class(image)} {\n\t\t\twidth: 100%;\n\t\t\theight: 100%;\n\t\t\tmax-width: $card-logo-size;\n\t\t\tmax-height: $card-logo-size;\n\n\t\t\t&#{class(large)} {\n\t\t\t\tmax-width: $card-logo-size * 2;\n\t\t\t\tmax-height: $card-logo-size * 2;\n\t\t\t}\n\n\t\t\timg {\n\t\t\t\tdisplay: block;\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 100%;\n\t\t\t\tobject-fit: contain;\n\t\t\t}\n\t\t}\n\n\t\ti {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tmin-width: $card-logo-size;\n\t\t\tmax-width: $card-logo-size;\n\t\t\tfont-size: calc($card-logo-size - 1rem);\n\t\t}\n\n\t\t& > div {\n\t\t\twidth: 100%;\n\n\t\t\t& > * {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t}\n\t}",
+      "value": "display: flex;\n\tflex-direction: column;\n\theight: 100%;\n\tmax-width: 100%;\n\tmargin: 0;\n\tborder-radius: $card-radius;\n\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\toverflow: hidden;\n\n\t@include break(sm) {\n\t\tflex-direction: row;\n\n\t\t&#{class(reverse)} {\n\t\t\tflex-direction: row-reverse;\n\t\t}\n\t}\n\n\t&#{class(center)} {\n\t\t#{class(content)} {\n\t\t\t& > * {\n\t\t\t\ttext-align: center;\n\t\t\t}\n\t\t}\n\n\t\t#{class(buttons)} {\n\t\t\tjustify-content: center;\n\t\t}\n\t}\n\n\t&#{class(stagger)} {\n\t\tposition: relative;\n\t\twidth: 100%;\n\n\t\t@include break(sm) {\n\t\t\tflex-direction: row;\n\t\t\twidth: calc(100% + $card-padding * 2);\n\t\t\tborder-radius: 0;\n\t\t\tbox-shadow: none;\n\t\t\toverflow: visible;\n\n\t\t\t& > #{class(image)},\n\t\t\t& > mint-image #{class(image)} {\n\t\t\t\twidth: calc(50% + $card-padding);\n\t\t\t\theight: fit-content;\n\t\t\t\tmargin-right: $card-padding * -2;\n\t\t\t\tborder-radius: $card-radius;\n\t\t\t\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\n\t\t\t\timg {\n\t\t\t\t\theight: 100%;\n\t\t\t\t\tobject-fit: cover;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t& > #{class(content)} {\n\t\t\t\twidth: calc(50% + $card-padding);\n\t\t\t\theight: fit-content;\n\t\t\t\tmargin-top: $card-padding * 2;\n\t\t\t\tborder-radius: $card-radius;\n\t\t\t\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\t\t\t}\n\t\t}\n\n\t\t&#{class(reverse)} {\n\t\t\t@include break(sm) {\n\t\t\t\tflex-direction: row-reverse;\n\n\t\t\t\t& > #{class(image)},\n\t\t\t\t& > mint-image #{class(image)} {\n\t\t\t\t\tmargin-right: 0;\n\t\t\t\t\tmargin-left: $card-padding * -2;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t& > #{class(image)}:only-child,\n\t& > mint-image:only-child #{class(image)} {\n\t\twidth: 100%;\n\t}\n\n\t& > #{class(image)},\n\t& > mint-image #{class(image)} {\n\t\toverflow: hidden;\n\n\t\t@include break(sm) {\n\t\t\twidth: 50%;\n\t\t}\n\n\t\t&+#{class(content)} {\n\t\t\t@include break(sm) {\n\t\t\t\twidth: 50%;\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(content)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tgap: math.div($grid-gap, 2);\n\t\tposition: relative;\n\t\tpadding: $card-padding;\n\t\tbackground: css-var($card-bg-color);\n\t\twidth: 100%;\n\t\toverflow: hidden;\n\n\t\t& > * {\n\t\t\tmargin-top: 0;\n\t\t\tmargin-bottom: 0;\n\t\t}\n\t}\n\n\t#{class(title)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\theight: fit-content;\n\t\tgap: $card-padding;\n\n\t\t@include break(xs) {\n\t\t\tflex-direction: row;\n\t\t}\n\n\t\t&:only-child {\n\t\t\theight: 100%;\n\t\t}\n\n\t\t& > #{class(image)},\n\t\t& > mint-image #{class(image)} {\n\t\t\twidth: 100%;\n\t\t\theight: 100%;\n\t\t\tmax-width: $card-logo-size;\n\t\t\tmax-height: $card-logo-size;\n\n\t\t\t&#{class(large)} {\n\t\t\t\tmax-width: $card-logo-size * 2;\n\t\t\t\tmax-height: $card-logo-size * 2;\n\t\t\t}\n\n\t\t\timg {\n\t\t\t\tdisplay: block;\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 100%;\n\t\t\t\tobject-fit: contain;\n\t\t\t}\n\t\t}\n\n\t\ti {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tmin-width: $card-logo-size;\n\t\t\tmax-width: $card-logo-size;\n\t\t\tfont-size: calc($card-logo-size - 1rem);\n\t\t}\n\n\t\t& > div {\n\t\t\twidth: 100%;\n\n\t\t\t& > * {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t}\n\t}",
       "line": {
         "start": 12,
         "end": 219
@@ -2432,7 +2446,7 @@
       "value": "@include css-var(header-height, $header-height);\n\t@include css-var-ref(header-back, $header-back);\n\t@include css-var-ref(header-fore, $header-fore);",
       "line": {
         "start": 12,
-        "end": 313
+        "end": 404
       }
     },
     "access": "public",
@@ -2453,10 +2467,10 @@
     "context": {
       "type": "css",
       "name": "#{id(header)}",
-      "value": "position: relative;\n\twidth: 100%;\n\tcolor: css-var(header-fore);\n\tbackground-color: css-var(header-back);\n\tz-index: 10000;\n\theight: css-var(header-height);\n\t//padding: 0 calc(css-var(header-height) / 2);\n\n\t&#{class(right)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: css-var(header-height);\n\t\t\tright: -100%;\n\t\t\tleft: unset;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tright: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(bottom)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: unset;\n\t\t\tbottom: -100%;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tbottom: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(left)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: css-var(header-height);\n\t\t\tleft: -100%;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tleft: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&::before {\n\t\tcontent: '';\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: css-var(header-height);\n\t\tbackground: css-var(header-back);\n\t\tz-index: -1;\n\t}\n\n\tnav {\n\t\t&>ul {\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t}\n\t}\n\n\tul {\n\t\tlist-style: none;\n\t\tmargin-top: 0;\n\t\tmargin-bottom: 1rem;\n\t\tpadding-left: 0;\n\t}\n\n\ta,\n\tbutton {\n\t\twidth: 100%;\n\t\tmargin: 0;\n\t\tborder: 0;\n\t\tcolor: css-var($header-link-fore);\n\t\tbackground: css-var(trans);\n\t\ttransition-property: color, background;\n\t\ttransition-duration: css-var(delay-default);\n\n\t\t@include states(hover) {\n\t\t\tcolor: css-var($header-link-fore-hover);\n\t\t}\n\t}\n\n\th1 {\n\t\tdisplay: flex;\n\t\twhite-space: nowrap;\n\t\tmargin: 0;\n\t}\n\n\t#{id(navbar)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\tflex-direction: row;\n\t\theight: 100%;\n\t}\n\n\t#{class(logo)} {\n\t\ttext-decoration: none;\n\t\twidth: auto;\n\n\t\timg {\n\t\t\tmax-width: css-var(header-height);\n\t\t}\n\t}\n\n\t#{controls(wrapper)} {\n\t\tdisplay: inline-block;\n\t\tposition: relative;\n\t\tpadding: $menu-btn-padding;\n\t\twidth: $menu-bar-width + $menu-btn-padding * 2;\n\t\theight: $menu-btn-height + $menu-btn-padding * 2;\n\t\tborder-radius: $border-radius;\n\t\tbackground: css-var($menu-btn-color);\n\t\tbox-shadow: $menu-btn-shadow-size css-var($menu-btn-shadow-color);\n\t\tz-index: 1000;\n\n\t\t@include states(hover) {\n\t\t\t#{class(menu-icon)} {\n\t\t\t\t&, &::before, &::after {\n\t\t\t\t\tbackground-color: css-var($header-link-fore-hover);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t#{class(menu-icon)} {\n\t\t\ttop: 50%;\n\t\t\tleft: 50%;\n\t\t\ttransform: translate(-50%, -50%);\n\n\t\t\t&,\n\t\t\t&::before,\n\t\t\t&::after {\n\t\t\t\tcontent: '';\n\t\t\t\tdisplay: block;\n\t\t\t\tposition: absolute;\n\t\t\t\tleft: 50%;\n\t\t\t\theight: $menu-bar-height;\n\t\t\t\twidth: $menu-bar-width;\n\t\t\t\tbackground-color: css-var($menu-bar-color);\n\t\t\t\ttransition: delay(default);\n\t\t\t}\n\n\t\t\t&::before {\n\t\t\t\ttransform: translate(-50%, -200%);\n\t\t\t}\n\n\t\t\t&::after {\n\t\t\t\ttransform: translate(-50%, 200%);\n\t\t\t}\n\t\t}\n\n\t\t&#{expanded(true)} {\n\t\t\t#{class(menu-icon)} {\n\t\t\t\tbackground: transparent;\n\n\t\t\t\t&::before {\n\t\t\t\t\ttransform: translate(-50%, 0) rotate(45deg);\n\t\t\t\t}\n\n\t\t\t\t&::after {\n\t\t\t\t\ttransform: translate(-50%, 0) rotate(-45deg);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t#{id(wrapper)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tposition: fixed;\n\t\ttop: -100%;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: calc(100vh - css-var(header-height));\n\t\theight: calc(100dvh - css-var(header-height));\n\t\tz-index: -2;\n\t\tbackground: css-var(header-back);\n\t\ttransition-duration: css-var(delay-default);\n\t\ttransition-property: top, right, bottom, left;\n\t\toverflow: auto;\n\n\t\t&#{class(open)} {\n\t\t\ttop: css-var(header-height);\n\t\t}\n\n\t\tnav {\n\t\t\theight: 100%;\n\t\t\tbackground: css-var(back);\n\t\t\toverflow: auto;\n\t\t\tbackground-repeat: repeat;\n\n\t\t\t@include break(xl) {\n\t\t\t\tdisplay: flex;\n\t\t\t\talign-items: center;\n\t\t\t\tjustify-content: center;\n\t\t\t}\n\n\t\t\t&> :last-child {\n\t\t\t\tmargin-bottom: 0;\n\t\t\t}\n\n\t\t\t&>ul {\n\t\t\t\t@include break(xl) {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tflex-direction: row;\n\t\t\t\t\tflex-wrap: wrap;\n\t\t\t\t\tjustify-content: space-evenly;\n\t\t\t\t\twidth: 100%;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\ta,\n\t\tbutton {\n\t\t\tfont-family: $font-secondary, $font-backups !important;\n\t\t\tfont-size: 3em;\n\t\t\tpadding: 0.5rem;\n\t\t\ttext-align: center;\n\n\t\t\t@include break(xs) {\n\t\t\t\tfont-size: 4em;\n\t\t\t}\n\n\t\t\t@include states(hover, focus) {\n\t\t\t\tbackground-color: css-var(shadow-5);\n\t\t\t}\n\n\t\t\t@include states(active) {\n\t\t\t\ttext-decoration: underline;\n\t\t\t}\n\t\t}\n\n\t\tul {\n\t\t\tli {\n\t\t\t\t&:last-child {\n\t\t\t\t\tmargin-bottom: 0;\n\n\t\t\t\t\tul {\n\t\t\t\t\t\tmargin-bottom: 0;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(buttons)} {\n\t\tflex-wrap: nowrap;\n\t\tjustify-content: flex-end;\n\t\twidth: 100%;\n\t\t\n\t\ta, button {\n\t\t\t&#{neg(controls(wrapper))} {\n\t\t\t\tdisplay: flex;\n\t\t\t\twidth: auto;\n\t\t\t\tpadding: 0.5rem;\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(dropdown)} {\n\t\tbackground: css-var(header-back);\n\n\t\tbutton {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tmin-width: css-var(header-height);\n\t\t\theight: css-var(header-height);\n\t\t\tpadding: calc(css-var(header-height) / 2);\n\t\t}\n\n\t\tli {\n\t\t\tpadding: calc(css-var(header-height) / 2);\n\t\t\tline-height: 1;\n\t\t\tcursor: pointer;\n\t\t}\n\t}\n\n\t#{$has-controls + neg(controls(wrapper))} {\n\t\t&+ul {\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t\theight: 0;\n\t\t\toverflow: hidden;\n\t\t\ttransition: height css-var(delay-default), margin css-var(delay-default);\n\t\t}\n\n\t\t&#{$has-expanded + neg(expanded(true))} {\n\t\t\t&+ul {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t}\n\t}",
+      "value": "position: relative;\n\twidth: 100%;\n\tcolor: css-var(header-fore);\n\tbackground-color: css-var(header-back);\n\tz-index: 10000;\n\theight: css-var(header-height);\n\t//padding: 0 calc(css-var(header-height) / 2);\n\n\t&#{class(right)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: css-var(header-height);\n\t\t\tright: -100%;\n\t\t\tleft: unset;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tright: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(bottom)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: unset;\n\t\t\tbottom: -100%;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tbottom: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(left)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: css-var(header-height);\n\t\t\tleft: -100%;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tleft: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(expand)} {\n\t\t@include break(sm) {\n\t\t\t#{class(buttons)} {\n\t\t\t\twidth: auto;\n\n\t\t\t\t#{controls(wrapper)} {\n\t\t\t\t\tdisplay: none;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t#{id(wrapper)} {\n\t\t\t\tposition: static;\n\t\t\t\tdisplay: flex !important;\n\t\t\t\theight: 100%;\n\t\t\t\tpadding: 0;\n\t\t\t\tz-index: 0;\n\n\t\t\t\t&,\n\t\t\t\t& nav {\n\t\t\t\t\tbackground: css-var(glow-0) !important;\n\t\t\t\t\toverflow: visible;\n\t\t\t\t}\n\n\t\t\t\tnav {\n\t\t\t\t\tborder: none;\n\n\t\t\t\t\t&>ul {\n\t\t\t\t\t\tflex-direction: row;\n\t\t\t\t\t\tjustify-content: flex-end;\n\t\t\t\t\t\tflex-wrap: nowrap;\n\n\t\t\t\t\t\t&>li {\n\t\t\t\t\t\t\tposition: relative;\n\t\t\t\t\t\t\twidth: 100%;\n\t\t\t\t\t\t\tmax-width: 200px;\n\t\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t\t\tbutton,\n\t\t\t\t\t\t\tul {\n\t\t\t\t\t\t\t\twidth: 100%;\n\t\t\t\t\t\t\t\tmax-width: 200px;\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tbutton {\n\t\t\t\t\t\t\t\tfont-size: 1.5rem;\n\n\t\t\t\t\t\t\t\t$arrow-size: 1rem;\n\t\t\t\t\t\t\t\t$arrow-margin: 1rem;\n\t\t\t\t\t\t\t\tpadding-right: $arrow-margin + $arrow-size;\n\n\t\t\t\t\t\t\t\t&::after {\n\t\t\t\t\t\t\t\t\tcontent: '\\f054';\n\t\t\t\t\t\t\t\t\tfont-family: 'Font Awesome 6 Pro';\n\t\t\t\t\t\t\t\t\tfont-weight: 900;\n\t\t\t\t\t\t\t\t\tfont-size: $arrow-size;\n\t\t\t\t\t\t\t\t\tposition: absolute;\n\t\t\t\t\t\t\t\t\ttop: 50%;\n\t\t\t\t\t\t\t\t\ttransform: translateY(-50%);\n\t\t\t\t\t\t\t\t\tmargin-left: $arrow-margin;\n\t\t\t\t\t\t\t\t\ttransition: transform css-var(delay-default);\n\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t@include states(hover, focus, expanded) {\n\t\t\t\t\t\t\t\t\t&::after {\n\t\t\t\t\t\t\t\t\t\ttransform: translateY(-50%) rotate(90deg);\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tul {\n\t\t\t\t\t\t\t\tposition: absolute;\n\t\t\t\t\t\t\t\ttop: 100%;\n\t\t\t\t\t\t\t\tleft: 50%;\n\t\t\t\t\t\t\t\ttransform: translateX(-50%);\n\t\t\t\t\t\t\t\tbackground-color: css-var($header-back);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\ta {\n\t\t\t\t\tfont-size: 1.25rem;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t&::before {\n\t\tcontent: '';\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: css-var(header-height);\n\t\tbackground: css-var(header-back);\n\t\tz-index: -1;\n\t}\n\n\tnav {\n\t\t&>ul {\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t}\n\t}\n\n\tul {\n\t\tlist-style: none;\n\t\tmargin-top: 0;\n\t\tmargin-bottom: 1rem;\n\t\tpadding-left: 0;\n\t}\n\n\ta,\n\tbutton {\n\t\twidth: 100%;\n\t\tmargin: 0;\n\t\tborder: 0;\n\t\tcolor: css-var($header-link-fore);\n\t\tbackground: css-var(trans);\n\t\ttransition-property: color, background;\n\t\ttransition-duration: css-var(delay-default);\n\n\t\t@include states(hover) {\n\t\t\tcolor: css-var($header-link-fore-hover);\n\t\t}\n\t}\n\n\th1 {\n\t\tdisplay: flex;\n\t\twhite-space: nowrap;\n\t\tmargin: 0;\n\t}\n\n\t#{id(navbar)} {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tflex-direction: row;\n\t\theight: 100%;\n\t}\n\n\t#{class(logo)} {\n\t\ttext-decoration: none;\n\t\twidth: auto;\n\n\t\timg {\n\t\t\tmax-width: css-var(header-height);\n\t\t}\n\t}\n\n\t#{controls(wrapper)} {\n\t\tdisplay: inline-block;\n\t\tposition: relative;\n\t\tpadding: $menu-btn-padding;\n\t\twidth: $menu-bar-width + $menu-btn-padding * 2;\n\t\theight: $menu-btn-height + $menu-btn-padding * 2;\n\t\tborder-radius: $border-radius;\n\t\tbackground: css-var($menu-btn-color);\n\t\tbox-shadow: $menu-btn-shadow-size css-var($menu-btn-shadow-color);\n\t\tz-index: 1000;\n\n\t\t@include states(hover) {\n\t\t\t#{class(menu-icon)} {\n\n\t\t\t\t&,\n\t\t\t\t&::before,\n\t\t\t\t&::after {\n\t\t\t\t\tbackground-color: css-var($header-link-fore-hover);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t#{class(menu-icon)} {\n\t\t\ttop: 50%;\n\t\t\tleft: 50%;\n\t\t\ttransform: translate(-50%, -50%);\n\n\t\t\t&,\n\t\t\t&::before,\n\t\t\t&::after {\n\t\t\t\tcontent: '';\n\t\t\t\tdisplay: block;\n\t\t\t\tposition: absolute;\n\t\t\t\tleft: 50%;\n\t\t\t\theight: $menu-bar-height;\n\t\t\t\twidth: $menu-bar-width;\n\t\t\t\tbackground-color: css-var($menu-bar-color);\n\t\t\t\ttransition: delay(default);\n\t\t\t}\n\n\t\t\t&::before {\n\t\t\t\ttransform: translate(-50%, -200%);\n\t\t\t}\n\n\t\t\t&::after {\n\t\t\t\ttransform: translate(-50%, 200%);\n\t\t\t}\n\t\t}\n\n\t\t&#{expanded(true)} {\n\t\t\t#{class(menu-icon)} {\n\t\t\t\tbackground: transparent;\n\n\t\t\t\t&::before {\n\t\t\t\t\ttransform: translate(-50%, 0) rotate(45deg);\n\t\t\t\t}\n\n\t\t\t\t&::after {\n\t\t\t\t\ttransform: translate(-50%, 0) rotate(-45deg);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t#{id(wrapper)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tposition: fixed;\n\t\ttop: -100%;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: calc(100vh - css-var(header-height));\n\t\theight: calc(100dvh - css-var(header-height));\n\t\tz-index: -2;\n\t\tbackground: css-var(header-back);\n\t\ttransition-duration: css-var(delay-default);\n\t\ttransition-property: top, right, bottom, left;\n\t\toverflow: auto;\n\n\t\t&#{class(open)} {\n\t\t\ttop: css-var(header-height);\n\t\t}\n\n\t\tnav {\n\t\t\theight: 100%;\n\t\t\tbackground: css-var(back);\n\t\t\toverflow: auto;\n\t\t\tbackground-repeat: repeat;\n\n\t\t\t@include break(xl) {\n\t\t\t\tdisplay: flex;\n\t\t\t\talign-items: center;\n\t\t\t\tjustify-content: center;\n\t\t\t}\n\n\t\t\t&> :last-child {\n\t\t\t\tmargin-bottom: 0;\n\t\t\t}\n\n\t\t\t&>ul {\n\t\t\t\t@include break(xl) {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tflex-direction: row;\n\t\t\t\t\tflex-wrap: wrap;\n\t\t\t\t\tjustify-content: space-evenly;\n\t\t\t\t\twidth: 100%;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\ta,\n\t\tbutton {\n\t\t\tfont-family: $font-secondary, $font-backups !important;\n\t\t\tfont-size: 3em;\n\t\t\tpadding: 0.5rem;\n\t\t\ttext-align: center;\n\n\t\t\t@include break(xs) {\n\t\t\t\tfont-size: 4em;\n\t\t\t}\n\n\t\t\t@include states(hover, focus) {\n\t\t\t\tbackground-color: css-var(shadow-5);\n\t\t\t\tcolor: css-var($header-link-fore-hover);\n\t\t\t}\n\n\t\t\t@include states(active) {\n\t\t\t\ttext-decoration: underline;\n\t\t\t}\n\t\t}\n\n\t\tul {\n\t\t\tli {\n\t\t\t\t&:last-child {\n\t\t\t\t\tmargin-bottom: 0;\n\n\t\t\t\t\tul {\n\t\t\t\t\t\tmargin-bottom: 0;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(buttons)} {\n\t\tflex-wrap: nowrap;\n\t\tjustify-content: flex-end;\n\t\twidth: 100%;\n\n\t\ta,\n\t\tbutton {\n\t\t\t&#{neg(controls(wrapper))} {\n\t\t\t\tdisplay: flex;\n\t\t\t\twidth: auto;\n\t\t\t\tpadding: 0.5rem;\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(dropdown)} {\n\t\tbackground: css-var(header-back);\n\n\t\tbutton {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tmin-width: css-var(header-height);\n\t\t\theight: css-var(header-height);\n\t\t\tpadding: calc(css-var(header-height) / 2);\n\t\t}\n\n\t\tli {\n\t\t\tpadding: calc(css-var(header-height) / 2);\n\t\t\tline-height: 1;\n\t\t\tcursor: pointer;\n\t\t}\n\t}\n\n\t#{$has-controls + neg(controls(wrapper))} {\n\t\t&+ul {\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t\theight: 0;\n\t\t\toverflow: hidden;\n\t\t\ttransition: height css-var(delay-default), margin css-var(delay-default);\n\t\t}\n\n\t\t&#{$has-expanded + neg(expanded(true))} {\n\t\t\t&+ul {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t}\n\t}",
       "line": {
         "start": 19,
-        "end": 313
+        "end": 404
       }
     },
     "access": "public",
@@ -2936,10 +2950,10 @@
     "context": {
       "type": "mixin",
       "name": "states",
-      "code": "\n\t@each $state in $states {\n\t\t@if (type-of($state) != 'string') {\n\t\t\t@error 'The states mixin requires a string for each state argument.';\n\t\t}\n\n\t\t@if not($state == 'hover' or $state == 'focus' or $state == 'active' or $state == 'visited' or $state == 'disabled') {\n\t\t\t@error 'The states mixin requires a string of \"hover\", \"focus\", \"active\", \"visited\", or \"disabled\" for each state argument.';\n\t\t}\n\t}\n\n\t@if (index($states, 'hover') != null) {\n\t\t&:hover {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'focus') != null) {\n\t\t&:focus {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'active') != null) {\n\n\t\t&:active,\n\t\t&#{class(active)} {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'visited') != null) {\n\t\t&:visited {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'disabled') != null) {\n\t\t&:disabled {\n\t\t\t@content;\n\t\t}\n\t}\n",
+      "code": "\n\t@each $state in $states {\n\t\t@if (type-of($state) != 'string') {\n\t\t\t@error 'The states mixin requires a string for each state argument.';\n\t\t}\n\t}\n\n\t@if (index($states, 'hover') != null) {\n\t\t&:hover {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'focus') != null) {\n\t\t&:focus-visible {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'active') != null) {\n\n\t\t&:active,\n\t\t&#{class(active)} {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'visited') != null) {\n\t\t&:visited {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'disabled') != null) {\n\t\t&:disabled {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'expanded') != null) {\n\t\t&#{expanded(true)} {\n\t\t\t@content;\n\t\t}\n\t}\n",
       "line": {
         "start": 840,
-        "end": 882
+        "end": 884
       }
     },
     "access": "public",
@@ -2951,11 +2965,14 @@
       {
         "type": "function",
         "name": "class"
+      },
+      {
+        "type": "function",
+        "name": "expanded"
       }
     ],
     "throw": [
-      "The states mixin requires a string for each state argument.",
-      "The states mixin requires a string of "
+      "The states mixin requires a string for each state argument."
     ],
     "file": {
       "path": "imports/util/_util.scss",
@@ -2965,16 +2982,16 @@
   {
     "description": "Mixins\nRegister an animation\n",
     "commentRange": {
-      "start": 963,
-      "end": 964
+      "start": 965,
+      "end": 966
     },
     "context": {
       "type": "mixin",
       "name": "animation",
       "code": "\n\t$animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n\t$this: map.get($animations, &);\n\t$animation: '';\n\n\t& {\n\t\t@each $item in $this {\n\t\t\t@if (list.index($this, $item) != 1) {\n\t\t\t\t$animation: #{$animation},\n\t\t\t\t;\n\t\t\t}\n\n\t\t\t$animation: #{$animation}#{$item};\n\t\t}\n\n\t\tanimation: $animation;\n\n\t\t@each $name,\n\t\t$items in $animations {\n\t\t\t&#{class($name)} {\n\t\t\t\tanimation: $animation;\n\t\t\t}\n\t\t}\n\t}\n",
       "line": {
-        "start": 965,
-        "end": 989
+        "start": 967,
+        "end": 991
       }
     },
     "access": "public",
@@ -2995,16 +3012,16 @@
   {
     "description": "Register a transition\n",
     "commentRange": {
-      "start": 991,
-      "end": 991
+      "start": 993,
+      "end": 993
     },
     "context": {
       "type": "mixin",
       "name": "transition",
       "code": "\n\t$transitions: map-merge($transitions, ($name: $transition));\n",
       "line": {
-        "start": 992,
-        "end": 994
+        "start": 994,
+        "end": 996
       }
     },
     "access": "public",
@@ -3492,7 +3509,7 @@
       "value": "Number",
       "line": {
         "start": 103,
-        "end": 995
+        "end": 997
       }
     },
     "author": [
