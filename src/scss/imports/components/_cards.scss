@@ -52,7 +52,7 @@
 
 			& > #{class(image)},
 			& > mint-image #{class(image)} {
-				width: 50%;
+				width: calc(50% + $card-padding);
 				height: fit-content;
 				margin-right: $card-padding * -2;
 				border-radius: $card-radius;
@@ -65,7 +65,7 @@
 			}
 
 			& > #{class(content)} {
-				width: 50%;
+				width: calc(50% + $card-padding);
 				height: fit-content;
 				margin-top: $card-padding * 2;
 				border-radius: $card-radius;
@@ -79,7 +79,7 @@
 
 				& > #{class(image)},
 				& > mint-image #{class(image)} {
-					margin-right: $card-padding * 2;
+					margin-right: 0;
 					margin-left: $card-padding * -2;
 				}
 			}

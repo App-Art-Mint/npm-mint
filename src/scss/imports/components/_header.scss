@@ -59,6 +59,93 @@
 		}
 	}
 
+	&#{class(expand)} {
+		@include break(sm) {
+			#{class(buttons)} {
+				width: auto;
+
+				#{controls(wrapper)} {
+					display: none;
+				}
+			}
+
+			#{id(wrapper)} {
+				position: static;
+				display: flex !important;
+				height: 100%;
+				padding: 0;
+				z-index: 0;
+
+				&,
+				& nav {
+					background: css-var(glow-0) !important;
+					overflow: visible;
+				}
+
+				nav {
+					border: none;
+
+					&>ul {
+						flex-direction: row;
+						justify-content: flex-end;
+						flex-wrap: nowrap;
+
+						&>li {
+							position: relative;
+							width: 100%;
+							max-width: 200px;
+							text-align: center;
+
+							button,
+							ul {
+								width: 100%;
+								max-width: 200px;
+							}
+
+							button {
+								font-size: 1.5rem;
+
+								$arrow-size: 1rem;
+								$arrow-margin: 1rem;
+								padding-right: $arrow-margin + $arrow-size;
+
+								&::after {
+									content: '\f054';
+									font-family: 'Font Awesome 6 Pro';
+									font-weight: 900;
+									font-size: $arrow-size;
+									position: absolute;
+									top: 50%;
+									transform: translateY(-50%);
+									margin-left: $arrow-margin;
+									transition: transform css-var(delay-default);
+								}
+
+								@include states(hover, focus, expanded) {
+									&::after {
+										transform: translateY(-50%) rotate(90deg);
+									}
+								}
+							}
+
+							ul {
+								position: absolute;
+								top: 100%;
+								left: 50%;
+								transform: translateX(-50%);
+								background-color: css-var($header-back);
+							}
+						}
+					}
+				}
+
+				a {
+					font-size: 1.25rem;
+				}
+			}
+		}
+	}
+
 	&::before {
 		content: '';
 		position: absolute;
@@ -107,7 +194,6 @@
 
 	#{id(navbar)} {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		flex-direction: row;
 		height: 100%;
@@ -135,7 +221,10 @@
 
 		@include states(hover) {
 			#{class(menu-icon)} {
-				&, &::before, &::after {
+
+				&,
+				&::before,
+				&::after {
 					background-color: css-var($header-link-fore-hover);
 				}
 			}
@@ -242,6 +331,7 @@
 
 			@include states(hover, focus) {
 				background-color: css-var(shadow-5);
+				color: css-var($header-link-fore-hover);
 			}
 
 			@include states(active) {
@@ -266,8 +356,9 @@
 		flex-wrap: nowrap;
 		justify-content: flex-end;
 		width: 100%;
-		
-		a, button {
+
+		a,
+		button {
 			&#{neg(controls(wrapper))} {
 				display: flex;
 				width: auto;

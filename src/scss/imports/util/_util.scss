@@ -842,10 +842,6 @@ $bootstrap5: false !default;
 		@if (type-of($state) != 'string') {
 			@error 'The states mixin requires a string for each state argument.';
 		}
-
-		@if not($state == 'hover' or $state == 'focus' or $state == 'active' or $state == 'visited' or $state == 'disabled') {
-			@error 'The states mixin requires a string of "hover", "focus", "active", "visited", or "disabled" for each state argument.';
-		}
 	}
 
 	@if (index($states, 'hover') != null) {
@@ -855,7 +851,7 @@ $bootstrap5: false !default;
 	}
 
 	@if (index($states, 'focus') != null) {
-		&:focus {
+		&:focus-visible {
 			@content;
 		}
 	}
@@ -876,6 +872,12 @@ $bootstrap5: false !default;
 
 	@if (index($states, 'disabled') != null) {
 		&:disabled {
+			@content;
+		}
+	}
+
+	@if (index($states, 'expanded') != null) {
+		&#{expanded(true)} {
 			@content;
 		}
 	}

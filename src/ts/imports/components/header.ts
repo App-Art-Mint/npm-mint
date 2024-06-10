@@ -106,12 +106,30 @@ export class mintHeader {
                     this.el.html.style.overflow = 'hidden';
                 }
             }, mintSettings.from === mintSide.Left ? mintSettings.delay.default : mintSettings.delay.instant);
-            this.el.wrapper?.classList.add(mintSelectors.getClass('open'));
+            if (this.el.wrapper) {
+                this.el.wrapper.style.display = 'flex';
+            }
+            requestAnimationFrame(() => {
+                this.el.wrapper?.classList.add(mintSelectors.getClass('open'));
+            });
         } else {
             if (this.el.html) {
                 this.el.html.style.overflow = 'auto';
             }
             this.el.wrapper?.classList.remove(mintSelectors.getClass('open'));
+            
+            const onTransitionEnd = () => {
+                if (this.el.wrapper) {
+                    this.el.wrapper.style.display = 'none';
+                    this.el.wrapper.removeEventListener('transitionend', onTransitionEnd);
+                }
+            };
+            if (typeof this.el.wrapper?.style.transition !== 'undefined') {
+                this.el.wrapper.addEventListener('transitionend', onTransitionEnd);
+            } else {
+                setTimeout(onTransitionEnd, mintSettings.delay.default);
+            }
+
             this.closeAllMenus();
         }
     }
@@ -161,6 +179,20 @@ export class mintHeader {
         subMenus.forEach((child: HTMLElement) => {
             // setMenu calls this function, so ignore subsub menus
             if (child.parentElement?.parentElement === menu) {
+                this.setMenu(child);
+            }
+        });
+    }
+
+    /**
+     * Closes all sibling menus of the provided button's menu
+     * @param button - Button element of the sibling menus
+     */
+    closeSiblingMenus (button?: HTMLElement | null) : void {
+        let menu: HTMLElement | null | undefined = button?.parentElement as HTMLElement,
+            siblingMenus: NodeListOf<HTMLElement> = menu?.parentElement?.querySelectorAll(mintSelectors.subMenuButtons) as NodeListOf<HTMLElement>;
+        siblingMenus.forEach((child: HTMLElement) => {
+            if (child !== button) {
                 this.setMenu(child);
             }
         });
@@ -331,7 +363,9 @@ export class mintHeader {
      * @param e - Mouse event
      */
     eToggleMenu (e: MouseEvent) : void {
-        this.toggleMenu(e.target as HTMLElement | null);
+        let target = e.target as HTMLElement | null;
+        this.closeSiblingMenus(target);
+        this.toggleMenu(target);
     }
 }
 export default mintHeader;
