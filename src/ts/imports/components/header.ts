@@ -65,10 +65,10 @@ export class mintHeader {
 
         let menuButtons: NodeListOf<HTMLElement> | undefined = this.el.header?.querySelectorAll(mintSelectors.controls() + mintSelectors.neg(mintSelectors.controls(mintSelectors.ids.wrapper as string)));
         menuButtons?.forEach((menuButton: HTMLElement) => {
-            menuButton.addEventListener('mousedown', mintUtil.throttleEvent(this.eToggleMenu.bind(this), mintSettings.delay.slow, { trailing: false }));
+            menuButton.addEventListener('click', mintUtil.throttleEvent(this.eToggleMenu.bind(this), mintSettings.delay.slow, { trailing: false }));
         });
 
-        this.el.mobileButton?.addEventListener('mousedown', mintUtil.throttleEvent(this.eToggleMobileMenu.bind(this), mintSettings.delay.slow, { trailing: false }));
+        this.el.mobileButton?.addEventListener('click', mintUtil.throttleEvent(this.eToggleMobileMenu.bind(this), mintSettings.delay.slow, { trailing: false }));
     }
 
     /**
@@ -291,8 +291,8 @@ export class mintHeader {
      * @param e - Keyboard event
      */
     eHandleButtonKeypress (e: KeyboardEvent) : void {
-        let target = e.target as HTMLElement,
-            subMenu = target.closest('li');
+        let target = e.target as HTMLElement | null,
+            subMenu = target?.closest('li');
         switch (e.key.toLowerCase()) {
             case 'escape':
                 if (subMenu?.classList.contains(mintSelectors.classes.open as string)) {
@@ -305,9 +305,11 @@ export class mintHeader {
                 this.closeClosestMenu();
                 break;
             case 'arrowright':
+                this.openClosestMenu();
                 break;
             case 'enter':
             case 'space':
+                target?.click();
                 break;
         }
     }
@@ -317,6 +319,7 @@ export class mintHeader {
      * @param e - Keyboard event
      */
     eHandleLinkKeypress (e: KeyboardEvent) : void {
+        let target = e.target as HTMLElement | null;
         switch (e.key.toLowerCase()) {
             case 'escape':
             case 'arrowleft':
@@ -327,7 +330,7 @@ export class mintHeader {
                 break;
             case 'enter':
             case 'space':
-                this.toggleClosestMenu();
+                target?.click();
                 break;
         }
     }
@@ -340,7 +343,7 @@ export class mintHeader {
         if (e.key.toLowerCase() !== 'tab') {
             e.preventDefault();
         }
-        let target: HTMLElement | null = e.target as HTMLElement | null;
+        const target = e.target as HTMLElement | null;
         switch (target?.tagName.toLowerCase()) {
             case 'a':
                 this.eHandleLinkKeypress(e);
