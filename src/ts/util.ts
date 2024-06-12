@@ -14,8 +14,7 @@ export abstract class mintUtil {
      * @returns the width of the window
      */
     static windowWidth () : number {
-        let body: HTMLBodyElement = document.getElementsByTagName('body')[0],
-            decimal: number = body.getBoundingClientRect().width % 1;
+        const decimal: number = document.body.getBoundingClientRect().width % 1;
         return window.innerWidth + decimal;
     }
 

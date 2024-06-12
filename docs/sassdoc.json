@@ -378,8 +378,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 890,
-            "end": 917
+            "start": 908,
+            "end": 935
           }
         }
       },
@@ -390,8 +390,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 890,
-            "end": 917
+            "start": 908,
+            "end": 935
           }
         }
       },
@@ -402,8 +402,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 890,
-            "end": 917
+            "start": 908,
+            "end": 935
           }
         }
       },
@@ -414,8 +414,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 890,
-            "end": 917
+            "start": 908,
+            "end": 935
           }
         }
       },
@@ -426,8 +426,8 @@
           "name": "flex-util",
           "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
           "line": {
-            "start": 890,
-            "end": 917
+            "start": 908,
+            "end": 935
           }
         }
       },
@@ -438,8 +438,8 @@
           "name": "headers",
           "code": "\n\t@for $i from 1 through 6 {\n\t\th#{$i},\n\t\t#{class(h#{$i})\n\t}\n\n\t\t{\n\t\t@content;\n\t}\n}\n",
           "line": {
-            "start": 923,
-            "end": 933
+            "start": 941,
+            "end": 951
           }
         }
       },
@@ -450,8 +450,8 @@
           "name": "states",
           "code": "\n\t@each $state in $states {\n\t\t@if (type-of($state) != 'string') {\n\t\t\t@error 'The states mixin requires a string for each state argument.';\n\t\t}\n\t}\n\n\t@if (index($states, 'hover') != null) {\n\t\t&:hover {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'focus') != null) {\n\t\t&:focus-visible {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'active') != null) {\n\n\t\t&:active,\n\t\t&#{class(active)} {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'visited') != null) {\n\t\t&:visited {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'disabled') != null) {\n\t\t&:disabled {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'expanded') != null) {\n\t\t&#{expanded(true)} {\n\t\t\t@content;\n\t\t}\n\t}\n",
           "line": {
-            "start": 840,
-            "end": 884
+            "start": 858,
+            "end": 902
           }
         }
       },
@@ -462,8 +462,8 @@
           "name": "animation",
           "code": "\n\t$animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n\t$this: map.get($animations, &);\n\t$animation: '';\n\n\t& {\n\t\t@each $item in $this {\n\t\t\t@if (list.index($this, $item) != 1) {\n\t\t\t\t$animation: #{$animation},\n\t\t\t\t;\n\t\t\t}\n\n\t\t\t$animation: #{$animation}#{$item};\n\t\t}\n\n\t\tanimation: $animation;\n\n\t\t@each $name,\n\t\t$items in $animations {\n\t\t\t&#{class($name)} {\n\t\t\t\tanimation: $animation;\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 967,
-            "end": 991
+            "start": 985,
+            "end": 1009
           }
         }
       }
@@ -646,8 +646,8 @@
           "name": "states",
           "code": "\n\t@each $state in $states {\n\t\t@if (type-of($state) != 'string') {\n\t\t\t@error 'The states mixin requires a string for each state argument.';\n\t\t}\n\t}\n\n\t@if (index($states, 'hover') != null) {\n\t\t&:hover {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'focus') != null) {\n\t\t&:focus-visible {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'active') != null) {\n\n\t\t&:active,\n\t\t&#{class(active)} {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'visited') != null) {\n\t\t&:visited {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'disabled') != null) {\n\t\t&:disabled {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'expanded') != null) {\n\t\t&#{expanded(true)} {\n\t\t\t@content;\n\t\t}\n\t}\n",
           "line": {
-            "start": 840,
-            "end": 884
+            "start": 858,
+            "end": 902
           }
         }
       }
@@ -884,8 +884,8 @@
           "name": "fluid",
           "code": "\n\t$u1: unit($min-vw);\n\t$u2: unit($max-vw);\n\t$u3: unit($min-size);\n\t$u4: unit($max-size);\n\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The fluid mixin requires a string for the $prop argument.';\n\t}\n\n\t@if not(type-of($u1) == 'string' and type-of($u2) == 'string' and type-of($u3) == 'string' and type-of($u4) == 'string') {\n\t\t@error 'The fluid mixin requires numbers for the width and size arguments.';\n\t}\n\n\t@if not($u1 == $u2 and $u1 == $u3 and $u1 == $u4) {\n\t\t@error 'The fluid mixin requires width and size arguments with the same units.';\n\t}\n\n\t// See if you can get rid of this wrapping & selector\n\t& {\n\t\t#{$prop}: $min-size;\n\n\t\t@media (min-width: $min-vw) {\n\t\t\t#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));\n\t\t}\n\n\t\t@media (min-width: $max-vw) {\n\t\t\t#{$prop}: $max-size;\n\t\t}\n\t}\n",
           "line": {
-            "start": 709,
-            "end": 739
+            "start": 727,
+            "end": 757
           }
         }
       },
@@ -896,8 +896,8 @@
           "name": "fluid",
           "code": "\n\t$u1: unit($min-vw);\n\t$u2: unit($max-vw);\n\t$u3: unit($min-size);\n\t$u4: unit($max-size);\n\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The fluid mixin requires a string for the $prop argument.';\n\t}\n\n\t@if not(type-of($u1) == 'string' and type-of($u2) == 'string' and type-of($u3) == 'string' and type-of($u4) == 'string') {\n\t\t@error 'The fluid mixin requires numbers for the width and size arguments.';\n\t}\n\n\t@if not($u1 == $u2 and $u1 == $u3 and $u1 == $u4) {\n\t\t@error 'The fluid mixin requires width and size arguments with the same units.';\n\t}\n\n\t// See if you can get rid of this wrapping & selector\n\t& {\n\t\t#{$prop}: $min-size;\n\n\t\t@media (min-width: $min-vw) {\n\t\t\t#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));\n\t\t}\n\n\t\t@media (min-width: $max-vw) {\n\t\t\t#{$prop}: $max-size;\n\t\t}\n\t}\n",
           "line": {
-            "start": 709,
-            "end": 739
+            "start": 727,
+            "end": 757
           }
         }
       }
@@ -1373,8 +1373,8 @@
           "name": "break-util",
           "code": "\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The break-util mixin requires a string for the $prop argument.';\n\t}\n\n\t& {\n\t\t#{$prop}: #{$val};\n\n\t\t@each $key,\n\t\t$width in $break {\n\t\t\t&-#{$key} {\n\t\t\t\t#{$prop}: #{$none};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$val};\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t&-to-#{$key} {\n\t\t\t\t#{$prop}: #{$val};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$none};\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 540,
-            "end": 567
+            "start": 558,
+            "end": 585
           }
         }
       }
@@ -1449,8 +1449,8 @@
           "name": "shades",
           "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 751,
-            "end": 837
+            "start": 769,
+            "end": 855
           }
         }
       },
@@ -1461,8 +1461,8 @@
           "name": "shades",
           "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 751,
-            "end": 837
+            "start": 769,
+            "end": 855
           }
         }
       },
@@ -1473,8 +1473,8 @@
           "name": "shades",
           "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 751,
-            "end": 837
+            "start": 769,
+            "end": 855
           }
         }
       },
@@ -1485,8 +1485,8 @@
           "name": "shades",
           "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 751,
-            "end": 837
+            "start": 769,
+            "end": 855
           }
         }
       },
@@ -1497,8 +1497,8 @@
           "name": "shades",
           "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 751,
-            "end": 837
+            "start": 769,
+            "end": 855
           }
         }
       },
@@ -1509,8 +1509,8 @@
           "name": "shades",
           "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 751,
-            "end": 837
+            "start": 769,
+            "end": 855
           }
         }
       },
@@ -1521,8 +1521,8 @@
           "name": "shades",
           "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 751,
-            "end": 837
+            "start": 769,
+            "end": 855
           }
         }
       },
@@ -1533,8 +1533,8 @@
           "name": "shades",
           "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 751,
-            "end": 837
+            "start": 769,
+            "end": 855
           }
         }
       },
@@ -1545,8 +1545,8 @@
           "name": "shades",
           "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 751,
-            "end": 837
+            "start": 769,
+            "end": 855
           }
         }
       },
@@ -1557,8 +1557,8 @@
           "name": "shades",
           "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 751,
-            "end": 837
+            "start": 769,
+            "end": 855
           }
         }
       },
@@ -1569,8 +1569,8 @@
           "name": "shades",
           "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 751,
-            "end": 837
+            "start": 769,
+            "end": 855
           }
         }
       },
@@ -1763,8 +1763,8 @@
           "name": "break-util",
           "code": "\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The break-util mixin requires a string for the $prop argument.';\n\t}\n\n\t& {\n\t\t#{$prop}: #{$val};\n\n\t\t@each $key,\n\t\t$width in $break {\n\t\t\t&-#{$key} {\n\t\t\t\t#{$prop}: #{$none};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$val};\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t&-to-#{$key} {\n\t\t\t\t#{$prop}: #{$val};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$none};\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 540,
-            "end": 567
+            "start": 558,
+            "end": 585
           }
         }
       },
@@ -1775,8 +1775,8 @@
           "name": "break-util",
           "code": "\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The break-util mixin requires a string for the $prop argument.';\n\t}\n\n\t& {\n\t\t#{$prop}: #{$val};\n\n\t\t@each $key,\n\t\t$width in $break {\n\t\t\t&-#{$key} {\n\t\t\t\t#{$prop}: #{$none};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$val};\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t&-to-#{$key} {\n\t\t\t\t#{$prop}: #{$val};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$none};\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n",
           "line": {
-            "start": 540,
-            "end": 567
+            "start": 558,
+            "end": 585
           }
         }
       }
@@ -1785,16 +1785,16 @@
   {
     "description": "Creates utility selectors for a given property at each breakpoint\n",
     "commentRange": {
-      "start": 502,
-      "end": 539
+      "start": 520,
+      "end": 557
     },
     "context": {
       "type": "mixin",
       "name": "break-util",
       "code": "\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The break-util mixin requires a string for the $prop argument.';\n\t}\n\n\t& {\n\t\t#{$prop}: #{$val};\n\n\t\t@each $key,\n\t\t$width in $break {\n\t\t\t&-#{$key} {\n\t\t\t\t#{$prop}: #{$none};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$val};\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t&-to-#{$key} {\n\t\t\t\t#{$prop}: #{$val};\n\n\t\t\t\t@include break($key) {\n\t\t\t\t\t#{$prop}: #{$none};\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n",
       "line": {
-        "start": 540,
-        "end": 567
+        "start": 558,
+        "end": 585
       }
     },
     "group": [
@@ -1851,16 +1851,16 @@
   {
     "description": "Creates utility selectors for a box model property\n",
     "commentRange": {
-      "start": 569,
-      "end": 574
+      "start": 587,
+      "end": 592
     },
     "context": {
       "type": "mixin",
       "name": "box-util",
       "code": "\n\t@if (type-of($prop) != 'string') {\n\t\t@error 'The box-util mixin requires a string for the $prop argument.';\n\t}\n\n\t&-auto {\n\t\t#{$prop}-left: auto;\n\t\t#{$prop}-right: auto;\n\n\t\t&-v {\n\t\t\t#{$prop}: $val auto;\n\n\t\t\t@for $i from 0 through 6 {\n\t\t\t\t&#{$i} {\n\t\t\t\t\t#{$prop}: $val * $i auto;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t&-t {\n\t\t\t#{$prop}-top: $val;\n\t\t\t#{$prop}-left: auto;\n\t\t\t#{$prop}-right: auto;\n\n\t\t\t@for $i from 0 through 6 {\n\t\t\t\t&#{$i} {\n\t\t\t\t\t#{$prop}-top: $val * $i;\n\t\t\t\t\t#{$prop}-left: auto;\n\t\t\t\t\t#{$prop}-right: auto;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t&-b {\n\t\t\t#{$prop}-bottom: $val;\n\t\t\t#{$prop}-left: auto;\n\t\t\t#{$prop}-right: auto;\n\n\t\t\t@for $i from 0 through 6 {\n\t\t\t\t&#{$i} {\n\t\t\t\t\t#{$prop}-bottom: $val * $i;\n\t\t\t\t\t#{$prop}-left: auto;\n\t\t\t\t\t#{$prop}-right: auto;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t&-v {\n\t\t#{$prop}-top: $val;\n\t\t#{$prop}-bottom: $val;\n\n\t\t@for $i from 0 through 6 {\n\t\t\t&#{$i} {\n\t\t\t\t#{$prop}-top: $val * $i;\n\t\t\t\t#{$prop}-bottom: $val * $i;\n\t\t\t}\n\t\t}\n\t}\n\n\t&-t {\n\t\t#{$prop}-top: $val;\n\n\t\t@for $i from 0 through 6 {\n\t\t\t&#{$i} {\n\t\t\t\t#{$prop}-top: $val * $i;\n\t\t\t}\n\t\t}\n\t}\n\n\t&-b {\n\t\t#{$prop}-bottom: $val;\n\n\t\t@for $i from 0 through 6 {\n\t\t\t&#{$i} {\n\t\t\t\t#{$prop}-bottom: $val * $i;\n\t\t\t}\n\t\t}\n\t}\n\n\t&-h {\n\t\t#{$prop}-left: $val;\n\t\t#{$prop}-right: $val;\n\n\t\t@for $i from 0 through 6 {\n\t\t\t&#{$i} {\n\t\t\t\t#{$prop}-left: $val * $i;\n\t\t\t\t#{$prop}-right: $val * $i;\n\t\t\t}\n\t\t}\n\t}\n\n\t&-l {\n\t\t#{$prop}-left: $val;\n\n\t\t@for $i from 0 through 6 {\n\t\t\t&#{$i} {\n\t\t\t\t#{$prop}-left: $val * $i;\n\t\t\t}\n\t\t}\n\t}\n\n\t&-r {\n\t\t#{$prop}-right: $val;\n\n\t\t@for $i from 0 through 6 {\n\t\t\t&#{$i} {\n\t\t\t\t#{$prop}-right: $val * $i;\n\t\t\t}\n\t\t}\n\t}\n",
       "line": {
-        "start": 575,
-        "end": 686
+        "start": 593,
+        "end": 704
       }
     },
     "group": [
@@ -1886,16 +1886,16 @@
   {
     "description": "Generates a property with a fluid value between specified screen sizes\n",
     "commentRange": {
-      "start": 689,
-      "end": 708
+      "start": 707,
+      "end": 726
     },
     "context": {
       "type": "mixin",
       "name": "fluid",
       "code": "\n\t$u1: unit($min-vw);\n\t$u2: unit($max-vw);\n\t$u3: unit($min-size);\n\t$u4: unit($max-size);\n\n\t@if (type-of($prop) !='string') {\n\t\t@error 'The fluid mixin requires a string for the $prop argument.';\n\t}\n\n\t@if not(type-of($u1) == 'string' and type-of($u2) == 'string' and type-of($u3) == 'string' and type-of($u4) == 'string') {\n\t\t@error 'The fluid mixin requires numbers for the width and size arguments.';\n\t}\n\n\t@if not($u1 == $u2 and $u1 == $u3 and $u1 == $u4) {\n\t\t@error 'The fluid mixin requires width and size arguments with the same units.';\n\t}\n\n\t// See if you can get rid of this wrapping & selector\n\t& {\n\t\t#{$prop}: $min-size;\n\n\t\t@media (min-width: $min-vw) {\n\t\t\t#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));\n\t\t}\n\n\t\t@media (min-width: $max-vw) {\n\t\t\t#{$prop}: $max-size;\n\t\t}\n\t}\n",
       "line": {
-        "start": 709,
-        "end": 739
+        "start": 727,
+        "end": 757
       }
     },
     "group": [
@@ -1960,16 +1960,16 @@
   {
     "description": "Generates css varibles for lighter, darker, or both variations\n",
     "commentRange": {
-      "start": 741,
-      "end": 750
+      "start": 759,
+      "end": 768
     },
     "context": {
       "type": "mixin",
       "name": "shades",
       "code": "\n\t@if (type-of($name) != 'string') {\n\t\t@error 'The shades mixin requires a string for the $name argument.';\n\t}\n\n\t@if (type-of($color) != 'color') {\n\t\t@error 'The shades mixin requires a color for the $color argument.';\n\t}\n\n\t@if not($type == lighten or $type == darken or $type == both) {\n\t\t@error 'The shades mixin requires a string of \"lighten\", \"darken\", or \"both\" for the $type argument.';\n\t}\n\n\t@if (type-of($number) != 'number') {\n\t\t@error 'The shades mixin requires a number for the $number argument.';\n\t}\n\n\t@if (type-of($alpha) == 'string') {\n\t\t$bool: string.to-lower-case($bool);\n\n\t\t@if not($bool == 'true' or $bool == 'false') {\n\t\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t\t}\n\t}\n\n\t@else if (type-of($alpha) != 'bool') {\n\t\t@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';\n\t}\n\n\t@include css-var(#{$name}, $color);\n\n\t@if ($alpha) {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: $i * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: -$i * math.div($amount, 100%)));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, color.adjust($color, $alpha: ($num-light - $i) * math.div($amount, 100%)));\n\t\t\t}\n\t\t}\n\t}\n\n\t@else {\n\t\t@if ($type == lighten) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == darken) {\n\t\t\t@for $i from 0 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));\n\t\t\t}\n\t\t}\n\n\t\t@else if ($type == both) {\n\t\t\t$num-light: floor(math.div($number, 2));\n\n\t\t\t@for $i from 0 through $num-light - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));\n\t\t\t}\n\n\t\t\t@include css-var(#{$name}-#{$num-light}, $color);\n\n\t\t\t@for $i from $num-light + 1 through $number - 1 {\n\t\t\t\t@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));\n\t\t\t}\n\t\t}\n\t}\n",
       "line": {
-        "start": 751,
-        "end": 837
+        "start": 769,
+        "end": 855
       }
     },
     "group": [
@@ -2070,16 +2070,16 @@
   {
     "description": "Generates flex utility classes\n",
     "commentRange": {
-      "start": 886,
-      "end": 889
+      "start": 904,
+      "end": 907
     },
     "context": {
       "type": "mixin",
       "name": "flex-util",
       "code": "\n\t& {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\tflex-wrap: wrap;\n\n\t\t&#{class(center)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&#{class(end)} {\n\t\t\tjustify-content: flex-end;\n\t\t}\n\n\t\t&#{class(between)} {\n\t\t\tjustify-content: space-between;\n\t\t}\n\n\t\t&#{class(around)} {\n\t\t\tjustify-content: space-around;\n\t\t}\n\n\t\t&#{class(even)} {\n\t\t\tjustify-content: space-evenly;\n\t\t}\n\t}\n",
       "line": {
-        "start": 890,
-        "end": 917
+        "start": 908,
+        "end": 935
       }
     },
     "group": [
@@ -2116,16 +2116,16 @@
   {
     "description": "Selector for all headers\n",
     "commentRange": {
-      "start": 919,
-      "end": 922
+      "start": 937,
+      "end": 940
     },
     "context": {
       "type": "mixin",
       "name": "headers",
       "code": "\n\t@for $i from 1 through 6 {\n\t\th#{$i},\n\t\t#{class(h#{$i})\n\t}\n\n\t\t{\n\t\t@content;\n\t}\n}\n",
       "line": {
-        "start": 923,
-        "end": 933
+        "start": 941,
+        "end": 951
       }
     },
     "group": [
@@ -2147,16 +2147,16 @@
   {
     "description": "Background clip text\n",
     "commentRange": {
-      "start": 936,
-      "end": 939
+      "start": 954,
+      "end": 957
     },
     "context": {
       "type": "mixin",
       "name": "background-clip",
       "code": "\n\tcolor: $color;\n\n\t@supports (-webkit-background-clip: text) and (-webkit-text-fill-color: transparent) {\n\t\tbackground: $color;\n\t\t@content;\n\t\tbackground-clip: text;\n\t\t-webkit-background-clip: text;\n\t\t-webkit-text-fill-color: transparent;\n\t}\n",
       "line": {
-        "start": 940,
-        "end": 950
+        "start": 958,
+        "end": 968
       }
     },
     "group": [
@@ -2446,7 +2446,7 @@
       "value": "@include css-var(header-height, $header-height);\n\t@include css-var-ref(header-back, $header-back);\n\t@include css-var-ref(header-fore, $header-fore);",
       "line": {
         "start": 12,
-        "end": 404
+        "end": 418
       }
     },
     "access": "public",
@@ -2467,10 +2467,10 @@
     "context": {
       "type": "css",
       "name": "#{id(header)}",
-      "value": "position: relative;\n\twidth: 100%;\n\tcolor: css-var(header-fore);\n\tbackground-color: css-var(header-back);\n\tz-index: 10000;\n\theight: css-var(header-height);\n\t//padding: 0 calc(css-var(header-height) / 2);\n\n\t&#{class(right)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: css-var(header-height);\n\t\t\tright: -100%;\n\t\t\tleft: unset;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tright: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(bottom)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: unset;\n\t\t\tbottom: -100%;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tbottom: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(left)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: css-var(header-height);\n\t\t\tleft: -100%;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tleft: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(expand)} {\n\t\t@include break(sm) {\n\t\t\t#{class(buttons)} {\n\t\t\t\twidth: auto;\n\n\t\t\t\t#{controls(wrapper)} {\n\t\t\t\t\tdisplay: none;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t#{id(wrapper)} {\n\t\t\t\tposition: static;\n\t\t\t\tdisplay: flex !important;\n\t\t\t\theight: 100%;\n\t\t\t\tpadding: 0;\n\t\t\t\tz-index: 0;\n\n\t\t\t\t&,\n\t\t\t\t& nav {\n\t\t\t\t\tbackground: css-var(glow-0) !important;\n\t\t\t\t\toverflow: visible;\n\t\t\t\t}\n\n\t\t\t\tnav {\n\t\t\t\t\tborder: none;\n\n\t\t\t\t\t&>ul {\n\t\t\t\t\t\tflex-direction: row;\n\t\t\t\t\t\tjustify-content: flex-end;\n\t\t\t\t\t\tflex-wrap: nowrap;\n\n\t\t\t\t\t\t&>li {\n\t\t\t\t\t\t\tposition: relative;\n\t\t\t\t\t\t\twidth: 100%;\n\t\t\t\t\t\t\tmax-width: 200px;\n\t\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t\t\tbutton,\n\t\t\t\t\t\t\tul {\n\t\t\t\t\t\t\t\twidth: 100%;\n\t\t\t\t\t\t\t\tmax-width: 200px;\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tbutton {\n\t\t\t\t\t\t\t\tfont-size: 1.5rem;\n\n\t\t\t\t\t\t\t\t$arrow-size: 1rem;\n\t\t\t\t\t\t\t\t$arrow-margin: 1rem;\n\t\t\t\t\t\t\t\tpadding-right: $arrow-margin + $arrow-size;\n\n\t\t\t\t\t\t\t\t&::after {\n\t\t\t\t\t\t\t\t\tcontent: '\\f054';\n\t\t\t\t\t\t\t\t\tfont-family: 'Font Awesome 6 Pro';\n\t\t\t\t\t\t\t\t\tfont-weight: 900;\n\t\t\t\t\t\t\t\t\tfont-size: $arrow-size;\n\t\t\t\t\t\t\t\t\tposition: absolute;\n\t\t\t\t\t\t\t\t\ttop: 50%;\n\t\t\t\t\t\t\t\t\ttransform: translateY(-50%);\n\t\t\t\t\t\t\t\t\tmargin-left: $arrow-margin;\n\t\t\t\t\t\t\t\t\ttransition: transform css-var(delay-default);\n\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t@include states(hover, focus, expanded) {\n\t\t\t\t\t\t\t\t\t&::after {\n\t\t\t\t\t\t\t\t\t\ttransform: translateY(-50%) rotate(90deg);\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tul {\n\t\t\t\t\t\t\t\tposition: absolute;\n\t\t\t\t\t\t\t\ttop: 100%;\n\t\t\t\t\t\t\t\tleft: 50%;\n\t\t\t\t\t\t\t\ttransform: translateX(-50%);\n\t\t\t\t\t\t\t\tbackground-color: css-var($header-back);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\ta {\n\t\t\t\t\tfont-size: 1.25rem;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t&::before {\n\t\tcontent: '';\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: css-var(header-height);\n\t\tbackground: css-var(header-back);\n\t\tz-index: -1;\n\t}\n\n\tnav {\n\t\t&>ul {\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t}\n\t}\n\n\tul {\n\t\tlist-style: none;\n\t\tmargin-top: 0;\n\t\tmargin-bottom: 1rem;\n\t\tpadding-left: 0;\n\t}\n\n\ta,\n\tbutton {\n\t\twidth: 100%;\n\t\tmargin: 0;\n\t\tborder: 0;\n\t\tcolor: css-var($header-link-fore);\n\t\tbackground: css-var(trans);\n\t\ttransition-property: color, background;\n\t\ttransition-duration: css-var(delay-default);\n\n\t\t@include states(hover) {\n\t\t\tcolor: css-var($header-link-fore-hover);\n\t\t}\n\t}\n\n\th1 {\n\t\tdisplay: flex;\n\t\twhite-space: nowrap;\n\t\tmargin: 0;\n\t}\n\n\t#{id(navbar)} {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tflex-direction: row;\n\t\theight: 100%;\n\t}\n\n\t#{class(logo)} {\n\t\ttext-decoration: none;\n\t\twidth: auto;\n\n\t\timg {\n\t\t\tmax-width: css-var(header-height);\n\t\t}\n\t}\n\n\t#{controls(wrapper)} {\n\t\tdisplay: inline-block;\n\t\tposition: relative;\n\t\tpadding: $menu-btn-padding;\n\t\twidth: $menu-bar-width + $menu-btn-padding * 2;\n\t\theight: $menu-btn-height + $menu-btn-padding * 2;\n\t\tborder-radius: $border-radius;\n\t\tbackground: css-var($menu-btn-color);\n\t\tbox-shadow: $menu-btn-shadow-size css-var($menu-btn-shadow-color);\n\t\tz-index: 1000;\n\n\t\t@include states(hover) {\n\t\t\t#{class(menu-icon)} {\n\n\t\t\t\t&,\n\t\t\t\t&::before,\n\t\t\t\t&::after {\n\t\t\t\t\tbackground-color: css-var($header-link-fore-hover);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t#{class(menu-icon)} {\n\t\t\ttop: 50%;\n\t\t\tleft: 50%;\n\t\t\ttransform: translate(-50%, -50%);\n\n\t\t\t&,\n\t\t\t&::before,\n\t\t\t&::after {\n\t\t\t\tcontent: '';\n\t\t\t\tdisplay: block;\n\t\t\t\tposition: absolute;\n\t\t\t\tleft: 50%;\n\t\t\t\theight: $menu-bar-height;\n\t\t\t\twidth: $menu-bar-width;\n\t\t\t\tbackground-color: css-var($menu-bar-color);\n\t\t\t\ttransition: delay(default);\n\t\t\t}\n\n\t\t\t&::before {\n\t\t\t\ttransform: translate(-50%, -200%);\n\t\t\t}\n\n\t\t\t&::after {\n\t\t\t\ttransform: translate(-50%, 200%);\n\t\t\t}\n\t\t}\n\n\t\t&#{expanded(true)} {\n\t\t\t#{class(menu-icon)} {\n\t\t\t\tbackground: transparent;\n\n\t\t\t\t&::before {\n\t\t\t\t\ttransform: translate(-50%, 0) rotate(45deg);\n\t\t\t\t}\n\n\t\t\t\t&::after {\n\t\t\t\t\ttransform: translate(-50%, 0) rotate(-45deg);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t#{id(wrapper)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tposition: fixed;\n\t\ttop: -100%;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: calc(100vh - css-var(header-height));\n\t\theight: calc(100dvh - css-var(header-height));\n\t\tz-index: -2;\n\t\tbackground: css-var(header-back);\n\t\ttransition-duration: css-var(delay-default);\n\t\ttransition-property: top, right, bottom, left;\n\t\toverflow: auto;\n\n\t\t&#{class(open)} {\n\t\t\ttop: css-var(header-height);\n\t\t}\n\n\t\tnav {\n\t\t\theight: 100%;\n\t\t\tbackground: css-var(back);\n\t\t\toverflow: auto;\n\t\t\tbackground-repeat: repeat;\n\n\t\t\t@include break(xl) {\n\t\t\t\tdisplay: flex;\n\t\t\t\talign-items: center;\n\t\t\t\tjustify-content: center;\n\t\t\t}\n\n\t\t\t&> :last-child {\n\t\t\t\tmargin-bottom: 0;\n\t\t\t}\n\n\t\t\t&>ul {\n\t\t\t\t@include break(xl) {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tflex-direction: row;\n\t\t\t\t\tflex-wrap: wrap;\n\t\t\t\t\tjustify-content: space-evenly;\n\t\t\t\t\twidth: 100%;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\ta,\n\t\tbutton {\n\t\t\tfont-family: $font-secondary, $font-backups !important;\n\t\t\tfont-size: 3em;\n\t\t\tpadding: 0.5rem;\n\t\t\ttext-align: center;\n\n\t\t\t@include break(xs) {\n\t\t\t\tfont-size: 4em;\n\t\t\t}\n\n\t\t\t@include states(hover, focus) {\n\t\t\t\tbackground-color: css-var(shadow-5);\n\t\t\t\tcolor: css-var($header-link-fore-hover);\n\t\t\t}\n\n\t\t\t@include states(active) {\n\t\t\t\ttext-decoration: underline;\n\t\t\t}\n\t\t}\n\n\t\tul {\n\t\t\tli {\n\t\t\t\t&:last-child {\n\t\t\t\t\tmargin-bottom: 0;\n\n\t\t\t\t\tul {\n\t\t\t\t\t\tmargin-bottom: 0;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(buttons)} {\n\t\tflex-wrap: nowrap;\n\t\tjustify-content: flex-end;\n\t\twidth: 100%;\n\n\t\ta,\n\t\tbutton {\n\t\t\t&#{neg(controls(wrapper))} {\n\t\t\t\tdisplay: flex;\n\t\t\t\twidth: auto;\n\t\t\t\tpadding: 0.5rem;\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(dropdown)} {\n\t\tbackground: css-var(header-back);\n\n\t\tbutton {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tmin-width: css-var(header-height);\n\t\t\theight: css-var(header-height);\n\t\t\tpadding: calc(css-var(header-height) / 2);\n\t\t}\n\n\t\tli {\n\t\t\tpadding: calc(css-var(header-height) / 2);\n\t\t\tline-height: 1;\n\t\t\tcursor: pointer;\n\t\t}\n\t}\n\n\t#{$has-controls + neg(controls(wrapper))} {\n\t\t&+ul {\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t\theight: 0;\n\t\t\toverflow: hidden;\n\t\t\ttransition: height css-var(delay-default), margin css-var(delay-default);\n\t\t}\n\n\t\t&#{$has-expanded + neg(expanded(true))} {\n\t\t\t&+ul {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t}\n\t}",
+      "value": "position: relative;\n\twidth: 100%;\n\tcolor: css-var(header-fore);\n\tbackground-color: css-var(header-back);\n\tz-index: 10000;\n\theight: css-var(header-height);\n\t//padding: 0 calc(css-var(header-height) / 2);\n\n\t&#{class(right)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: css-var(header-height);\n\t\t\tright: -100%;\n\t\t\tleft: unset;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tright: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(bottom)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: unset;\n\t\t\tbottom: -100%;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tbottom: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(left)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: css-var(header-height);\n\t\t\tleft: -100%;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tleft: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(expand)} {\n\t\t@include break($header-break) {\n\t\t\t#{class(buttons)} {\n\t\t\t\twidth: auto;\n\n\t\t\t\t#{controls(wrapper)} {\n\t\t\t\t\tdisplay: none;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t#{id(wrapper)} {\n\t\t\t\tposition: static;\n\t\t\t\tdisplay: flex !important;\n\t\t\t\theight: 100%;\n\t\t\t\tpadding: 0;\n\t\t\t\tz-index: 0;\n\n\t\t\t\t&,\n\t\t\t\t& nav {\n\t\t\t\t\tbackground: css-var(glow-0) !important;\n\t\t\t\t\toverflow: visible;\n\t\t\t\t}\n\n\t\t\t\tnav {\n\t\t\t\t\tborder: none;\n\n\t\t\t\t\t&>ul {\n\t\t\t\t\t\tflex-direction: row;\n\t\t\t\t\t\tjustify-content: flex-end;\n\t\t\t\t\t\tflex-wrap: nowrap;\n\n\t\t\t\t\t\t&>li {\n\t\t\t\t\t\t\tposition: relative;\n\t\t\t\t\t\t\twidth: 100%;\n\t\t\t\t\t\t\tmax-width: 200px;\n\t\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t\t\tbutton,\n\t\t\t\t\t\t\tul {\n\t\t\t\t\t\t\t\twidth: 100%;\n\t\t\t\t\t\t\t\tmax-width: 200px;\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tbutton {\n\t\t\t\t\t\t\t\tfont-size: 1.5rem;\n\n\t\t\t\t\t\t\t\t$arrow-size: 1rem;\n\t\t\t\t\t\t\t\t$arrow-margin: 1rem;\n\t\t\t\t\t\t\t\tpadding-right: $arrow-margin + $arrow-size;\n\n\t\t\t\t\t\t\t\t&::after {\n\t\t\t\t\t\t\t\t\tcontent: '\\f054';\n\t\t\t\t\t\t\t\t\tfont-family: 'Font Awesome 6 Pro';\n\t\t\t\t\t\t\t\t\tfont-weight: 900;\n\t\t\t\t\t\t\t\t\tfont-size: $arrow-size;\n\t\t\t\t\t\t\t\t\tposition: absolute;\n\t\t\t\t\t\t\t\t\ttop: 50%;\n\t\t\t\t\t\t\t\t\ttransform: translateY(-50%);\n\t\t\t\t\t\t\t\t\tmargin-left: $arrow-margin;\n\t\t\t\t\t\t\t\t\ttransition: transform css-var(delay-default);\n\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t@include states(hover, focus, expanded) {\n\t\t\t\t\t\t\t\t\t&::after {\n\t\t\t\t\t\t\t\t\t\ttransform: translateY(-50%) rotate(90deg);\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tul {\n\t\t\t\t\t\t\t\tposition: absolute;\n\t\t\t\t\t\t\t\ttop: 100%;\n\t\t\t\t\t\t\t\tleft: 50%;\n\t\t\t\t\t\t\t\ttransform: translateX(-50%);\n\t\t\t\t\t\t\t\tbackground-color: css-var($header-back);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\ta {\n\t\t\t\t\tfont-size: 1.25rem;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(spread)} {\n\t\t@include break-max($header-break) {\n\t\t\t#{$has-controls + neg(controls(wrapper))} {\n\t\t\t\tdisplay: none;\n\t\n\t\t\t\t& + ul {\n\t\t\t\t\tdisplay: flex !important;\n\t\t\t\t\theight: auto !important;\n\t\t\t\t\tmargin-bottom: 1rem !important;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t&::before {\n\t\tcontent: '';\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: css-var(header-height);\n\t\tbackground: css-var(header-back);\n\t\tz-index: -1;\n\t}\n\n\tnav {\n\t\t&>ul {\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t}\n\t}\n\n\tul {\n\t\tlist-style: none;\n\t\tmargin-top: 0;\n\t\tmargin-bottom: 1rem;\n\t\tpadding-left: 0;\n\t}\n\n\ta,\n\tbutton {\n\t\twidth: 100%;\n\t\tmargin: 0;\n\t\tborder: 0;\n\t\tcolor: css-var($header-link-fore);\n\t\tbackground: css-var(trans);\n\t\ttransition-property: color, background;\n\t\ttransition-duration: css-var(delay-default);\n\n\t\t@include states(hover) {\n\t\t\tcolor: css-var($header-link-fore-hover);\n\t\t}\n\t}\n\n\th1 {\n\t\tdisplay: flex;\n\t\twhite-space: nowrap;\n\t\tmargin: 0;\n\t}\n\n\t#{id(navbar)} {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tflex-direction: row;\n\t\theight: 100%;\n\t}\n\n\t#{class(logo)} {\n\t\ttext-decoration: none;\n\t\twidth: auto;\n\n\t\timg {\n\t\t\tmax-width: css-var(header-height);\n\t\t}\n\t}\n\n\t#{controls(wrapper)} {\n\t\tdisplay: inline-block;\n\t\tposition: relative;\n\t\tpadding: $menu-btn-padding;\n\t\twidth: $menu-bar-width + $menu-btn-padding * 2;\n\t\theight: $menu-btn-height + $menu-btn-padding * 2;\n\t\tborder-radius: $border-radius;\n\t\tbackground: css-var($menu-btn-color);\n\t\tbox-shadow: $menu-btn-shadow-size css-var($menu-btn-shadow-color);\n\t\tz-index: 1000;\n\n\t\t@include states(hover) {\n\t\t\t#{class(menu-icon)} {\n\n\t\t\t\t&,\n\t\t\t\t&::before,\n\t\t\t\t&::after {\n\t\t\t\t\tbackground-color: css-var($header-link-fore-hover);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t#{class(menu-icon)} {\n\t\t\ttop: 50%;\n\t\t\tleft: 50%;\n\t\t\ttransform: translate(-50%, -50%);\n\n\t\t\t&,\n\t\t\t&::before,\n\t\t\t&::after {\n\t\t\t\tcontent: '';\n\t\t\t\tdisplay: block;\n\t\t\t\tposition: absolute;\n\t\t\t\tleft: 50%;\n\t\t\t\theight: $menu-bar-height;\n\t\t\t\twidth: $menu-bar-width;\n\t\t\t\tbackground-color: css-var($menu-bar-color);\n\t\t\t\ttransition: delay(default);\n\t\t\t}\n\n\t\t\t&::before {\n\t\t\t\ttransform: translate(-50%, -200%);\n\t\t\t}\n\n\t\t\t&::after {\n\t\t\t\ttransform: translate(-50%, 200%);\n\t\t\t}\n\t\t}\n\n\t\t&#{expanded(true)} {\n\t\t\t#{class(menu-icon)} {\n\t\t\t\tbackground: transparent;\n\n\t\t\t\t&::before {\n\t\t\t\t\ttransform: translate(-50%, 0) rotate(45deg);\n\t\t\t\t}\n\n\t\t\t\t&::after {\n\t\t\t\t\ttransform: translate(-50%, 0) rotate(-45deg);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t#{id(wrapper)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tposition: fixed;\n\t\ttop: -100%;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: calc(100vh - css-var(header-height));\n\t\theight: calc(100dvh - css-var(header-height));\n\t\tz-index: -2;\n\t\tbackground: css-var(header-back);\n\t\ttransition-duration: css-var(delay-default);\n\t\ttransition-property: top, right, bottom, left;\n\t\toverflow: auto;\n\n\t\t&#{class(open)} {\n\t\t\ttop: css-var(header-height);\n\t\t}\n\n\t\tnav {\n\t\t\theight: 100%;\n\t\t\tbackground: css-var(back);\n\t\t\toverflow: auto;\n\t\t\tbackground-repeat: repeat;\n\n\t\t\t@include break(xl) {\n\t\t\t\tdisplay: flex;\n\t\t\t\talign-items: center;\n\t\t\t\tjustify-content: center;\n\t\t\t}\n\n\t\t\t&> :last-child {\n\t\t\t\tmargin-bottom: 0;\n\t\t\t}\n\n\t\t\t&>ul {\n\t\t\t\t@include break(xl) {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tflex-direction: row;\n\t\t\t\t\tflex-wrap: wrap;\n\t\t\t\t\tjustify-content: space-evenly;\n\t\t\t\t\twidth: 100%;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\ta,\n\t\tbutton {\n\t\t\tfont-family: $font-secondary, $font-backups !important;\n\t\t\tfont-size: 3em;\n\t\t\tpadding: 0.5rem;\n\t\t\ttext-align: center;\n\n\t\t\t@include break(xs) {\n\t\t\t\tfont-size: 4em;\n\t\t\t}\n\n\t\t\t@include states(hover, focus) {\n\t\t\t\tbackground-color: css-var(shadow-5);\n\t\t\t\tcolor: css-var($header-link-fore-hover);\n\t\t\t}\n\n\t\t\t@include states(active) {\n\t\t\t\ttext-decoration: underline;\n\t\t\t}\n\t\t}\n\n\t\tul {\n\t\t\tli {\n\t\t\t\t&:last-child {\n\t\t\t\t\tmargin-bottom: 0;\n\n\t\t\t\t\tul {\n\t\t\t\t\t\tmargin-bottom: 0;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(buttons)} {\n\t\tflex-wrap: nowrap;\n\t\tjustify-content: flex-end;\n\t\twidth: 100%;\n\n\t\ta,\n\t\tbutton {\n\t\t\t&#{neg(controls(wrapper))} {\n\t\t\t\tdisplay: flex;\n\t\t\t\twidth: auto;\n\t\t\t\tpadding: 0.5rem;\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(dropdown)} {\n\t\tbackground: css-var(header-back);\n\n\t\tbutton {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tmin-width: css-var(header-height);\n\t\t\theight: css-var(header-height);\n\t\t\tpadding: calc(css-var(header-height) / 2);\n\t\t}\n\n\t\tli {\n\t\t\tpadding: calc(css-var(header-height) / 2);\n\t\t\tline-height: 1;\n\t\t\tcursor: pointer;\n\t\t}\n\t}\n\n\t#{$has-controls + neg(controls(wrapper))} {\n\t\t&+ul {\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t\theight: 0;\n\t\t\toverflow: hidden;\n\t\t\ttransition: height css-var(delay-default), margin css-var(delay-default);\n\t\t}\n\n\t\t&#{$has-expanded + neg(expanded(true))} {\n\t\t\t&+ul {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t}\n\t}",
       "line": {
         "start": 19,
-        "end": 404
+        "end": 418
       }
     },
     "access": "public",
@@ -2944,16 +2944,16 @@
   {
     "description": "TODO: Document this\n",
     "commentRange": {
-      "start": 839,
-      "end": 839
+      "start": 857,
+      "end": 857
     },
     "context": {
       "type": "mixin",
       "name": "states",
       "code": "\n\t@each $state in $states {\n\t\t@if (type-of($state) != 'string') {\n\t\t\t@error 'The states mixin requires a string for each state argument.';\n\t\t}\n\t}\n\n\t@if (index($states, 'hover') != null) {\n\t\t&:hover {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'focus') != null) {\n\t\t&:focus-visible {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'active') != null) {\n\n\t\t&:active,\n\t\t&#{class(active)} {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'visited') != null) {\n\t\t&:visited {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'disabled') != null) {\n\t\t&:disabled {\n\t\t\t@content;\n\t\t}\n\t}\n\n\t@if (index($states, 'expanded') != null) {\n\t\t&#{expanded(true)} {\n\t\t\t@content;\n\t\t}\n\t}\n",
       "line": {
-        "start": 840,
-        "end": 884
+        "start": 858,
+        "end": 902
       }
     },
     "access": "public",
@@ -2982,16 +2982,16 @@
   {
     "description": "Mixins\nRegister an animation\n",
     "commentRange": {
-      "start": 965,
-      "end": 966
+      "start": 983,
+      "end": 984
     },
     "context": {
       "type": "mixin",
       "name": "animation",
       "code": "\n\t$animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n\t$this: map.get($animations, &);\n\t$animation: '';\n\n\t& {\n\t\t@each $item in $this {\n\t\t\t@if (list.index($this, $item) != 1) {\n\t\t\t\t$animation: #{$animation},\n\t\t\t\t;\n\t\t\t}\n\n\t\t\t$animation: #{$animation}#{$item};\n\t\t}\n\n\t\tanimation: $animation;\n\n\t\t@each $name,\n\t\t$items in $animations {\n\t\t\t&#{class($name)} {\n\t\t\t\tanimation: $animation;\n\t\t\t}\n\t\t}\n\t}\n",
       "line": {
-        "start": 967,
-        "end": 991
+        "start": 985,
+        "end": 1009
       }
     },
     "access": "public",
@@ -3012,16 +3012,16 @@
   {
     "description": "Register a transition\n",
     "commentRange": {
-      "start": 993,
-      "end": 993
+      "start": 1011,
+      "end": 1011
     },
     "context": {
       "type": "mixin",
       "name": "transition",
       "code": "\n\t$transitions: map-merge($transitions, ($name: $transition));\n",
       "line": {
-        "start": 994,
-        "end": 996
+        "start": 1012,
+        "end": 1014
       }
     },
     "access": "public",
@@ -3212,8 +3212,8 @@
   {
     "description": "Default Shadows\n",
     "commentRange": {
-      "start": 88,
-      "end": 88
+      "start": 89,
+      "end": 89
     },
     "context": {
       "type": "variable",
@@ -3221,8 +3221,8 @@
       "value": "glow-2",
       "scope": "default",
       "line": {
-        "start": 89,
-        "end": 89
+        "start": 90,
+        "end": 90
       }
     },
     "access": "public",
@@ -3237,8 +3237,8 @@
   {
     "description": "Images\n",
     "commentRange": {
-      "start": 92,
-      "end": 92
+      "start": 93,
+      "end": 93
     },
     "context": {
       "type": "variable",
@@ -3246,8 +3246,8 @@
       "value": "0.5rem",
       "scope": "default",
       "line": {
-        "start": 93,
-        "end": 93
+        "start": 94,
+        "end": 94
       }
     },
     "access": "public",
@@ -3262,8 +3262,8 @@
   {
     "description": "Buttons\n",
     "commentRange": {
-      "start": 95,
-      "end": 95
+      "start": 96,
+      "end": 96
     },
     "context": {
       "type": "variable",
@@ -3271,8 +3271,8 @@
       "value": "brand-4",
       "scope": "default",
       "line": {
-        "start": 96,
-        "end": 96
+        "start": 97,
+        "end": 97
       }
     },
     "access": "public",
@@ -3287,8 +3287,8 @@
   {
     "description": "Cards\n",
     "commentRange": {
-      "start": 122,
-      "end": 122
+      "start": 123,
+      "end": 123
     },
     "context": {
       "type": "variable",
@@ -3296,8 +3296,8 @@
       "value": "black-2",
       "scope": "default",
       "line": {
-        "start": 123,
-        "end": 123
+        "start": 124,
+        "end": 124
       }
     },
     "access": "public",
@@ -3312,8 +3312,8 @@
   {
     "description": "Texture\n",
     "commentRange": {
-      "start": 130,
-      "end": 130
+      "start": 131,
+      "end": 131
     },
     "context": {
       "type": "variable",
@@ -3321,8 +3321,8 @@
       "value": "1rem",
       "scope": "default",
       "line": {
-        "start": 131,
-        "end": 131
+        "start": 132,
+        "end": 132
       }
     },
     "access": "public",
@@ -3351,8 +3351,8 @@
   {
     "description": "Themes\n",
     "commentRange": {
-      "start": 147,
-      "end": 147
+      "start": 148,
+      "end": 148
     },
     "context": {
       "type": "variable",
@@ -3360,8 +3360,8 @@
       "value": "light",
       "scope": "default",
       "line": {
-        "start": 148,
-        "end": 148
+        "start": 149,
+        "end": 149
       }
     },
     "access": "public",
@@ -3376,8 +3376,8 @@
   {
     "description": "Buttons\n",
     "commentRange": {
-      "start": 152,
-      "end": 152
+      "start": 153,
+      "end": 153
     },
     "context": {
       "type": "variable",
@@ -3385,8 +3385,8 @@
       "value": "brand-2",
       "scope": "private",
       "line": {
-        "start": 153,
-        "end": 153
+        "start": 154,
+        "end": 154
       }
     },
     "access": "public",
@@ -3401,8 +3401,8 @@
   {
     "description": "Header\n",
     "commentRange": {
-      "start": 159,
-      "end": 159
+      "start": 160,
+      "end": 160
     },
     "context": {
       "type": "variable",
@@ -3410,8 +3410,8 @@
       "value": "brand-2",
       "scope": "private",
       "line": {
-        "start": 160,
-        "end": 160
+        "start": 161,
+        "end": 161
       }
     },
     "access": "public",
@@ -3426,16 +3426,16 @@
   {
     "description": "Default Theme (light)\n",
     "commentRange": {
-      "start": 150,
-      "end": 150
+      "start": 151,
+      "end": 151
     },
     "context": {
       "type": "css",
       "name": "/// Buttons\n$btn-back-default: brand-2;\n$btn-back: $btn-back-default !default;\n\n$btn-border-default: brand-4;\n$btn-border: $btn-border-default !default;\n\n/// Header\n$header-back-default: brand-2;\n$header-back: $header-back-default !default;\n\n$header-fore-default: fore;\n$header-fore: $header-fore-default !default;\n\n$header-link-fore-default: fore;\n$header-link-fore: $header-link-fore-default !default;\n\n$header-link-fore-hover-default: back;\n$header-link-fore-hover: $header-link-fore-hover-default !default;\n\n/// Dark Theme\n@if ($theme-default == dark)",
       "value": "/// Buttons\n    $btn-back: if($btn-back != $btn-back-default, $btn-back, brand-5);\n    $btn-border: if($btn-border != $btn-border-default, $btn-border, brand-2);\n\n    /// Header\n    $header-back: if($header-back != $header-back-default, $header-back, brand-4);\n    $header-fore: if($header-fore != $header-fore-default, $header-fore, back);",
       "line": {
-        "start": 173,
-        "end": 183
+        "start": 174,
+        "end": 184
       }
     },
     "access": "public",
@@ -3450,8 +3450,8 @@
   {
     "description": "Buttons\n",
     "commentRange": {
-      "start": 175,
-      "end": 175
+      "start": 176,
+      "end": 176
     },
     "context": {
       "type": "variable",
@@ -3459,8 +3459,8 @@
       "value": "if($btn-back != $btn-back-default, $btn-back, brand-5)",
       "scope": "private",
       "line": {
-        "start": 176,
-        "end": 176
+        "start": 177,
+        "end": 177
       }
     },
     "access": "public",
@@ -3475,8 +3475,8 @@
   {
     "description": "Header\n",
     "commentRange": {
-      "start": 179,
-      "end": 179
+      "start": 180,
+      "end": 180
     },
     "context": {
       "type": "variable",
@@ -3484,8 +3484,8 @@
       "value": "if($header-back != $header-back-default, $header-back, brand-4)",
       "scope": "private",
       "line": {
-        "start": 180,
-        "end": 180
+        "start": 181,
+        "end": 181
       }
     },
     "access": "public",
@@ -3509,7 +3509,7 @@
       "value": "Number",
       "line": {
         "start": 103,
-        "end": 997
+        "end": 1015
       }
     },
     "author": [

@@ -499,6 +499,24 @@ $bootstrap5: false !default;
 	}
 }
 
+@mixin break-max ($max, $min: null) {
+	@if not(map-has-key($break, $max) and (type-of($min) == 'null' or map-has-key($break, $min))) {
+		@error 'The break-max mixin requires one or two of the following values: #{map-keys($break)}';
+	}
+
+	@if (map-has-key($break, $min)) {
+		@media (min-width: break($min)) and (max-width: break($max)) {
+			@content;
+		}
+	}
+
+	@else {
+		@media (max-width: break($max)) {
+			@content;
+		}
+	}
+}
+
 /// Creates utility selectors for a given property at each breakpoint
 /// @group Mixins
 ///
