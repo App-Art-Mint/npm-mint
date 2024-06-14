@@ -201,9 +201,9 @@ export abstract class mintSelectors {
     static getFocusables (el?: HTMLElement) : HTMLElement[] {
         let focusables: HTMLElement[];
         if (el) {
-            focusables = [...el.querySelectorAll<HTMLElement>(this.focusable)];
+            focusables = Array.from(el.querySelectorAll<HTMLElement>(this.focusable));
         } else {
-            focusables = [...document.querySelectorAll<HTMLElement>(this.focusable)];
+            focusables = Array.from(document.querySelectorAll<HTMLElement>(this.focusable));
         }
         return focusables.filter((el: HTMLElement) => this.isFocusable(el));
     }

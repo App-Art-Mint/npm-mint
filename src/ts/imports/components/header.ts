@@ -295,6 +295,7 @@ export class mintHeader {
                     this.setMobileMenu();
                     this.el.menuButton?.focus();
                 }
+                break;
             case 'arrowleft':
                 this.closeClosestMenu();
                 break;

@@ -10,12 +10,13 @@ export abstract class mintObject {
         if (keys.length !== Object.keys(obj2).length) {
             return false;
         }
+        let isSimilar: boolean = true;
         keys.forEach((key: string) => {
             if (obj1[key] !== obj2[key]) {
-                return false;
+                isSimilar = false;
             }
         });
-        return true;
+        return isSimilar;
     };
 
     /**
