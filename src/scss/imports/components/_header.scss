@@ -43,6 +43,7 @@
 			bottom: -100%;
 
 			&#{class(open)} {
+				top: unset;
 				bottom: 0;
 			}
 		}
@@ -209,13 +210,14 @@
 	#{id(navbar)} {
 		display: flex;
 		align-items: center;
-		flex-direction: row;
+		justify-content: space-between;
 		height: 100%;
 	}
 
 	#{class(logo)} {
-		text-decoration: none;
+		display: flex;
 		width: auto;
+		text-decoration: none;
 
 		img {
 			max-width: css-var(header-height);
@@ -369,7 +371,6 @@
 	#{class(buttons)} {
 		flex-wrap: nowrap;
 		justify-content: flex-end;
-		width: 100%;
 
 		a,
 		button {
