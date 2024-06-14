@@ -19,10 +19,10 @@
   "bugs": {
     "url": "https://github.com/App-Art-Mint/npm-mint/issues"
   },
-  "main": "dist/js/index.min.js",
-  "types": "dist/js/index.d.ts",
+  "main": "src/ts/index.ts",
+  "type": "module",
   "files": [
-    "src/scss/**/*.scss",
+    "src/**/*.{ts,scss}",
     "dist/**/*.{css,js,d.ts,map}"
   ],
   "directories": {
@@ -44,35 +44,40 @@
     "webpack": "node_modules/@appartmint/config/dist/js/webpack.config.min.js"
   },
   "scripts": {
-    "upgrade:config": "npm up -D @appartmint/config && mint-config",
+    "upgrade": "npm up -D @appartmint/config && mint-config",
     "prepare": "npm-run-all clean bundle",
-    "bundle": "npm-run-all build build:**",
     "preversion": "npm i && npm run test",
     "version": "npm publish && git add -A",
     "postversion": "git push && git push --tags && npm run endversion --if-present",
-    "clean": "rimraf $npm_package_config_dirs_dist $npm_package_config_dirs_doc",
+    "clean": "cross-var rimraf $npm_package_config_dirs_dist $npm_package_config_dirs_doc",
     "clear": "npm run clean",
-    "build": "webpack --config $npm_package_config_webpack",
+    "bundle": "npm-run-all build build:**",
+    "build": "cross-var webpack --config $npm_package_config_webpack",
     "build:prod": "cross-env NODE_ENV=production npm run build",
     "build:index": "cross-env BUILD_MODE=index npm run build",
     "build:index:prod": "cross-env NODE_ENV=production BUILD_MODE=index npm run build",
     "build:config": "cross-env BUILD_MODE=config npm run build",
     "build:config:prod": "cross-env NODE_ENV=production BUILD_MODE=config npm run build",
     "build:tsdoc": "typedoc",
-    "build:sassdoc": "sassdoc $npm_package_config_dirs_src/$npm_package_config_dirs_scss -p > $npm_package_config_dirs_doc/sassdoc.json",
-    "serve": "webpack serve --config $npm_package_config_webpack",
+    "build:sassdoc": "cross-var sassdoc $npm_package_config_dirs_src/$npm_package_config_dirs_scss -p > $npm_package_config_dirs_doc/sassdoc.json",
+    "serve": "cross-var webpack serve --config $npm_package_config_webpack",
     "watch": "npm run build -- --watch",
-    "test": "echo '\nRun tests here!\n'",
-    "relink": "npm r -g @appartmint/mint && npm link"
+    "watch:prod": "cross-env NODE_ENV=production npm run watch",
+    "watch:tsdoc": "npm run build:tsdoc -- --watch",
+    "test": "echo-cli \"\\nRun tests here!\\n\"",
+    "relink": "npm r -g @appartmint/mint && npm link",
+    "upgrade:config": "npm up -D @appartmint/config && mint-config"
   },
   "devDependencies": {
-    "@appartmint/config": "^0.6.5",
+    "@appartmint/config": "^0.7.0",
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",
     "babel-loader": "^9.0.1",
     "copy-webpack-plugin": "^11.0.0",
     "cross-env": "^7.0.3",
+    "cross-var": "^1.1.0",
     "css-loader": "^6.7.1",
+    "echo-cli": "^2.0.0",
     "jasmine-core": "^4.5.0",
     "karma": "^6.4.1",
     "karma-babel-preprocessor": "^8.0.2",
