@@ -23,6 +23,7 @@
         background-image: url($texture-bg);
         background-size: $texture-bg-size;
         background-position: $texture-bg-position;
+        //z-index: 0;
         @if ($texture-blend) {
             mix-blend-mode: $texture-blend;
         }

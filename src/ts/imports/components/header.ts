@@ -69,6 +69,7 @@ export class mintHeader {
         });
 
         this.el.mobileButton?.addEventListener('click', mintUtil.throttleEvent(this.eToggleMobileMenu.bind(this), mintSettings.delay.slow, { trailing: false }));
+        this.el.wrapper?.addEventListener('transitionend', this.eTransitionEnd.bind(this));
     }
 
     /**
@@ -101,34 +102,28 @@ export class mintHeader {
                     behavior: 'smooth'
                 });
             }
+
             setTimeout(() => {
                 if (this.el.html) {
                     this.el.html.style.overflow = 'hidden';
                 }
             }, mintSettings.from === mintSide.Left ? mintSettings.delay.default : mintSettings.delay.instant);
+            
             if (this.el.wrapper) {
                 this.el.wrapper.style.display = 'flex';
             }
+
             requestAnimationFrame(() => {
                 this.el.wrapper?.classList.add(mintSelectors.getClass('open'));
             });
         } else {
             if (this.el.html) {
                 this.el.html.style.overflow = 'auto';
-            }
-            this.el.wrapper?.classList.remove(mintSelectors.getClass('open'));
+            }            
             
-            const onTransitionEnd = () => {
-                if (this.el.wrapper) {
-                    this.el.wrapper.style.display = 'none';
-                    this.el.wrapper.removeEventListener('transitionend', onTransitionEnd);
-                }
-            };
-            if (typeof this.el.wrapper?.style.transition !== 'undefined') {
-                this.el.wrapper.addEventListener('transitionend', onTransitionEnd);
-            } else {
-                setTimeout(onTransitionEnd, mintSettings.delay.default);
-            }
+            requestAnimationFrame(() => {
+                this.el.wrapper?.classList.remove(mintSelectors.getClass('open'));
+            });
 
             this.closeAllMenus();
         }
@@ -258,7 +253,6 @@ export class mintHeader {
      * Closes the mobile menu when the window resizes
      */
     eHandleResize (e: Event) : void {
-        //console.log(e, window.innerWidth, mintUtil.windowWidth(), this.lastWidth);
         // Also check if resized from mobile to desktop
         if (mintUtil.windowWidth() !== this.lastWidth) {
             this.setMobileMenu();
@@ -370,5 +364,14 @@ export class mintHeader {
         this.closeSiblingMenus(target);
         this.toggleMenu(target);
     }
+
+    /**
+     * Runs after the mobile menu transitions
+     */
+    eTransitionEnd () : void {
+        if (this.el.wrapper?.classList.contains(mintSelectors.getClass('open')) === false ) {
+            this.el.wrapper.style.display = 'none';
+        }
+    };
 }
 export default mintHeader;
