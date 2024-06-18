@@ -159,6 +159,18 @@
 				}
 			}
 		}
+
+		&#{neg(class(expand))} {
+			#{$has-controls + neg(controls(wrapper))} {
+				display: none;
+	
+				& + ul {
+					display: flex !important;
+					height: auto !important;
+					margin-bottom: 1rem !important;
+				}
+			}
+		}
 	}
 
 	&::before {
@@ -236,6 +248,7 @@
 		z-index: 1000;
 
 		@include states(hover) {
+			background: css-var($header-link-back-hover);
 			#{class(menu-icon)} {
 
 				&,
@@ -308,7 +321,8 @@
 		}
 
 		nav {
-			height: 100%;
+			height: calc(100vh - css-var(header-height));
+			height: calc(100dvh - css-var(header-height));
 			background: css-var(back);
 			overflow: auto;
 			background-repeat: repeat;
@@ -324,10 +338,14 @@
 			}
 
 			&>ul {
-				@include break(xl) {
+				height: 100%;
+				overflow: auto;
+
+				@include break(md) {
 					display: flex;
 					flex-direction: row;
 					flex-wrap: wrap;
+					align-items: center;
 					justify-content: space-evenly;
 					width: 100%;
 				}
@@ -340,13 +358,19 @@
 			font-size: 3em;
 			padding: 0.5rem;
 			text-align: center;
+			border-radius: $header-link-border-radius;
 
 			@include break(xs) {
 				font-size: 4em;
+				padding: 1rem 1.5rem;
+
+				i {
+					font-size: 0.75em;
+				}
 			}
 
 			@include states(hover, focus) {
-				background-color: css-var(shadow-5);
+				background-color: css-var($header-link-back-hover);
 				color: css-var($header-link-fore-hover);
 			}
 

@@ -85,6 +85,7 @@ $border-radius: 1rem !default;
 /// Header
 $header-height: 4rem !default;
 $header-break: sm !default;
+$header-link-border-radius: $border-radius !default;
 
 /// Default Shadows
 $shadow-color: glow-2 !default;
@@ -164,6 +165,9 @@ $header-back: $header-back-default !default;
 $header-fore-default: fore;
 $header-fore: $header-fore-default !default;
 
+$header-link-back-hover-default: shadow-5;
+$header-link-back-hover: $header-link-back-hover-default !default;
+
 $header-link-fore-default: fore;
 $header-link-fore: $header-link-fore-default !default;
 
@@ -180,4 +184,5 @@ $header-link-fore-hover: $header-link-fore-hover-default !default;
     /// Header
     $header-back: if($header-back != $header-back-default, $header-back, brand-4);
     $header-fore: if($header-fore != $header-fore-default, $header-fore, back);
+    $header-link-back-hover: if($header-link-back-hover != $header-link-back-hover-default, $header-link-back-hover, glow-5);
 }
