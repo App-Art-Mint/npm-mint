@@ -173,14 +173,19 @@
 		}
 	}
 
+	&#{neg(class(border))} {
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background: css-var(header-back);
+		}
+	}
+
 	&::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
 		height: css-var(header-height);
-		background: css-var(header-back);
 		z-index: -1;
 	}
 
@@ -352,8 +357,15 @@
 			}
 		}
 
+		a {
+			display: flex;
+		}
+
 		a,
 		button {
+			//display: flex;
+			align-items: center;
+			justify-content: center;
 			font-family: $font-secondary, $font-backups !important;
 			font-size: 3em;
 			padding: 0.5rem;
@@ -365,7 +377,7 @@
 				padding: 1rem 1.5rem;
 
 				i {
-					font-size: 0.75em;
+					font-size: 0.5em;
 				}
 			}
 
