@@ -92,16 +92,6 @@ a {
 			white-space: nowrap;
 		}
 	}
-
-	i {
-		&:first-child {
-			margin-right: 0.25em;
-		}
-
-		&:last-child {
-			margin-left: 0.25em;
-		}
-	}
 }
 
 button,
@@ -112,6 +102,16 @@ a[routerLink] {
 a,
 button {
 	font-size: inherit;
+
+	i {
+		&:first-child {
+			margin-right: 0.5em;
+		}
+
+		&:last-child {
+			margin-left: 0.5em;
+		}
+	}
 }
 
 img,

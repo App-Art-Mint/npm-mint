@@ -11,6 +11,7 @@
 #{class(btn)},
 #{class(btn-icon)},
 #{class(pill)} {
+	width: fit-content;
 	max-width: 100%;
 	text-decoration: none;
     text-overflow: ellipsis;
