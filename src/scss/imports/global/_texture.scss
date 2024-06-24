@@ -63,13 +63,14 @@
 }
 
 #{class(frame)} {
+    height: fit-content;
+
     @extend #{class(border)};
     @if $texture-border-image {
         padding: $texture-border-width;
     } @else if $texture-border-color {
         padding: 0;
     }
-    
 }
 
 #{class(card)} {
