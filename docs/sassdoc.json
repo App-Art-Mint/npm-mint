@@ -2179,10 +2179,10 @@
     "context": {
       "type": "css",
       "name": "#{class(bg)}",
-      "value": "display: block;\n    opacity: 0;\n    height: 0;\n    width: 0;\n    z-index: -1;",
+      "value": "display: block;\n    opacity: 0;\n    height: 0;\n    width: 0;\n    z-index: -1;\n    transform: none !important;",
       "line": {
         "start": 11,
-        "end": 18
+        "end": 19
       }
     },
     "access": "public",
