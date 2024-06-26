@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App Art Mint LLC",
-  "version": "0.13.2",
+  "version": "0.13.3",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [
@@ -59,7 +59,7 @@
     "build:config": "cross-env BUILD_MODE=config npm run build",
     "build:config:prod": "cross-env NODE_ENV=production BUILD_MODE=config npm run build",
     "build:tsdoc": "typedoc",
-    "build:sassdoc": "cross-var sassdoc $npm_package_config_dirs_src/$npm_package_config_dirs_scss -p > $npm_package_config_dirs_doc/sassdoc.json",
+    "build:sassdoc": "cross-var \"sassdoc $npm_package_config_dirs_src/$npm_package_config_dirs_scss -p > $npm_package_config_dirs_doc/sassdoc.json\"",
     "serve": "cross-var webpack serve --config $npm_package_config_webpack",
     "watch": "npm run build -- --watch",
     "watch:prod": "cross-env NODE_ENV=production npm run watch",
