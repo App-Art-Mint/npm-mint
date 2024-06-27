@@ -410,6 +410,7 @@
 
 	#{class(buttons)} {
 		flex-wrap: nowrap;
+		flex-shrink: 0;
 		justify-content: flex-end;
 
 		a,
