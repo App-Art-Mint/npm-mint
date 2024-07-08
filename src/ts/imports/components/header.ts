@@ -63,7 +63,7 @@ export class mintHeader {
             focusable.addEventListener('keydown', mintUtil.throttleEvent(this.eHandleKeypress.bind(this)));
         });
 
-        let menuButtons: NodeListOf<HTMLElement> | undefined = this.el.header?.querySelectorAll(mintSelectors.controls() + mintSelectors.neg(mintSelectors.controls(mintSelectors.ids.wrapper as string)));
+        let menuButtons: NodeListOf<HTMLElement> | undefined = this.el.wrapper?.querySelectorAll(mintSelectors.controls());
         menuButtons?.forEach((menuButton: HTMLElement) => {
             menuButton.addEventListener('click', mintUtil.throttleEvent(this.eToggleMenu.bind(this), mintSettings.delay.slow, { trailing: false }));
         });

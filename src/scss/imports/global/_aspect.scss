@@ -28,5 +28,5 @@ $width: 16;
 $height: 9;
 #{class($width + '-' + $height)} {
 	@extend #{class(aspect)};
-	padding-top: math.div($height, $width) * 100%;
+	padding-top: math.div($height, $width) * 100% !important;
 }

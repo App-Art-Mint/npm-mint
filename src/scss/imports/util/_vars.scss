@@ -138,6 +138,14 @@ $texture-bg-position: center !default;
 $texture-blend: null !default;
 $texture-opacity: 1 !default;
 
+$texture-alt-bg: null !default;
+$texture-alt-num: 0 !default;
+$texture-alt-opacity: 1 !default;
+$texture-alt-bg-size: cover !default;
+$texture-alt-bg-position: center !default;
+$texture-alt-mask: null !default;
+$texture-alt-blend: null !default;
+
 $texture-border-width: 1.25rem !default;
 $texture-border-type: solid !default;
 $texture-border-color: null !default;
