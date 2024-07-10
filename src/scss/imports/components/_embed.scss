@@ -39,6 +39,18 @@
 
 			@include break(lg) {
 				position: absolute;
+				left: -1rem;
+				width: 100vw;
+				border: none;
+				padding: 0;
+			}
+
+			& + * {
+				#{class(grid)} {
+					@include break(lg) {
+						margin-bottom: -15%;
+					}
+				}
 			}
 		}
 

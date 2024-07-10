@@ -92,12 +92,14 @@
 	}
 }
 
-@for $num from 1 through $texture-alt-num {
-    #{class(texture-#{$num})} {
-        #{class(content)} {
-            &::after {
-				background-image: url('#{$texture-alt-bg}#{$num}.jpg');
-			}
+@if $texture-alt-bg and $texture-alt-num {
+    @for $num from 1 through $texture-alt-num {
+        #{class(texture-#{$num})} {
+            #{class(content)} {
+                &::after {
+                    background-image: url('#{$texture-alt-bg}#{$num}.jpg');
+                }
+            }
         }
     }
 }
