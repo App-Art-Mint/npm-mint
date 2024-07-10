@@ -37,6 +37,18 @@
 		#{class(buttons)} {
 			justify-content: center;
 		}
+
+		&-title {
+			#{class(title)} {
+				text-align: center;
+			}
+		}
+
+		&-btns {
+			#{class(buttons)} {
+				justify-content: center;
+			}
+		}
 	}
 
 	&#{class(stagger)} {
@@ -45,7 +57,6 @@
 
 		@include break(sm) {
 			flex-direction: row;
-			width: calc(100% + $card-padding * 2);
 			border-radius: 0;
 			box-shadow: none;
 			overflow: visible;

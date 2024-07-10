@@ -151,8 +151,8 @@
 		@include break-max($header-break) {
 			#{$has-controls + neg(controls(wrapper))} {
 				display: none;
-	
-				& + ul {
+
+				&+ul {
 					display: flex !important;
 					height: auto !important;
 					margin-bottom: 1rem !important;
@@ -163,11 +163,27 @@
 		&#{neg(class(expand))} {
 			#{$has-controls + neg(controls(wrapper))} {
 				display: none;
-	
-				& + ul {
+
+				&+ul {
 					display: flex !important;
 					height: auto !important;
 					margin-bottom: 1rem !important;
+				}
+			}
+		}
+	}
+
+	&#{class(tray)} {
+		#{id(wrapper)} {
+			gap: 1.5rem;
+			max-width: 512px;
+			font-size: 0.5em;
+
+			nav {
+				&>ul {
+					flex-direction: column;
+					flex-wrap: nowrap;
+					justify-content: flex-start;
 				}
 			}
 		}
@@ -255,6 +271,7 @@
 
 		@include states(hover) {
 			background: css-var($header-link-back-hover);
+
 			#{class(menu-icon)} {
 
 				&,
