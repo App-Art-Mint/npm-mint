@@ -12,9 +12,12 @@ import mintSettings from '../util/settings';
  */
 export class mintHeader {
     /**
-     * Last-logged window width
+     * Navbar settings
      */
-    lastWidth: number = mintUtil.windowWidth();
+     settings: {[key: string]: any} = {
+        from: mintSide.Top,
+        fixed: true
+    };
 
     /**
      * Frequently-referenced elements
@@ -25,17 +28,11 @@ export class mintHeader {
      * Initializes and closes the menu
      */
     constructor (settings?: {[key: string]: any}) {
-        let defaultSettings: {[key: string]: any} = {
-            from: mintSide.Top,
-            fixed: true
-        };
-        mintSettings.set({ ...defaultSettings, ...settings });
-        
+        this.settings = {...this.settings, ...settings};
+
         this.attachElements();
         this.attachEvents();
         this.addClasses();
-        
-        this.setMobileMenu();
     }
 
     /**
@@ -44,27 +41,27 @@ export class mintHeader {
     attachElements () : void {
         this.el.html = document.querySelector('html');
         this.el.body = document.querySelector('body');
-        this.el.header = document.getElementById(mintSelectors.getId('header'));
-        this.el.mobileButton = this.el.header?.querySelector(mintSelectors.controls(mintSelectors.getId('wrapper'))) || null;
-        this.el.wrapper = document.getElementById(mintSelectors.getId('wrapper'));
+        this.el.header = document.getElementById('mint-header');
+        this.el.mobileButton = this.el.header?.querySelector(mintSelectors.controls('mint-wrapper')) || null;
+        this.el.wrapper = document.getElementById('mint-wrapper');
     }
 
     /**
      * Adds events to the dom
      */
     attachEvents () : void {
-        //window.addEventListener('resize', mintUtil.throttleEvent(this.eHandleResize.bind(this), mintSettings.delay.default, { trailing: false }));
+        window.addEventListener('resize', mintUtil.throttleEvent(this.eHandleResize.bind(this), mintSettings.delay.default));
         window.addEventListener('scroll', mintUtil.throttleEvent(this.eHandleScroll.bind(this), mintSettings.delay.default, { trailing: false }));
 
-        let focusables: NodeListOf<HTMLElement> | undefined = this.el.header?.querySelectorAll(mintSelectors.focusable),
-            lastFocusable: HTMLElement | undefined = focusables?.[focusables?.length - 1];
+        let focusables = this.el.header?.querySelectorAll(mintSelectors.focusable),
+            lastFocusable = focusables?.[focusables?.length - 1];
         lastFocusable?.addEventListener('keydown', mintUtil.throttleEvent(this.eWrapTab.bind(this)));
-        focusables?.forEach((focusable: HTMLElement) => {
+        focusables?.forEach((focusable) => {
             focusable.addEventListener('keydown', mintUtil.throttleEvent(this.eHandleKeypress.bind(this)));
         });
 
-        let menuButtons: NodeListOf<HTMLElement> | undefined = this.el.wrapper?.querySelectorAll(mintSelectors.controls());
-        menuButtons?.forEach((menuButton: HTMLElement) => {
+        let menuButtons = this.el.wrapper?.querySelectorAll(mintSelectors.controls());
+        menuButtons?.forEach((menuButton) => {
             menuButton.addEventListener('click', mintUtil.throttleEvent(this.eToggleMenu.bind(this), mintSettings.delay.slow, { trailing: false }));
         });
 
@@ -73,11 +70,17 @@ export class mintHeader {
     }
 
     /**
-     * Adds classes that inform the styles 
+     * Adds classes that inform the styles based on settings
      */
     addClasses () : void {
-        if (mintSettings.fixed) {
-            this.el.body?.classList.add(mintSelectors.getClass('fixed'));
+        this.el.header?.classList.remove('mint-top', 'mint-right', 'mint-bottom', 'mint-left');
+        this.el.header?.classList.add(`mint-${mintSide[this.settings.from ?? 0].toLowerCase()}`);
+
+        if (this.settings.fixed) {
+            this.el.body?.classList.add('mint-fixed');
+        }
+        if (this.settings.tray) {
+            this.el.header?.classList.add('mint-tray');
         }
     }
 
@@ -95,7 +98,7 @@ export class mintHeader {
         }, mintSettings.delay.fast);
 
         if (open) {
-            if (mintSettings.fixed !== true) {
+            if (this.settings.fixed !== true) {
                 window.scroll({
                     top: 0,
                     left: 0,
@@ -105,16 +108,26 @@ export class mintHeader {
 
             setTimeout(() => {
                 if (this.el.html) {
-                    this.el.html.style.overflow = 'hidden';
+                    let isMobile = mintUtil.windowWidth() <= mintSettings.break.sm,
+                        overflow = 'auto';
+
+                    if (this.settings.tray) {
+                        if (isMobile) {
+                            overflow = 'hidden';
+                        }
+                    } else {
+                        overflow = 'hidden';
+                    }
+                    this.el.html.style.overflow = overflow;
                 }
-            }, mintSettings.from === mintSide.Left ? mintSettings.delay.default : mintSettings.delay.instant);
+            }, this.settings.from === mintSide.Left ? mintSettings.delay.default : mintSettings.delay.instant);
             
             if (this.el.wrapper) {
                 this.el.wrapper.style.display = 'flex';
             }
 
             requestAnimationFrame(() => {
-                this.el.wrapper?.classList.add(mintSelectors.getClass('open'));
+                this.el.wrapper?.classList.add('mint-open');
             });
         } else {
             if (this.el.html) {
@@ -122,7 +135,7 @@ export class mintHeader {
             }            
             
             requestAnimationFrame(() => {
-                this.el.wrapper?.classList.remove(mintSelectors.getClass('open'));
+                this.el.wrapper?.classList.remove('mint-open');
             });
 
             this.closeAllMenus();
@@ -210,7 +223,7 @@ export class mintHeader {
         let activeButton: HTMLElement | null = document.activeElement as HTMLElement | null,
             activeMenu: HTMLElement | null = activeButton?.nextElementSibling as HTMLElement | null,
             showing: boolean = activeButton?.getAttribute('aria-expanded')?.toLowerCase() === 'true';
-        if (activeButton?.getAttribute('aria-controls') === mintSelectors.ids.wrapper) {
+        if (activeButton?.getAttribute('aria-controls') === 'mint-wrapper') {
             activeMenu = this.el.wrapper;
         }
 
@@ -252,12 +265,24 @@ export class mintHeader {
     /**
      * Closes the mobile menu when the window resizes
      */
-    eHandleResize (e: Event) : void {
-        // Also check if resized from mobile to desktop
-        if (mintUtil.windowWidth() !== this.lastWidth) {
-            this.setMobileMenu();
+    eHandleResize () : void {
+        let isOpen = this.el.mobileButton?.getAttribute('aria-expanded')?.toLowerCase() === 'true',
+            isMobile = mintUtil.windowWidth() <= mintSettings.break.sm,
+            overflow = 'auto';
+        
+        if (isOpen) {
+            if (this.settings.tray) {
+                if (isMobile) {
+                    overflow = 'hidden';
+                }
+            } else {
+                overflow = 'hidden';
+            }
         }
-        this.lastWidth = mintUtil.windowWidth();
+
+        if (this.el.html) {
+            this.el.html.style.overflow = overflow;
+        }
     }
 
     /**
@@ -289,7 +314,7 @@ export class mintHeader {
             subMenu = target?.closest('li');
         switch (e.key.toLowerCase()) {
             case 'escape':
-                if (subMenu?.classList.contains(mintSelectors.classes.open as string)) {
+                if (subMenu?.classList.contains('mint-open')) {
                     this.setMenu(subMenu);
                 } else {
                     this.setMobileMenu();
@@ -370,7 +395,7 @@ export class mintHeader {
      * Runs after the mobile menu transitions
      */
     eTransitionEnd () : void {
-        if (this.el.wrapper?.classList.contains(mintSelectors.getClass('open')) === false ) {
+        if (this.el.wrapper?.classList.contains('mint-open') === false ) {
             this.el.wrapper.style.display = 'none';
         }
     };

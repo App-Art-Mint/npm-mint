@@ -76,33 +76,6 @@ export abstract class mintSelectors {
     static subMenu: string = `${this.subMenuButtons} + ul${this.hasId}`;
 
     /**
-     * Frequently-used ids
-     */
-    static ids: {[key: string]: string | {[key: string]: string}} = {
-        header: this.prefix('header'),
-        logo: this.prefix('logo'),
-        wrapper: this.prefix('wrapper'),
-        mainContent: this.prefix('main-content')
-    };
-
-    /**
-     * Classes
-     */
-    static classes: {[key: string]: string | {[key: string]: string}} = {
-        sides: {
-            top: this.prefix('top'),
-            right: this.prefix('right'),
-            bottom: this.prefix('bottom'),
-            left: this.prefix('left')
-        },
-        srOnly: this.prefix('sr-only'),
-        js: this.prefix('js'),
-        ready: this.prefix('ready'),
-        fixed: this.prefix('fixed'),
-        open: this.prefix('open')
-    };
-
-    /**
      * Adds the library prefix to the beginning of the provided string
      * @param base - the string to be prefixed
      * @returns - the provided string prefixed with the library name
@@ -173,24 +146,6 @@ export abstract class mintSelectors {
      */
     static expanded (bool?: boolean | null) : string {
         return typeof bool === 'boolean' ? `[aria-expanded="${bool}"]` : this.hasExpanded;
-    }
-
-    /**
-     * Returns the id of the requested element
-     */
-    static getId (id?: string) : string {
-        return this.ids[id ?? -1] as string ?? '';
-    }
-
-    /**
-     * Returns the class of the requested element
-     */
-    static getClass (className?: string, classGroup?: string) : string {
-        if (classGroup) {
-            let group: {[key: string]: string} = this.classes[classGroup] as {[key: string]: string};
-            return group[className ?? -1] ?? '';
-        }
-        return this.classes[className ?? -1] as string ?? '';
     }
 
     /**

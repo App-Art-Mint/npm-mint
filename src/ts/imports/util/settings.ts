@@ -1,10 +1,4 @@
 /**
- * Imports
- */
-import { mintSide } from '../enum';
-import { mintSelectors } from './selectors';
-
-/**
  * Settings management
  * @public
  */
@@ -32,14 +26,16 @@ export abstract class mintSettings {
     };
 
     /**
-     * Side of the window the mobile navbar enters from
+     * Breakpoint variables
      */
-    static from?: mintSide;
-
-    /**
-    * Whether the navbar is fixed or not
-    */
-    static fixed?: boolean;
+    static break: {[key: string]: number} = {
+        z: 0,
+        xs: 480,
+        sm: 768,
+        md: 1024,
+        lg: 1200,
+        xl: 1440
+    };
 
     /**
      * Update the provided settings variables
@@ -65,12 +61,10 @@ export abstract class mintSettings {
             }
         }
 
-        if (typeof settings.from === 'number') {
-            this.setFrom(settings.from);
-        }
-
-        if (typeof settings.fixed === 'boolean') {
-            this.setFixed(settings.fixed);
+        if (settings.break && Object.keys(settings.break).length) {
+            if (Object.values(settings.break).reduce((prev: any, next: any) => prev && typeof next === 'number', true)) {
+                this.break = {...this.break, ...settings.break};
+            }
         }
     }
 
@@ -86,34 +80,6 @@ export abstract class mintSettings {
             medSlow: this.delayBase + this.delayStep * 4,
             slow: this.delayBase + this.delayStep * 5
         };
-    }
-
-    /**
-     * Updates the direction the navbar enters from
-     */
-    protected static setFrom (from: mintSide) : void {
-        if (this.from !== from) {
-            this.from = from;
-            let header: HTMLElement | null = document.getElementById(mintSelectors.getId('header'));
-            header?.classList.remove(...Object.values(mintSelectors.classes.sides));
-            header?.classList.add(mintSelectors.getClass(mintSide[this.from].toLowerCase(), 'sides'));
-        }
-    }
-
-    /**
-     * Updates whether or not the navbar is fixed
-     */
-    protected static setFixed (fixed: boolean) : void {
-        if (this.fixed !== fixed) {
-            this.fixed = fixed;
-            let header: HTMLElement | null = document.getElementById(mintSelectors.getId('header')),
-                fixedClass: string = mintSelectors.getClass('fixed');
-            if (this.fixed) {
-                header?.classList.add(fixedClass);
-            } else {
-                header?.classList.remove(fixedClass);
-            }
-        }
     }
 };
 
