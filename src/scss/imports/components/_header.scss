@@ -149,25 +149,29 @@
 
 	&#{class(spread)} {
 		@include break-max($header-break) {
-			#{$has-controls + neg(controls(wrapper))} {
-				display: none;
-
-				&+ul {
-					display: flex !important;
-					height: auto !important;
-					margin-bottom: 1rem !important;
+			#{id(wrapper)} {
+				#{$has-controls} {
+					display: none;
+	
+					&+ul {
+						display: flex !important;
+						height: auto !important;
+						margin-bottom: 1rem !important;
+					}
 				}
 			}
 		}
 
 		&#{neg(class(expand))} {
-			#{$has-controls + neg(controls(wrapper))} {
-				display: none;
-
-				&+ul {
-					display: flex !important;
-					height: auto !important;
-					margin-bottom: 1rem !important;
+			#{id(wrapper)} {
+				#{$has-controls} {
+					display: none;
+	
+					&+ul {
+						display: flex !important;
+						height: auto !important;
+						margin-bottom: 1rem;
+					}
 				}
 			}
 		}
@@ -176,14 +180,37 @@
 	&#{class(tray)} {
 		#{id(wrapper)} {
 			gap: 1.5rem;
-			max-width: 512px;
 			font-size: 0.5em;
+
+			@include break(sm) {
+				max-width: 512px;
+			}
+
+			a, button {
+				padding: 0.75rem;
+				margin: 0.25rem 0;
+				line-height: 1;
+			}
 
 			nav {
 				&>ul {
 					flex-direction: column;
 					flex-wrap: nowrap;
 					justify-content: flex-start;
+				}
+				
+				li {
+					width: 100%;
+				}
+
+				#{$has-controls} {
+					&+ul {
+						margin-bottom: 3rem !important;
+
+						&>li:first-child {
+							font-size: 1.5em;
+						}
+					}
 				}
 			}
 		}
@@ -254,7 +281,7 @@
 		text-decoration: none;
 
 		img {
-			max-width: css-var(header-height);
+			max-height: calc(2rem + css-var(header-height));
 		}
 	}
 
@@ -430,6 +457,7 @@
 		flex-wrap: nowrap;
 		flex-shrink: 0;
 		justify-content: flex-end;
+		margin-left: auto;
 
 		a,
 		button {
