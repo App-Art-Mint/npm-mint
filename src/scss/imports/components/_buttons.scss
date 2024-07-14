@@ -126,6 +126,8 @@
 	/// Button groups
 	&-group {
 		display: flex;
+		width: fit-content;
+		margin: auto;
 		padding: 0;
 		transition: all css-var(delay-default);
 

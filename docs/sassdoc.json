@@ -50,7 +50,7 @@
       "The prefix function requires a string value."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -175,7 +175,7 @@
       "The css-prefix function requires a string value."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -252,7 +252,7 @@
       "The css-var function requires a string value."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -312,7 +312,7 @@
       "The neg function requires a string value."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -367,7 +367,7 @@
       "The class function requires a string value."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -531,7 +531,7 @@
       "The controls function requires a valid attribute comparison operator for param 2."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -589,7 +589,7 @@
       "The controls function requires a valid attribute comparison operator for param 2."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -635,7 +635,7 @@
       "The expanded function requires a boolean value."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -695,7 +695,7 @@
       "The hidden function requires a boolean value. Received: #{$bool}"
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -741,7 +741,7 @@
       "The ms function requires a number value."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -801,7 +801,7 @@
       "The px function requires a number value."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -861,7 +861,7 @@
       "The strip-unit function requires a number value."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -956,7 +956,7 @@
       }
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -1019,7 +1019,7 @@
       "The delay function requires one of the following values: #{map-keys($delay)}"
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -1082,7 +1082,7 @@
       "The break function requires one of the following values: #{map-keys($break)}"
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -1183,7 +1183,7 @@
     ],
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -1278,7 +1278,7 @@
     ],
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -1426,7 +1426,7 @@
       }
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -1674,7 +1674,7 @@
       }
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -1752,7 +1752,7 @@
       "The break mixin requires one or two of the following values: #{map-keys($break)}"
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -1844,7 +1844,7 @@
       "The break-util mixin requires a string for the $prop argument."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -1879,7 +1879,7 @@
       "The box-util mixin requires a string for the $prop argument."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -1953,7 +1953,7 @@
       "The fluid mixin requires width and size arguments with the same units."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -2063,7 +2063,7 @@
       "The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}"
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -2109,7 +2109,7 @@
       }
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -2140,7 +2140,7 @@
       }
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -2166,7 +2166,7 @@
     "content": "",
     "require": [],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -2190,7 +2190,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_backgrounds.scss",
+      "path": "imports\\components\\_backgrounds.scss",
       "name": "_backgrounds.scss"
     }
   },
@@ -2206,7 +2206,7 @@
       "value": "width: fit-content;\n\tmax-width: 100%;\n\ttext-decoration: none;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    overflow: hidden;\n\tuser-select: none;\n    transition: color css-var(delay-default),\n                background-color css-var(delay-default),\n                border-color css-var(delay-default);",
       "line": {
         "start": 13,
-        "end": 222
+        "end": 224
       }
     },
     "access": "public",
@@ -2214,7 +2214,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_buttons.scss",
+      "path": "imports\\components\\_buttons.scss",
       "name": "_buttons.scss"
     }
   },
@@ -2230,7 +2230,7 @@
       "value": "color: inherit;\n\t\n\t\t&:hover {\n\t\t\tcolor: inherit;\n\t\t}\n\t\n\t\ti {\n\t\t\tdisplay: none;\n\t\t}",
       "line": {
         "start": 83,
-        "end": 222
+        "end": 224
       }
     },
     "access": "public",
@@ -2238,7 +2238,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_buttons.scss",
+      "path": "imports\\components\\_buttons.scss",
       "name": "_buttons.scss"
     }
   },
@@ -2251,10 +2251,10 @@
     "context": {
       "type": "css",
       "name": "#{class(btn)}",
-      "value": "padding: $btn-padding-v $btn-padding-h + $btn-padding-adjust;\n\n\t/// Icon buttons\n\t&-icon {\n\t\tdisplay: block;\n\t\ttext-align: center;\n\n\t\t@include states(hover, focus, active) {\n\t\t\ti {\n\t\t\t\tcolor: css-var($btn-back-alt-hover);\n\t\t\t}\n\t\t}\n\n\t\t@include break(xs) {\n\t\t\tdisplay: inline-block;\n\t\t}\n\n\t\ti {\n\t\t\tmargin: 0 !important;\n\t\t\tcolor: css-var($btn-border);\n\t\t\tfont-size: 4rem;\n\n\t\t\t&::before {\n\t\t\t\ttransition: color css-var(delay-default);\n\t\t\t}\n\t\t}\n\t}\n\n\t/// Button groups\n\t&-group {\n\t\tdisplay: flex;\n\t\tpadding: 0;\n\t\ttransition: all css-var(delay-default);\n\n\t\tbutton {\n\t\t\twidth: 100%;\n\t\t\tborder: none;\n\t\t\tcolor: inherit;\n\t\t\tbackground: transparent;\n\n\t\t\t&:first-child {\n\t\t\t\tpadding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;\n\t\t\t\tborder-top-left-radius: $pill-radius;\n\t\t\t\tborder-bottom-left-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&:last-child {\n\t\t\t\tpadding: $btn-padding-v $btn-padding-h $btn-padding-v 0;\n\t\t\t\tborder-top-right-radius: $pill-radius;\n\t\t\t\tborder-bottom-right-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&[disabled] {\n\t\t\t\tpointer-events: none;\n\t\t\t}\n\n\t\t\t@include states(hover, focus, active) {\n\t\t\t\tbackground: css-var(brand-5);\n\t\t\t}\n\t\t}\n\t}",
+      "value": "padding: $btn-padding-v $btn-padding-h + $btn-padding-adjust;\n\n\t/// Icon buttons\n\t&-icon {\n\t\tdisplay: block;\n\t\ttext-align: center;\n\n\t\t@include states(hover, focus, active) {\n\t\t\ti {\n\t\t\t\tcolor: css-var($btn-back-alt-hover);\n\t\t\t}\n\t\t}\n\n\t\t@include break(xs) {\n\t\t\tdisplay: inline-block;\n\t\t}\n\n\t\ti {\n\t\t\tmargin: 0 !important;\n\t\t\tcolor: css-var($btn-border);\n\t\t\tfont-size: 4rem;\n\n\t\t\t&::before {\n\t\t\t\ttransition: color css-var(delay-default);\n\t\t\t}\n\t\t}\n\t}\n\n\t/// Button groups\n\t&-group {\n\t\tdisplay: flex;\n\t\twidth: fit-content;\n\t\tmargin: auto;\n\t\tpadding: 0;\n\t\ttransition: all css-var(delay-default);\n\n\t\tbutton {\n\t\t\twidth: 100%;\n\t\t\tborder: none;\n\t\t\tcolor: inherit;\n\t\t\tbackground: transparent;\n\n\t\t\t&:first-child {\n\t\t\t\tpadding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;\n\t\t\t\tborder-top-left-radius: $pill-radius;\n\t\t\t\tborder-bottom-left-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&:last-child {\n\t\t\t\tpadding: $btn-padding-v $btn-padding-h $btn-padding-v 0;\n\t\t\t\tborder-top-right-radius: $pill-radius;\n\t\t\t\tborder-bottom-right-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&[disabled] {\n\t\t\t\tpointer-events: none;\n\t\t\t}\n\n\t\t\t@include states(hover, focus, active) {\n\t\t\t\tbackground: css-var(brand-5);\n\t\t\t}\n\t\t}\n\t}",
       "line": {
         "start": 97,
-        "end": 222
+        "end": 224
       }
     },
     "access": "public",
@@ -2262,7 +2262,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_buttons.scss",
+      "path": "imports\\components\\_buttons.scss",
       "name": "_buttons.scss"
     }
   },
@@ -2278,7 +2278,7 @@
       "value": "display: block;\n\t\ttext-align: center;\n\n\t\t@include states(hover, focus, active) {\n\t\t\ti {\n\t\t\t\tcolor: css-var($btn-back-alt-hover);\n\t\t\t}\n\t\t}\n\n\t\t@include break(xs) {\n\t\t\tdisplay: inline-block;\n\t\t}\n\n\t\ti {\n\t\t\tmargin: 0 !important;\n\t\t\tcolor: css-var($btn-border);\n\t\t\tfont-size: 4rem;\n\n\t\t\t&::before {\n\t\t\t\ttransition: color css-var(delay-default);\n\t\t\t}\n\t\t}",
       "line": {
         "start": 101,
-        "end": 222
+        "end": 224
       }
     },
     "access": "public",
@@ -2286,7 +2286,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_buttons.scss",
+      "path": "imports\\components\\_buttons.scss",
       "name": "_buttons.scss"
     }
   },
@@ -2299,10 +2299,10 @@
     "context": {
       "type": "css",
       "name": "&-group",
-      "value": "display: flex;\n\t\tpadding: 0;\n\t\ttransition: all css-var(delay-default);\n\n\t\tbutton {\n\t\t\twidth: 100%;\n\t\t\tborder: none;\n\t\t\tcolor: inherit;\n\t\t\tbackground: transparent;\n\n\t\t\t&:first-child {\n\t\t\t\tpadding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;\n\t\t\t\tborder-top-left-radius: $pill-radius;\n\t\t\t\tborder-bottom-left-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&:last-child {\n\t\t\t\tpadding: $btn-padding-v $btn-padding-h $btn-padding-v 0;\n\t\t\t\tborder-top-right-radius: $pill-radius;\n\t\t\t\tborder-bottom-right-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&[disabled] {\n\t\t\t\tpointer-events: none;\n\t\t\t}\n\n\t\t\t@include states(hover, focus, active) {\n\t\t\t\tbackground: css-var(brand-5);\n\t\t\t}\n\t\t}",
+      "value": "display: flex;\n\t\twidth: fit-content;\n\t\tmargin: auto;\n\t\tpadding: 0;\n\t\ttransition: all css-var(delay-default);\n\n\t\tbutton {\n\t\t\twidth: 100%;\n\t\t\tborder: none;\n\t\t\tcolor: inherit;\n\t\t\tbackground: transparent;\n\n\t\t\t&:first-child {\n\t\t\t\tpadding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;\n\t\t\t\tborder-top-left-radius: $pill-radius;\n\t\t\t\tborder-bottom-left-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&:last-child {\n\t\t\t\tpadding: $btn-padding-v $btn-padding-h $btn-padding-v 0;\n\t\t\t\tborder-top-right-radius: $pill-radius;\n\t\t\t\tborder-bottom-right-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&[disabled] {\n\t\t\t\tpointer-events: none;\n\t\t\t}\n\n\t\t\t@include states(hover, focus, active) {\n\t\t\t\tbackground: css-var(brand-5);\n\t\t\t}\n\t\t}",
       "line": {
         "start": 127,
-        "end": 222
+        "end": 224
       }
     },
     "access": "public",
@@ -2310,23 +2310,23 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_buttons.scss",
+      "path": "imports\\components\\_buttons.scss",
       "name": "_buttons.scss"
     }
   },
   {
     "description": "Pill buttons\n",
     "commentRange": {
-      "start": 161,
-      "end": 161
+      "start": 163,
+      "end": 163
     },
     "context": {
       "type": "css",
       "name": "#{class(pill)}",
       "value": "padding: 0 $btn-padding-adjust;\n    line-height: 2;",
       "line": {
-        "start": 162,
-        "end": 222
+        "start": 164,
+        "end": 224
       }
     },
     "access": "public",
@@ -2334,23 +2334,23 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_buttons.scss",
+      "path": "imports\\components\\_buttons.scss",
       "name": "_buttons.scss"
     }
   },
   {
     "description": "A list of buttons\n",
     "commentRange": {
-      "start": 180,
-      "end": 180
+      "start": 182,
+      "end": 182
     },
     "context": {
       "type": "css",
       "name": "#{class(buttons)}",
       "value": "display: flex;\n\talign-items: center;\n\tjustify-content: center;\n\tflex-wrap: wrap;\n\tgap: 1rem;\n\n\t@include break(xs) {\n\t\tjustify-content: flex-start;\n\t}\n\n    & > * {\n        width: 100%;\n\n        #{class(btn)}, #{class(pill)} {\n            display: block;\n        }\n\n        @include break(xs) {\n            width: auto;\n        }\n    }\n\n    #{class(buttons)} {\n        #{class(pill)} {\n            width: 100%;\n        }\n    }",
       "line": {
-        "start": 181,
-        "end": 222
+        "start": 183,
+        "end": 224
       }
     },
     "access": "public",
@@ -2358,7 +2358,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_buttons.scss",
+      "path": "imports\\components\\_buttons.scss",
       "name": "_buttons.scss"
     }
   },
@@ -2371,10 +2371,10 @@
     "context": {
       "type": "css",
       "name": "#{class(card)}",
-      "value": "display: flex;\n\tflex-direction: column;\n\theight: 100%;\n\tmax-width: 100%;\n\tmargin: 0;\n\tborder-radius: $card-radius;\n\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\toverflow: hidden;\n\n\t@include break(sm) {\n\t\tflex-direction: row;\n\n\t\t&#{class(reverse)} {\n\t\t\tflex-direction: row-reverse;\n\t\t}\n\t}\n\n\t&#{class(center)} {\n\t\t#{class(content)} {\n\t\t\t& > * {\n\t\t\t\ttext-align: center;\n\t\t\t}\n\t\t}\n\n\t\t#{class(buttons)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&-title {\n\t\t\t#{class(title)} {\n\t\t\t\ttext-align: center;\n\t\t\t}\n\t\t}\n\n\t\t&-btns {\n\t\t\t#{class(buttons)} {\n\t\t\t\tjustify-content: center;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(stagger)} {\n\t\tposition: relative;\n\t\twidth: 100%;\n\n\t\t@include break(sm) {\n\t\t\tflex-direction: row;\n\t\t\tborder-radius: 0;\n\t\t\tbox-shadow: none;\n\t\t\toverflow: visible;\n\n\t\t\t& > #{class(image)},\n\t\t\t& > mint-image #{class(image)} {\n\t\t\t\twidth: calc(50% + $card-padding);\n\t\t\t\theight: fit-content;\n\t\t\t\tmargin-right: $card-padding * -2;\n\t\t\t\tborder-radius: $card-radius;\n\t\t\t\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\n\t\t\t\timg {\n\t\t\t\t\theight: 100%;\n\t\t\t\t\tobject-fit: cover;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t& > #{class(content)} {\n\t\t\t\twidth: calc(50% + $card-padding);\n\t\t\t\theight: fit-content;\n\t\t\t\tmargin-top: $card-padding * 2;\n\t\t\t\tborder-radius: $card-radius;\n\t\t\t\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\t\t\t}\n\t\t}\n\n\t\t&#{class(reverse)} {\n\t\t\t@include break(sm) {\n\t\t\t\tflex-direction: row-reverse;\n\n\t\t\t\t& > #{class(image)},\n\t\t\t\t& > mint-image #{class(image)} {\n\t\t\t\t\tmargin-right: 0;\n\t\t\t\t\tmargin-left: $card-padding * -2;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t& > #{class(image)}:only-child,\n\t& > mint-image:only-child #{class(image)} {\n\t\twidth: 100%;\n\t}\n\n\t& > #{class(image)},\n\t& > mint-image #{class(image)} {\n\t\toverflow: hidden;\n\n\t\t@include break(sm) {\n\t\t\twidth: 50%;\n\t\t}\n\n\t\t&+#{class(content)} {\n\t\t\t@include break(sm) {\n\t\t\t\twidth: 50%;\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(content)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tgap: math.div($grid-gap, 2);\n\t\tposition: relative;\n\t\tpadding: $card-padding;\n\t\tbackground: css-var($card-bg-color);\n\t\twidth: 100%;\n\t\toverflow: hidden;\n\n\t\t& > * {\n\t\t\tmargin-top: 0;\n\t\t\tmargin-bottom: 0;\n\t\t}\n\t}\n\n\t#{class(title)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\tjustify-content: flex-start;\n\t\theight: fit-content;\n\t\tgap: $card-padding;\n\n\t\t@include break(xs) {\n\t\t\tflex-direction: row;\n\t\t}\n\n\t\t&:only-child {\n\t\t\theight: 100%;\n\t\t}\n\n\t\t& > #{class(image)},\n\t\t& > mint-image #{class(image)} {\n\t\t\twidth: 100%;\n\t\t\theight: 100%;\n\t\t\tmax-width: $card-logo-size;\n\t\t\tmax-height: $card-logo-size;\n\n\t\t\t&#{class(large)} {\n\t\t\t\tmax-width: $card-logo-size * 2;\n\t\t\t\tmax-height: $card-logo-size * 2;\n\t\t\t}\n\n\t\t\timg {\n\t\t\t\tdisplay: block;\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 100%;\n\t\t\t\tobject-fit: contain;\n\t\t\t}\n\t\t}\n\n\t\ti {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tmin-width: $card-logo-size;\n\t\t\tmax-width: $card-logo-size;\n\t\t\tfont-size: calc($card-logo-size - 1rem);\n\t\t}\n\n\t\t& > div {\n\t\t\twidth: 100%;\n\n\t\t\t& > * {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t}\n\t}",
+      "value": "display: flex;\n\tflex-direction: column;\n\theight: 100%;\n\tmax-width: 100%;\n\tmargin: 0;\n\tborder-radius: $card-radius;\n\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\toverflow: hidden;\n\n\t@include break(sm) {\n\t\tflex-direction: row;\n\n\t\t&#{class(reverse)} {\n\t\t\tflex-direction: row-reverse;\n\t\t}\n\t}\n\n\t&#{class(center)} {\n\t\t#{class(title)} {\n\t\t\ttext-align: center;\n\t\t}\n\n\t\t#{class(content)} {\n\t\t\t& > * {\n\t\t\t\ttext-align: center;\n\t\t\t}\n\t\t}\n\n\t\t#{class(buttons)} {\n\t\t\tjustify-content: center;\n\t\t}\n\n\t\t&-title {\n\t\t\t#{class(title)} {\n\t\t\t\ttext-align: center;\n\t\t\t}\n\t\t}\n\n\t\t&-content {\n\t\t\t#{class(content)} {\n\t\t\t\t& > * {\n\t\t\t\t\ttext-align: center;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t&-btns {\n\t\t\t#{class(buttons)} {\n\t\t\t\tjustify-content: center;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(stagger)} {\n\t\tposition: relative;\n\t\twidth: 100%;\n\n\t\t@include break(sm) {\n\t\t\tflex-direction: row;\n\t\t\tborder-radius: 0;\n\t\t\tbox-shadow: none;\n\t\t\toverflow: visible;\n\n\t\t\t& > #{class(image)},\n\t\t\t& > mint-image #{class(image)} {\n\t\t\t\twidth: calc(50% + $card-padding);\n\t\t\t\theight: fit-content;\n\t\t\t\tmargin-right: $card-padding * -2;\n\t\t\t\tborder-radius: $card-radius;\n\t\t\t\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\n\t\t\t\timg {\n\t\t\t\t\theight: 100%;\n\t\t\t\t\tobject-fit: cover;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t& > #{class(content)} {\n\t\t\t\twidth: calc(50% + $card-padding);\n\t\t\t\theight: fit-content;\n\t\t\t\tmargin-top: $card-padding * 2;\n\t\t\t\tborder-radius: $card-radius;\n\t\t\t\tbox-shadow: $card-shadow-size #{css-var($card-shadow-color)};\n\t\t\t}\n\t\t}\n\n\t\t&#{class(reverse)} {\n\t\t\t@include break(sm) {\n\t\t\t\tflex-direction: row-reverse;\n\n\t\t\t\t& > #{class(image)},\n\t\t\t\t& > mint-image #{class(image)} {\n\t\t\t\t\tmargin-right: 0;\n\t\t\t\t\tmargin-left: $card-padding * -2;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t& > #{class(image)}:only-child,\n\t& > mint-image:only-child #{class(image)} {\n\t\twidth: 100%;\n\t}\n\n\t& > #{class(image)},\n\t& > mint-image #{class(image)} {\n\t\toverflow: hidden;\n\n\t\t@include break(sm) {\n\t\t\twidth: 50%;\n\t\t}\n\n\t\t&+#{class(content)} {\n\t\t\t@include break(sm) {\n\t\t\t\twidth: 50%;\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(content)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tgap: math.div($grid-gap, 2);\n\t\tposition: relative;\n\t\tpadding: $card-padding;\n\t\tbackground: css-var($card-bg-color);\n\t\twidth: 100%;\n\t\toverflow: hidden;\n\n\t\t& > * {\n\t\t\tmargin-top: 0;\n\t\t\tmargin-bottom: 0;\n\t\t}\n\t}\n\n\t#{class(title)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\theight: fit-content;\n\t\tgap: $card-padding;\n\t\ttext-align: center;\n\n\t\t@include break(xs) {\n\t\t\tflex-direction: row;\n\t\t\ttext-align: left;\n\t\t}\n\n\t\t&:only-child {\n\t\t\theight: 100%;\n\t\t}\n\n\t\t& > #{class(image)},\n\t\t& > mint-image #{class(image)} {\n\t\t\twidth: 100%;\n\t\t\theight: 100%;\n\t\t\tmax-width: $card-logo-size;\n\t\t\tmax-height: $card-logo-size;\n\n\t\t\t&#{class(large)} {\n\t\t\t\tmax-width: $card-logo-size * 2;\n\t\t\t\tmax-height: $card-logo-size * 2;\n\t\t\t}\n\n\t\t\timg {\n\t\t\t\tdisplay: block;\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 100%;\n\t\t\t\tobject-fit: contain;\n\t\t\t}\n\t\t}\n\n\t\ti {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tmin-width: $card-logo-size;\n\t\t\tmax-width: $card-logo-size;\n\t\t\tmargin: 0;\n\t\t\tfont-size: calc($card-logo-size - 1rem);\n\t\t}\n\n\t\t& > div {\n\t\t\twidth: 100%;\n\n\t\t\t& > * {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(date)} {\n\t\ttext-align: center;\n\n\t\t@include break(xs) {\n\t\t\ttext-align: left;\n\t\t}\n\t}",
       "line": {
         "start": 12,
-        "end": 230
+        "end": 252
       }
     },
     "access": "public",
@@ -2382,7 +2382,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_cards.scss",
+      "path": "imports\\components\\_cards.scss",
       "name": "_cards.scss"
     }
   },
@@ -2406,7 +2406,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_embed.scss",
+      "path": "imports\\components\\_embed.scss",
       "name": "_embed.scss"
     }
   },
@@ -2430,7 +2430,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_footer.scss",
+      "path": "imports\\components\\_footer.scss",
       "name": "_footer.scss"
     }
   },
@@ -2454,7 +2454,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_header.scss",
+      "path": "imports\\components\\_header.scss",
       "name": "_header.scss"
     }
   },
@@ -2478,7 +2478,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_header.scss",
+      "path": "imports\\components\\_header.scss",
       "name": "_header.scss"
     }
   },
@@ -2502,7 +2502,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_image.scss",
+      "path": "imports\\components\\_image.scss",
       "name": "_image.scss"
     }
   },
@@ -2526,7 +2526,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_image.scss",
+      "path": "imports\\components\\_image.scss",
       "name": "_image.scss"
     }
   },
@@ -2550,7 +2550,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/components/_image.scss",
+      "path": "imports\\components\\_image.scss",
       "name": "_image.scss"
     }
   },
@@ -2574,7 +2574,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/global/_animations.scss",
+      "path": "imports\\global\\_animations.scss",
       "name": "_animations.scss"
     }
   },
@@ -2598,7 +2598,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/global/_aspect.scss",
+      "path": "imports\\global\\_aspect.scss",
       "name": "_aspect.scss"
     }
   },
@@ -2622,7 +2622,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/global/_global.scss",
+      "path": "imports\\global\\_global.scss",
       "name": "_global.scss"
     }
   },
@@ -2646,7 +2646,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/global/_icons.scss",
+      "path": "imports\\global\\_icons.scss",
       "name": "_icons.scss"
     }
   },
@@ -2670,7 +2670,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/global/_structure.scss",
+      "path": "imports\\global\\_structure.scss",
       "name": "_structure.scss"
     }
   },
@@ -2694,7 +2694,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/global/_text.scss",
+      "path": "imports\\global\\_text.scss",
       "name": "_text.scss"
     }
   },
@@ -2719,7 +2719,7 @@
     ],
     "require": [],
     "file": {
-      "path": "imports/global/_texture.scss",
+      "path": "imports\\global\\_texture.scss",
       "name": "_texture.scss"
     }
   },
@@ -2749,7 +2749,7 @@
       }
     ],
     "file": {
-      "path": "imports/global/_texture.scss",
+      "path": "imports\\global\\_texture.scss",
       "name": "_texture.scss"
     }
   },
@@ -2773,7 +2773,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/global/_texture.scss",
+      "path": "imports\\global\\_texture.scss",
       "name": "_texture.scss"
     }
   },
@@ -2797,7 +2797,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/global/_texture.scss",
+      "path": "imports\\global\\_texture.scss",
       "name": "_texture.scss"
     }
   },
@@ -2821,7 +2821,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/global/_themes.scss",
+      "path": "imports\\global\\_themes.scss",
       "name": "_themes.scss"
     }
   },
@@ -2855,7 +2855,7 @@
       }
     ],
     "file": {
-      "path": "imports/global/_themes.scss",
+      "path": "imports\\global\\_themes.scss",
       "name": "_themes.scss"
     }
   },
@@ -2889,7 +2889,7 @@
       }
     ],
     "file": {
-      "path": "imports/global/_themes.scss",
+      "path": "imports\\global\\_themes.scss",
       "name": "_themes.scss"
     }
   },
@@ -2913,7 +2913,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/global/_themes.scss",
+      "path": "imports\\global\\_themes.scss",
       "name": "_themes.scss"
     }
   },
@@ -2937,7 +2937,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/global/_themes.scss",
+      "path": "imports\\global\\_themes.scss",
       "name": "_themes.scss"
     }
   },
@@ -2975,7 +2975,7 @@
       "The states mixin requires a string for each state argument."
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3005,7 +3005,7 @@
       }
     ],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3030,7 +3030,7 @@
     ],
     "require": [],
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3055,7 +3055,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3080,7 +3080,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3105,7 +3105,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3130,7 +3130,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3155,7 +3155,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3180,7 +3180,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3205,7 +3205,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3230,7 +3230,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3255,7 +3255,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3280,7 +3280,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3305,7 +3305,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3330,7 +3330,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     },
     "usedBy": [
@@ -3369,7 +3369,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3394,7 +3394,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3419,7 +3419,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3443,7 +3443,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3468,7 +3468,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3493,7 +3493,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/util/_vars.scss",
+      "path": "imports\\util\\_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3520,7 +3520,7 @@
     ],
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3546,7 +3546,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3572,7 +3572,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -3636,7 +3636,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -3688,7 +3688,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -3728,7 +3728,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -3768,7 +3768,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3794,7 +3794,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3820,7 +3820,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3846,7 +3846,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3872,7 +3872,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3898,7 +3898,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3924,7 +3924,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3950,7 +3950,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3976,7 +3976,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -4002,7 +4002,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -4028,7 +4028,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -4054,7 +4054,7 @@
     "type": "Number",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -4080,7 +4080,7 @@
     "type": "Number",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   },
@@ -4106,7 +4106,7 @@
     "type": "Boolean",
     "access": "public",
     "file": {
-      "path": "imports/util/_util.scss",
+      "path": "imports\\util\\_util.scss",
       "name": "_util.scss"
     }
   }
