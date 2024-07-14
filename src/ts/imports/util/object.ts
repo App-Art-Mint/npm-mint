@@ -137,5 +137,48 @@ export abstract class mintObject {
             return obj;
         }, {});
     };
+
+    /**
+     * Update two sets of objects
+     * @param original - the original object
+     * @param update - the object to update the original with
+     * @returns - the original objects with updated data from the update
+     */
+    static updateArray (original: any[], update?: any[], key = 'id') : any {
+        
+        // If there are no originals, push the updates
+        if (!update?.length) {
+            update?.forEach((object) => original.push(object));
+        
+        // If there are existing objects
+        } else {
+
+            // Create a dictionary of the updated objects
+            const updateObjects = update.reduce<{ [key: string]: Object }>((objects, object) => ({
+                ...objects,
+                [object?.[key] ?? '']: object
+            }), {});
+
+            // Remove any objects that aren't in the updated objects
+            const missingObjects = original.filter((object) => !updateObjects[object?.[key] ?? '']);
+            missingObjects?.forEach((object) => {
+                const index = original.indexOf(object);
+                if (typeof index == 'number' && index !== -1) {
+                    original.splice(index, 1);
+                }
+            });
+
+            // Update the existing objects with updates
+            original.forEach((object) => {
+                if (updateObjects[object?.[key] ?? '']) {
+                    Object.assign(object, updateObjects[object?.[key] ?? '']);
+                }
+            });
+        }
+
+        // Push any new objects
+        const newObjects = update?.filter((object) => !original.some((existingObject) => existingObject?.[key] === object?.[key]));
+        newObjects?.forEach(newObject => original.push(newObject));
+    }
 };
 export default mintObject;

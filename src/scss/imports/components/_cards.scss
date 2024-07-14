@@ -28,6 +28,10 @@
 	}
 
 	&#{class(center)} {
+		#{class(title)} {
+			text-align: center;
+		}
+
 		#{class(content)} {
 			& > * {
 				text-align: center;
@@ -41,6 +45,14 @@
 		&-title {
 			#{class(title)} {
 				text-align: center;
+			}
+		}
+
+		&-content {
+			#{class(content)} {
+				& > * {
+					text-align: center;
+				}
 			}
 		}
 
@@ -137,12 +149,13 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: flex-start;
 		height: fit-content;
 		gap: $card-padding;
+		text-align: center;
 
 		@include break(xs) {
 			flex-direction: row;
+			text-align: left;
 		}
 
 		&:only-child {
@@ -175,6 +188,7 @@
 			justify-content: center;
 			min-width: $card-logo-size;
 			max-width: $card-logo-size;
+			margin: 0;
 			font-size: calc($card-logo-size - 1rem);
 		}
 
@@ -184,6 +198,14 @@
 			& > * {
 				margin: 0;
 			}
+		}
+	}
+
+	#{class(date)} {
+		text-align: center;
+
+		@include break(xs) {
+			text-align: left;
 		}
 	}
 }
