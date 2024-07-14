@@ -82,6 +82,117 @@ section {
 	}
 }
 
+@mixin grid-2 {
+	@include break(sm) {
+		grid-template-columns: repeat(2, 1fr);
+		
+		& > :last-child:nth-child(odd) {
+			#{class(card)} {
+				grid-column: span 2;
+				width: 50%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}
+
+@mixin grid-3 {
+	@include break(lg) {
+		grid-template-columns: repeat(3, 1fr);
+
+		& > :last-child:nth-child(odd) {
+			#{class(card)} {
+				grid-column: span 1;
+				width: 100%;
+			}
+		}
+
+		& > :last-child:nth-child(#{'3n+1'}) {
+			#{class(card)} {
+				grid-column: 2;
+			}
+		}
+
+		& > :last-child:nth-child(#{'3n+2'}) {
+			#{class(card)} {
+				grid-column: 3;
+			}
+		}
+
+		& > :nth-last-child(2):nth-child(#{'3n+1'}) {
+			#{class(card)} {
+				grid-column: 1;
+			}
+		}
+	}
+}
+
+@mixin grid-4 {
+	@include break(xl) {
+		grid-template-columns: repeat(4, 1fr);
+
+		& > :last-child:nth-child(odd),
+		& > :last-child:nth-child(#{'3n+1'}),
+		& > :last-child:nth-child(#{'3n+2'}),
+		& > :nth-last-child(2):nth-child(#{'3n+1'}) {
+			#{class(card)} {
+				grid-column: span 1;
+				width: 100%;
+			}
+		}
+
+		& > :last-child:nth-child(#{'4n+1'}) {
+			#{class(card)} {
+				grid-column: 2 / span 2;
+				width: 50%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+		& > :last-child:nth-child(#{'4n+2'}) {
+			#{class(card)} {
+				grid-column: 3 / span 2;
+				width: 50%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+		& > :nth-last-child(2):nth-child(#{'4n+1'}) {
+			#{class(card)} {
+				grid-column: 1 / span 2;
+				width: 50%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+		& > :last-child:nth-child(#{'4n+3'}) {
+			#{class(card)} {
+				grid-column: 4;
+			}
+		}
+
+		& > :nth-last-child(2):nth-child(#{'4n+2'}) {
+			#{class(card)} {
+				grid-column: 2 / span 2;
+				width: 50%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+		& > :nth-last-child(3):nth-child(#{'4n+1'}) {
+			#{class(card)} {
+				grid-column: 1;
+			}
+		}
+	}
+
+}
+
 #{class(grid)} {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -89,38 +200,19 @@ section {
 	margin-top: $grid-gap;
 	margin-bottom: $grid-gap;
 
-	&>* {
-		margin: 0;
-	}
-
 	&#{class('2')} {
-		@include break(sm) {
-			grid-template-columns: repeat(2, 1fr);
-		}
+		@include grid-2;
 	}
 
 	&#{class('3')} {
-		@include break(sm) {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
-		@include break(lg) {
-			grid-template-columns: repeat(3, 1fr);
-		}
+		@include grid-2;
+		@include grid-3;
 	}
 
 	&#{class('4')} {
-		@include break(sm) {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
-		@include break(lg) {
-			grid-template-columns: repeat(3, 1fr);
-		}
-
-		@include break(xl) {
-			grid-template-columns: repeat(4, 1fr);
-		}
+		@include grid-2;
+		@include grid-3;
+		@include grid-4;
 	}
 
 	#{class(portrait)} {
