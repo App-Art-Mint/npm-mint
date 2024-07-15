@@ -1779,6 +1779,18 @@
             "end": 585
           }
         }
+      },
+      {
+        "description": "Border Mixin\n",
+        "context": {
+          "type": "mixin",
+          "name": "mint-border",
+          "code": "\n\tpadding: math.div($texture-padding, 2) + $texture-border-width;\n\tborder-image-source: url($texture-border-image);\n\tborder-image-slice: $texture-border-slice;\n\tborder-image-repeat: #{$texture-border-repeat};\n\tborder-image-width: $texture-border-width;\n\tborder-style: $texture-border-type;\n\n    @include break(sm) {\n        padding: $texture-padding + $texture-border-width;\n    }\n",
+          "line": {
+            "start": 53,
+            "end": 64
+          }
+        }
       }
     ]
   },
@@ -2614,7 +2626,7 @@
       "value": "&,\n\t&::before,\n\t&::after {\n\t\tbox-sizing: border-box;\n\t}",
       "line": {
         "start": 5,
-        "end": 150
+        "end": 151
       }
     },
     "access": "public",
@@ -2686,7 +2698,7 @@
       "value": "font-family: $font-primary, $font-backups;\n    font-size: 1rem;\n\n    @include break(md) {\n        font-size: 1.125rem;\n    }",
       "line": {
         "start": 11,
-        "end": 55
+        "end": 59
       }
     },
     "access": "public",
@@ -2701,16 +2713,16 @@
   {
     "description": "Texture Mixin\n",
     "commentRange": {
-      "start": 10,
-      "end": 10
+      "start": 11,
+      "end": 11
     },
     "context": {
       "type": "mixin",
       "name": "mint-texture",
       "code": "\n    position: relative;\n    \n    &::before, &::after {\n        content: '';\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        pointer-events: none;\n    }\n\n    &::before {\n        opacity: $texture-opacity;\n        background-image: url($texture-bg);\n        background-size: $texture-bg-size;\n        background-position: $texture-bg-position;\n        @if ($texture-blend) {\n            mix-blend-mode: $texture-blend;\n        }\n    }\n\n    &::after {\n        opacity: $texture-alt-opacity;\n        background-size: $texture-alt-bg-size;\n        background-position: $texture-alt-bg-position;\n        mask-image: $texture-alt-mask;\n        @if ($texture-alt-blend) {\n            mix-blend-mode: $texture-alt-blend;\n        }\n        z-index: 1;\n    }\n\n    & > * {\n        position: relative;\n        z-index: 10;\n    }\n",
       "line": {
-        "start": 11,
-        "end": 49
+        "start": 12,
+        "end": 50
       }
     },
     "access": "public",
@@ -2726,16 +2738,16 @@
   {
     "description": "Border Mixin\n",
     "commentRange": {
-      "start": 51,
-      "end": 51
+      "start": 52,
+      "end": 52
     },
     "context": {
       "type": "mixin",
       "name": "mint-border",
-      "code": "\n\tpadding: $texture-padding + $texture-border-width;\n\tborder-image-source: url($texture-border-image);\n\tborder-image-slice: $texture-border-slice;\n\tborder-image-repeat: #{$texture-border-repeat};\n\tborder-image-width: $texture-border-width;\n\tborder-style: $texture-border-type;\n",
+      "code": "\n\tpadding: math.div($texture-padding, 2) + $texture-border-width;\n\tborder-image-source: url($texture-border-image);\n\tborder-image-slice: $texture-border-slice;\n\tborder-image-repeat: #{$texture-border-repeat};\n\tborder-image-width: $texture-border-width;\n\tborder-style: $texture-border-type;\n\n    @include break(sm) {\n        padding: $texture-padding + $texture-border-width;\n    }\n",
       "line": {
-        "start": 52,
-        "end": 59
+        "start": 53,
+        "end": 64
       }
     },
     "access": "public",
@@ -2743,6 +2755,14 @@
       "undefined"
     ],
     "require": [
+      {
+        "type": "mixin",
+        "name": "break"
+      },
+      {
+        "type": "variable",
+        "name": "texture-padding"
+      },
       {
         "type": "variable",
         "name": "texture-padding"
@@ -2756,16 +2776,16 @@
   {
     "description": "Texture Styles\n",
     "commentRange": {
-      "start": 61,
-      "end": 61
+      "start": 66,
+      "end": 66
     },
     "context": {
       "type": "css",
       "name": "#{class(texture)}",
       "value": "@if $texture-bg {\n        @include mint-texture();\n    }",
       "line": {
-        "start": 62,
-        "end": 105
+        "start": 67,
+        "end": 110
       }
     },
     "access": "public",
@@ -2780,16 +2800,16 @@
   {
     "description": "Border Styles\n",
     "commentRange": {
-      "start": 68,
-      "end": 68
+      "start": 73,
+      "end": 73
     },
     "context": {
       "type": "css",
       "name": "#{class(border)}",
       "value": "@extend #{class(texture)};\n    @if $texture-border-image {\n        @include mint-border();\n    } @else if $texture-border-color {\n        border: $texture-border-width $texture-border-type css-var($texture-border-color);\n    }",
       "line": {
-        "start": 69,
-        "end": 105
+        "start": 74,
+        "end": 110
       }
     },
     "access": "public",
@@ -3339,10 +3359,22 @@
         "context": {
           "type": "mixin",
           "name": "mint-border",
-          "code": "\n\tpadding: $texture-padding + $texture-border-width;\n\tborder-image-source: url($texture-border-image);\n\tborder-image-slice: $texture-border-slice;\n\tborder-image-repeat: #{$texture-border-repeat};\n\tborder-image-width: $texture-border-width;\n\tborder-style: $texture-border-type;\n",
+          "code": "\n\tpadding: math.div($texture-padding, 2) + $texture-border-width;\n\tborder-image-source: url($texture-border-image);\n\tborder-image-slice: $texture-border-slice;\n\tborder-image-repeat: #{$texture-border-repeat};\n\tborder-image-width: $texture-border-width;\n\tborder-style: $texture-border-type;\n\n    @include break(sm) {\n        padding: $texture-padding + $texture-border-width;\n    }\n",
           "line": {
-            "start": 52,
-            "end": 59
+            "start": 53,
+            "end": 64
+          }
+        }
+      },
+      {
+        "description": "Border Mixin\n",
+        "context": {
+          "type": "mixin",
+          "name": "mint-border",
+          "code": "\n\tpadding: math.div($texture-padding, 2) + $texture-border-width;\n\tborder-image-source: url($texture-border-image);\n\tborder-image-slice: $texture-border-slice;\n\tborder-image-repeat: #{$texture-border-repeat};\n\tborder-image-width: $texture-border-width;\n\tborder-style: $texture-border-type;\n\n    @include break(sm) {\n        padding: $texture-padding + $texture-border-width;\n    }\n",
+          "line": {
+            "start": 53,
+            "end": 64
           }
         }
       }
