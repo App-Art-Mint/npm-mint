@@ -28,27 +28,18 @@
 	}
 
 	&#{class(center)} {
-		#{class(title)} {
-			text-align: center;
-		}
-
-		#{class(content)} {
-			& > * {
-				text-align: center;
-			}
-		}
-
-		#{class(buttons)} {
-			justify-content: center;
-		}
-
-		&-title {
+		
+		@mixin title {
 			#{class(title)} {
-				text-align: center;
+				justify-content: center;
+
+				& > div {
+					width: auto;
+				}
 			}
 		}
 
-		&-content {
+		@mixin content {
 			#{class(content)} {
 				& > * {
 					text-align: center;
@@ -56,10 +47,26 @@
 			}
 		}
 
-		&-btns {
+		@mixin buttons {
 			#{class(buttons)} {
 				justify-content: center;
 			}
+		}
+
+		@include title;
+		@include content;
+		@include buttons;
+
+		&-title {
+			@include title;
+		}
+
+		&-content {
+			@include content;
+		}
+
+		&-btns {
+			@include buttons;
 		}
 	}
 

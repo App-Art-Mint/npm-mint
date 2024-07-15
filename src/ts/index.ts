@@ -24,6 +24,7 @@ export { mintIcon } from './imports/util/icon';
 export { mintList } from './imports/util/list';
 export { mintMath } from './imports/util/math';
 export { mintObject } from './imports/util/object';
+export { mintScroll } from './imports/util/scroll';
 export { mintText } from './imports/util/text';
 export { mintWindow } from './imports/util/window';
 
