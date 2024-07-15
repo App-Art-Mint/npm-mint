@@ -51,4 +51,8 @@ p {
 
 #{class(disclaim)} {
     font-size: 0.875rem;
+
+    @include break-max(xs) {
+        text-align: center;
+    }
 }

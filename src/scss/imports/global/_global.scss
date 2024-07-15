@@ -47,6 +47,7 @@ main {
 	position: relative;
 	width: 100%;
 	min-height: calc(100vh - css-var(header-height));
+	overflow: hidden;
 	z-index: 1000;
 
 	&>router-outlet {

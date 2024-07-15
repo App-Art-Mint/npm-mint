@@ -5,6 +5,7 @@
 @charset 'utf-8';
 
 /// Imports
+@use 'sass:math';
 @use '../util' as *;
 
 /// Texture Mixin
@@ -50,12 +51,16 @@
 
 /// Border Mixin
 @mixin mint-border () {
-	padding: $texture-padding + $texture-border-width;
+	padding: math.div($texture-padding, 2) + $texture-border-width;
 	border-image-source: url($texture-border-image);
 	border-image-slice: $texture-border-slice;
 	border-image-repeat: #{$texture-border-repeat};
 	border-image-width: $texture-border-width;
 	border-style: $texture-border-type;
+
+    @include break(sm) {
+        padding: $texture-padding + $texture-border-width;
+    }
 }
 
 /// Texture Styles
