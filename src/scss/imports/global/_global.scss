@@ -20,6 +20,7 @@ body {
 	margin: 0;
 	padding: 0;
 	word-break: break-word;
+	scroll-behavior: smooth;
 
 	@include break(xs) {
 		word-break: initial;
