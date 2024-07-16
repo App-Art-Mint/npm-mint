@@ -32,13 +32,13 @@
 }
 
 #{class(fall-in)} {
-    opacity: 0;
+    filter: opacity(0%);
     transform: translateY(-100px);
     transition: all delay(slow) ease-out, box-shadow delay(slow) delay(med-slow) ease-out !important;
     pointer-events: none;
 
     &#{class(show)}#{neg(class(loading))} {
-        opacity: 1;
+        filter: opacity(100%);
         transform: translateY(0%);
         pointer-events: auto;
     }
