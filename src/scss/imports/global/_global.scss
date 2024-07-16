@@ -105,6 +105,15 @@ a,
 button {
 	font-size: inherit;
 
+	&[disabled] {
+		filter: grayscale(1) brightness(0.75) !important;
+		pointer-events: none !important;
+
+		&#{class(fall-in)}#{neg(class(mint-show))} {
+			filter: grayscale(1) brightness(0.75) opacity(0%) !important;
+		}
+	}
+
 	i {
 		&:first-child {
 			margin-right: 0.5em;
