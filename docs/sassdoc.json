@@ -2626,7 +2626,7 @@
       "value": "&,\n\t&::before,\n\t&::after {\n\t\tbox-sizing: border-box;\n\t}",
       "line": {
         "start": 5,
-        "end": 151
+        "end": 152
       }
     },
     "access": "public",
