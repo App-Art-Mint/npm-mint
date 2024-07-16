@@ -2599,10 +2599,10 @@
     "context": {
       "type": "css",
       "name": "#{class(aspect)}",
-      "value": "position: relative;\n\theight: 0;\n\toverflow: hidden;\n\n\tiframe, video {\n\t\tposition: absolute !important;\n\t\ttop: 50% !important;\n\t\tleft: 50% !important;\n\t\ttransform: translate(-50%, -50%) !important;\n\t\twidth: 100% !important;\n\t\theight: 100% !important;\n\t}",
+      "value": "position: relative;\n\theight: 0;\n\toverflow: hidden;\n\n\t&#{class(spotify)} {\n\t\t&-playlist {\n\t\t\tpadding-top: 152px !important;\n\n\t\t\t@include break(xs) {\n\t\t\t\tpadding-top: 125% !important;\n\t\t\t}\n\n\t\t\t@include break(sm) {\n\t\t\t\tpadding-top: 75% !important;\n\t\t\t}\n\n\t\t\t@include break(md) {\n\t\t\t\tpadding-top: 56.25% !important;\n\t\t\t}\n\t\t}\n\n\t\t&-podcast {\n\t\t\tpadding-top: 352px !important;\n\t\t}\n\t}\n\n\tiframe, video {\n\t\tposition: absolute !important;\n\t\ttop: 50% !important;\n\t\tleft: 50% !important;\n\t\ttransform: translate(-50%, -50%) !important;\n\t\twidth: 100% !important;\n\t\theight: 100% !important;\n\t}",
       "line": {
         "start": 12,
-        "end": 33
+        "end": 55
       }
     },
     "access": "public",

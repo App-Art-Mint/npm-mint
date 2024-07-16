@@ -14,6 +14,28 @@
 	height: 0;
 	overflow: hidden;
 
+	&#{class(spotify)} {
+		&-playlist {
+			padding-top: 152px !important;
+
+			@include break(xs) {
+				padding-top: 125% !important;
+			}
+
+			@include break(sm) {
+				padding-top: 75% !important;
+			}
+
+			@include break(md) {
+				padding-top: 56.25% !important;
+			}
+		}
+
+		&-podcast {
+			padding-top: 352px !important;
+		}
+	}
+
 	iframe, video {
 		position: absolute !important;
 		top: 50% !important;
