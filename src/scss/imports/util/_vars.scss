@@ -82,6 +82,10 @@ $grid-gap: 2rem !default;
 $border-width: 0.125rem !default;
 $border-radius: 1rem !default;
 
+/// Root
+$root-bg-image: null !default;
+$root-bg-filter: null !default;
+
 /// Header
 $header-height: 4rem !default;
 $header-break: sm !default;
