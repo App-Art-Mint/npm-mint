@@ -79,6 +79,7 @@
 
 				&,
 				& nav {
+					height: $header-height;
 					background: css-var(glow-0) !important;
 					overflow: visible;
 				}
@@ -86,13 +87,19 @@
 				nav {
 					border: none;
 
+					&::before {
+						display: none;
+					}
+
 					&>ul {
 						flex-direction: row;
 						justify-content: flex-end;
 						flex-wrap: nowrap;
+						overflow: visible;
 
 						&>li {
 							position: relative;
+							display: flex;
 							width: 100%;
 							max-width: 200px;
 							text-align: center;
@@ -142,6 +149,10 @@
 
 				a {
 					font-size: 1.25rem;
+				}
+
+				a, button {
+					margin: 0.25rem 0;
 				}
 			}
 		}
@@ -374,16 +385,12 @@
 			height: calc(100vh - css-var(header-height));
 			height: calc(100dvh - css-var(header-height));
 			overflow: auto;
-			background-repeat: repeat;
+			background: css-var(back);
 
 			@include break(xl) {
 				display: flex;
 				align-items: center;
 				justify-content: center;
-			}
-
-			&#{neg(class(border))} {
-				background: css-var(back);
 			}
 
 			&> :last-child {

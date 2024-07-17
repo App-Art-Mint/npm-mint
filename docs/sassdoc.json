@@ -50,7 +50,7 @@
       "The prefix function requires a string value."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -175,7 +175,7 @@
       "The css-prefix function requires a string value."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -252,7 +252,7 @@
       "The css-var function requires a string value."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -312,7 +312,7 @@
       "The neg function requires a string value."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -367,7 +367,7 @@
       "The class function requires a string value."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -531,7 +531,7 @@
       "The controls function requires a valid attribute comparison operator for param 2."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -589,7 +589,7 @@
       "The controls function requires a valid attribute comparison operator for param 2."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -635,7 +635,7 @@
       "The expanded function requires a boolean value."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -695,7 +695,7 @@
       "The hidden function requires a boolean value. Received: #{$bool}"
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -741,7 +741,7 @@
       "The ms function requires a number value."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -801,7 +801,7 @@
       "The px function requires a number value."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -861,7 +861,7 @@
       "The strip-unit function requires a number value."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -956,7 +956,7 @@
       }
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -1019,7 +1019,7 @@
       "The delay function requires one of the following values: #{map-keys($delay)}"
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -1082,7 +1082,7 @@
       "The break function requires one of the following values: #{map-keys($break)}"
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -1183,7 +1183,7 @@
     ],
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -1278,7 +1278,7 @@
     ],
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -1426,7 +1426,7 @@
       }
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -1674,7 +1674,7 @@
       }
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -1752,7 +1752,7 @@
       "The break mixin requires one or two of the following values: #{map-keys($break)}"
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -1856,7 +1856,7 @@
       "The break-util mixin requires a string for the $prop argument."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -1891,7 +1891,7 @@
       "The box-util mixin requires a string for the $prop argument."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -1965,7 +1965,7 @@
       "The fluid mixin requires width and size arguments with the same units."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -2075,7 +2075,7 @@
       "The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}"
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -2121,7 +2121,7 @@
       }
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -2152,7 +2152,7 @@
       }
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -2178,7 +2178,7 @@
     "content": "",
     "require": [],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -2202,7 +2202,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_backgrounds.scss",
+      "path": "imports/components/_backgrounds.scss",
       "name": "_backgrounds.scss"
     }
   },
@@ -2226,7 +2226,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_buttons.scss",
+      "path": "imports/components/_buttons.scss",
       "name": "_buttons.scss"
     }
   },
@@ -2250,7 +2250,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_buttons.scss",
+      "path": "imports/components/_buttons.scss",
       "name": "_buttons.scss"
     }
   },
@@ -2274,7 +2274,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_buttons.scss",
+      "path": "imports/components/_buttons.scss",
       "name": "_buttons.scss"
     }
   },
@@ -2298,7 +2298,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_buttons.scss",
+      "path": "imports/components/_buttons.scss",
       "name": "_buttons.scss"
     }
   },
@@ -2322,7 +2322,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_buttons.scss",
+      "path": "imports/components/_buttons.scss",
       "name": "_buttons.scss"
     }
   },
@@ -2346,7 +2346,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_buttons.scss",
+      "path": "imports/components/_buttons.scss",
       "name": "_buttons.scss"
     }
   },
@@ -2370,7 +2370,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_buttons.scss",
+      "path": "imports/components/_buttons.scss",
       "name": "_buttons.scss"
     }
   },
@@ -2394,7 +2394,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_cards.scss",
+      "path": "imports/components/_cards.scss",
       "name": "_cards.scss"
     }
   },
@@ -2418,7 +2418,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_embed.scss",
+      "path": "imports/components/_embed.scss",
       "name": "_embed.scss"
     }
   },
@@ -2442,7 +2442,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_footer.scss",
+      "path": "imports/components/_footer.scss",
       "name": "_footer.scss"
     }
   },
@@ -2458,7 +2458,7 @@
       "value": "@include css-var(header-height, $header-height);\n\t@include css-var-ref(header-back, $header-back);\n\t@include css-var-ref(header-fore, $header-fore);",
       "line": {
         "start": 12,
-        "end": 506
+        "end": 513
       }
     },
     "access": "public",
@@ -2466,7 +2466,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_header.scss",
+      "path": "imports/components/_header.scss",
       "name": "_header.scss"
     }
   },
@@ -2479,10 +2479,10 @@
     "context": {
       "type": "css",
       "name": "#{id(header)}",
-      "value": "position: relative;\n\twidth: 100%;\n\tcolor: css-var(header-fore);\n\tbackground-color: css-var(header-back);\n\tz-index: 10000;\n\theight: css-var(header-height);\n\t//padding: 0 calc(css-var(header-height) / 2);\n\n\t&#{class(right)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: css-var(header-height);\n\t\t\tright: -100%;\n\t\t\tleft: unset;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tright: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(bottom)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: unset;\n\t\t\tbottom: -100%;\n\n\t\t\t&#{class(open)} {\n\t\t\t\ttop: unset;\n\t\t\t\tbottom: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(left)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: css-var(header-height);\n\t\t\tleft: -100%;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tleft: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(expand)} {\n\t\t@include break($header-break) {\n\t\t\t#{class(buttons)} {\n\t\t\t\twidth: auto;\n\n\t\t\t\t#{controls(wrapper)} {\n\t\t\t\t\tdisplay: none;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t#{id(wrapper)} {\n\t\t\t\tposition: static;\n\t\t\t\tdisplay: flex !important;\n\t\t\t\theight: 100%;\n\t\t\t\tpadding: 0;\n\t\t\t\tz-index: 0;\n\n\t\t\t\t&,\n\t\t\t\t& nav {\n\t\t\t\t\tbackground: css-var(glow-0) !important;\n\t\t\t\t\toverflow: visible;\n\t\t\t\t}\n\n\t\t\t\tnav {\n\t\t\t\t\tborder: none;\n\n\t\t\t\t\t&>ul {\n\t\t\t\t\t\tflex-direction: row;\n\t\t\t\t\t\tjustify-content: flex-end;\n\t\t\t\t\t\tflex-wrap: nowrap;\n\n\t\t\t\t\t\t&>li {\n\t\t\t\t\t\t\tposition: relative;\n\t\t\t\t\t\t\twidth: 100%;\n\t\t\t\t\t\t\tmax-width: 200px;\n\t\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t\t\tbutton,\n\t\t\t\t\t\t\tul {\n\t\t\t\t\t\t\t\twidth: 100%;\n\t\t\t\t\t\t\t\tmax-width: 200px;\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tbutton {\n\t\t\t\t\t\t\t\tfont-size: 1.5rem;\n\n\t\t\t\t\t\t\t\t$arrow-size: 1rem;\n\t\t\t\t\t\t\t\t$arrow-margin: 1rem;\n\t\t\t\t\t\t\t\tpadding-right: $arrow-margin + $arrow-size;\n\n\t\t\t\t\t\t\t\t&::after {\n\t\t\t\t\t\t\t\t\tcontent: '\\f054';\n\t\t\t\t\t\t\t\t\tfont-family: 'Font Awesome 6 Pro';\n\t\t\t\t\t\t\t\t\tfont-weight: 900;\n\t\t\t\t\t\t\t\t\tfont-size: $arrow-size;\n\t\t\t\t\t\t\t\t\tposition: absolute;\n\t\t\t\t\t\t\t\t\ttop: 50%;\n\t\t\t\t\t\t\t\t\ttransform: translateY(-50%);\n\t\t\t\t\t\t\t\t\tmargin-left: $arrow-margin;\n\t\t\t\t\t\t\t\t\ttransition: transform css-var(delay-default);\n\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t@include states(hover, focus, expanded) {\n\t\t\t\t\t\t\t\t\t&::after {\n\t\t\t\t\t\t\t\t\t\ttransform: translateY(-50%) rotate(90deg);\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tul {\n\t\t\t\t\t\t\t\tposition: absolute;\n\t\t\t\t\t\t\t\ttop: 100%;\n\t\t\t\t\t\t\t\tleft: 50%;\n\t\t\t\t\t\t\t\ttransform: translateX(-50%);\n\t\t\t\t\t\t\t\tbackground-color: css-var($header-back);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\ta {\n\t\t\t\t\tfont-size: 1.25rem;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(spread)} {\n\t\t@include break-max($header-break) {\n\t\t\t#{id(wrapper)} {\n\t\t\t\t#{$has-controls} {\n\t\t\t\t\tdisplay: none;\n\t\n\t\t\t\t\t&+ul {\n\t\t\t\t\t\tdisplay: flex !important;\n\t\t\t\t\t\theight: auto !important;\n\t\t\t\t\t\tmargin-bottom: 1rem !important;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t&#{neg(class(expand))} {\n\t\t\t#{id(wrapper)} {\n\t\t\t\t#{$has-controls} {\n\t\t\t\t\tdisplay: none;\n\t\n\t\t\t\t\t&+ul {\n\t\t\t\t\t\tdisplay: flex !important;\n\t\t\t\t\t\theight: auto !important;\n\t\t\t\t\t\tmargin-bottom: 1rem;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(tray)} {\n\t\t#{id(wrapper)} {\n\t\t\tgap: 1.5rem;\n\t\t\tfont-size: 0.5em;\n\n\t\t\t@include break(sm) {\n\t\t\t\tmax-width: 512px;\n\t\t\t}\n\n\t\t\ta, button {\n\t\t\t\tpadding: 0.75rem;\n\t\t\t\tmargin: 0.25rem 0;\n\t\t\t\tline-height: 1;\n\t\t\t}\n\n\t\t\tnav {\n\t\t\t\t&>ul {\n\t\t\t\t\tflex-direction: column;\n\t\t\t\t\tflex-wrap: nowrap;\n\t\t\t\t\tjustify-content: flex-start;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\tli {\n\t\t\t\t\twidth: 100%;\n\t\t\t\t}\n\n\t\t\t\t#{$has-controls} {\n\t\t\t\t\t&+ul {\n\t\t\t\t\t\tmargin-bottom: 3rem !important;\n\n\t\t\t\t\t\t&>li:first-child {\n\t\t\t\t\t\t\tfont-size: 1.5em;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{neg(class(border))} {\n\t\t&::before {\n\t\t\tcontent: '';\n\t\t\tposition: absolute;\n\t\t\ttop: 0;\n\t\t\tleft: 0;\n\t\t\twidth: 100%;\n\t\t\tbackground: css-var(header-back);\n\t\t}\n\t}\n\n\t&::before {\n\t\theight: css-var(header-height);\n\t\tz-index: -1;\n\t}\n\n\tnav {\n\t\t&>ul {\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t}\n\t}\n\n\tul {\n\t\tlist-style: none;\n\t\tmargin-top: 0;\n\t\tmargin-bottom: 1rem;\n\t\tpadding-left: 0;\n\t}\n\n\ta,\n\tbutton {\n\t\twidth: 100%;\n\t\tmargin: 0;\n\t\tborder: 0;\n\t\tcolor: css-var($header-link-fore);\n\t\tbackground: css-var(trans);\n\t\ttransition-property: color, background;\n\t\ttransition-duration: css-var(delay-default);\n\n\t\t@include states(hover) {\n\t\t\tcolor: css-var($header-link-fore-hover);\n\t\t}\n\t}\n\n\th1 {\n\t\tdisplay: flex;\n\t\twhite-space: nowrap;\n\t\tmargin: 0;\n\t}\n\n\t#{id(navbar)} {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: space-between;\n\t\theight: 100%;\n\t}\n\n\t#{class(logo)} {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\twidth: auto;\n\t\ttext-decoration: none;\n\n\t\timg {\n\t\t\tmax-height: calc(2rem + css-var(header-height));\n\t\t}\n\t}\n\n\t#{controls(wrapper)} {\n\t\tdisplay: inline-block;\n\t\tposition: relative;\n\t\tpadding: $menu-btn-padding;\n\t\twidth: $menu-bar-width + $menu-btn-padding * 2;\n\t\theight: $menu-btn-height + $menu-btn-padding * 2;\n\t\tborder-radius: $border-radius;\n\t\tbackground: css-var($menu-btn-color);\n\t\tbox-shadow: $menu-btn-shadow-size css-var($menu-btn-shadow-color);\n\t\tz-index: 1000;\n\n\t\t@include states(hover) {\n\t\t\tbackground: css-var($header-link-back-hover);\n\n\t\t\t#{class(menu-icon)} {\n\n\t\t\t\t&,\n\t\t\t\t&::before,\n\t\t\t\t&::after {\n\t\t\t\t\tbackground-color: css-var($header-link-fore-hover);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t#{class(menu-icon)} {\n\t\t\ttop: 50%;\n\t\t\tleft: 50%;\n\t\t\ttransform: translate(-50%, -50%);\n\n\t\t\t&,\n\t\t\t&::before,\n\t\t\t&::after {\n\t\t\t\tcontent: '';\n\t\t\t\tdisplay: block;\n\t\t\t\tposition: absolute;\n\t\t\t\tleft: 50%;\n\t\t\t\theight: $menu-bar-height;\n\t\t\t\twidth: $menu-bar-width;\n\t\t\t\tbackground-color: css-var($menu-bar-color);\n\t\t\t\ttransition: delay(default);\n\t\t\t}\n\n\t\t\t&::before {\n\t\t\t\ttransform: translate(-50%, -200%);\n\t\t\t}\n\n\t\t\t&::after {\n\t\t\t\ttransform: translate(-50%, 200%);\n\t\t\t}\n\t\t}\n\n\t\t&#{expanded(true)} {\n\t\t\t#{class(menu-icon)} {\n\t\t\t\tbackground: transparent;\n\n\t\t\t\t&::before {\n\t\t\t\t\ttransform: translate(-50%, 0) rotate(45deg);\n\t\t\t\t}\n\n\t\t\t\t&::after {\n\t\t\t\t\ttransform: translate(-50%, 0) rotate(-45deg);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t#{id(wrapper)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tposition: fixed;\n\t\ttop: -100%;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: calc(100vh - css-var(header-height));\n\t\theight: calc(100dvh - css-var(header-height));\n\t\tz-index: -2;\n\t\tbackground: css-var(header-back);\n\t\ttransition-duration: css-var(delay-default);\n\t\ttransition-property: top, right, bottom, left;\n\t\toverflow: auto;\n\n\t\t&#{class(open)} {\n\t\t\ttop: css-var(header-height);\n\t\t}\n\n\t\tnav {\n\t\t\theight: calc(100vh - css-var(header-height));\n\t\t\theight: calc(100dvh - css-var(header-height));\n\t\t\toverflow: auto;\n\t\t\tbackground-repeat: repeat;\n\n\t\t\t@include break(xl) {\n\t\t\t\tdisplay: flex;\n\t\t\t\talign-items: center;\n\t\t\t\tjustify-content: center;\n\t\t\t}\n\n\t\t\t&#{neg(class(border))} {\n\t\t\t\tbackground: css-var(back);\n\t\t\t}\n\n\t\t\t&> :last-child {\n\t\t\t\tmargin-bottom: 0;\n\t\t\t}\n\n\t\t\t&>ul {\n\t\t\t\theight: 100%;\n\t\t\t\toverflow: auto;\n\n\t\t\t\t@include break(md) {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tflex-direction: row;\n\t\t\t\t\tflex-wrap: wrap;\n\t\t\t\t\talign-items: center;\n\t\t\t\t\tjustify-content: space-evenly;\n\t\t\t\t\twidth: 100%;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\ta {\n\t\t\tdisplay: flex;\n\t\t}\n\n\t\ta,\n\t\tbutton {\n\t\t\t//display: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tfont-family: $font-secondary, $font-backups !important;\n\t\t\tfont-size: 3em;\n\t\t\tpadding: 0.5rem;\n\t\t\tmargin: 0.5rem 0;\n\t\t\ttext-align: center;\n\t\t\tborder-radius: $header-link-border-radius;\n\n\t\t\t@include break(xs) {\n\t\t\t\tfont-size: 4em;\n\t\t\t\tpadding: 1rem 1.5rem;\n\n\t\t\t\ti {\n\t\t\t\t\tfont-size: 0.5em;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t@include states(hover, focus) {\n\t\t\t\tbackground-color: css-var($header-link-back-hover);\n\t\t\t\tcolor: css-var($header-link-fore-hover);\n\t\t\t}\n\n\t\t\t@include states(active) {\n\t\t\t\ttext-decoration: underline;\n\t\t\t}\n\t\t}\n\n\t\tul {\n\t\t\tli {\n\t\t\t\t&:last-child {\n\t\t\t\t\tmargin-bottom: 0;\n\n\t\t\t\t\tul {\n\t\t\t\t\t\tmargin-bottom: 0;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(buttons)} {\n\t\tflex-wrap: nowrap;\n\t\tflex-shrink: 0;\n\t\tjustify-content: flex-end;\n\t\tmargin-left: auto;\n\n\t\ta,\n\t\tbutton {\n\t\t\t&#{neg(controls(wrapper))} {\n\t\t\t\tdisplay: flex;\n\t\t\t\twidth: auto;\n\t\t\t\tpadding: 0.5rem;\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(dropdown)} {\n\t\tbackground: css-var(header-back);\n\n\t\tbutton {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tmin-width: css-var(header-height);\n\t\t\theight: css-var(header-height);\n\t\t\tpadding: calc(css-var(header-height) / 2);\n\t\t}\n\n\t\tli {\n\t\t\tpadding: calc(css-var(header-height) / 2);\n\t\t\tline-height: 1;\n\t\t\tcursor: pointer;\n\t\t}\n\t}\n\n\t#{$has-controls + neg(controls(wrapper))} {\n\t\t&+ul {\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t\theight: 0;\n\t\t\toverflow: hidden;\n\t\t\ttransition: height css-var(delay-default), margin css-var(delay-default);\n\t\t}\n\n\t\t&#{$has-expanded + neg(expanded(true))} {\n\t\t\t&+ul {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t}\n\t}",
+      "value": "position: relative;\n\twidth: 100%;\n\tcolor: css-var(header-fore);\n\tbackground-color: css-var(header-back);\n\tz-index: 10000;\n\theight: css-var(header-height);\n\t//padding: 0 calc(css-var(header-height) / 2);\n\n\t&#{class(right)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: css-var(header-height);\n\t\t\tright: -100%;\n\t\t\tleft: unset;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tright: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(bottom)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: unset;\n\t\t\tbottom: -100%;\n\n\t\t\t&#{class(open)} {\n\t\t\t\ttop: unset;\n\t\t\t\tbottom: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(left)} {\n\t\t#{id(wrapper)} {\n\t\t\ttop: css-var(header-height);\n\t\t\tleft: -100%;\n\n\t\t\t&#{class(open)} {\n\t\t\t\tleft: 0;\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(expand)} {\n\t\t@include break($header-break) {\n\t\t\t#{class(buttons)} {\n\t\t\t\twidth: auto;\n\n\t\t\t\t#{controls(wrapper)} {\n\t\t\t\t\tdisplay: none;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t#{id(wrapper)} {\n\t\t\t\tposition: static;\n\t\t\t\tdisplay: flex !important;\n\t\t\t\theight: 100%;\n\t\t\t\tpadding: 0;\n\t\t\t\tz-index: 0;\n\n\t\t\t\t&,\n\t\t\t\t& nav {\n\t\t\t\t\theight: $header-height;\n\t\t\t\t\tbackground: css-var(glow-0) !important;\n\t\t\t\t\toverflow: visible;\n\t\t\t\t}\n\n\t\t\t\tnav {\n\t\t\t\t\tborder: none;\n\n\t\t\t\t\t&::before {\n\t\t\t\t\t\tdisplay: none;\n\t\t\t\t\t}\n\n\t\t\t\t\t&>ul {\n\t\t\t\t\t\tflex-direction: row;\n\t\t\t\t\t\tjustify-content: flex-end;\n\t\t\t\t\t\tflex-wrap: nowrap;\n\t\t\t\t\t\toverflow: visible;\n\n\t\t\t\t\t\t&>li {\n\t\t\t\t\t\t\tposition: relative;\n\t\t\t\t\t\t\tdisplay: flex;\n\t\t\t\t\t\t\twidth: 100%;\n\t\t\t\t\t\t\tmax-width: 200px;\n\t\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t\t\tbutton,\n\t\t\t\t\t\t\tul {\n\t\t\t\t\t\t\t\twidth: 100%;\n\t\t\t\t\t\t\t\tmax-width: 200px;\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tbutton {\n\t\t\t\t\t\t\t\tfont-size: 1.5rem;\n\n\t\t\t\t\t\t\t\t$arrow-size: 1rem;\n\t\t\t\t\t\t\t\t$arrow-margin: 1rem;\n\t\t\t\t\t\t\t\tpadding-right: $arrow-margin + $arrow-size;\n\n\t\t\t\t\t\t\t\t&::after {\n\t\t\t\t\t\t\t\t\tcontent: '\\f054';\n\t\t\t\t\t\t\t\t\tfont-family: 'Font Awesome 6 Pro';\n\t\t\t\t\t\t\t\t\tfont-weight: 900;\n\t\t\t\t\t\t\t\t\tfont-size: $arrow-size;\n\t\t\t\t\t\t\t\t\tposition: absolute;\n\t\t\t\t\t\t\t\t\ttop: 50%;\n\t\t\t\t\t\t\t\t\ttransform: translateY(-50%);\n\t\t\t\t\t\t\t\t\tmargin-left: $arrow-margin;\n\t\t\t\t\t\t\t\t\ttransition: transform css-var(delay-default);\n\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t@include states(hover, focus, expanded) {\n\t\t\t\t\t\t\t\t\t&::after {\n\t\t\t\t\t\t\t\t\t\ttransform: translateY(-50%) rotate(90deg);\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tul {\n\t\t\t\t\t\t\t\tposition: absolute;\n\t\t\t\t\t\t\t\ttop: 100%;\n\t\t\t\t\t\t\t\tleft: 50%;\n\t\t\t\t\t\t\t\ttransform: translateX(-50%);\n\t\t\t\t\t\t\t\tbackground-color: css-var($header-back);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\ta {\n\t\t\t\t\tfont-size: 1.25rem;\n\t\t\t\t}\n\n\t\t\t\ta, button {\n\t\t\t\t\tmargin: 0.25rem 0;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(spread)} {\n\t\t@include break-max($header-break) {\n\t\t\t#{id(wrapper)} {\n\t\t\t\t#{$has-controls} {\n\t\t\t\t\tdisplay: none;\n\t\n\t\t\t\t\t&+ul {\n\t\t\t\t\t\tdisplay: flex !important;\n\t\t\t\t\t\theight: auto !important;\n\t\t\t\t\t\tmargin-bottom: 1rem !important;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t&#{neg(class(expand))} {\n\t\t\t#{id(wrapper)} {\n\t\t\t\t#{$has-controls} {\n\t\t\t\t\tdisplay: none;\n\t\n\t\t\t\t\t&+ul {\n\t\t\t\t\t\tdisplay: flex !important;\n\t\t\t\t\t\theight: auto !important;\n\t\t\t\t\t\tmargin-bottom: 1rem;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{class(tray)} {\n\t\t#{id(wrapper)} {\n\t\t\tgap: 1.5rem;\n\t\t\tfont-size: 0.5em;\n\n\t\t\t@include break(sm) {\n\t\t\t\tmax-width: 512px;\n\t\t\t}\n\n\t\t\ta, button {\n\t\t\t\tpadding: 0.75rem;\n\t\t\t\tmargin: 0.25rem 0;\n\t\t\t\tline-height: 1;\n\t\t\t}\n\n\t\t\tnav {\n\t\t\t\t&>ul {\n\t\t\t\t\tflex-direction: column;\n\t\t\t\t\tflex-wrap: nowrap;\n\t\t\t\t\tjustify-content: flex-start;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\tli {\n\t\t\t\t\twidth: 100%;\n\t\t\t\t}\n\n\t\t\t\t#{$has-controls} {\n\t\t\t\t\t&+ul {\n\t\t\t\t\t\tmargin-bottom: 3rem !important;\n\n\t\t\t\t\t\t&>li:first-child {\n\t\t\t\t\t\t\tfont-size: 1.5em;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t&#{neg(class(border))} {\n\t\t&::before {\n\t\t\tcontent: '';\n\t\t\tposition: absolute;\n\t\t\ttop: 0;\n\t\t\tleft: 0;\n\t\t\twidth: 100%;\n\t\t\tbackground: css-var(header-back);\n\t\t}\n\t}\n\n\t&::before {\n\t\theight: css-var(header-height);\n\t\tz-index: -1;\n\t}\n\n\tnav {\n\t\t&>ul {\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t}\n\t}\n\n\tul {\n\t\tlist-style: none;\n\t\tmargin-top: 0;\n\t\tmargin-bottom: 1rem;\n\t\tpadding-left: 0;\n\t}\n\n\ta,\n\tbutton {\n\t\twidth: 100%;\n\t\tmargin: 0;\n\t\tborder: 0;\n\t\tcolor: css-var($header-link-fore);\n\t\tbackground: css-var(trans);\n\t\ttransition-property: color, background;\n\t\ttransition-duration: css-var(delay-default);\n\n\t\t@include states(hover) {\n\t\t\tcolor: css-var($header-link-fore-hover);\n\t\t}\n\t}\n\n\th1 {\n\t\tdisplay: flex;\n\t\twhite-space: nowrap;\n\t\tmargin: 0;\n\t}\n\n\t#{id(navbar)} {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: space-between;\n\t\theight: 100%;\n\t}\n\n\t#{class(logo)} {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\twidth: auto;\n\t\ttext-decoration: none;\n\n\t\timg {\n\t\t\tmax-height: calc(2rem + css-var(header-height));\n\t\t}\n\t}\n\n\t#{controls(wrapper)} {\n\t\tdisplay: inline-block;\n\t\tposition: relative;\n\t\tpadding: $menu-btn-padding;\n\t\twidth: $menu-bar-width + $menu-btn-padding * 2;\n\t\theight: $menu-btn-height + $menu-btn-padding * 2;\n\t\tborder-radius: $border-radius;\n\t\tbackground: css-var($menu-btn-color);\n\t\tbox-shadow: $menu-btn-shadow-size css-var($menu-btn-shadow-color);\n\t\tz-index: 1000;\n\n\t\t@include states(hover) {\n\t\t\tbackground: css-var($header-link-back-hover);\n\n\t\t\t#{class(menu-icon)} {\n\n\t\t\t\t&,\n\t\t\t\t&::before,\n\t\t\t\t&::after {\n\t\t\t\t\tbackground-color: css-var($header-link-fore-hover);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t#{class(menu-icon)} {\n\t\t\ttop: 50%;\n\t\t\tleft: 50%;\n\t\t\ttransform: translate(-50%, -50%);\n\n\t\t\t&,\n\t\t\t&::before,\n\t\t\t&::after {\n\t\t\t\tcontent: '';\n\t\t\t\tdisplay: block;\n\t\t\t\tposition: absolute;\n\t\t\t\tleft: 50%;\n\t\t\t\theight: $menu-bar-height;\n\t\t\t\twidth: $menu-bar-width;\n\t\t\t\tbackground-color: css-var($menu-bar-color);\n\t\t\t\ttransition: delay(default);\n\t\t\t}\n\n\t\t\t&::before {\n\t\t\t\ttransform: translate(-50%, -200%);\n\t\t\t}\n\n\t\t\t&::after {\n\t\t\t\ttransform: translate(-50%, 200%);\n\t\t\t}\n\t\t}\n\n\t\t&#{expanded(true)} {\n\t\t\t#{class(menu-icon)} {\n\t\t\t\tbackground: transparent;\n\n\t\t\t\t&::before {\n\t\t\t\t\ttransform: translate(-50%, 0) rotate(45deg);\n\t\t\t\t}\n\n\t\t\t\t&::after {\n\t\t\t\t\ttransform: translate(-50%, 0) rotate(-45deg);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t#{id(wrapper)} {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tposition: fixed;\n\t\ttop: -100%;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: calc(100vh - css-var(header-height));\n\t\theight: calc(100dvh - css-var(header-height));\n\t\tz-index: -2;\n\t\tbackground: css-var(header-back);\n\t\ttransition-duration: css-var(delay-default);\n\t\ttransition-property: top, right, bottom, left;\n\t\toverflow: auto;\n\n\t\t&#{class(open)} {\n\t\t\ttop: css-var(header-height);\n\t\t}\n\n\t\tnav {\n\t\t\theight: calc(100vh - css-var(header-height));\n\t\t\theight: calc(100dvh - css-var(header-height));\n\t\t\toverflow: auto;\n\t\t\tbackground: css-var(back);\n\n\t\t\t@include break(xl) {\n\t\t\t\tdisplay: flex;\n\t\t\t\talign-items: center;\n\t\t\t\tjustify-content: center;\n\t\t\t}\n\n\t\t\t&> :last-child {\n\t\t\t\tmargin-bottom: 0;\n\t\t\t}\n\n\t\t\t&>ul {\n\t\t\t\theight: 100%;\n\t\t\t\toverflow: auto;\n\n\t\t\t\t@include break(md) {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tflex-direction: row;\n\t\t\t\t\tflex-wrap: wrap;\n\t\t\t\t\talign-items: center;\n\t\t\t\t\tjustify-content: space-evenly;\n\t\t\t\t\twidth: 100%;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\ta {\n\t\t\tdisplay: flex;\n\t\t}\n\n\t\ta,\n\t\tbutton {\n\t\t\t//display: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tfont-family: $font-secondary, $font-backups !important;\n\t\t\tfont-size: 3em;\n\t\t\tpadding: 0.5rem;\n\t\t\tmargin: 0.5rem 0;\n\t\t\ttext-align: center;\n\t\t\tborder-radius: $header-link-border-radius;\n\n\t\t\t@include break(xs) {\n\t\t\t\tfont-size: 4em;\n\t\t\t\tpadding: 1rem 1.5rem;\n\n\t\t\t\ti {\n\t\t\t\t\tfont-size: 0.5em;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t@include states(hover, focus) {\n\t\t\t\tbackground-color: css-var($header-link-back-hover);\n\t\t\t\tcolor: css-var($header-link-fore-hover);\n\t\t\t}\n\n\t\t\t@include states(active) {\n\t\t\t\ttext-decoration: underline;\n\t\t\t}\n\t\t}\n\n\t\tul {\n\t\t\tli {\n\t\t\t\t&:last-child {\n\t\t\t\t\tmargin-bottom: 0;\n\n\t\t\t\t\tul {\n\t\t\t\t\t\tmargin-bottom: 0;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(buttons)} {\n\t\tflex-wrap: nowrap;\n\t\tflex-shrink: 0;\n\t\tjustify-content: flex-end;\n\t\tmargin-left: auto;\n\n\t\ta,\n\t\tbutton {\n\t\t\t&#{neg(controls(wrapper))} {\n\t\t\t\tdisplay: flex;\n\t\t\t\twidth: auto;\n\t\t\t\tpadding: 0.5rem;\n\t\t\t}\n\t\t}\n\t}\n\n\t#{class(dropdown)} {\n\t\tbackground: css-var(header-back);\n\n\t\tbutton {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tmin-width: css-var(header-height);\n\t\t\theight: css-var(header-height);\n\t\t\tpadding: calc(css-var(header-height) / 2);\n\t\t}\n\n\t\tli {\n\t\t\tpadding: calc(css-var(header-height) / 2);\n\t\t\tline-height: 1;\n\t\t\tcursor: pointer;\n\t\t}\n\t}\n\n\t#{$has-controls + neg(controls(wrapper))} {\n\t\t&+ul {\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: column;\n\t\t\theight: 0;\n\t\t\toverflow: hidden;\n\t\t\ttransition: height css-var(delay-default), margin css-var(delay-default);\n\t\t}\n\n\t\t&#{$has-expanded + neg(expanded(true))} {\n\t\t\t&+ul {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t}\n\t}",
       "line": {
         "start": 19,
-        "end": 506
+        "end": 513
       }
     },
     "access": "public",
@@ -2490,7 +2490,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_header.scss",
+      "path": "imports/components/_header.scss",
       "name": "_header.scss"
     }
   },
@@ -2514,7 +2514,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_image.scss",
+      "path": "imports/components/_image.scss",
       "name": "_image.scss"
     }
   },
@@ -2538,7 +2538,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_image.scss",
+      "path": "imports/components/_image.scss",
       "name": "_image.scss"
     }
   },
@@ -2562,7 +2562,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\components\\_image.scss",
+      "path": "imports/components/_image.scss",
       "name": "_image.scss"
     }
   },
@@ -2586,7 +2586,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\global\\_animations.scss",
+      "path": "imports/global/_animations.scss",
       "name": "_animations.scss"
     }
   },
@@ -2610,7 +2610,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\global\\_aspect.scss",
+      "path": "imports/global/_aspect.scss",
       "name": "_aspect.scss"
     }
   },
@@ -2626,7 +2626,7 @@
       "value": "&,\n\t&::before,\n\t&::after {\n\t\tbox-sizing: border-box;\n\t}",
       "line": {
         "start": 5,
-        "end": 161
+        "end": 186
       }
     },
     "access": "public",
@@ -2634,7 +2634,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\global\\_global.scss",
+      "path": "imports/global/_global.scss",
       "name": "_global.scss"
     }
   },
@@ -2658,7 +2658,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\global\\_icons.scss",
+      "path": "imports/global/_icons.scss",
       "name": "_icons.scss"
     }
   },
@@ -2682,7 +2682,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\global\\_structure.scss",
+      "path": "imports/global/_structure.scss",
       "name": "_structure.scss"
     }
   },
@@ -2706,7 +2706,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\global\\_text.scss",
+      "path": "imports/global/_text.scss",
       "name": "_text.scss"
     }
   },
@@ -2731,7 +2731,7 @@
     ],
     "require": [],
     "file": {
-      "path": "imports\\global\\_texture.scss",
+      "path": "imports/global/_texture.scss",
       "name": "_texture.scss"
     }
   },
@@ -2769,7 +2769,7 @@
       }
     ],
     "file": {
-      "path": "imports\\global\\_texture.scss",
+      "path": "imports/global/_texture.scss",
       "name": "_texture.scss"
     }
   },
@@ -2793,7 +2793,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\global\\_texture.scss",
+      "path": "imports/global/_texture.scss",
       "name": "_texture.scss"
     }
   },
@@ -2817,7 +2817,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\global\\_texture.scss",
+      "path": "imports/global/_texture.scss",
       "name": "_texture.scss"
     }
   },
@@ -2841,7 +2841,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\global\\_themes.scss",
+      "path": "imports/global/_themes.scss",
       "name": "_themes.scss"
     }
   },
@@ -2875,7 +2875,7 @@
       }
     ],
     "file": {
-      "path": "imports\\global\\_themes.scss",
+      "path": "imports/global/_themes.scss",
       "name": "_themes.scss"
     }
   },
@@ -2909,7 +2909,7 @@
       }
     ],
     "file": {
-      "path": "imports\\global\\_themes.scss",
+      "path": "imports/global/_themes.scss",
       "name": "_themes.scss"
     }
   },
@@ -2933,7 +2933,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\global\\_themes.scss",
+      "path": "imports/global/_themes.scss",
       "name": "_themes.scss"
     }
   },
@@ -2957,7 +2957,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\global\\_themes.scss",
+      "path": "imports/global/_themes.scss",
       "name": "_themes.scss"
     }
   },
@@ -2995,7 +2995,7 @@
       "The states mixin requires a string for each state argument."
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3025,7 +3025,7 @@
       }
     ],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3050,7 +3050,7 @@
     ],
     "require": [],
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3075,7 +3075,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3100,7 +3100,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3125,7 +3125,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3150,7 +3150,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3175,7 +3175,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3200,20 +3200,20 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
   {
-    "description": "Header\n",
+    "description": "Root\n",
     "commentRange": {
       "start": 85,
       "end": 85
     },
     "context": {
       "type": "variable",
-      "name": "header-height",
-      "value": "4rem",
+      "name": "root-bg-image",
+      "value": "null",
       "scope": "default",
       "line": {
         "start": 86,
@@ -3225,24 +3225,24 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
   {
-    "description": "Default Shadows\n",
+    "description": "Header\n",
     "commentRange": {
-      "start": 90,
-      "end": 90
+      "start": 89,
+      "end": 89
     },
     "context": {
       "type": "variable",
-      "name": "shadow-color",
-      "value": "glow-2",
+      "name": "header-height",
+      "value": "4rem",
       "scope": "default",
       "line": {
-        "start": 91,
-        "end": 91
+        "start": 90,
+        "end": 90
       }
     },
     "access": "public",
@@ -3250,20 +3250,20 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
   {
-    "description": "Images\n",
+    "description": "Default Shadows\n",
     "commentRange": {
       "start": 94,
       "end": 94
     },
     "context": {
       "type": "variable",
-      "name": "image-shadow-size",
-      "value": "0.5rem",
+      "name": "shadow-color",
+      "value": "glow-2",
       "scope": "default",
       "line": {
         "start": 95,
@@ -3275,15 +3275,40 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
+      "name": "_vars.scss"
+    }
+  },
+  {
+    "description": "Images\n",
+    "commentRange": {
+      "start": 98,
+      "end": 98
+    },
+    "context": {
+      "type": "variable",
+      "name": "image-shadow-size",
+      "value": "0.5rem",
+      "scope": "default",
+      "line": {
+        "start": 99,
+        "end": 99
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
   {
     "description": "Buttons\n",
     "commentRange": {
-      "start": 97,
-      "end": 97
+      "start": 101,
+      "end": 101
     },
     "context": {
       "type": "variable",
@@ -3291,8 +3316,8 @@
       "value": "brand-4",
       "scope": "default",
       "line": {
-        "start": 98,
-        "end": 98
+        "start": 102,
+        "end": 102
       }
     },
     "access": "public",
@@ -3300,15 +3325,15 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
   {
     "description": "Cards\n",
     "commentRange": {
-      "start": 124,
-      "end": 124
+      "start": 128,
+      "end": 128
     },
     "context": {
       "type": "variable",
@@ -3316,8 +3341,8 @@
       "value": "black-2",
       "scope": "default",
       "line": {
-        "start": 125,
-        "end": 125
+        "start": 129,
+        "end": 129
       }
     },
     "access": "public",
@@ -3325,15 +3350,15 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
   {
     "description": "Texture\n",
     "commentRange": {
-      "start": 132,
-      "end": 132
+      "start": 136,
+      "end": 136
     },
     "context": {
       "type": "variable",
@@ -3341,8 +3366,8 @@
       "value": "1rem",
       "scope": "default",
       "line": {
-        "start": 133,
-        "end": 133
+        "start": 137,
+        "end": 137
       }
     },
     "access": "public",
@@ -3350,7 +3375,7 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     },
     "usedBy": [
@@ -3383,8 +3408,8 @@
   {
     "description": "Themes\n",
     "commentRange": {
-      "start": 157,
-      "end": 157
+      "start": 161,
+      "end": 161
     },
     "context": {
       "type": "variable",
@@ -3392,8 +3417,8 @@
       "value": "light",
       "scope": "default",
       "line": {
-        "start": 158,
-        "end": 158
+        "start": 162,
+        "end": 162
       }
     },
     "access": "public",
@@ -3401,15 +3426,15 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
   {
     "description": "Buttons\n",
     "commentRange": {
-      "start": 162,
-      "end": 162
+      "start": 166,
+      "end": 166
     },
     "context": {
       "type": "variable",
@@ -3417,8 +3442,8 @@
       "value": "brand-2",
       "scope": "private",
       "line": {
-        "start": 163,
-        "end": 163
+        "start": 167,
+        "end": 167
       }
     },
     "access": "public",
@@ -3426,15 +3451,15 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
   {
     "description": "Header\n",
     "commentRange": {
-      "start": 169,
-      "end": 169
+      "start": 173,
+      "end": 173
     },
     "context": {
       "type": "variable",
@@ -3442,8 +3467,8 @@
       "value": "brand-2",
       "scope": "private",
       "line": {
-        "start": 170,
-        "end": 170
+        "start": 174,
+        "end": 174
       }
     },
     "access": "public",
@@ -3451,23 +3476,23 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
   {
     "description": "Default Theme (light)\n",
     "commentRange": {
-      "start": 160,
-      "end": 160
+      "start": 164,
+      "end": 164
     },
     "context": {
       "type": "css",
       "name": "/// Buttons\n$btn-back-default: brand-2;\n$btn-back: $btn-back-default !default;\n\n$btn-border-default: brand-4;\n$btn-border: $btn-border-default !default;\n\n/// Header\n$header-back-default: brand-2;\n$header-back: $header-back-default !default;\n\n$header-fore-default: fore;\n$header-fore: $header-fore-default !default;\n\n$header-link-back-hover-default: shadow-5;\n$header-link-back-hover: $header-link-back-hover-default !default;\n\n$header-link-fore-default: fore;\n$header-link-fore: $header-link-fore-default !default;\n\n$header-link-fore-hover-default: back;\n$header-link-fore-hover: $header-link-fore-hover-default !default;\n\n/// Dark Theme\n@if ($theme-default == dark)",
       "value": "/// Buttons\n    $btn-back: if($btn-back != $btn-back-default, $btn-back, brand-5);\n    $btn-border: if($btn-border != $btn-border-default, $btn-border, brand-2);\n\n    /// Header\n    $header-back: if($header-back != $header-back-default, $header-back, brand-4);\n    $header-fore: if($header-fore != $header-fore-default, $header-fore, back);\n    $header-link-back-hover: if($header-link-back-hover != $header-link-back-hover-default, $header-link-back-hover, glow-5);",
       "line": {
-        "start": 186,
-        "end": 197
+        "start": 190,
+        "end": 201
       }
     },
     "access": "public",
@@ -3475,45 +3500,20 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
   {
     "description": "Buttons\n",
     "commentRange": {
-      "start": 188,
-      "end": 188
-    },
-    "context": {
-      "type": "variable",
-      "name": "btn-back",
-      "value": "if($btn-back != $btn-back-default, $btn-back, brand-5)",
-      "scope": "private",
-      "line": {
-        "start": 189,
-        "end": 189
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports\\util\\_vars.scss",
-      "name": "_vars.scss"
-    }
-  },
-  {
-    "description": "Header\n",
-    "commentRange": {
       "start": 192,
       "end": 192
     },
     "context": {
       "type": "variable",
-      "name": "header-back",
-      "value": "if($header-back != $header-back-default, $header-back, brand-4)",
+      "name": "btn-back",
+      "value": "if($btn-back != $btn-back-default, $btn-back, brand-5)",
       "scope": "private",
       "line": {
         "start": 193,
@@ -3525,7 +3525,32 @@
       "undefined"
     ],
     "file": {
-      "path": "imports\\util\\_vars.scss",
+      "path": "imports/util/_vars.scss",
+      "name": "_vars.scss"
+    }
+  },
+  {
+    "description": "Header\n",
+    "commentRange": {
+      "start": 196,
+      "end": 196
+    },
+    "context": {
+      "type": "variable",
+      "name": "header-back",
+      "value": "if($header-back != $header-back-default, $header-back, brand-4)",
+      "scope": "private",
+      "line": {
+        "start": 197,
+        "end": 197
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/util/_vars.scss",
       "name": "_vars.scss"
     }
   },
@@ -3552,7 +3577,7 @@
     ],
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3578,7 +3603,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3604,7 +3629,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -3668,7 +3693,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -3720,7 +3745,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -3760,7 +3785,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     },
     "usedBy": [
@@ -3800,7 +3825,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3826,7 +3851,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3852,7 +3877,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3878,7 +3903,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3904,7 +3929,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3930,7 +3955,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3956,7 +3981,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -3982,7 +4007,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -4008,7 +4033,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -4034,7 +4059,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -4060,7 +4085,7 @@
     "type": "String",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -4086,7 +4111,7 @@
     "type": "Number",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -4112,7 +4137,7 @@
     "type": "Number",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   },
@@ -4138,7 +4163,7 @@
     "type": "Boolean",
     "access": "public",
     "file": {
-      "path": "imports\\util\\_util.scss",
+      "path": "imports/util/_util.scss",
       "name": "_util.scss"
     }
   }

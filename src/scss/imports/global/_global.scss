@@ -40,6 +40,35 @@ body {
 			padding-top: css-var(header-height);
 		}
 	}
+
+	&#{class(ready)} {
+		#{prefix(root)} {
+			filter: opacity(1);
+		}
+	}
+}
+
+#{prefix(root)} {
+	display: block;
+	position: relative;
+	filter: opacity(0);
+	transition: filter 750ms;
+
+	@if (type-of($root-bg-image) == 'string') {
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url($root-bg-image);
+			
+			@if (type-of($root-bg-filter) == 'string' or type-of($root-bg-filter) == 'list') {
+				filter: $root-bg-filter;
+			}
+		}
+	}
 }
 
 main {
@@ -61,10 +90,6 @@ main {
 	router-outlet {
 		flex-grow: 0;
 	}
-}
-
-app-root {
-	display: block;
 }
 
 nav {
