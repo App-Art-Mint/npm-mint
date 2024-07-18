@@ -37,7 +37,11 @@ p {
 @each $tag in map-keys($font-size-mobile) {
     #{$tag}, #{class($tag)} {
         margin: 1rem 0;
-        font-size: map-get($font-size-mobile, $tag);
+        font-size: min(map-get($font-size-tiny, $tag), map-get($font-size-mobile, $tag));
+
+        @include break(xs) {
+            font-size: map-get($font-size-mobile, $tag);
+        }
 
         @include break(md) {
             font-size: map-get($font-size-desktop, $tag);
