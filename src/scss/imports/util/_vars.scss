@@ -56,6 +56,15 @@ $font-secondary-backups: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
 $font-height: 1.25 !default;
 
 /// Font Sizes
+$font-size-tiny: (
+    h1: 15vw,
+    h2: 12vw,
+    h3: 10vw,
+    h4: 8vw,
+    h5: 7vw,
+    h6: 6vw,
+    p: 1rem,
+) !default;
 $font-size-mobile: (
     h1: 2.5rem,
     h2: 2rem,
