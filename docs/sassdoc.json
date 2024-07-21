@@ -2218,7 +2218,7 @@
       "value": "width: fit-content;\n\tmax-width: 100%;\n\ttext-decoration: none;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    overflow: hidden;\n\tuser-select: none;\n    transition: color css-var(delay-default),\n                background-color css-var(delay-default),\n                border-color css-var(delay-default);",
       "line": {
         "start": 13,
-        "end": 224
+        "end": 229
       }
     },
     "access": "public",
@@ -2242,7 +2242,7 @@
       "value": "color: inherit;\n\t\n\t\t&:hover {\n\t\t\tcolor: inherit;\n\t\t}\n\t\n\t\ti {\n\t\t\tdisplay: none;\n\t\t}",
       "line": {
         "start": 83,
-        "end": 224
+        "end": 229
       }
     },
     "access": "public",
@@ -2266,7 +2266,7 @@
       "value": "padding: $btn-padding-v $btn-padding-h + $btn-padding-adjust;\n\n\t/// Icon buttons\n\t&-icon {\n\t\tdisplay: block;\n\t\ttext-align: center;\n\n\t\t@include states(hover, focus, active) {\n\t\t\ti {\n\t\t\t\tcolor: css-var($btn-back-alt-hover);\n\t\t\t}\n\t\t}\n\n\t\t@include break(xs) {\n\t\t\tdisplay: inline-block;\n\t\t}\n\n\t\ti {\n\t\t\tmargin: 0 !important;\n\t\t\tcolor: css-var($btn-border);\n\t\t\tfont-size: 4rem;\n\n\t\t\t&::before {\n\t\t\t\ttransition: color css-var(delay-default);\n\t\t\t}\n\t\t}\n\t}\n\n\t/// Button groups\n\t&-group {\n\t\tdisplay: flex;\n\t\twidth: fit-content;\n\t\tmargin: auto;\n\t\tpadding: 0;\n\t\ttransition: all css-var(delay-default);\n\n\t\tbutton {\n\t\t\twidth: 100%;\n\t\t\tborder: none;\n\t\t\tcolor: inherit;\n\t\t\tbackground: transparent;\n\n\t\t\t&:first-child {\n\t\t\t\tpadding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;\n\t\t\t\tborder-top-left-radius: $pill-radius;\n\t\t\t\tborder-bottom-left-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&:last-child {\n\t\t\t\tpadding: $btn-padding-v $btn-padding-h $btn-padding-v 0;\n\t\t\t\tborder-top-right-radius: $pill-radius;\n\t\t\t\tborder-bottom-right-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&[disabled] {\n\t\t\t\tpointer-events: none;\n\t\t\t}\n\n\t\t\t@include states(hover, focus, active) {\n\t\t\t\tbackground: css-var(brand-5);\n\t\t\t}\n\t\t}\n\t}",
       "line": {
         "start": 97,
-        "end": 224
+        "end": 229
       }
     },
     "access": "public",
@@ -2290,7 +2290,7 @@
       "value": "display: block;\n\t\ttext-align: center;\n\n\t\t@include states(hover, focus, active) {\n\t\t\ti {\n\t\t\t\tcolor: css-var($btn-back-alt-hover);\n\t\t\t}\n\t\t}\n\n\t\t@include break(xs) {\n\t\t\tdisplay: inline-block;\n\t\t}\n\n\t\ti {\n\t\t\tmargin: 0 !important;\n\t\t\tcolor: css-var($btn-border);\n\t\t\tfont-size: 4rem;\n\n\t\t\t&::before {\n\t\t\t\ttransition: color css-var(delay-default);\n\t\t\t}\n\t\t}",
       "line": {
         "start": 101,
-        "end": 224
+        "end": 229
       }
     },
     "access": "public",
@@ -2314,7 +2314,31 @@
       "value": "display: flex;\n\t\twidth: fit-content;\n\t\tmargin: auto;\n\t\tpadding: 0;\n\t\ttransition: all css-var(delay-default);\n\n\t\tbutton {\n\t\t\twidth: 100%;\n\t\t\tborder: none;\n\t\t\tcolor: inherit;\n\t\t\tbackground: transparent;\n\n\t\t\t&:first-child {\n\t\t\t\tpadding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;\n\t\t\t\tborder-top-left-radius: $pill-radius;\n\t\t\t\tborder-bottom-left-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&:last-child {\n\t\t\t\tpadding: $btn-padding-v $btn-padding-h $btn-padding-v 0;\n\t\t\t\tborder-top-right-radius: $pill-radius;\n\t\t\t\tborder-bottom-right-radius: $pill-radius;\n\t\t\t}\n\n\t\t\t&[disabled] {\n\t\t\t\tpointer-events: none;\n\t\t\t}\n\n\t\t\t@include states(hover, focus, active) {\n\t\t\t\tbackground: css-var(brand-5);\n\t\t\t}\n\t\t}",
       "line": {
         "start": 127,
-        "end": 224
+        "end": 229
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_buttons.scss",
+      "name": "_buttons.scss"
+    }
+  },
+  {
+    "description": "Select button\n",
+    "commentRange": {
+      "start": 163,
+      "end": 163
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(select)}",
+      "value": "@extend .mint-btn;",
+      "line": {
+        "start": 164,
+        "end": 229
       }
     },
     "access": "public",
@@ -2329,16 +2353,16 @@
   {
     "description": "Pill buttons\n",
     "commentRange": {
-      "start": 163,
-      "end": 163
+      "start": 168,
+      "end": 168
     },
     "context": {
       "type": "css",
       "name": "#{class(pill)}",
       "value": "padding: 0 $btn-padding-adjust;\n    line-height: 2;",
       "line": {
-        "start": 164,
-        "end": 224
+        "start": 169,
+        "end": 229
       }
     },
     "access": "public",
@@ -2353,16 +2377,16 @@
   {
     "description": "A list of buttons\n",
     "commentRange": {
-      "start": 182,
-      "end": 182
+      "start": 187,
+      "end": 187
     },
     "context": {
       "type": "css",
       "name": "#{class(buttons)}",
       "value": "display: flex;\n\talign-items: center;\n\tjustify-content: center;\n\tflex-wrap: wrap;\n\tgap: 1rem;\n\n\t@include break(xs) {\n\t\tjustify-content: flex-start;\n\t}\n\n    & > * {\n        width: 100%;\n\n        #{class(btn)}, #{class(pill)} {\n            display: block;\n        }\n\n        @include break(xs) {\n            width: auto;\n        }\n    }\n\n    #{class(buttons)} {\n        #{class(pill)} {\n            width: 100%;\n        }\n    }",
       "line": {
-        "start": 183,
-        "end": 224
+        "start": 188,
+        "end": 229
       }
     },
     "access": "public",
@@ -2626,7 +2650,7 @@
       "value": "&,\n\t&::before,\n\t&::after {\n\t\tbox-sizing: border-box;\n\t}",
       "line": {
         "start": 5,
-        "end": 181
+        "end": 180
       }
     },
     "access": "public",
