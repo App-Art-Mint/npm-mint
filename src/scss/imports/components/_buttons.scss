@@ -9,6 +9,13 @@
 
 /// All buttons
 #{class(btn)},
+#{class(btn-group)},
+#{class(btn-icon)},
+#{class(pill)} {
+	flex-shrink: 0;
+}
+
+#{class(btn)},
 #{class(btn-icon)},
 #{class(pill)} {
 	width: fit-content;
