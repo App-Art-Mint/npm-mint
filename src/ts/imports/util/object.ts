@@ -17,7 +17,7 @@ export abstract class mintObject {
             }
         });
         return isSimilar;
-    };
+    }
 
     /**
      * Returns true if the first object has at least the same
@@ -55,7 +55,7 @@ export abstract class mintObject {
             isSuperset = isSuperset && mintObject.isSuperset(superset[key], subset[key]);
         });
         return isSuperset;
-    };
+    }
 
     /**
      * Removes object entries by key
@@ -65,7 +65,7 @@ export abstract class mintObject {
      */
     static remove (object: any, keys: string[]) : Object {
         return this.removeKeys(object, keys);
-    };
+    }
 
     /**
      * Removes object entries by key
@@ -79,7 +79,7 @@ export abstract class mintObject {
             }
             return obj;
         }, {});
-    };
+    }
 
     /**
      * Removes object entries by value
@@ -91,24 +91,41 @@ export abstract class mintObject {
             }
             return obj;
         }, {});
-    };
+    }
     
     /**
      * Sorts an object's entries alphabetically by key
      */
-    static sort (object: any) : Object {
-        return Object.keys(object).sort().reduce((obj: any, key: string) => {
+    static sort (object: any, compareFn?: (a: string, b: string) => number) : any {
+        return this.sortKeys(object, compareFn);
+    }
+
+    /**
+     * Sorts an object's entries alphabetically by key
+     */
+    static sortKeys (object: any, compareFn?: (a: string, b: string) => number) : any {
+        return Object.keys(object).sort(compareFn).reduce((obj: any, key: string) => {
             obj[key] = object[key];
             return obj;
         }, {});
-    };
+    }
+
+    /**
+     * Sorts an object's entries alphabetically by value
+     */
+    static sortValues (object: any, compareFn: (a: any, b: any) => number) : any {
+        return Object.keys(object).sort((a: string, b: string) => compareFn(object[a], object[b])).reduce((obj: any, key: string) => {
+            obj[key] = object[key];
+            return obj;
+        }, {});
+    }
 
     /**
      * @alias mintObject.filterKeys
      */
     static filter (object: any, keys: string[]) : Object {
         return this.filterKeys(object, keys);
-    };
+    }
 
     /**
      * Filters an object by its keys
@@ -121,7 +138,7 @@ export abstract class mintObject {
             obj[key] = object[key];
             return obj;
         }, {});
-    };
+    }
 
     /**
      * Filters an object by its values
@@ -136,7 +153,7 @@ export abstract class mintObject {
             }
             return obj;
         }, {});
-    };
+    }
 
     /**
      * Update two sets of objects

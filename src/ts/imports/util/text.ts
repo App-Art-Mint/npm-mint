@@ -43,5 +43,14 @@ export abstract class mintText {
 
 		return word + 's';
 	}
+
+	/**
+	 * Capitalize the first letter of the given word
+	 */
+	static titleCase (text: string): string {
+		return text
+			.toLowerCase()
+			.replace(/(?:^|\s)\S/g, a => a.toUpperCase());
+	}
 };
 export default mintText;

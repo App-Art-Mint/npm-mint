@@ -160,6 +160,11 @@
 	}
 }
 
+/// Select button
+#{class(select)} {
+	@extend .mint-btn;
+}
+
 /// Pill buttons
 #{class(pill)} {
     padding: 0 $btn-padding-adjust;
