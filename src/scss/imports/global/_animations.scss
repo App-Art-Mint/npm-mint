@@ -36,11 +36,13 @@
     transform: translateY(-100px);
     transition: all delay(slow) ease-out, box-shadow delay(slow) delay(med-slow) ease-out !important;
     pointer-events: none;
+    z-index: -1;
 
     &#{class(show)}#{neg(class(loading))} {
         filter: opacity(100%);
         transform: translateY(0%);
         pointer-events: auto;
+        z-index: 1;
     }
 
     &#{neg(class(show))}, &#{class(loading)} {

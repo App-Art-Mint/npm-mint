@@ -2602,7 +2602,7 @@
       "value": "@include css-var(delay-instant, delay(instant));\n    @include css-var(delay-fast, delay(fast));\n    @include css-var(delay-med-fast, delay(med-fast));\n    @include css-var(delay-default, delay(default));\n    @include css-var(delay-med-slow, delay(med-slow));\n    @include css-var(delay-slow, delay(slow));",
       "line": {
         "start": 25,
-        "end": 78
+        "end": 80
       }
     },
     "access": "public",
