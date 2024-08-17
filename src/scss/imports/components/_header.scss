@@ -275,6 +275,8 @@
 	h1 {
 		display: flex;
 		white-space: nowrap;
+		align-items: center;
+		gap: 1rem;
 		margin: 0;
 	}
 
@@ -292,7 +294,7 @@
 		text-decoration: none;
 
 		img {
-			max-height: calc(2rem + css-var(header-height));
+			max-height: css-var(header-height);
 		}
 	}
 
