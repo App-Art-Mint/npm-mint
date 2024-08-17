@@ -2698,7 +2698,7 @@
       "value": "$padding: 0.25rem;\n\t$height: 1.5rem;\n\t$border-width: 0.125rem;\n\t$width: ($height - $padding) * 2;\n\tposition: relative;\n\tdisplay: inline-block;\n\tflex-shrink: 0;\n\theight: $height + $border-width * 2;\n\twidth: $width + $border-width * 2;\n\tborder: $border-width solid css-var(brand-2);\n\tborder-radius: $border-radius;\n\tbackground-color: css-var(brand-5);\n\tcursor: pointer;\n\n\t[type=\"checkbox\"] {\n\t\tdisplay: none;\n\n\t\t&:checked {\n\t\t\t\n\n\t\t\t& + span {\n\t\t\t\tleft: calc(100% - #{$height - $padding});\n\t\t\t\tbackground-color: css-var(brand-2);\n\t\t\t\tfilter: grayscale(0);\n\t\t\t}\n\t\t}\n\n\t\t& + span {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\tposition: absolute;\n\t\t\ttop: $padding;\n\t\t\tleft: $padding;\n\t\t\ttransform: translateX(0);\n\t\t\twidth: $height - $padding * 2;\n\t\t\theight: $height - $padding * 2;\n\t\t\tbackground-color: css-var(brand-4);\n\t\t\tborder-radius: $border-radius;\n\t\t\tfilter: grayscale(1);\n\t\t\ttransition: filter 300ms, background-color 300ms, left 300ms;\n\t\t}\n\t}",
       "line": {
         "start": 11,
-        "end": 62
+        "end": 63
       }
     },
     "access": "public",
@@ -2719,10 +2719,10 @@
     "context": {
       "type": "css",
       "name": "#{class(dropdown)}",
-      "value": "display: flex;\n\tflex-wrap: wrap;\n\tgap: 1rem;",
+      "value": "display: flex;\n\talign-items: center;\n\tflex-wrap: wrap;\n\tgap: 1rem;",
       "line": {
         "start": 58,
-        "end": 62
+        "end": 63
       }
     },
     "access": "public",
