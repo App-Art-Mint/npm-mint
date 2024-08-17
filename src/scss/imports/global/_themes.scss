@@ -89,6 +89,10 @@
 	border-color: css-var(success-4);
 }
 
+#{class(danger)} {
+	color: css-var(danger);
+}
+
 a {
 	color: css-var($link-color);
 	transition-duration: css-var(delay-default);

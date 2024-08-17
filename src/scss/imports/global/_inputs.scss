@@ -1,0 +1,62 @@
+/// _inputs.scss - Input styles
+/// @author App Art Mint LLC
+///
+/// @group Inputs
+@charset 'utf-8';
+
+/// Imports
+@use '../util' as *;
+
+/// Checkbox Styles
+#{class(check)} {
+	$padding: 0.25rem;
+	$height: 1.5rem;
+	$border-width: 0.125rem;
+	$width: ($height - $padding) * 2;
+	position: relative;
+	display: inline-block;
+	flex-shrink: 0;
+	height: $height + $border-width * 2;
+	width: $width + $border-width * 2;
+	border: $border-width solid css-var(brand-2);
+	border-radius: $border-radius;
+	background-color: css-var(brand-5);
+	cursor: pointer;
+
+	[type="checkbox"] {
+		display: none;
+
+		&:checked {
+			
+
+			& + span {
+				left: calc(100% - #{$height - $padding});
+				background-color: css-var(brand-2);
+				filter: grayscale(0);
+			}
+		}
+
+		& + span {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: $padding;
+			left: $padding;
+			transform: translateX(0);
+			width: $height - $padding * 2;
+			height: $height - $padding * 2;
+			background-color: css-var(brand-4);
+			border-radius: $border-radius;
+			filter: grayscale(1);
+			transition: filter 300ms, background-color 300ms, left 300ms;
+		}
+	}
+}
+
+/// Dropdown Styles
+#{class(dropdown)} {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
