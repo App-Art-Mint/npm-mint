@@ -2,25 +2,65 @@
  * Functions for analyzing and manipulating text.
  */
 export abstract class mintText {
-	/*static fitContainer () {
-		let $warning: JQuery<HTMLElement> = $(warningSelector);
-		$warning.css({
-			overflow: 'scroll',
-			fontSize: ''
-		});
-		while (($warning?.[0].scrollHeight ?? Number.MIN_SAFE_INTEGER) > ($warning?.innerHeight() ?? Number.MAX_SAFE_INTEGER)) {
-			let fontSize: number = parseInt($warning.css('font-size')) - 1;
-			$warning.css('font-size', fontSize + 'px');
-		}
-	}*/
 
 	/**
 	 * Generate a slug from a string
-	 * @param str - The string to slugify
+	 * @param text - The string to slugify
 	 * @returns The slugified string
 	 */
-	static slug (str: string): string {
-		return str.toLowerCase().replace(/\W+/g, '-').replace(/^-+|-+$/g, '');
+	static slug (text?: string): string {
+		return text?.toLowerCase().replace(/\W+/g, '-').replace(/^-+|-+$/g, '') ?? '';
+	}
+
+	/**
+	 * Format a phone number
+	 * @param phone - The phone number to format
+	 * @returns The formatted phone number
+	 */
+	static phone (phone?: string | number): string {
+		const given = phone?.toString().trim() ?? '';
+		if (given === '(' || given === '') {
+			console.log(given);
+			return given;
+		}
+
+		let numbers = given.replace(/\D/g, '') ?? '',
+			formatted = '';
+
+		if (numbers.length > 10) {
+			formatted += `+${numbers.slice(0, numbers.length - 10)} `;
+			numbers = numbers.slice(numbers.length - 10);
+		}
+
+		for (var i = 0; i < numbers.length; i++) {
+			switch (i) {
+				case 0:
+					formatted += '(';
+					break;
+				case 3:
+					formatted += ') ';
+					break;
+				case 6:
+					formatted += '-';
+					break;
+			}
+			formatted += numbers[i];
+		}
+
+		switch (given[given.length - 1]) {
+			case ')':
+				if (i === 3) {
+					formatted += ') ';
+				}
+				break;
+			case '-':
+				if (i === 6) {
+					formatted += '-';
+				}
+				break;
+		}
+
+		return formatted;
 	}
 
 	/**
