@@ -20,7 +20,6 @@ export abstract class mintText {
 	static phone (phone?: string | number): string {
 		const given = phone?.toString().trim() ?? '';
 		if (given === '(' || given === '') {
-			console.log(given);
 			return given;
 		}
 

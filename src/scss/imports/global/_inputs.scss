@@ -8,6 +8,16 @@
 @use '../util' as *;
 
 /// Checkbox Styles
+#{class(toggle)} {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+
+	@include break(xs) {
+		flex-direction: row;
+	}
+}
 #{class(check)} {
 	$padding: 0.25rem;
 	$height: 1.5rem;
