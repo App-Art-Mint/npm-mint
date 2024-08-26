@@ -1,0 +1,17 @@
+/// _recaptcha.scss - Recaptcha styles
+/// @author App Art Mint LLC
+///
+/// @group Components
+@charset 'utf-8';
+
+/// Recaptcha styles
+
+/// Hide the badge
+/// Requires this on form:
+/// 
+/// This site is protected by reCAPTCHA and the Google
+/// <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+/// <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+.grecaptcha-badge {
+	visibility: hidden;
+}

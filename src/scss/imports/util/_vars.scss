@@ -100,6 +100,11 @@ $header-height: 4rem !default;
 $header-break: sm !default;
 $header-link-border-radius: $border-radius !default;
 
+/// Footer
+$footer-back: back !default;
+$footer-heel-back: brand-6 !default;
+$footer-shadow: null !default;
+
 /// Default Shadows
 $shadow-color: glow-2 !default;
 $shadow-size: 0 0 2rem -0.5rem !default;
@@ -195,6 +200,10 @@ $header-link-fore: $header-link-fore-default !default;
 $header-link-fore-hover-default: back;
 $header-link-fore-hover: $header-link-fore-hover-default !default;
 
+/// Footer
+$footer-heel-fore-default: back;
+$footer-heel-fore: $footer-heel-fore-default !default;
+
 /// Dark Theme
 @if ($theme-default == dark) {
 
@@ -206,4 +215,7 @@ $header-link-fore-hover: $header-link-fore-hover-default !default;
     $header-back: if($header-back != $header-back-default, $header-back, brand-4);
     $header-fore: if($header-fore != $header-fore-default, $header-fore, back);
     $header-link-back-hover: if($header-link-back-hover != $header-link-back-hover-default, $header-link-back-hover, glow-5);
+
+    /// Footer
+    $footer-heel-fore: if($footer-heel-fore != $footer-heel-fore-default, $footer-heel-fore, fore);
 }
