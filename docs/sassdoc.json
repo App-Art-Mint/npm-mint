@@ -2687,18 +2687,42 @@
     }
   },
   {
-    "description": "Checkbox Styles\n",
+    "description": "Input Styles\n",
     "commentRange": {
       "start": 10,
       "end": 10
     },
     "context": {
       "type": "css",
-      "name": "#{class(toggle)}",
-      "value": "display: flex;\n\tflex-direction: column;\n\talign-items: center;\n\tgap: 0.5rem;\n\n\t@include break(xs) {\n\t\tflex-direction: row;\n\t}",
+      "name": "input,\ntextarea,\nselect",
+      "value": "width: 100%;\n\tpadding: 0.5rem;\n\tborder: 2px solid #ccc;\n\tborder-radius: $border-radius;",
       "line": {
-        "start": 11,
-        "end": 73
+        "start": 13,
+        "end": 120
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports\\global\\_inputs.scss",
+      "name": "_inputs.scss"
+    }
+  },
+  {
+    "description": "Checkbox Styles\n",
+    "commentRange": {
+      "start": 30,
+      "end": 30
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(toggle)}",
+      "value": "display: flex;\n\talign-items: center;\n\tgap: 1rem;\n\t\n\tdiv {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\tgap: 0.5rem;\n\n\t\t@include break(xs) {\n\t\t\tflex-direction: row;\n\t\t}\n\t}",
+      "line": {
+        "start": 31,
+        "end": 120
       }
     },
     "access": "public",
@@ -2713,16 +2737,40 @@
   {
     "description": "Dropdown Styles\n",
     "commentRange": {
-      "start": 67,
-      "end": 67
+      "start": 99,
+      "end": 99
     },
     "context": {
       "type": "css",
       "name": "#{class(dropdown)}",
-      "value": "display: flex;\n\talign-items: center;\n\tflex-wrap: wrap;\n\tgap: 1rem;",
+      "value": "display: flex;\n\talign-items: center;\n\tflex-wrap: wrap;\n\t\n\t@include break(xs) {\n\t\tgap: 1rem;\n\t}",
       "line": {
-        "start": 68,
-        "end": 73
+        "start": 100,
+        "end": 120
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports\\global\\_inputs.scss",
+      "name": "_inputs.scss"
+    }
+  },
+  {
+    "description": "Label Styles\n",
+    "commentRange": {
+      "start": 111,
+      "end": 111
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(error)}",
+      "value": "line-height: 0;\n\tfilter: opacity(0);\n\ttransition: filter 0.3s;\n\n\t&.mint-show {\n\t\tfilter: opacity(1);\n\t}",
+      "line": {
+        "start": 112,
+        "end": 120
       }
     },
     "access": "public",
