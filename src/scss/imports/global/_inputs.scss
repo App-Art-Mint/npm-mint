@@ -7,17 +7,44 @@
 /// Imports
 @use '../util' as *;
 
+/// Input Styles
+input,
+textarea,
+select {
+	width: 100%;
+	padding: 0.5rem;
+	border: 2px solid #ccc;
+	border-radius: $border-radius;
+}
+
+select {
+	@include break(xs) {
+		width: auto;
+	}
+}
+
+textarea {
+	resize: vertical;
+}
+
 /// Checkbox Styles
 #{class(toggle)} {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	gap: 0.5rem;
+	gap: 1rem;
+	
+	div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
 
-	@include break(xs) {
-		flex-direction: row;
+		@include break(xs) {
+			flex-direction: row;
+		}
 	}
 }
+
 #{class(check)} {
 	$padding: 0.25rem;
 	$height: 1.5rem;
@@ -62,6 +89,11 @@
 			transition: filter 300ms, background-color 300ms, left 300ms;
 		}
 	}
+
+	& + span {
+		width: 1.5rem;
+		text-align: center;
+	}
 }
 
 /// Dropdown Styles
@@ -69,5 +101,20 @@
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 1rem;
+	
+	@include break(xs) {
+		gap: 1rem;
+	}
+}
+
+
+/// Label Styles
+#{class(error)} {
+	line-height: 0;
+	filter: opacity(0);
+	transition: filter 0.3s;
+
+	&.mint-show {
+		filter: opacity(1);
+	}
 }
