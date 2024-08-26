@@ -4,6 +4,9 @@
 /// @group Components
 @charset 'utf-8';
 
+/// Imports
+@use '../util' as *;
+
 /// Footer Styles
 app-footer {
     display: flex;
@@ -16,4 +19,127 @@ app-footer {
         height: 100%;
         background: css-var(trans);
     }
+}
+
+/// Footer styles
+#{class(footer)} {
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+    background: css-var($footer-back);
+	transition: transform 300ms;
+	z-index: 999;
+	overflow: hidden;
+
+    @if ($footer-shadow) {
+        box-shadow: $footer-shadow css-var($footer-back);
+    }
+
+	&#{class(hide)} {
+		transform: translateY(100%);
+	}
+
+	* {
+		max-width: 100%;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	&-content {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+
+		@include break(sm) {
+			flex-direction: row;
+			align-items: flex-start;
+		}
+
+		&>p {
+			margin: 0 auto;
+			text-align: center;
+
+			a {
+				display: block;
+			}
+		}
+
+		[label="Footer"] {
+			width: 100%;
+			margin: auto;
+
+			@include break(sm) {
+				width: auto;
+			}
+
+			&>ul {
+				flex-direction: column;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				text-align: center;
+
+				@include break(xs) {
+					flex-direction: row;
+				}
+
+				&>ul {
+					li:last-child {
+						#{class(pill)} {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+
+			#{class(pill)} {
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+
+	&-heel {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0.4rem 1rem;
+        color: css-var($footer-heel-fore);
+		background: css-var($footer-heel-back);
+		text-align: center;
+
+		@include break(sm) {
+			flex-direction: row;
+		}
+	}
+
+	&-message {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		@include break(xs) {
+			flex-wrap: nowrap;
+		}
+
+		&>#{class(pill)} {
+			margin: 0 0.25rem;
+		}
+
+		&>* {
+			margin: 0 0.5rem;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
 }
