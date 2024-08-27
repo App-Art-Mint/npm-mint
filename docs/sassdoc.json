@@ -2215,10 +2215,10 @@
     "context": {
       "type": "css",
       "name": "#{class(bg)}",
-      "value": "display: block;\n    opacity: 0;\n    height: 0;\n    width: 0;\n    z-index: -1;\n    transform: none !important;",
+      "value": "display: block;\n\topacity: 0;\n\theight: 0;\n\twidth: 0;\n\tz-index: -1;\n\ttransform: none !important;",
       "line": {
         "start": 11,
-        "end": 19
+        "end": 39
       }
     },
     "access": "public",
@@ -3705,10 +3705,35 @@
     ]
   },
   {
+    "description": "Backgrounds\n",
+    "commentRange": {
+      "start": 174,
+      "end": 174
+    },
+    "context": {
+      "type": "variable",
+      "name": "back-bg-blur",
+      "value": "0.15vw",
+      "scope": "default",
+      "line": {
+        "start": 175,
+        "end": 175
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports\\util\\_vars.scss",
+      "name": "_vars.scss"
+    }
+  },
+  {
     "description": "Themes\n",
     "commentRange": {
-      "start": 175,
-      "end": 175
+      "start": 178,
+      "end": 178
     },
     "context": {
       "type": "variable",
@@ -3716,8 +3741,8 @@
       "value": "light",
       "scope": "default",
       "line": {
-        "start": 176,
-        "end": 176
+        "start": 179,
+        "end": 179
       }
     },
     "access": "public",
@@ -3732,8 +3757,8 @@
   {
     "description": "Buttons\n",
     "commentRange": {
-      "start": 180,
-      "end": 180
+      "start": 183,
+      "end": 183
     },
     "context": {
       "type": "variable",
@@ -3741,8 +3766,8 @@
       "value": "brand-2",
       "scope": "private",
       "line": {
-        "start": 181,
-        "end": 181
+        "start": 184,
+        "end": 184
       }
     },
     "access": "public",
@@ -3757,8 +3782,8 @@
   {
     "description": "Header\n",
     "commentRange": {
-      "start": 187,
-      "end": 187
+      "start": 190,
+      "end": 190
     },
     "context": {
       "type": "variable",
@@ -3766,8 +3791,8 @@
       "value": "brand-2",
       "scope": "private",
       "line": {
-        "start": 188,
-        "end": 188
+        "start": 191,
+        "end": 191
       }
     },
     "access": "public",
@@ -3782,8 +3807,8 @@
   {
     "description": "Footer\n",
     "commentRange": {
-      "start": 203,
-      "end": 203
+      "start": 206,
+      "end": 206
     },
     "context": {
       "type": "variable",
@@ -3791,8 +3816,8 @@
       "value": "back",
       "scope": "private",
       "line": {
-        "start": 204,
-        "end": 204
+        "start": 207,
+        "end": 207
       }
     },
     "access": "public",
@@ -3807,16 +3832,16 @@
   {
     "description": "Default Theme (light)\n",
     "commentRange": {
-      "start": 178,
-      "end": 178
+      "start": 181,
+      "end": 181
     },
     "context": {
       "type": "css",
       "name": "/// Buttons\n$btn-back-default: brand-2;\n$btn-back: $btn-back-default !default;\n\n$btn-border-default: brand-4;\n$btn-border: $btn-border-default !default;\n\n/// Header\n$header-back-default: brand-2;\n$header-back: $header-back-default !default;\n\n$header-fore-default: fore;\n$header-fore: $header-fore-default !default;\n\n$header-link-back-hover-default: shadow-5;\n$header-link-back-hover: $header-link-back-hover-default !default;\n\n$header-link-fore-default: fore;\n$header-link-fore: $header-link-fore-default !default;\n\n$header-link-fore-hover-default: back;\n$header-link-fore-hover: $header-link-fore-hover-default !default;\n\n/// Footer\n$footer-heel-fore-default: back;\n$footer-heel-fore: $footer-heel-fore-default !default;\n\n/// Dark Theme\n@if ($theme-default == dark)",
       "value": "/// Buttons\n    $btn-back: if($btn-back != $btn-back-default, $btn-back, brand-5);\n    $btn-border: if($btn-border != $btn-border-default, $btn-border, brand-2);\n\n    /// Header\n    $header-back: if($header-back != $header-back-default, $header-back, brand-4);\n    $header-fore: if($header-fore != $header-fore-default, $header-fore, back);\n    $header-link-back-hover: if($header-link-back-hover != $header-link-back-hover-default, $header-link-back-hover, glow-5);\n\n    /// Footer\n    $footer-heel-fore: if($footer-heel-fore != $footer-heel-fore-default, $footer-heel-fore, fore);",
       "line": {
-        "start": 208,
-        "end": 222
+        "start": 211,
+        "end": 225
       }
     },
     "access": "public",
@@ -3831,8 +3856,8 @@
   {
     "description": "Buttons\n",
     "commentRange": {
-      "start": 210,
-      "end": 210
+      "start": 213,
+      "end": 213
     },
     "context": {
       "type": "variable",
@@ -3840,8 +3865,8 @@
       "value": "if($btn-back != $btn-back-default, $btn-back, brand-5)",
       "scope": "private",
       "line": {
-        "start": 211,
-        "end": 211
+        "start": 214,
+        "end": 214
       }
     },
     "access": "public",
@@ -3856,8 +3881,8 @@
   {
     "description": "Header\n",
     "commentRange": {
-      "start": 214,
-      "end": 214
+      "start": 217,
+      "end": 217
     },
     "context": {
       "type": "variable",
@@ -3865,8 +3890,8 @@
       "value": "if($header-back != $header-back-default, $header-back, brand-4)",
       "scope": "private",
       "line": {
-        "start": 215,
-        "end": 215
+        "start": 218,
+        "end": 218
       }
     },
     "access": "public",
@@ -3881,8 +3906,8 @@
   {
     "description": "Footer\n",
     "commentRange": {
-      "start": 219,
-      "end": 219
+      "start": 222,
+      "end": 222
     },
     "context": {
       "type": "variable",
@@ -3890,8 +3915,8 @@
       "value": "if($footer-heel-fore != $footer-heel-fore-default, $footer-heel-fore, fore)",
       "scope": "private",
       "line": {
-        "start": 220,
-        "end": 220
+        "start": 223,
+        "end": 223
       }
     },
     "access": "public",
