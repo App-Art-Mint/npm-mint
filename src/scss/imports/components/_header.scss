@@ -167,7 +167,11 @@
 					&+ul {
 						display: flex !important;
 						height: auto !important;
-						margin-bottom: 1rem !important;
+						margin-bottom: 3rem !important;
+
+						&>li:first-child {
+							font-size: 1.5em;
+						}
 					}
 				}
 			}
@@ -181,7 +185,11 @@
 					&+ul {
 						display: flex !important;
 						height: auto !important;
-						margin-bottom: 1rem;
+						margin-bottom: 3rem;
+
+						&>li:first-child {
+							font-size: 1.5em;
+						}
 					}
 				}
 			}
@@ -212,16 +220,6 @@
 				
 				li {
 					width: 100%;
-				}
-
-				#{$has-controls} {
-					&+ul {
-						margin-bottom: 3rem !important;
-
-						&>li:first-child {
-							font-size: 1.5em;
-						}
-					}
 				}
 			}
 		}

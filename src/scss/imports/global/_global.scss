@@ -75,13 +75,21 @@ main {
 	overflow: hidden;
 	z-index: 1000;
 
-
 	&>router-outlet {
 		flex-grow: 0;
 		
 		&+* {
-			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 			flex-grow: 1;
+			width: 100%;
+
+			&+:not(mint-footer) {
+				height: 0;
+				overflow: hidden;
+			}
 		}
 	}
 }

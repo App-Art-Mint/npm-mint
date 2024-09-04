@@ -152,8 +152,9 @@ $texture-padding: 1rem !default;
 
 $texture-bg: null !default;
 $texture-bg-size: cover !default;
-$texture-bg-position: center !default;
+$texture-bg-position: top !default;
 $texture-blend: null !default;
+$texture-filter: null !default;
 $texture-opacity: 1 !default;
 
 $texture-alt-bg: null !default;

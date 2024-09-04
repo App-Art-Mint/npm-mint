@@ -30,6 +30,9 @@
         @if ($texture-blend) {
             mix-blend-mode: $texture-blend;
         }
+        @if ($texture-filter) {
+            filter: $texture-filter;
+        }
     }
 
     &::after {

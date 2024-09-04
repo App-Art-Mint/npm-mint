@@ -36,6 +36,7 @@ app-footer {
     }
 
 	&#{class(hide)} {
+		display: flex;
 		transform: translateY(100%);
 	}
 
