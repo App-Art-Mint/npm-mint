@@ -1,7 +1,7 @@
 /**
  * Object functions for the util library
  */
-export abstract class mintObject {
+export abstract class MintObject {
     /**
      * Returns true if the provided objects have the same entries
      */
@@ -52,7 +52,7 @@ export abstract class mintObject {
         // If the children of the subset are subsets of the
         // respective children of the superset, it is a superset
         Object.keys(subset).forEach((key: string) => {
-            isSuperset = isSuperset && mintObject.isSuperset(superset[key], subset[key]);
+            isSuperset = isSuperset && MintObject.isSuperset(superset[key], subset[key]);
         });
         return isSuperset;
     }
@@ -198,4 +198,4 @@ export abstract class mintObject {
         newObjects?.forEach(newObject => original.push(newObject));
     }
 };
-export default mintObject;
+export default MintObject;
