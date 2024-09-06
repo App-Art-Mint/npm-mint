@@ -169,7 +169,7 @@
 
 /// Select button
 #{class(select)} {
-	@extend .mint-btn;
+	@extend #{class(btn)};
 }
 
 /// Pill buttons
