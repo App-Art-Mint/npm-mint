@@ -2,7 +2,7 @@
  * CSS-selector helpers
  * @public
  */
-export abstract class mintSelectors {
+export abstract class MintSelectors {
     /**
      * The library name that will be added as a prefix
      */
@@ -181,5 +181,5 @@ export abstract class mintSelectors {
         } while (current);
         return true;
     }
-}
-export default mintSelectors;
+};
+export default MintSelectors;

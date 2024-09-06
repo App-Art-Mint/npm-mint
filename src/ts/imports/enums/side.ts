@@ -1,7 +1,7 @@
 /**
  * Side Enum
  */
- export enum mintSide {
+export enum EMintSide {
     Top,
     Right,
     Bottom,

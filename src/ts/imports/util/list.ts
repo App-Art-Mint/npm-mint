@@ -1,7 +1,7 @@
 /**
  * List functions for the util library
  */
-export abstract class mintList {
+export abstract class MintList {
 	/**
 	 * Returns a copy of the provided list with the items in random order
 	 * @param list - the list to shuffle
@@ -36,4 +36,4 @@ export abstract class mintList {
 		return list;
 	}
 };
-export default mintList;
+export default MintList;

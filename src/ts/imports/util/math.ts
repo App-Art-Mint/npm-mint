@@ -1,7 +1,7 @@
 /**
  * Math functions for the util library
  */
-export abstract class mintMath {
+export abstract class MintMath {
     /**
      * Get a random integer between min and max
      * @param max Maximum value to return
@@ -14,4 +14,4 @@ export abstract class mintMath {
         return Math.floor(Math.random() * (max - min) + min);
     }
 };
-export default mintMath;
+export default MintMath;

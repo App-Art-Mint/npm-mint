@@ -1,21 +1,26 @@
 /**
  * Imports
  */
-import { mintSide } from '../enum';
-import mintUtil from '../../util';
-import mintSelectors from '../util/selectors';
-import mintSettings from '../util/settings';
+import { EMintSide } from '../enums';
+import {
+	MintDisplay,
+	MintEvent,
+	MintSelectors,
+	MintSettings,
+	MintWindow
+} from '../util';
+
 
 /**
  * Main header functionality
  * @public
  */
-export class mintHeader {
+export class MintHeader {
     /**
      * Navbar settings
      */
      settings: {[key: string]: any} = {
-        from: mintSide.Top,
+        from: EMintSide.Top,
         fixed: true
     };
 
@@ -42,7 +47,7 @@ export class mintHeader {
         this.el.html = document.querySelector('html');
         this.el.body = document.querySelector('body');
         this.el.header = document.getElementById('mint-header');
-        this.el.mobileButton = this.el.header?.querySelector(mintSelectors.controls('mint-wrapper')) || null;
+        this.el.mobileButton = this.el.header?.querySelector(MintSelectors.controls('mint-wrapper')) || null;
         this.el.wrapper = document.getElementById('mint-wrapper');
     }
 
@@ -50,22 +55,22 @@ export class mintHeader {
      * Adds events to the dom
      */
     attachEvents () : void {
-        window.addEventListener('resize', mintUtil.throttleEvent(this.eHandleResize.bind(this), mintSettings.delay.default));
-        window.addEventListener('scroll', mintUtil.throttleEvent(this.eHandleScroll.bind(this), mintSettings.delay.default, { trailing: false }));
+        window.addEventListener('resize', MintEvent.throttleEvent(this.eHandleResize.bind(this), MintSettings.delay.default));
+        window.addEventListener('scroll', MintEvent.throttleEvent(this.eHandleScroll.bind(this), MintSettings.delay.default, { trailing: false }));
 
-        let focusables = this.el.header?.querySelectorAll(mintSelectors.focusable),
+        let focusables = this.el.header?.querySelectorAll(MintSelectors.focusable),
             lastFocusable = focusables?.[focusables?.length - 1];
-        lastFocusable?.addEventListener('keydown', mintUtil.throttleEvent(this.eWrapTab.bind(this)));
+        lastFocusable?.addEventListener('keydown', MintEvent.throttleEvent(this.eWrapTab.bind(this)));
         focusables?.forEach((focusable) => {
-            focusable.addEventListener('keydown', mintUtil.throttleEvent(this.eHandleKeypress.bind(this)));
+            focusable.addEventListener('keydown', MintEvent.throttleEvent(this.eHandleKeypress.bind(this)));
         });
 
-        let menuButtons = this.el.wrapper?.querySelectorAll(mintSelectors.controls());
+        let menuButtons = this.el.wrapper?.querySelectorAll(MintSelectors.controls());
         menuButtons?.forEach((menuButton) => {
-            menuButton.addEventListener('click', mintUtil.throttleEvent(this.eToggleMenu.bind(this), mintSettings.delay.slow, { trailing: false }));
+            menuButton.addEventListener('click', MintEvent.throttleEvent(this.eToggleMenu.bind(this), MintSettings.delay.slow, { trailing: false }));
         });
 
-        this.el.mobileButton?.addEventListener('click', mintUtil.throttleEvent(this.eToggleMobileMenu.bind(this), mintSettings.delay.slow, { trailing: false }));
+        this.el.mobileButton?.addEventListener('click', MintEvent.throttleEvent(this.eToggleMobileMenu.bind(this), MintSettings.delay.slow, { trailing: false }));
         this.el.wrapper?.addEventListener('transitionend', this.eTransitionEnd.bind(this));
     }
 
@@ -74,7 +79,7 @@ export class mintHeader {
      */
     addClasses () : void {
         this.el.header?.classList.remove('mint-top', 'mint-right', 'mint-bottom', 'mint-left');
-        this.el.header?.classList.add(`mint-${mintSide[this.settings.from ?? 0].toLowerCase()}`);
+        this.el.header?.classList.add(`mint-${EMintSide[this.settings.from ?? 0].toLowerCase()}`);
 
         if (this.settings.fixed) {
             this.el.body?.classList.add('mint-fixed');
@@ -95,7 +100,7 @@ export class mintHeader {
         this.el.mobileButton?.setAttribute('aria-expanded', ariaExpanded);
         setTimeout(() => {
             this.el.mobileButton?.setAttribute('aria-label', ariaLabel);
-        }, mintSettings.delay.fast);
+        }, MintSettings.delay.fast);
 
         if (open) {
             if (this.settings.fixed !== true) {
@@ -108,7 +113,7 @@ export class mintHeader {
 
             setTimeout(() => {
                 if (this.el.html) {
-                    let isMobile = mintUtil.windowWidth() <= mintSettings.break.sm,
+                    let isMobile = MintWindow.width() <= MintSettings.break.sm,
                         overflow = 'auto';
 
                     if (this.settings.tray) {
@@ -120,7 +125,7 @@ export class mintHeader {
                     }
                     this.el.html.style.overflow = overflow;
                 }
-            }, this.settings.from === mintSide.Left ? mintSettings.delay.default : mintSettings.delay.instant);
+            }, this.settings.from === EMintSide.Left ? MintSettings.delay.default : MintSettings.delay.instant);
             
             if (this.el.wrapper) {
                 this.el.wrapper.style.display = 'flex';
@@ -161,9 +166,9 @@ export class mintHeader {
         if (button && menu) {
             button.setAttribute('aria-expanded', ariaExpanded);
             if (open) {
-                mintUtil.show(menu);
+                MintDisplay.show(menu);
             } else {
-                mintUtil.hide(menu);
+                MintDisplay.hide(menu);
                 this.closeSubMenus(button);
             }
         }
@@ -183,7 +188,7 @@ export class mintHeader {
      */
     closeSubMenus (button?: HTMLElement | null) : void {
         let menu: HTMLElement | null | undefined = button?.nextElementSibling as HTMLElement,
-            subMenus: NodeListOf<HTMLElement> = menu?.querySelectorAll(mintSelectors.subMenuButtons) as NodeListOf<HTMLElement>;
+            subMenus: NodeListOf<HTMLElement> = menu?.querySelectorAll(MintSelectors.subMenuButtons) as NodeListOf<HTMLElement>;
         subMenus.forEach((child: HTMLElement) => {
             // setMenu calls this function, so ignore subsub menus
             if (child.parentElement?.parentElement === menu) {
@@ -198,7 +203,7 @@ export class mintHeader {
      */
     closeSiblingMenus (button?: HTMLElement | null) : void {
         let menu: HTMLElement | null | undefined = button?.parentElement as HTMLElement,
-            siblingMenus: NodeListOf<HTMLElement> = menu?.parentElement?.querySelectorAll(mintSelectors.subMenuButtons) as NodeListOf<HTMLElement>;
+            siblingMenus: NodeListOf<HTMLElement> = menu?.parentElement?.querySelectorAll(MintSelectors.subMenuButtons) as NodeListOf<HTMLElement>;
         siblingMenus.forEach((child: HTMLElement) => {
             if (child !== button) {
                 this.setMenu(child);
@@ -210,7 +215,7 @@ export class mintHeader {
      * Closes all submenus of the n4vbar
      */
     closeAllMenus () : void {
-        let menuButtons: NodeListOf<HTMLElement> | undefined = this.el.wrapper?.querySelectorAll(mintSelectors.subMenuButtons);
+        let menuButtons: NodeListOf<HTMLElement> | undefined = this.el.wrapper?.querySelectorAll(MintSelectors.subMenuButtons);
         menuButtons?.forEach((menuButton: HTMLElement) => {
             this.setMenu(menuButton);
         });
@@ -229,7 +234,7 @@ export class mintHeader {
 
         if (activeButton?.getAttribute('aria-controls') && activeMenu && !showing) {
             activeButton.click();
-            let firstFocusable: HTMLElement | null = activeMenu.querySelector(mintSelectors.focusable);
+            let firstFocusable: HTMLElement | null = activeMenu.querySelector(MintSelectors.focusable);
             firstFocusable?.focus();
         }
     }
@@ -239,7 +244,7 @@ export class mintHeader {
      */
     closeClosestMenu () : void {
         let activeElement: HTMLElement | null = document.activeElement as HTMLElement | null,
-            activeMenu: HTMLElement | null = activeElement?.closest(mintSelectors.subMenu) as HTMLElement | null,
+            activeMenu: HTMLElement | null = activeElement?.closest(MintSelectors.subMenu) as HTMLElement | null,
             activeButton: HTMLElement | null = activeMenu?.previousElementSibling ? activeMenu.previousElementSibling as HTMLElement : this.el.mobileButton;
         if (activeElement?.getAttribute('aria-controls') && activeElement?.getAttribute('aria-expanded')?.toLowerCase() === 'true') {
             activeButton = activeElement;
@@ -267,7 +272,7 @@ export class mintHeader {
      */
     eHandleResize () : void {
         let isOpen = this.el.mobileButton?.getAttribute('aria-expanded')?.toLowerCase() === 'true',
-            isMobile = mintUtil.windowWidth() <= mintSettings.break.sm,
+            isMobile = MintWindow.width() <= MintSettings.break.sm,
             overflow = 'auto';
         
         if (isOpen) {
@@ -399,5 +404,5 @@ export class mintHeader {
             this.el.wrapper.style.display = 'none';
         }
     };
-}
-export default mintHeader;
+};
+export default MintHeader;

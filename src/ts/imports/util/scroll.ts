@@ -1,7 +1,7 @@
 /**
  * Scroll functions
  */
-export abstract class mintScroll {
+export abstract class MintScroll {
 	/**
 	 * Scroll to the top of the page
 	 */
@@ -38,4 +38,4 @@ export abstract class mintScroll {
 		});
 	}
 };
-export default mintScroll;
+export default MintScroll;

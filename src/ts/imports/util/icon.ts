@@ -6,7 +6,7 @@ import mintObject from "./object";
 /**
  * Icon helper functions
  */
-export abstract class mintIcon {
+export abstract class MintIcon {
     /**
      * Default icons
      */
@@ -64,4 +64,4 @@ export abstract class mintIcon {
         });
     }
 };
-export default mintIcon;
+export default MintIcon;

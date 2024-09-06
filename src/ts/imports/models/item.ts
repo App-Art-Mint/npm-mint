@@ -3,7 +3,7 @@
  * @note - this class must be convertable with JSON
  *       - only add strings, numbers, booleans, arrays, and objects
  */
-export class mintItem {
+export class MintItem {
 	/**
 	 * Item settings
 	 */
@@ -32,7 +32,7 @@ export class mintItem {
 	category?: string;
 	type?: string;
 	unit?: string;
-	logo?: mintItem;
+	logo?: MintItem;
 	icon?: string;
 	position?: string;
 	transform?: string;
@@ -59,8 +59,8 @@ export class mintItem {
 	 */
 	paragraphs?: string[] = [];
 	classes?: string[] = [];
-	items?: mintItem[] = [];
-	images?: mintItem[] = [];
-	buttons?: mintItem[] = [];
+	items?: MintItem[] = [];
+	images?: MintItem[] = [];
+	buttons?: MintItem[] = [];
 };
-export default mintItem;
+export default MintItem;
