@@ -86,7 +86,7 @@ main {
 			flex-grow: 1;
 			width: 100%;
 
-			&+:not(mint-footer) {
+			&+:not(#{prefix(footer-partial)}) {
 				height: 0;
 				overflow: hidden;
 			}
@@ -136,7 +136,7 @@ button {
 		filter: grayscale(1) brightness(0.75) !important;
 		pointer-events: none !important;
 
-		&#{class(fall-in)}#{neg(class(mint-show))} {
+		&#{class(fall-in)}#{neg(class(show))} {
 			filter: grayscale(1) brightness(0.75) opacity(0%) !important;
 		}
 	}
