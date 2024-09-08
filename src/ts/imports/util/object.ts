@@ -197,5 +197,12 @@ export abstract class MintObject {
         const newObjects = update?.filter((object) => !original.some((existingObject) => existingObject?.[key] === object?.[key]));
         newObjects?.forEach(newObject => original.push(newObject));
     }
+
+	/**
+	 * Get an object's key by value
+	 */
+	static getKeyByValue(object: any, value: any): string | undefined {
+		return Object.keys(object).find((key) => object[key] === value);
+	}
 };
 export default MintObject;
