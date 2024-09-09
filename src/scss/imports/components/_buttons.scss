@@ -108,6 +108,8 @@
 	&-icon {
 		display: block;
 		text-align: center;
+		background: none;
+		border: none;
 
 		@include states(hover, focus, active) {
 			i {
@@ -119,10 +121,16 @@
 			display: inline-block;
 		}
 
+		&#{class(lg)} {
+			i {
+				font-size: 4rem;
+			}
+		}
+
 		i {
 			margin: 0 !important;
 			color: css-var($btn-border);
-			font-size: 4rem;
+			font-size: 1.5rem;
 
 			&::before {
 				transition: color css-var(delay-default);
