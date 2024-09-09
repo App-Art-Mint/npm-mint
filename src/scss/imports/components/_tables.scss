@@ -1,0 +1,18 @@
+/// _tables.scss - Table styles
+/// @author App Art Mint LLC
+///
+/// @group Components
+@charset 'utf-8';
+
+/// Imports
+@use '../util' as *;
+
+/// Table
+#{class(table)} {
+    #{class(actions)} {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+		gap: 1rem;
+    }
+}
