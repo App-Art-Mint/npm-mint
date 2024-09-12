@@ -1,0 +1,7 @@
+/// Imports
+@use '../util' as *;
+
+/// Flex mixins
+#{class(flex)} {
+	@include flex-util();
+}

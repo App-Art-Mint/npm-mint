@@ -2759,6 +2759,30 @@
     }
   },
   {
+    "description": "Flex mixins\n",
+    "commentRange": {
+      "start": 4,
+      "end": 4
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(flex)}",
+      "value": "@include flex-util();",
+      "line": {
+        "start": 5,
+        "end": 8
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports\\global\\_flex.scss",
+      "name": "_flex.scss"
+    }
+  },
+  {
     "description": "Global styles\n",
     "commentRange": {
       "start": 4,
