@@ -1,4 +1,9 @@
 /**
+ * Imports
+ */
+import MintEvent from './event';
+
+/**
  * Scroll functions
  */
 export abstract class MintScroll {
@@ -36,6 +41,13 @@ export abstract class MintScroll {
 				}, i * 200 + i * i * 20);
 			}
 		});
+	}
+
+	/**
+	 * Show visible elements on scroll
+	 */
+	static showElementsOnScroll(): void {
+		window.addEventListener('scroll', MintEvent.throttleEvent(this.showElements, 200));
 	}
 };
 export default MintScroll;

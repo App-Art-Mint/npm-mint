@@ -11,11 +11,14 @@
 	}
 }
 
+html {
+	overflow-x: hidden;
+}
+
 html,
 body {
 	color: css-var(fore);
 	background-color: css-var(back);
-	overflow-x: hidden;
 	min-height: 100vh;
 	margin: 0;
 	padding: 0;
@@ -37,13 +40,13 @@ body {
 	}
 
 	&#{class(ready)} {
-		#{prefix(root)} {
+		app-root {
 			opacity: 1;
 		}
 	}
 }
 
-#{prefix(root)} {
+app-root {
 	display: block;
 	position: relative;
 	opacity: 0;
