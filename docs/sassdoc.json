@@ -2695,10 +2695,10 @@
     "context": {
       "type": "css",
       "name": "#{class(table)}",
-      "value": "#{class(actions)} {\n        display: flex;\n        align-items: center;\n        justify-content: flex-end;\n\t\tgap: 1rem;\n    }",
+      "value": "&-wrap {\n\t\tmax-height: 50vh;\n\t\toverflow-y: auto;\n\t}\n\n\t&.mat-mdc-table {\n\t\tthead {\n\t\t\tbackground: css-var(back);\n\t\t}\n\t}\n\n    #{class(actions)} {\n        display: flex;\n        align-items: center;\n        justify-content: flex-end;\n\t\tgap: 1rem;\n    }",
       "line": {
         "start": 11,
-        "end": 18
+        "end": 29
       }
     },
     "access": "public",
