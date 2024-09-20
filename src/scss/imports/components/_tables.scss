@@ -9,6 +9,17 @@
 
 /// Table
 #{class(table)} {
+	&-wrap {
+		max-height: 50vh;
+		overflow-y: auto;
+	}
+
+	&.mat-mdc-table {
+		thead {
+			background: css-var(back);
+		}
+	}
+
     #{class(actions)} {
         display: flex;
         align-items: center;
