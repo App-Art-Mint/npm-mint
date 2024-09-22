@@ -23,7 +23,6 @@
 	background-color: css-var(header-back);
 	z-index: 10000;
 	height: css-var(header-height);
-	//padding: 0 calc(css-var(header-height) / 2);
 
 	&#{class(right)} {
 		#{id(wrapper)} {
@@ -429,7 +428,6 @@
 			border-radius: $header-link-border-radius;
 
 			@include break(xs) {
-				font-size: 4em;
 				padding: 1rem 1.5rem;
 
 				i {
