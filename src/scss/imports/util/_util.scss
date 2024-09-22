@@ -200,7 +200,11 @@ $bootstrap5: false !default;
 		@error 'The css-var function requires a string value.';
 	}
 
-	@return var(css-prefix($base));
+	@if (string.index($base, '--') != 1) {
+		$base: css-prefix($base);
+	}
+
+	@return var(#{$base});
 }
 
 /// Negates a provided CSS-selector
@@ -454,7 +458,15 @@ $bootstrap5: false !default;
 /// @param {Any} $val - the value of the CSS var
 /// @output a prefixed CSS var definition
 @mixin css-var ($key, $val) {
-	#{css-prefix($key)}: #{$val};
+	@if (type-of($key) != 'string') {
+		@error 'The css-var mixin requires a string for the $key argument.';
+	}
+
+	@if (string.index($key, '--') != 1) {
+		$key: css-prefix($key);
+	}
+
+	#{$key}: #{$val};
 }
 
 /// Creates a prefixed CSS var reference
@@ -467,6 +479,10 @@ $bootstrap5: false !default;
 /// @param {String} $key2 - the key of the referenced CSS var
 /// @output a prefixed CSS var reference
 @mixin css-var-ref ($key1, $key2) {
+	@if (type-of($key1) != 'string' or type-of($key2) != 'string') {
+		@error 'The css-var-ref mixin requires string values for both parameters.';
+	}
+
 	@include css-var($key1, css-var($key2));
 }
 

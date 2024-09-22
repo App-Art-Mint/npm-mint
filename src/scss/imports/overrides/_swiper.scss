@@ -1,0 +1,55 @@
+/// _swiper.scss - Swiper styles
+/// @author App Art Mint LLC
+/// 
+/// @group Overrides
+@charset 'utf-8';
+
+/// Imports
+@use '../util' as *;
+
+/// Variables
+$arrows-offset: 1rem;
+$arrows-size: 2rem;
+
+/// Swiper Styles
+:root {
+	@include css-var-ref(--swiper-navigation-color, fore);
+	@include css-var-ref(--swiper-pagination-color, brand);
+	@include css-var(--swiper-navigation-size, $arrows-size);
+
+	.swiper {
+		max-width: 100%;
+
+		@include break(xs) {
+			@include css-var(--swiper-navigation-sides-offset, $arrows-offset);
+		}
+
+		&-slide {
+			@include break(xs) {
+				padding: $arrows-offset + $arrows-size;
+			}
+		}
+	
+		&-button {
+			&-prev,
+			&-next {
+				&::after {
+					font-family: "Font Awesome 6 Pro";
+					font-weight: 900;
+				}
+			}
+	
+			&-prev {
+				&::after {
+					content: '\f053';
+				}
+			}
+	
+			&-next {
+				&::after {
+					content: '\f054';
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+/// _amplify.scss - Amplify styles
+/// @author App Art Mint LLC
+/// 
+/// @group Overrides
+@charset 'utf-8';
+
+/// Imports
+@use '../util' as *;
+
+/// Amplify Styles
+:root:root:root {
+	--amplify-colors-background-error: #{css-var(glow-0)};
+	--amplify-colors-border-primary: #{css-var(brand-1)};
+	--amplify-colors-border-focus: #{css-var(brand-3)};
+	--amplify-colors-font-hover: #{css-var(brand-0)};
+	--amplify-colors-font-interactive: #{css-var(brand-1)};
+	--amplify-colors-font-primary: #{css-var('white')};
+	--amplify-colors-font-secondary: #{css-var(brand-0)};
+	--amplify-colors-font-error: #{css-var(danger)};
+	--amplify-colors-font-warning: #{css-var(warning)};
+	--amplify-colors-font-success: #{css-var(success)};
+	--amplify-colors-font-info: #{css-var(info)};
+
+	--amplify-border-widths-small: $border-width;
+}
+
+[data-amplify-authenticator] {
+	[data-amplify-container] {
+		@extend .mint-card !optional;
+
+		[data-amplify-router] {
+			@extend .mint-content !optional;
+			border: none;
+		}
+	}
+}
+
+[amplify-button] {
+	@extend .mint-btn !optional;
+	margin: auto;
+}
+
+.amplify-icon {
+	display: block;
+}
