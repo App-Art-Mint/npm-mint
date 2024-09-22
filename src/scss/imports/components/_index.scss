@@ -1,3 +1,10 @@
+/// _index.scss - Forward all overrides
+/// @author App Art Mint LLC
+/// 
+/// @group Index
+@charset 'utf-8';
+
+/// Imports
 @use './backgrounds';
 @use './buttons';
 @use './cards';

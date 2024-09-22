@@ -1,0 +1,46 @@
+/// _amplify.scss - Amplify styles
+/// @author App Art Mint LLC
+/// 
+/// @group Overrides
+@charset 'utf-8';
+
+/// Imports
+@use '../util' as *;
+
+/// FullCalendar Styles
+.fc {
+	--fc-page-bg-color: #{css-var(brand-6)};
+	.fc-toolbar {
+		flex-wrap: wrap;
+		justify-content: space-around;
+		gap: 1rem;
+
+		&-title {
+			@include break-max(sm) {
+				font-size: 1.25rem;
+			}
+		}
+	}
+	.fc-timegrid {
+		&-divider {
+			padding: 0;
+		}
+		&-slot-minor {
+			border-top-style: groove;
+		}
+	}
+	.fc-list-table {
+		--fc-list-event-hover-bg-color: #{css-var(brand-4)};
+
+		@include break-max(sm) {
+			word-break: normal;
+		}
+
+		.fc-list-event-time {
+			@include break-max(xs) {
+				white-space: normal;
+
+			}
+		}
+	}
+}

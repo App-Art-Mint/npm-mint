@@ -1,0 +1,19 @@
+/// _material.scss - Material styles
+/// @author App Art Mint LLC
+/// 
+/// @group Overrides
+@charset 'utf-8';
+
+/// Imports
+@use '../util' as *;
+
+/// Material Styles
+:root:root {
+	@include css-var(--mat-table-background-color, transparent);
+}
+
+.cdk-overlay-container {
+	.mat-mdc-select-panel {
+		background: css-var(brand-4)
+	}
+}
