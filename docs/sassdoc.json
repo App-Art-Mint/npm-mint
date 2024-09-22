@@ -3292,16 +3292,16 @@
   {
     "description": "Amplify Styles\n",
     "commentRange": {
-      "start": 10,
-      "end": 10
+      "start": 12,
+      "end": 12
     },
     "context": {
       "type": "css",
-      "name": ":root:root:root",
-      "value": "--amplify-colors-background-error: #{css-var(glow-0)};\n\t--amplify-colors-border-primary: #{css-var(brand-1)};\n\t--amplify-colors-border-focus: #{css-var(brand-3)};\n\t--amplify-colors-font-hover: #{css-var(brand-0)};\n\t--amplify-colors-font-interactive: #{css-var(brand-1)};\n\t--amplify-colors-font-primary: #{css-var('white')};\n\t--amplify-colors-font-secondary: #{css-var(brand-0)};\n\t--amplify-colors-font-error: #{css-var(danger)};\n\t--amplify-colors-font-warning: #{css-var(warning)};\n\t--amplify-colors-font-success: #{css-var(success)};\n\t--amplify-colors-font-info: #{css-var(info)};\n\n\t--amplify-border-widths-small: $border-width;",
+      "name": ":root:root",
+      "value": "@include css-var-ref(--amplify-colors-background-error, $amp-background-error);\n\t@include css-var-ref(--amplify-colors-border-primary, $amp-border-primary);\n\t@include css-var-ref(--amplify-colors-border-focus, $amp-border-focus);\n\t@include css-var-ref(--amplify-colors-font-hover, $amp-font-hover);\n\t@include css-var-ref(--amplify-colors-font-interactive, $amp-font-interactive);\n\t@include css-var-ref(--amplify-colors-font-primary, $amp-font-primary);\n\t@include css-var-ref(--amplify-components-fieldcontrol-color, --amplify-colors-font-primary);\n\t@include css-var-ref(--amplify-colors-font-secondary, $amp-font-secondary);\n\t@include css-var-ref(--amplify-colors-font-error, $amp-font-error);\n\t@include css-var-ref(--amplify-colors-font-warning, $amp-font-warning);\n\t@include css-var-ref(--amplify-colors-font-success, $amp-font-success);\n\t@include css-var-ref(--amplify-colors-font-info, $amp-font-info);\n\n\t@include css-var(--amplify-border-widths-small, $amp-border-width);\n\n\t[data-amplify-authenticator] {\n\t\t[data-amplify-container] {\n\t\t\t@extend #{class(card)};\n\t\n\t\t\t[data-amplify-router] {\n\t\t\t\t@extend #{class(content)};\n\t\t\t\tborder: none;\n\t\t\t}\n\t\t}\n\t}\n\t\n\t[amplify-button] {\n\t\t@extend #{class(btn)};\n\t\tmargin: auto;\n\t}\n\t\n\t.amplify-icon {\n\t\tdisplay: block;\n\t}",
       "line": {
-        "start": 11,
-        "end": 46
+        "start": 13,
+        "end": 49
       }
     },
     "access": "public",
@@ -3346,10 +3346,10 @@
     "context": {
       "type": "css",
       "name": ":root:root",
-      "value": "@include css-var(--mat-table-background-color, transparent);",
+      "value": "@include css-var(--mat-table-background-color, $mat-table-bg);\n\t@include css-var(--mat-paginator-container-background-color, $mat-table-bg);\n\t@include css-var(--mat-table-row-item-label-text-color, $mat-table-fore);\n\t@include css-var(--mat-table-header-headline-color, $mat-table-fore);\n\t@include css-var(--mat-table-header-subheadline-color, $mat-table-fore);\n\t@include css-var(--mat-paginator-container-text-color, $mat-table-fore);",
       "line": {
         "start": 11,
-        "end": 20
+        "end": 25
       }
     },
     "access": "public",
@@ -3905,10 +3905,60 @@
     }
   },
   {
+    "description": "Material\n",
+    "commentRange": {
+      "start": 178,
+      "end": 178
+    },
+    "context": {
+      "type": "variable",
+      "name": "mat-table-bg",
+      "value": "back",
+      "scope": "default",
+      "line": {
+        "start": 179,
+        "end": 179
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports\\util\\_vars.scss",
+      "name": "_vars.scss"
+    }
+  },
+  {
+    "description": "Amplify\n",
+    "commentRange": {
+      "start": 183,
+      "end": 183
+    },
+    "context": {
+      "type": "variable",
+      "name": "amp-font-primary",
+      "value": "fore",
+      "scope": "default",
+      "line": {
+        "start": 184,
+        "end": 184
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports\\util\\_vars.scss",
+      "name": "_vars.scss"
+    }
+  },
+  {
     "description": "Themes\n",
     "commentRange": {
-      "start": 179,
-      "end": 179
+      "start": 192,
+      "end": 192
     },
     "context": {
       "type": "variable",
@@ -3916,8 +3966,8 @@
       "value": "light",
       "scope": "default",
       "line": {
-        "start": 180,
-        "end": 180
+        "start": 193,
+        "end": 193
       }
     },
     "access": "public",
@@ -3930,10 +3980,10 @@
     }
   },
   {
-    "description": "Buttons\n",
+    "description": "Default Theme (light)\nButtons\n",
     "commentRange": {
-      "start": 184,
-      "end": 184
+      "start": 195,
+      "end": 196
     },
     "context": {
       "type": "variable",
@@ -3941,8 +3991,8 @@
       "value": "brand-2",
       "scope": "private",
       "line": {
-        "start": 185,
-        "end": 185
+        "start": 197,
+        "end": 197
       }
     },
     "access": "public",
@@ -3957,8 +4007,8 @@
   {
     "description": "Header\n",
     "commentRange": {
-      "start": 191,
-      "end": 191
+      "start": 203,
+      "end": 203
     },
     "context": {
       "type": "variable",
@@ -3966,8 +4016,8 @@
       "value": "brand-2",
       "scope": "private",
       "line": {
-        "start": 192,
-        "end": 192
+        "start": 204,
+        "end": 204
       }
     },
     "access": "public",
@@ -3982,8 +4032,8 @@
   {
     "description": "Footer\n",
     "commentRange": {
-      "start": 207,
-      "end": 207
+      "start": 219,
+      "end": 219
     },
     "context": {
       "type": "variable",
@@ -3991,8 +4041,8 @@
       "value": "back",
       "scope": "private",
       "line": {
-        "start": 208,
-        "end": 208
+        "start": 220,
+        "end": 220
       }
     },
     "access": "public",
@@ -4005,18 +4055,19 @@
     }
   },
   {
-    "description": "Default Theme (light)\n",
+    "description": "Amplify\n",
     "commentRange": {
-      "start": 182,
-      "end": 182
+      "start": 223,
+      "end": 223
     },
     "context": {
-      "type": "css",
-      "name": "/// Buttons\n$btn-back-default: brand-2;\n$btn-back: $btn-back-default !default;\n\n$btn-border-default: brand-4;\n$btn-border: $btn-border-default !default;\n\n/// Header\n$header-back-default: brand-2;\n$header-back: $header-back-default !default;\n\n$header-fore-default: fore;\n$header-fore: $header-fore-default !default;\n\n$header-link-back-hover-default: shadow-5;\n$header-link-back-hover: $header-link-back-hover-default !default;\n\n$header-link-fore-default: fore;\n$header-link-fore: $header-link-fore-default !default;\n\n$header-link-fore-hover-default: back;\n$header-link-fore-hover: $header-link-fore-hover-default !default;\n\n/// Footer\n$footer-heel-fore-default: back;\n$footer-heel-fore: $footer-heel-fore-default !default;\n\n/// Dark Theme\n@if ($theme-default == dark)",
-      "value": "/// Buttons\n    $btn-back: if($btn-back != $btn-back-default, $btn-back, brand-5);\n    $btn-border: if($btn-border != $btn-border-default, $btn-border, brand-2);\n\n    /// Header\n    $header-back: if($header-back != $header-back-default, $header-back, brand-4);\n    $header-fore: if($header-fore != $header-fore-default, $header-fore, back);\n    $header-link-back-hover: if($header-link-back-hover != $header-link-back-hover-default, $header-link-back-hover, glow-5);\n\n    /// Footer\n    $footer-heel-fore: if($footer-heel-fore != $footer-heel-fore-default, $footer-heel-fore, fore);",
+      "type": "variable",
+      "name": "amp-border-primary-default",
+      "value": "brand-5",
+      "scope": "private",
       "line": {
-        "start": 212,
-        "end": 226
+        "start": 224,
+        "end": 224
       }
     },
     "access": "public",
@@ -4031,8 +4082,8 @@
   {
     "description": "Buttons\n",
     "commentRange": {
-      "start": 214,
-      "end": 214
+      "start": 241,
+      "end": 241
     },
     "context": {
       "type": "variable",
@@ -4040,8 +4091,8 @@
       "value": "if($btn-back != $btn-back-default, $btn-back, brand-5)",
       "scope": "private",
       "line": {
-        "start": 215,
-        "end": 215
+        "start": 242,
+        "end": 242
       }
     },
     "access": "public",
@@ -4056,8 +4107,8 @@
   {
     "description": "Header\n",
     "commentRange": {
-      "start": 218,
-      "end": 218
+      "start": 245,
+      "end": 245
     },
     "context": {
       "type": "variable",
@@ -4065,8 +4116,8 @@
       "value": "if($header-back != $header-back-default, $header-back, brand-4)",
       "scope": "private",
       "line": {
-        "start": 219,
-        "end": 219
+        "start": 246,
+        "end": 246
       }
     },
     "access": "public",
@@ -4081,8 +4132,8 @@
   {
     "description": "Footer\n",
     "commentRange": {
-      "start": 223,
-      "end": 223
+      "start": 250,
+      "end": 250
     },
     "context": {
       "type": "variable",
@@ -4090,8 +4141,33 @@
       "value": "if($footer-heel-fore != $footer-heel-fore-default, $footer-heel-fore, fore)",
       "scope": "private",
       "line": {
-        "start": 224,
-        "end": 224
+        "start": 251,
+        "end": 251
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports\\util\\_vars.scss",
+      "name": "_vars.scss"
+    }
+  },
+  {
+    "description": "Amplify\n",
+    "commentRange": {
+      "start": 253,
+      "end": 253
+    },
+    "context": {
+      "type": "variable",
+      "name": "amp-border-primary",
+      "value": "if($amp-border-primary != $amp-border-primary-default, $amp-border-primary, brand-1)",
+      "scope": "private",
+      "line": {
+        "start": 254,
+        "end": 254
       }
     },
     "access": "public",

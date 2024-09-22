@@ -6,40 +6,43 @@
 
 /// Imports
 @use '../util' as *;
+@use '../components/buttons';
+@use '../components/cards';
 
 /// Amplify Styles
-:root:root:root {
-	--amplify-colors-background-error: #{css-var(glow-0)};
-	--amplify-colors-border-primary: #{css-var(brand-1)};
-	--amplify-colors-border-focus: #{css-var(brand-3)};
-	--amplify-colors-font-hover: #{css-var(brand-0)};
-	--amplify-colors-font-interactive: #{css-var(brand-1)};
-	--amplify-colors-font-primary: #{css-var('white')};
-	--amplify-colors-font-secondary: #{css-var(brand-0)};
-	--amplify-colors-font-error: #{css-var(danger)};
-	--amplify-colors-font-warning: #{css-var(warning)};
-	--amplify-colors-font-success: #{css-var(success)};
-	--amplify-colors-font-info: #{css-var(info)};
+:root:root {
+	@include css-var-ref(--amplify-colors-background-error, $amp-background-error);
+	@include css-var-ref(--amplify-colors-border-primary, $amp-border-primary);
+	@include css-var-ref(--amplify-colors-border-focus, $amp-border-focus);
+	@include css-var-ref(--amplify-colors-font-hover, $amp-font-hover);
+	@include css-var-ref(--amplify-colors-font-interactive, $amp-font-interactive);
+	@include css-var-ref(--amplify-colors-font-primary, $amp-font-primary);
+	@include css-var-ref(--amplify-components-fieldcontrol-color, --amplify-colors-font-primary);
+	@include css-var-ref(--amplify-colors-font-secondary, $amp-font-secondary);
+	@include css-var-ref(--amplify-colors-font-error, $amp-font-error);
+	@include css-var-ref(--amplify-colors-font-warning, $amp-font-warning);
+	@include css-var-ref(--amplify-colors-font-success, $amp-font-success);
+	@include css-var-ref(--amplify-colors-font-info, $amp-font-info);
 
-	--amplify-border-widths-small: $border-width;
-}
+	@include css-var(--amplify-border-widths-small, $amp-border-width);
 
-[data-amplify-authenticator] {
-	[data-amplify-container] {
-		@extend .mint-card !optional;
-
-		[data-amplify-router] {
-			@extend .mint-content !optional;
-			border: none;
+	[data-amplify-authenticator] {
+		[data-amplify-container] {
+			@extend #{class(card)};
+	
+			[data-amplify-router] {
+				@extend #{class(content)};
+				border: none;
+			}
 		}
 	}
-}
-
-[amplify-button] {
-	@extend .mint-btn !optional;
-	margin: auto;
-}
-
-.amplify-icon {
-	display: block;
+	
+	[amplify-button] {
+		@extend #{class(btn)};
+		margin: auto;
+	}
+	
+	.amplify-icon {
+		display: block;
+	}
 }
