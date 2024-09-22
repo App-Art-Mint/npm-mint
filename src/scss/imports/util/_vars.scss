@@ -175,12 +175,24 @@ $texture-border-repeat: round !default;
 /// Backgrounds
 $back-bg-blur: 0.15vw !default;
 
+/// Material
+$mat-table-bg: back !default;
+$mat-table-fore: fore !default;
+$mat-select-bg: brand-4 !default;
+
+/// Amplify
+$amp-font-primary: fore !default;
+$amp-background-error: glow-0 !default;
+$amp-font-warning: warning !default;
+$amp-font-success: success !default;
+$amp-font-info: info !default;
+$amp-border-width: $border-width !default;
+
 
 /// Themes
 $theme-default: light !default;
 
 /// Default Theme (light)
-
 /// Buttons
 $btn-back-default: brand-2;
 $btn-back: $btn-back-default !default;
@@ -208,6 +220,21 @@ $header-link-fore-hover: $header-link-fore-hover-default !default;
 $footer-heel-fore-default: back;
 $footer-heel-fore: $footer-heel-fore-default !default;
 
+/// Amplify
+$amp-border-primary-default: brand-5;
+$amp-border-primary: $amp-border-primary-default !default;
+$amp-border-focus-default: brand-4;
+$amp-border-focus: $amp-border-focus-default !default;
+$amp-font-hover-default: brand-3;
+$amp-font-hover: $amp-font-hover-default !default;
+$amp-font-interactive-default: brand-5;
+$amp-font-interactive: $amp-font-interactive-default !default;
+$amp-font-secondary-default: brand-6;
+$amp-font-secondary: $amp-font-secondary-default !default;
+$amp-font-error-default: danger-5 !default;
+$amp-font-error: $amp-font-error-default !default;
+
+
 /// Dark Theme
 @if ($theme-default == dark) {
 
@@ -222,4 +249,12 @@ $footer-heel-fore: $footer-heel-fore-default !default;
 
     /// Footer
     $footer-heel-fore: if($footer-heel-fore != $footer-heel-fore-default, $footer-heel-fore, fore);
+
+	/// Amplify
+	$amp-border-primary: if($amp-border-primary != $amp-border-primary-default, $amp-border-primary, brand-1);
+	$amp-border-focus: if($amp-border-focus != $amp-border-focus-default, $amp-border-focus, brand-3);
+	$amp-font-hover: if($amp-font-hover != $amp-font-hover-default, $amp-font-hover, brand-0);
+	$amp-font-interactive: if($amp-font-interactive != $amp-font-interactive-default, $amp-font-interactive, brand-1);
+	$amp-font-secondary: if($amp-font-secondary != $amp-font-secondary-default, $amp-font-secondary, brand-0);
+	$amp-font-error: if($amp-font-error != $amp-font-error-default, $amp-font-error, danger-4);
 }
