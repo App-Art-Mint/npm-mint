@@ -2906,7 +2906,7 @@
       "value": "width: 100%;\n\tpadding: 0.5rem;\n\tborder: 2px solid #ccc;\n\tborder-radius: $border-radius;",
       "line": {
         "start": 13,
-        "end": 120
+        "end": 135
       }
     },
     "access": "public",
@@ -2930,7 +2930,7 @@
       "value": "display: flex;\n\talign-items: center;\n\tgap: 1rem;\n\t\n\tdiv {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\tgap: 0.5rem;\n\n\t\t@include break(xs) {\n\t\t\tflex-direction: row;\n\t\t}\n\t}",
       "line": {
         "start": 31,
-        "end": 120
+        "end": 135
       }
     },
     "access": "public",
@@ -2954,7 +2954,7 @@
       "value": "display: flex;\n\talign-items: center;\n\tflex-wrap: wrap;\n\t\n\t@include break(xs) {\n\t\tgap: 1rem;\n\t}",
       "line": {
         "start": 100,
-        "end": 120
+        "end": 135
       }
     },
     "access": "public",
@@ -2969,16 +2969,40 @@
   {
     "description": "Label Styles\n",
     "commentRange": {
-      "start": 111,
-      "end": 111
+      "start": 110,
+      "end": 110
     },
     "context": {
       "type": "css",
       "name": "#{class(error)}",
       "value": "line-height: 0;\n\tfilter: opacity(0);\n\ttransition: filter 0.3s;\n\n\t&#{class(show)} {\n\t\tfilter: opacity(1);\n\t}",
       "line": {
-        "start": 112,
-        "end": 120
+        "start": 111,
+        "end": 135
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports\\global\\_inputs.scss",
+      "name": "_inputs.scss"
+    }
+  },
+  {
+    "description": "Array Input Styles\n",
+    "commentRange": {
+      "start": 121,
+      "end": 121
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(array-item)}",
+      "value": "display: flex;\n\talign-items: center;\n\tjustify-content: flex-end;\n\tgap: 0.5rem;\n\n\t:first-child {\n\t\tflex-grow: 1;\n\t}\n\n\t:last-child {\n\t\tflex-shrink: 0;\n\t}",
+      "line": {
+        "start": 122,
+        "end": 135
       }
     },
     "access": "public",
