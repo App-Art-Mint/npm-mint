@@ -1,4 +1,10 @@
 /**
+ * Imports
+ */
+import MintItem from "./item";
+
+
+/**
  * Page Interface
  */
 export interface IMintPage {
@@ -7,7 +13,7 @@ export interface IMintPage {
 	title?: string;
 	description?: string;
 	image?: string;
-	items?: any[];
+	items: MintItem[];
 	createdAt?: string;
 	updatedAt?: string;
 }

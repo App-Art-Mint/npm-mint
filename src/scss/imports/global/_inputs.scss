@@ -107,7 +107,6 @@ textarea {
 	}
 }
 
-
 /// Label Styles
 #{class(error)} {
 	line-height: 0;
@@ -116,5 +115,21 @@ textarea {
 
 	&#{class(show)} {
 		filter: opacity(1);
+	}
+}
+
+/// Array Input Styles
+#{class(array-item)} {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 0.5rem;
+
+	:first-child {
+		flex-grow: 1;
+	}
+
+	:last-child {
+		flex-shrink: 0;
 	}
 }
