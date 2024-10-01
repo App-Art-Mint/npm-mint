@@ -755,7 +755,7 @@ $bootstrap5: false !default;
 	}
 
 	@if not(type-of($u1) == 'string' and type-of($u2) == 'string' and type-of($u3) == 'string' and type-of($u4) == 'string') {
-		@error 'The fluid mixin requires numbers for the width and size arguments.';
+		@error 'The fluid mixin requires numbers with units for the width and size arguments.';
 	}
 
 	@if not($u1 == $u2 and $u1 == $u3 and $u1 == $u4) {
