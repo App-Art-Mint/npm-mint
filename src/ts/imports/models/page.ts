@@ -13,7 +13,7 @@ export interface IMintPage {
 	title?: string;
 	description?: string;
 	image?: string;
-	items: MintItem[];
+	items?: MintItem[];
 	createdAt?: string;
 	updatedAt?: string;
 }
