@@ -80,21 +80,27 @@ main {
 
 	&>router-outlet {
 		flex-grow: 0;
-		
-		&+* {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			flex-grow: 1;
-			width: 100%;
-			padding: 0.25rem;
+	}
+}
 
-			@include fluid(padding, map-get($break, xs) * 1px, map-get($break, sm) * 1px, 4px, 16px);
+:root {
+	main {
+		& > router-outlet {
+			& + * {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				flex-grow: 1;
+				width: 100%;
+				padding: 0.25rem;
 
-			&+:not(#{prefix(footer-partial)}) {
-				height: 0;
-				overflow: hidden;
+				@include fluid(padding, map-get($break, xs) * 1px, map-get($break, sm) * 1px, 4px, 16px);
+
+				&+:not(#{prefix(footer-partial)}) {
+					height: 0;
+					overflow: hidden;
+				}
 			}
 		}
 	}

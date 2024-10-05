@@ -2800,7 +2800,7 @@
       "value": "&,\n\t&::before,\n\t&::after {\n\t\tbox-sizing: border-box;\n\t}",
       "line": {
         "start": 5,
-        "end": 194
+        "end": 200
       }
     },
     "access": "public",
