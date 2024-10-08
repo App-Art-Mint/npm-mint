@@ -2855,10 +2855,10 @@
     "context": {
       "type": "css",
       "name": "#{class(grid)}",
-      "value": "display: grid;\n\tgrid-template-columns: 1fr;\n\tgap: $grid-gap;\n\tmargin-top: $grid-gap;\n\tmargin-bottom: $grid-gap;\n\n\t&#{class('2')} {\n\t\t@include grid-2;\n\t}\n\n\t&#{class('3')} {\n\t\t@include grid-2;\n\t\t@include grid-3;\n\t}\n\n\t&#{class('4')} {\n\t\t@include grid-2;\n\t\t@include grid-3;\n\t\t@include grid-4;\n\t}\n\n\t#{class(portrait)} {\n\t\tgrid-row: span 2;\n\t}",
+      "value": "display: grid;\n\tgrid-template-columns: 1fr;\n\tgap: $grid-gap;\n\twidth: 100%;\n\tmargin-top: $grid-gap;\n\tmargin-bottom: $grid-gap;\n\n\t&#{class('2')} {\n\t\t@include grid-2;\n\t}\n\n\t&#{class('3')} {\n\t\t@include grid-2;\n\t\t@include grid-3;\n\t}\n\n\t&#{class('4')} {\n\t\t@include grid-2;\n\t\t@include grid-3;\n\t\t@include grid-4;\n\t}\n\n\t#{class(portrait)} {\n\t\tgrid-row: span 2;\n\t}",
       "line": {
         "start": 117,
-        "end": 144
+        "end": 145
       }
     },
     "access": "public",
