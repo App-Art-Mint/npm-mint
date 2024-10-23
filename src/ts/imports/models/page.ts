@@ -8,7 +8,6 @@ import MintItem from "./item";
  * Page Interface
  */
 export interface IMintPage {
-	id: string;
 	slug: string;
 	title?: string;
 	description?: string;
