@@ -82,7 +82,7 @@
 			overflow: visible;
 
 			& > #{class(image)},
-			& > #{prefix(image-widget)} #{class(image)} {
+			& > #{prefix(widget-image)} #{class(image)} {
 				width: calc(50% + $card-padding);
 				height: fit-content;
 				margin-right: $card-padding * -2;
@@ -109,7 +109,7 @@
 				flex-direction: row-reverse;
 
 				& > #{class(image)},
-				& > #{prefix(image-widget)} #{class(image)} {
+				& > #{prefix(widget-image)} #{class(image)} {
 					margin-right: 0;
 					margin-left: $card-padding * -2;
 				}
@@ -118,12 +118,12 @@
 	}
 
 	& > #{class(image)}:only-child,
-	& > #{prefix(image-widget)}:only-child #{class(image)} {
+	& > #{prefix(widget-image)}:only-child #{class(image)} {
 		width: 100%;
 	}
 
 	& > #{class(image)},
-	& > #{prefix(image-widget)} #{class(image)} {
+	& > #{prefix(widget-image)} #{class(image)} {
 		overflow: hidden;
 
 		@include break(sm) {
@@ -171,7 +171,7 @@
 		}
 
 		& > #{class(image)},
-		& > #{prefix(image-widget)} #{class(image)} {
+		& > #{prefix(widget-image)} #{class(image)} {
 			width: 100%;
 			height: 100%;
 			max-width: $card-logo-size;
@@ -224,7 +224,7 @@
 		flex-direction: column !important;
 
 		& > #{class(image)},
-		& > #{prefix(image-widget)} #{class(image)} {
+		& > #{prefix(widget-image)} #{class(image)} {
 			overflow: hidden;
 
 			@include break(sm) {
