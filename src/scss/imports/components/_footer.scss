@@ -7,19 +7,6 @@
 /// Imports
 @use '../util' as *;
 
-/// Footer Styles
-app-footer {
-    display: flex;
-    flex-direction: column;
-
-    &::before {
-        content: '';
-        display: flex;
-        flex-grow: 1;
-        height: 100%;
-        background: css-var(trans);
-    }
-}
 
 /// Footer styles
 #{class(footer)} {

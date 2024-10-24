@@ -2477,42 +2477,18 @@
     }
   },
   {
-    "description": "Footer Styles\n",
-    "commentRange": {
-      "start": 10,
-      "end": 10
-    },
-    "context": {
-      "type": "css",
-      "name": "app-footer",
-      "value": "display: flex;\n    flex-direction: column;\n\n    &::before {\n        content: '';\n        display: flex;\n        flex-grow: 1;\n        height: 100%;\n        background: css-var(trans);\n    }",
-      "line": {
-        "start": 11,
-        "end": 147
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports\\components\\_footer.scss",
-      "name": "_footer.scss"
-    }
-  },
-  {
     "description": "Footer styles\n",
     "commentRange": {
-      "start": 24,
-      "end": 24
+      "start": 11,
+      "end": 11
     },
     "context": {
       "type": "css",
       "name": "#{class(footer)}",
       "value": "display: flex;\n\tflex-direction: column;\n\tmax-width: 100%;\n    background: css-var($footer-back);\n\ttransition: transform 300ms;\n\tz-index: 999;\n\toverflow: hidden;\n\n    @if ($footer-shadow) {\n        box-shadow: $footer-shadow css-var($footer-back);\n    }\n\n\t&#{class(hide)} {\n\t\tdisplay: flex;\n\t\ttransform: translateY(100%);\n\t}\n\n\t* {\n\t\tmax-width: 100%;\n\t}\n\n\tp {\n\t\tmargin: 0;\n\t}\n\n\t&-content {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tflex-wrap: wrap;\n\t\talign-items: center;\n\t\tjustify-content: space-between;\n\n\t\t@include break(sm) {\n\t\t\tflex-direction: row;\n\t\t\talign-items: flex-start;\n\t\t}\n\n\t\t&>p {\n\t\t\tmargin: 0 auto;\n\t\t\ttext-align: center;\n\n\t\t\ta {\n\t\t\t\tdisplay: block;\n\t\t\t}\n\t\t}\n\n\t\t[label=\"Footer\"] {\n\t\t\twidth: 100%;\n\t\t\tmargin: auto;\n\n\t\t\t@include break(sm) {\n\t\t\t\twidth: auto;\n\t\t\t}\n\n\t\t\t&>ul {\n\t\t\t\tflex-direction: column;\n\t\t\t\tflex-wrap: wrap;\n\t\t\t\tjustify-content: space-around;\n\t\t\t\ttext-align: center;\n\n\t\t\t\t@include break(xs) {\n\t\t\t\t\tflex-direction: row;\n\t\t\t\t}\n\n\t\t\t\t&>ul {\n\t\t\t\t\tli:last-child {\n\t\t\t\t\t\t#{class(pill)} {\n\t\t\t\t\t\t\tmargin-bottom: 0;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t#{class(pill)} {\n\t\t\t\tmargin-bottom: 0.5rem;\n\t\t\t}\n\t\t}\n\t}\n\n\t&-heel {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\tjustify-content: space-between;\n\t\tpadding: 0.4rem 1rem;\n        color: css-var($footer-heel-fore);\n\t\tbackground: css-var($footer-heel-back);\n\t\ttext-align: center;\n\n\t\t@include break(sm) {\n\t\t\tflex-direction: row;\n\t\t}\n\t}\n\n\t&-message {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n\t\tflex-wrap: wrap;\n\n\t\t@include break(xs) {\n\t\t\tflex-wrap: nowrap;\n\t\t}\n\n\t\t&>#{class(pill)} {\n\t\t\tmargin: 0 0.25rem;\n\t\t}\n\n\t\t&>* {\n\t\t\tmargin: 0 0.5rem;\n\n\t\t\t&:first-child {\n\t\t\t\tmargin-left: 0;\n\t\t\t}\n\n\t\t\t&:last-child {\n\t\t\t\tmargin-right: 0;\n\t\t\t}\n\t\t}\n\t}",
       "line": {
-        "start": 25,
-        "end": 147
+        "start": 12,
+        "end": 134
       }
     },
     "access": "public",

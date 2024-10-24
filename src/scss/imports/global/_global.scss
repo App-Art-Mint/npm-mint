@@ -97,7 +97,7 @@ main {
 
 				@include fluid(padding, map-get($break, xs) * 1px, map-get($break, sm) * 1px, 4px, 16px);
 
-				&+:not(#{prefix(footer-partial)}) {
+				&+:not(#{prefix(partial-footer)}) {
 					height: 0;
 					overflow: hidden;
 				}
