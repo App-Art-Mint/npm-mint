@@ -1,5 +1,7 @@
+/// Forward all global styles
 @use './animations';
 @use './aspect';
+@use './flex';
 @use './global';
 @use './grid';
 @use './icons';
