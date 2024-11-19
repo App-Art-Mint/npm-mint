@@ -100,6 +100,7 @@
 	}
 }
 
+/// Alt Texture Styles
 @if $texture-alt-bg and $texture-alt-num {
     @for $num from 1 through $texture-alt-num {
         #{class(texture-#{$num})} {
@@ -110,4 +111,13 @@
             }
         }
     }
+}
+
+/// Overlay texture
+#{class(overlay)} {
+	#{class(border)}, #{class(texture)} {
+		&::before {
+			z-index: 100;
+		}
+	}
 }
