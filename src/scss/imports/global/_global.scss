@@ -61,8 +61,16 @@ app-root {
 			width: 100%;
 			height: 100%;
 			background-image: url($root-bg-image);
+
+			@if (type-of($root-bg-size) != 'null') {
+				background-size: $root-bg-size;
+			}
+
+			@if (type-of($root-bg-position) != 'null') {
+				background-position: $root-bg-position;
+			}
 			
-			@if (type-of($root-bg-filter) == 'string' or type-of($root-bg-filter) == 'list') {
+			@if (type-of($root-bg-filter) != 'null') {
 				filter: $root-bg-filter;
 			}
 		}
