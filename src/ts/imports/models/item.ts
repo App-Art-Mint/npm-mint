@@ -63,5 +63,10 @@ export class MintItem {
 	items?: MintItem[] = [];
 	images?: MintItem[] = [];
 	buttons?: MintItem[] = [];
+
+	/**
+	 * Item functions
+	 */
+	click?: Function;
 };
 export default MintItem;
