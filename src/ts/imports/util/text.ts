@@ -9,7 +9,13 @@ export abstract class MintText {
 	 * @returns The slugified string
 	 */
 	static slug (text?: string): string {
-		return text?.toLowerCase().replace(/\W+/g, '-').replace(/^-+|-+$/g, '') ?? '';
+		return text?.trim()
+			.toLowerCase()
+			.replace(/'/g, '')
+			.replace(/\W+/g, '-')
+			.replace(/-+/g, '-')
+			.replace(/^-+|-+$/g, '')
+			.replace(/^\/+|\/+$/g, '') ?? '';
 	}
 
 	/**
@@ -65,7 +71,7 @@ export abstract class MintText {
 	/**
 	 * Pluralize the given word
 	 */
-	static pluralize (word: string): string {
+	static plural (word: string): string {
 		if (word.endsWith('ies') ||
 			word.endsWith('es') ||
 			(word.endsWith('s') && !word.endsWith('us') && !word.endsWith('is') && !word.endsWith('ss'))) {
