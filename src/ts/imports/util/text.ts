@@ -19,6 +19,15 @@ export abstract class MintText {
 	}
 
 	/**
+	 * Generate a title from a slug
+	 * @param slug - The slug to generate a title from
+	 * @returns The title
+	 */
+	static unslug (slug: string): string {
+		return this.titleCase(slug.replace(/[-/]+/g, ' '));
+	}
+
+	/**
 	 * Format a phone number
 	 * @param phone - The phone number to format
 	 * @returns The formatted phone number
