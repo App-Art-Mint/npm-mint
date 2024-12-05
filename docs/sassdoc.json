@@ -3113,7 +3113,7 @@
       "value": "@if $texture-bg {\n        @include mint-texture();\n    }",
       "line": {
         "start": 70,
-        "end": 124
+        "end": 125
       }
     },
     "access": "public",
@@ -3137,7 +3137,7 @@
       "value": "@extend #{class(texture)};\n    @if $texture-border-image {\n        @include mint-border();\n    } @else if $texture-border-color {\n        border: $texture-border-width $texture-border-type css-var($texture-border-color);\n    }",
       "line": {
         "start": 77,
-        "end": 124
+        "end": 125
       }
     },
     "access": "public",
@@ -3152,16 +3152,16 @@
   {
     "description": "Overlay texture\n",
     "commentRange": {
-      "start": 116,
-      "end": 116
+      "start": 117,
+      "end": 117
     },
     "context": {
       "type": "css",
       "name": "#{class(overlay)}",
       "value": "#{class(border)}, #{class(texture)} {\n\t\t&::before {\n\t\t\tz-index: 100;\n\t\t}\n\t}",
       "line": {
-        "start": 117,
-        "end": 124
+        "start": 118,
+        "end": 125
       }
     },
     "access": "public",

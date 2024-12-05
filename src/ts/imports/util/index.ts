@@ -1,6 +1,7 @@
 /**
  * Forward all exports from the util directory
  */
+export * from './async';
 export * from './display';
 export * from './event';
 export * from './icon';

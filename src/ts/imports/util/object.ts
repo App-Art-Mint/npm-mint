@@ -204,5 +204,31 @@ export abstract class MintObject {
 	static getKeyByValue(object: any, value: any): string | undefined {
 		return Object.keys(object).find((key) => object[key] === value);
 	}
+
+	/**
+	 * Create a deep copy of an object
+	 * @recursive
+	 */
+	static deepClone(object: any): any {
+
+		// Clone every property
+		const clone: any = {};
+		for (const key in object) {
+
+			// Functions
+			if (typeof object[key] === 'function') {
+				clone[key] = object[key].bind(clone);
+
+			// Objects
+			} else if (object[key] && typeof object[key] === 'object') {
+				clone[key] = this.deepClone(object[key]);
+			
+			// Primitives
+			} else {
+				clone[key] = object[key];
+			}
+		}
+		return clone;
+	}
 };
 export default MintObject;
