@@ -38,7 +38,7 @@ export abstract class MintScroll {
 			for (let i = 0; i < elementsToShow.length; i++) {
 				setTimeout(() => {
 					elementsToShow[i].classList.add('mint-show');
-				}, i * 200 + i * i * 20);
+				}, i * 100);
 			}
 		});
 	}

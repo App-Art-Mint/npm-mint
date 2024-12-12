@@ -12,7 +12,7 @@ export abstract class MintText {
 		return text?.trim()
 			.toLowerCase()
 			.replace(/'/g, '')
-			.replace(/\W+/g, '-')
+			.replace(/[^\w/-]+/g, '-')
 			.replace(/-+/g, '-')
 			.replace(/^-+|-+$/g, '')
 			.replace(/^\/+|\/+$/g, '') ?? '';

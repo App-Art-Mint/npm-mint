@@ -3002,7 +3002,7 @@
       "value": "@include box-util(padding, 1rem);\n\t@include break-util(padding, 0.5rem, 0);\n\n\t@include break(xs) {\n\t\t@include break-util(padding, 1rem, 0);\n\t}",
       "line": {
         "start": 6,
-        "end": 84
+        "end": 90
       }
     },
     "access": "public",
