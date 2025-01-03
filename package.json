@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App Art Mint LLC",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [
@@ -23,7 +23,7 @@
   "types": "dist/js/index.d.ts",
   "type": "module",
   "files": [
-    "src/**/*.{scss}",
+    "src/**/*.scss",
     "dist/**/*.{css,js,d.ts,map}"
   ],
   "directories": {
