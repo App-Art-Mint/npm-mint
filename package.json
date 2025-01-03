@@ -19,10 +19,11 @@
   "bugs": {
     "url": "https://github.com/App-Art-Mint/npm-mint/issues"
   },
-  "main": "src/ts/index.ts",
+  "main": "dist/js/index.min.js",
+  "types": "dist/js/index.d.ts",
   "type": "module",
   "files": [
-    "src/**/*.{ts,scss}",
+    "src/**/*.{scss}",
     "dist/**/*.{css,js,d.ts,map}"
   ],
   "directories": {
