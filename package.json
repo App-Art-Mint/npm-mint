@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App Art Mint LLC",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [
@@ -48,7 +48,7 @@
     "upgrade": "npm up -D @appartmint/config && mint-config",
     "prepare": "npm-run-all clean bundle",
     "preversion": "npm i && npm run test",
-    "version": "npm publish && git add -A",
+    "version": "git add -A",
     "postversion": "git push && git push --tags && npm run endversion --if-present",
     "clean": "cross-var rimraf $npm_package_config_dirs_dist $npm_package_config_dirs_doc",
     "clear": "npm run clean",
