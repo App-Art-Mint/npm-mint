@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App Art Mint LLC",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [
@@ -45,7 +45,7 @@
     "webpack": "node_modules/@appartmint/config/dist/js/webpack.config.min.js"
   },
   "scripts": {
-    "upgrade": "npm up -D @appartmint/config && mint-config",
+    "upgrade": "npm i -D @appartmint/config@latest && mint-config",
     "prepare": "npm-run-all clean bundle",
     "preversion": "npm i && npm run test",
     "version": "git add -A",
@@ -70,7 +70,7 @@
     "upgrade:config": "npm up -D @appartmint/config && mint-config"
   },
   "devDependencies": {
-    "@appartmint/config": "^0.7.0",
+    "@appartmint/config": "^1.0.1",
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",
     "babel-loader": "^9.0.1",
