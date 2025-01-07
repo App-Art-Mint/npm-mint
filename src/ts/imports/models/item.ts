@@ -1,7 +1,9 @@
 /**
  * A generic item
- * @note - this class must be convertable with JSON
- *       - only add strings, numbers, booleans, arrays, and objects
+ * 
+ * @remarks
+ * - this class must be convertable with JSON
+ * - only add strings, numbers, booleans, arrays, and objects
  */
 export class MintItem {
 	/**

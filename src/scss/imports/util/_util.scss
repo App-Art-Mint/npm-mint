@@ -5,7 +5,10 @@
 
 /// Imports
 @use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
 @use 'sass:math';
+@use 'sass:meta';
 @use 'sass:string';
 
 /// Library name
@@ -154,7 +157,7 @@ $bootstrap5: false !default;
 /// @param {String} $base - the string to be prefixed
 /// @return {String} - a prefixed string
 @function prefix ($base) {
-	@if (type-of($base) != 'string') {
+	@if (meta.type-of($base) != 'string') {
 		@error 'The prefix function requires a string value.';
 	}
 
@@ -176,7 +179,7 @@ $bootstrap5: false !default;
 /// @param {String} $base - the string to be prefixed
 /// @return {String} - a prefixed string
 @function css-prefix ($base) {
-	@if (type-of($base) != 'string') {
+	@if (meta.type-of($base) != 'string') {
 		@error 'The css-prefix function requires a string value.';
 	}
 
@@ -196,7 +199,7 @@ $bootstrap5: false !default;
 /// @param {String} $base - the CSS-var to create a call for
 /// @return {String} - a CSS-var call
 @function css-var ($base) {
-	@if (type-of($base) != 'string') {
+	@if (meta.type-of($base) != 'string') {
 		@error 'The css-var function requires a string value.';
 	}
 
@@ -216,7 +219,7 @@ $bootstrap5: false !default;
 /// @param {String} $base - the CSS-selector to negate
 /// @return {String} - a negated CSS-selector
 @function neg ($base) {
-	@if (type-of($base) != 'string') {
+	@if (meta.type-of($base) != 'string') {
 		@error 'The neg function requires a string value.';
 	}
 
@@ -232,7 +235,7 @@ $bootstrap5: false !default;
 /// @param {String} $base - the name of the class
 /// @return {String} - a class selector
 @function class($base) {
-	@if (type-of($base) != 'string') {
+	@if (meta.type-of($base) != 'string') {
 		@error 'The class function requires a string value.';
 	}
 
@@ -249,11 +252,11 @@ $bootstrap5: false !default;
 /// @param {String} $op - the comparison operator
 /// @return {String} - an id selector
 @function id ($base, $op: '=') {
-	@if (type-of($base) != 'string') {
+	@if (meta.type-of($base) != 'string') {
 		@error 'The id function requires a string value.';
 	}
 
-	@if (type-of($op) != 'string') {
+	@if (meta.type-of($op) != 'string') {
 		@error 'The controls function requires a string value for param 2.';
 	}
 
@@ -278,11 +281,11 @@ $bootstrap5: false !default;
 /// @param {String} $op - the comparison operator
 /// @return {String} - an aria-controls selector
 @function controls ($id, $op: '=') {
-	@if (type-of($id) != 'string') {
+	@if (meta.type-of($id) != 'string') {
 		@error 'The controls function requires a string value for param 1.';
 	}
 
-	@if (type-of($op) != 'string') {
+	@if (meta.type-of($op) != 'string') {
 		@error 'The controls function requires a string value for param 2.';
 	}
 
@@ -302,7 +305,7 @@ $bootstrap5: false !default;
 /// @param {Bool} $bool - the value of the selector
 /// @return {String} - an aria-expanded selector
 @function expanded ($bool) {
-	@if (type-of($bool) == 'string') {
+	@if (meta.type-of($bool) == 'string') {
 		$bool: string.to-lower-case($bool);
 
 		@if not($bool == 'true' or $bool == 'false') {
@@ -310,7 +313,7 @@ $bootstrap5: false !default;
 		}
 	}
 
-	@else if (type-of($bool) != 'bool') {
+	@else if (meta.type-of($bool) != 'bool') {
 		@error 'The expanded function requires a boolean value.';
 	}
 
@@ -326,7 +329,7 @@ $bootstrap5: false !default;
 /// @param {Bool} $bool - the value of the selector
 /// @return {String} - an aria-hidden selector
 @function hidden ($bool) {
-	@if (type-of($bool) == 'string') {
+	@if (meta.type-of($bool) == 'string') {
 		$bool: string.to-lower-case($bool);
 
 		@if not($bool == 'true' or $bool == 'false') {
@@ -334,7 +337,7 @@ $bootstrap5: false !default;
 		}
 	}
 
-	@else if (type-of($bool) !='bool') {
+	@else if (meta.type-of($bool) !='bool') {
 		@error 'The hidden function requires a boolean value. Received: #{$bool}';
 	}
 
@@ -350,7 +353,7 @@ $bootstrap5: false !default;
 /// @param {Number} $val - the number of ms to return
 /// @return {Number} the number as ms
 @function ms ($val) {
-	@if (type-of($val) != 'number') {
+	@if (meta.type-of($val) != 'number') {
 		@error 'The ms function requires a number value.';
 	}
 
@@ -366,7 +369,7 @@ $bootstrap5: false !default;
 /// @param {Number} $val - the number of px to return
 /// @return {Number} - the number as px
 @function px ($val) {
-	@if (type-of($val) != 'number') {
+	@if (meta.type-of($val) != 'number') {
 		@error 'The px function requires a number value.';
 	}
 
@@ -382,7 +385,7 @@ $bootstrap5: false !default;
 /// @param {Number} $val - the value to strip
 /// @return {Number} - the number without units
 @function strip-unit($val) {
-	@if (type-of($val) != 'number') {
+	@if (meta.type-of($val) != 'number') {
 		@error 'The strip-unit function requires a number value.';
 	}
 
@@ -401,7 +404,7 @@ $bootstrap5: false !default;
 /// @throws {Error} - if the values are not numbers
 /// @throws {Error} - if the divisor is 0
 @function percent($dividend, $divisor, $padding: 0) {
-	@if (type-of($dividend) != 'number' or type-of($divisor) != 'number' or type-of($padding) != 'number') {
+	@if (meta.type-of($dividend) != 'number' or meta.type-of($divisor) != 'number' or meta.type-of($padding) != 'number') {
 		@error 'The percent function requires number parameters.';
 	}
 
@@ -425,11 +428,11 @@ $bootstrap5: false !default;
 /// @param {Number} $key - the key of the delay to use
 /// @return {Number} - the delay value as ms
 @function delay($key) {
-	@if not(map-has-key($delay, $key)) {
+	@if not(map.has-key($delay, $key)) {
 		@error 'The delay function requires one of the following values: #{map-keys($delay)}';
 	}
 
-	@return ms(map-get($delay, $key));
+	@return ms(map.get($delay, $key));
 }
 
 /// Returns the requested breakpoint value as px
@@ -441,11 +444,11 @@ $bootstrap5: false !default;
 /// @param {Number} $key - the key of the breakpoint to use
 /// @return {Number} - the breakpoint value as px
 @function break($key) {
-	@if not(map-has-key($break, $key)) {
+	@if not(map.has-key($break, $key)) {
 		@error 'The break function requires one of the following values: #{map-keys($break)}';
 	}
 
-	@return px(map-get($break, $key));
+	@return px(map.get($break, $key));
 }
 
 /// Creates a prefixed CSS var definition
@@ -458,7 +461,7 @@ $bootstrap5: false !default;
 /// @param {Any} $val - the value of the CSS var
 /// @output a prefixed CSS var definition
 @mixin css-var ($key, $val) {
-	@if (type-of($key) != 'string') {
+	@if (meta.type-of($key) != 'string') {
 		@error 'The css-var mixin requires a string for the $key argument.';
 	}
 
@@ -479,7 +482,7 @@ $bootstrap5: false !default;
 /// @param {String} $key2 - the key of the referenced CSS var
 /// @output a prefixed CSS var reference
 @mixin css-var-ref ($key1, $key2) {
-	@if (type-of($key1) != 'string' or type-of($key2) != 'string') {
+	@if (meta.type-of($key1) != 'string' or meta.type-of($key2) != 'string') {
 		@error 'The css-var-ref mixin requires string values for both parameters.';
 	}
 
@@ -498,11 +501,11 @@ $bootstrap5: false !default;
 /// @param {String} $max - the key of the breakpoint to use with max-width
 /// @output the provided content wrapped in a media query
 @mixin break ($min, $max: null) {
-	@if not(map-has-key($break, $min) and (type-of($max) == 'null' or map-has-key($break, $max))) {
+	@if not(map.has-key($break, $min) and (meta.type-of($max) == 'null' or map.has-key($break, $max))) {
 		@error 'The break mixin requires one or two of the following values: #{map-keys($break)}';
 	}
 
-	@if (map-has-key($break, $max)) {
+	@if (map.has-key($break, $max)) {
 		@media (min-width: break($min)) and (max-width: break($max)) {
 			@content;
 		}
@@ -516,11 +519,11 @@ $bootstrap5: false !default;
 }
 
 @mixin break-max ($max, $min: null) {
-	@if not(map-has-key($break, $max) and (type-of($min) == 'null' or map-has-key($break, $min))) {
+	@if not(map.has-key($break, $max) and (meta.type-of($min) == 'null' or map.has-key($break, $min))) {
 		@error 'The break-max mixin requires one or two of the following values: #{map-keys($break)}';
 	}
 
-	@if (map-has-key($break, $min)) {
+	@if (map.has-key($break, $min)) {
 		@media (min-width: break($min)) and (max-width: break($max)) {
 			@content;
 		}
@@ -572,7 +575,7 @@ $bootstrap5: false !default;
 /// @param {Any} $none - the inactive value of the property
 /// @output utility selectors for the given property at each breakpoint
 @mixin break-util ($prop, $val, $none: "none") {
-	@if (type-of($prop) !='string') {
+	@if (meta.type-of($prop) !='string') {
 		@error 'The break-util mixin requires a string for the $prop argument.';
 	}
 
@@ -607,7 +610,7 @@ $bootstrap5: false !default;
 ///    @include box-util(margin, 1rem, 0);    // ->   & {
 /// 
 @mixin box-util ($prop, $val) {
-	@if (type-of($prop) != 'string') {
+	@if (meta.type-of($prop) != 'string') {
 		@error 'The box-util mixin requires a string for the $prop argument.';
 	}
 
@@ -745,16 +748,16 @@ $bootstrap5: false !default;
 /// @param {String} $max-size - the maximum value of the fluid property
 /// @output the definitions for the property at different screen sizes
 @mixin fluid ($prop, $min-vw, $max-vw, $min-size, $max-size) {
-	$u1: unit($min-vw);
-	$u2: unit($max-vw);
-	$u3: unit($min-size);
-	$u4: unit($max-size);
+	$u1: math.unit($min-vw);
+	$u2: math.unit($max-vw);
+	$u3: math.unit($min-size);
+	$u4: math.unit($max-size);
 
-	@if (type-of($prop) !='string') {
+	@if (meta.type-of($prop) !='string') {
 		@error 'The fluid mixin requires a string for the $prop argument.';
 	}
 
-	@if not(type-of($u1) == 'string' and type-of($u2) == 'string' and type-of($u3) == 'string' and type-of($u4) == 'string') {
+	@if not(meta.type-of($u1) == 'string' and meta.type-of($u2) == 'string' and meta.type-of($u3) == 'string' and meta.type-of($u4) == 'string') {
 		@error 'The fluid mixin requires numbers with units for the width and size arguments.';
 	}
 
@@ -787,11 +790,11 @@ $bootstrap5: false !default;
 /// @param {Boolean} $alpha - whether to generate alpha variations
 /// @output css variables for different shades of the source color
 @mixin shades ($name, $color, $type: both, $number: 7, $amount: 10%, $alpha: false) {
-	@if (type-of($name) != 'string') {
+	@if (meta.type-of($name) != 'string') {
 		@error 'The shades mixin requires a string for the $name argument.';
 	}
 
-	@if (type-of($color) != 'color') {
+	@if (meta.type-of($color) != 'color') {
 		@error 'The shades mixin requires a color for the $color argument.';
 	}
 
@@ -799,11 +802,11 @@ $bootstrap5: false !default;
 		@error 'The shades mixin requires a string of "lighten", "darken", or "both" for the $type argument.';
 	}
 
-	@if (type-of($number) != 'number') {
+	@if (meta.type-of($number) != 'number') {
 		@error 'The shades mixin requires a number for the $number argument.';
 	}
 
-	@if (type-of($alpha) == 'string') {
+	@if (meta.type-of($alpha) == 'string') {
 		$bool: string.to-lower-case($bool);
 
 		@if not($bool == 'true' or $bool == 'false') {
@@ -811,7 +814,7 @@ $bootstrap5: false !default;
 		}
 	}
 
-	@else if (type-of($alpha) != 'bool') {
+	@else if (meta.type-of($alpha) != 'bool') {
 		@error 'The shades mixin requires a boolean value for the $alpha argument. Received: #{$bool}';
 	}
 
@@ -848,27 +851,27 @@ $bootstrap5: false !default;
 	@else {
 		@if ($type == lighten) {
 			@for $i from 0 through $number - 1 {
-				@include css-var(#{$name}-#{$i}, lighten($color, $i * $amount));
+				@include css-var(#{$name}-#{$i}, color.adjust($color, $lightness: $i * $amount));
 			}
 		}
 
 		@else if ($type == darken) {
 			@for $i from 0 through $number - 1 {
-				@include css-var(#{$name}-#{$i}, darken($color, $i * $amount));
+				@include css-var(#{$name}-#{$i}, color.adjust($color, $lightness: $i * -$amount));
 			}
 		}
 
 		@else if ($type == both) {
-			$num-light: floor(math.div($number, 2));
+			$num-light: math.floor(math.div($number, 2));
 
 			@for $i from 0 through $num-light - 1 {
-				@include css-var(#{$name}-#{$i}, lighten($color, ($num-light - $i) * $amount));
+				@include css-var(#{$name}-#{$i}, color.adjust($color, $lightness: ($num-light - $i) * $amount));
 			}
 
 			@include css-var(#{$name}-#{$num-light}, $color);
 
 			@for $i from $num-light + 1 through $number - 1 {
-				@include css-var(#{$name}-#{$i}, darken($color, ($i - $num-light) * $amount));
+				@include css-var(#{$name}-#{$i}, color.adjust($color, $lightness: ($i - $num-light) * -$amount));
 			}
 		}
 	}
@@ -877,24 +880,24 @@ $bootstrap5: false !default;
 /// TODO: Document this
 @mixin states ($states...) {
 	@each $state in $states {
-		@if (type-of($state) != 'string') {
+		@if (meta.type-of($state) != 'string') {
 			@error 'The states mixin requires a string for each state argument.';
 		}
 	}
 
-	@if (index($states, 'hover') != null) {
+	@if (list.index($states, 'hover') != null) {
 		&:hover {
 			@content;
 		}
 	}
 
-	@if (index($states, 'focus') != null) {
+	@if (list.index($states, 'focus') != null) {
 		&:focus-visible {
 			@content;
 		}
 	}
 
-	@if (index($states, 'active') != null) {
+	@if (list.index($states, 'active') != null) {
 
 		&:active,
 		&#{class(active)} {
@@ -902,19 +905,19 @@ $bootstrap5: false !default;
 		}
 	}
 
-	@if (index($states, 'visited') != null) {
+	@if (list.index($states, 'visited') != null) {
 		&:visited {
 			@content;
 		}
 	}
 
-	@if (index($states, 'disabled') != null) {
+	@if (list.index($states, 'disabled') != null) {
 		&:disabled {
 			@content;
 		}
 	}
 
-	@if (index($states, 'expanded') != null) {
+	@if (list.index($states, 'expanded') != null) {
 		&#{expanded(true)} {
 			@content;
 		}

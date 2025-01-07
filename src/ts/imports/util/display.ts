@@ -1,7 +1,7 @@
 /**
  * Imports
  */
-import { EMintSide } from '../enums';
+import { EMintSide } from '../enums/side';
 import { MintSettings } from './settings';
 
 /**

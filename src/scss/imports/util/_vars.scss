@@ -4,6 +4,9 @@
 /// @group Vars
 @charset 'utf-8';
 
+/// Imports
+@use 'sass:color';
+
 /// Global Colors
 $bitcoin: #FF9900;
 $ethereum: #3C3C3D;
@@ -45,8 +48,8 @@ $danger: #ff4d4d !default;
 $warning: #ffaa22 !default;
 $info: $brand !default;
 
-$fore: lighten($black, 10%) !default;
-$back: darken($white, 10%) !default;
+$fore: color.adjust($black, $lightness: 10%) !default;
+$back: color.adjust($white, $lightness: -10%) !default;
 
 /// Fonts
 $font-primary: sans-serif !default;

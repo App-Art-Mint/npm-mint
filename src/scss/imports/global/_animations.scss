@@ -14,7 +14,7 @@
 /// Cycle through instagram colors
 @keyframes instafade {
     @for $i from 0 through 6 {
-        $percent: percentage(math.div($i, 6));
+        $percent: math.percentage(math.div($i, 6));
         #{$percent} {
             color: css-var(instagram-#{$i});
         }

@@ -1,4 +1,6 @@
 /// Imports
+@use 'sass:map';
+@use 'sass:meta';
 @use '../util' as *;
 
 /// Global styles
@@ -52,7 +54,7 @@ app-root {
 	opacity: 0;
 	transition: opacity 750ms ease-in;
 	
-	@if (type-of($root-bg-image) == 'string') {
+	@if (meta.type-of($root-bg-image) == 'string') {
 		&::before {
 			content: '';
 			position: absolute;
@@ -62,15 +64,15 @@ app-root {
 			height: 100%;
 			background-image: url($root-bg-image);
 
-			@if (type-of($root-bg-size) != 'null') {
+			@if (meta.type-of($root-bg-size) != 'null') {
 				background-size: $root-bg-size;
 			}
 
-			@if (type-of($root-bg-position) != 'null') {
+			@if (meta.type-of($root-bg-position) != 'null') {
 				background-position: $root-bg-position;
 			}
 			
-			@if (type-of($root-bg-filter) != 'null') {
+			@if (meta.type-of($root-bg-filter) != 'null') {
 				filter: $root-bg-filter;
 			}
 		}
@@ -103,7 +105,7 @@ main {
 				width: 100%;
 				padding: 0.25rem;
 
-				@include fluid(padding, map-get($break, xs) * 1px, map-get($break, sm) * 1px, 4px, 16px);
+				@include fluid(padding, map.get($break, xs) * 1px, map.get($break, sm) * 1px, 4px, 16px);
 
 				&+:not(#{prefix(partial-footer)}) {
 					height: 0;

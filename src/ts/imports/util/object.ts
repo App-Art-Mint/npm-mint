@@ -25,7 +25,6 @@ export abstract class MintObject {
      * @param superset - the object to check
      * @param subset - the object whose entries are required
      * @returns - true if the first object is a superset of the second
-     * @recursive
      */
     static isSuperset (superset: any, subset: any) : boolean {
         let isSuperset: boolean = true;
@@ -59,7 +58,7 @@ export abstract class MintObject {
 
     /**
      * Removes object entries by key
-     * @alias mintObject.removeKeys
+     * @see mintObject.removeKeys
      * @param object - the object to remove entries from
      * @param keys - the keys to remove
      */
@@ -121,7 +120,7 @@ export abstract class MintObject {
     }
 
     /**
-     * @alias mintObject.filterKeys
+     * @see mintObject.filterKeys
      */
     static filter (object: any, keys: string[]) : Object {
         return this.filterKeys(object, keys);
@@ -207,7 +206,6 @@ export abstract class MintObject {
 
 	/**
 	 * Create a deep copy of an object
-	 * @recursive
 	 */
 	static deepClone(object: any): any {
 
