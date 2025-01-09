@@ -114,7 +114,7 @@ main {
 			}
 
 			& + #{prefix(partial-footer)} {
-				margin-top: 100vh;
+				transform: translateY(100vh);
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App Art Mint LLC",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [
@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "cross-replace": "^0.2.0",
     "css-loader": "^7.1.2",
     "echo-cli": "^2.0.0",
     "mini-css-extract-plugin": "^2.9.2",
@@ -59,8 +60,5 @@
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
     "webpack-remove-empty-scripts": "^1.0.4"
-  },
-  "dependencies": {
-    "cross-replace": "^0.2.0"
   }
 }
