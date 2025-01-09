@@ -112,6 +112,10 @@ main {
 					overflow: hidden;
 				}
 			}
+
+			& + #{prefix(partial-footer)} {
+				margin-top: 100vh;
+			}
 		}
 	}
 }

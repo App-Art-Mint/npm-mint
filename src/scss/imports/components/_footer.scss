@@ -25,6 +25,7 @@
 	&#{class(hide)} {
 		display: flex;
 		transform: translateY(100%);
+		transition: transform 0ms;
 	}
 
 	* {

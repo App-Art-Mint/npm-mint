@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App Art Mint LLC",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [
@@ -30,9 +30,8 @@
     "access": "public"
   },
   "scripts": {
-    "preversion": "npm i && npm run test",
-    "version": "git add -A",
-    "postversion": "git push && git push --tags && gh release create v$npm_package_version --generate-notes",
+    "version": "npm i && git add -A",
+    "postversion": "git push && git push --tags && cross-replace gh release create \"v$npm_package_version\" --generate-notes",
     "prepare": "npm-run-all clean bundle",
     "clean": "rimraf dist doc",
     "clear": "npm run clean",
@@ -60,5 +59,8 @@
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
     "webpack-remove-empty-scripts": "^1.0.4"
+  },
+  "dependencies": {
+    "cross-replace": "^0.2.0"
   }
 }
