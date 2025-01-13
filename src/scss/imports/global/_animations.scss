@@ -11,15 +11,42 @@
 @use '../util' as *;
 
 /// Animations
-/// Cycle through instagram colors
-@keyframes instafade {
-    @for $i from 0 through 6 {
-        $percent: math.percentage(math.div($i, 6));
-        #{$percent} {
-            color: css-var(instagram-#{$i});
-        }
-    }
+@keyframes #{prefix(stretch-in)} {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.25);
+	}
+
+	70% {
+		transform: scale(1.15);
+	}
+
+	100% {
+		transform: scale(1.2);
+	}
 }
+
+@keyframes #{prefix(stretch-out)} {
+	0% {
+		transform: scale(1.2);
+	}
+
+	25% {
+		transform: scale(0.9);
+	}
+
+	50% {
+		transform: scale(1.05);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
 
 /// CSS variables
 :root {
@@ -31,6 +58,8 @@
     @include css-var(delay-slow, delay(slow));
 }
 
+
+/// Animation classes
 #{class(fall-in)} {
     filter: opacity(0%);
     transform: translateY(-100px);
@@ -76,4 +105,35 @@
         background: linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
         transition: transform delay(med-fast) ease-out;
     }
+}
+
+#{class(stretch)} {
+	animation: #{prefix(stretch-out)} 0.5s ease forwards;
+	@include states(hover, focus) {
+		animation: #{prefix(stretch-in)} 0.75s ease forwards;
+	}
+
+	&-img {
+		img {
+			animation: #{prefix(stretch-out)} 0.5s ease forwards;
+		}
+
+		@include states(hover, focus) {
+			img {
+				animation: #{prefix(stretch-in)} 0.75s ease forwards;
+			}
+		}
+	}
+
+	&-icon {
+		i {
+			animation: #{prefix(stretch-out)} 0.5s ease forwards;
+		}
+
+		@include states(hover, focus) {
+			i {
+				animation: #{prefix(stretch-in)} 0.75s ease forwards;
+			}
+		}
+	}
 }
