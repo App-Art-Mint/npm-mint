@@ -1,0 +1,29 @@
+/// _landing.scss - Landing styles
+/// @author App Art Mint LLC
+///
+/// @group Components
+@charset 'utf-8';
+
+/// Imports
+@use 'sass:map';
+@use '../util' as *;
+
+/// Landing Styles
+:root {
+	#{class(landing)} {
+		&.swiper {
+			width: 100vw;
+			max-width: 100vw;
+			@include fluid(top, map.get($break, xs) * 1px, map.get($break, sm) * 1px, -4px, -16px);
+			@include fluid(left, map.get($break, xs) * 1px, map.get($break, sm) * 1px, -4px, -16px);
+	
+			.swiper-slide {
+				padding: 0;
+			}
+		}
+		
+		#{class(video-bg)} {
+			margin: 0;
+		}
+	}
+}
