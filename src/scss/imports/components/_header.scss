@@ -269,14 +269,6 @@
 		}
 	}
 
-	h1 {
-		display: flex;
-		white-space: nowrap;
-		align-items: center;
-		gap: 1rem;
-		margin: 0;
-	}
-
 	#{id(navbar)} {
 		display: flex;
 		align-items: center;
@@ -287,8 +279,13 @@
 	#{class(logo)} {
 		display: flex;
 		align-items: center;
+		gap: 1rem;
 		width: auto;
 		text-decoration: none;
+
+		span {
+			margin: 0;
+		}
 
 		img {
 			max-height: css-var(header-height);
