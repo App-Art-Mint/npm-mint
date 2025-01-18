@@ -14,59 +14,22 @@
 		flex-direction: column;
 		align-items: flex-end;
 		justify-content: center;
+		flex-direction: row;
+		min-height: calc(100vh - css-var(header-height) + 10rem);
 		gap: 2rem;
 		position: relative;
+		@include exit-padding;
+		@include fluid-padding;
 
-		@include break(lg) {
-			flex-direction: row;
-			min-height: calc(100vh - css-var(header-height));
-			margin-bottom: 15%;
-		}
-
-		& > section {
-			@include break(lg) {
-				margin-bottom: -15%;
-			}
-		}
-
-		iframe, video {
+		iframe, video, #{class(image)}, #{class(embed)} {
+			position: absolute;
+			top: 0;
+			padding: 0;
 			width: 100%;
-			height: 100%;
+			height: calc(100vh - css-var(header-height));
+			border: none;
 			object-fit: cover;
 			pointer-events: none;
-
-			@include break(lg) {
-				position: absolute;
-				width: 100vw;
-				border: none;
-				padding: 0;
-			}
-
-			& + * {
-				#{class(grid)} {
-					@include break(lg) {
-						margin-bottom: -15%;
-					}
-				}
-			}
-		}
-
-		&#{class(overflow)} {
-			overflow: hidden;
-			margin-bottom: 0;
-
-			& > section {
-				@include break(lg) {
-					margin-bottom: 0;
-				}
-			}
-
-			iframe, video {
-				top: -10%;
-				left: -10%;
-				width: 120%;
-				height: 120%;
-			}
 		}
 	}
 }

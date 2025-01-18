@@ -89,6 +89,10 @@ $font-size-desktop: (
 
 /// Structure
 $grid-gap: 2rem !default;
+$pad-min-vw: xs !default;
+$pad-max-vw: sm !default;
+$pad-min-size: 4px !default;
+$pad-max-size: 16px !default;
 
 /// Outline width
 $border-width: 0.125rem !default;

@@ -12,18 +12,41 @@
 :root {
 	#{class(landing)} {
 		&.swiper {
-			width: 100vw;
 			max-width: 100vw;
-			@include fluid(top, map.get($break, xs) * 1px, map.get($break, sm) * 1px, -4px, -16px);
-			@include fluid(left, map.get($break, xs) * 1px, map.get($break, sm) * 1px, -4px, -16px);
-	
+			@include exit-padding;
+			
+			$padding-min-vw: map.get($break, $pad-min-vw) * 1px;
+			$padding-max-vw: map.get($break, $pad-max-vw) * 1px;
+			@include fluid(left, $padding-min-vw, $padding-max-vw, $pad-min-size * -1, $pad-max-size * -1);
+
 			.swiper-slide {
 				padding: 0;
 			}
 		}
+	}
+}
+
+#{class(landing)} {
+	#{class(video-bg)} {
+		align-items: center;
+		top: 0;
+		width: 100%;
+		margin: 0;
+		min-height: calc(100vh - css-var(header-height));
+		$padding-min-vw: map.get($break, $pad-min-vw) * 1px;
+		$padding-max-vw: map.get($break, $pad-max-vw) * 1px;
+		@include fluid(padding, $padding-min-vw, $padding-max-vw, $pad-min-size * 4, $pad-max-size * 4);
 		
-		#{class(video-bg)} {
-			margin: 0;
+		iframe, video {
+			position: absolute;
+
+			& + * {
+				#{class(grid)} {
+					@include break(lg) {
+						margin-bottom: 0;
+					}
+				}
+			}
 		}
 	}
 }
