@@ -87,7 +87,7 @@
     position: relative;
     overflow: hidden;
 
-    @include states(hover, focus, active) {
+    @include states(hover, focus, active, mint-active) {
         &::after {
             transition-duration: delay(default);
             transform: translate(100%, -100%);

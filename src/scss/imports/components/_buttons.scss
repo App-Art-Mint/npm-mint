@@ -44,7 +44,7 @@
         width: fit-content;
     }
 
-    @include states(hover, focus, active) {
+    @include states(hover, focus, active, mint-active) {
         color: css-var($btn-fore-hover);
         background: css-var($btn-border);
 
@@ -57,7 +57,7 @@
 		color: css-var($btn-fore-hover);
 		background: css-var($btn-border);
 
-		@include states(hover, focus, active) {
+		@include states(hover, focus, active, mint-active) {
 			color: css-var($btn-fore);
     		background: css-var($btn-back);
 		}
@@ -67,7 +67,7 @@
         color: css-var($btn-border);
         background: css-var($btn-back-alt);
 
-        @include states(hover, focus, active) {
+        @include states(hover, focus, active, mint-active) {
             color: css-var($btn-fore-alt-hover);
             background: css-var($btn-back-alt-hover);
             border-color: css-var($btn-back-alt-hover);
@@ -78,7 +78,7 @@
 			background: css-var($btn-back-alt-hover);
 			border-color: css-var($btn-back-alt-hover);
 
-			@include states(hover, focus, active) {
+			@include states(hover, focus, active, mint-active) {
 				color: css-var($btn-border);
 				background: css-var($btn-back-alt);
 				border-color: css-var($btn-back-alt);
@@ -111,7 +111,7 @@
 		background: none;
 		border: none;
 
-		@include states(hover, focus, active) {
+		@include states(hover, focus, active, mint-active) {
 			i {
 				color: css-var($btn-back-alt-hover);
 			}
@@ -168,7 +168,7 @@
 				pointer-events: none;
 			}
 
-			@include states(hover, focus, active) {
+			@include states(hover, focus, active, mint-active) {
 				background: css-var(brand-5);
 			}
 		}

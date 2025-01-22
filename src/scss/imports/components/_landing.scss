@@ -13,11 +13,6 @@
 	#{class(landing)} {
 		&.swiper {
 			max-width: 100vw;
-			@include exit-padding;
-			
-			$padding-min-vw: map.get($break, $pad-min-vw) * 1px;
-			$padding-max-vw: map.get($break, $pad-max-vw) * 1px;
-			@include fluid(left, $padding-min-vw, $padding-max-vw, $pad-min-size * -1, $pad-max-size * -1);
 
 			.swiper-slide {
 				padding: 0;
@@ -27,9 +22,12 @@
 }
 
 #{class(landing)} {
+	@include exit-padding;	
+
 	#{class(video-bg)} {
 		align-items: center;
 		top: 0;
+		left: 0;
 		width: 100%;
 		margin: 0;
 		min-height: calc(100vh - css-var(header-height));

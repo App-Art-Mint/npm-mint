@@ -73,6 +73,7 @@
 				position: static;
 				display: flex !important;
 				height: 100%;
+				max-width: unset !important;
 				padding: 0;
 				z-index: 0;
 
@@ -91,7 +92,7 @@
 					}
 
 					&>ul {
-						flex-direction: row;
+						flex-direction: row !important;
 						justify-content: flex-end;
 						flex-wrap: nowrap;
 						overflow: visible;
@@ -209,6 +210,11 @@
 				margin: 0.25rem 0;
 				line-height: 1;
 				font-size: 4em;
+				width: 100%;
+			}
+
+			button {
+				font-size: 6em;
 			}
 
 			nav {
@@ -380,9 +386,9 @@
 		}
 
 		nav {
-			height: calc(100vh - css-var(header-height));
-			height: calc(100dvh - css-var(header-height));
-			overflow: auto;
+			flex-grow: 1;
+			height: auto;
+			overflow: visible;
 			background: css-var(back);
 
 			@include break(xl) {
@@ -397,7 +403,7 @@
 
 			&>ul {
 				height: 100%;
-				overflow: auto;
+				overflow: visible;
 
 				@include break(md) {
 					display: flex;
@@ -439,7 +445,7 @@
 				color: css-var($header-link-fore-hover);
 			}
 
-			@include states(active) {
+			@include states(mint-active) {
 				text-decoration: underline;
 			}
 		}

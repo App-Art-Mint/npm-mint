@@ -16,7 +16,8 @@ import {
  * @public
  */
 export class MintHeader {
-    /**
+    
+	/**
      * Navbar settings
      */
      settings: {[key: string]: any} = {
@@ -29,6 +30,16 @@ export class MintHeader {
      */
     el: {[key: string]: HTMLElement | null} = {};
 
+	/**
+	 * Event handlers
+	 */
+	events: {
+		el: HTMLElement | Window | null,
+		handlers: EventListener[],
+		events: string[]
+	}[] = [];
+
+
     /**
      * Initializes and closes the menu
      */
@@ -39,6 +50,18 @@ export class MintHeader {
         this.attachEvents();
         this.addClasses();
     }
+
+	/**
+	 * Destroys the header
+	 */
+	destroy () : void {
+		this.events.forEach(event => {
+			event.handlers.forEach((handler, index) => {
+				event.el?.removeEventListener(event.events[index], handler);
+			});
+		});
+		this.events = [];
+	}
 
     /**
      * Adds elements to {@link el | `this.el`}
@@ -51,27 +74,50 @@ export class MintHeader {
         this.el.wrapper = document.getElementById('mint-wrapper');
     }
 
+	/**
+	 * Attach event to the given element
+	 * @param element - Element to attach event to
+	 * @param event - Event to attach
+	 * @param handler - Handler to attach
+	 */
+	attachEvent (element: HTMLElement | Window | null | undefined, event: string, handler: EventListener) : void {
+		if (element) {
+			let oldElement = this.events.find(e => e.el === element);
+			if (oldElement) {
+				oldElement.handlers.push(handler);
+				oldElement.events.push(event);
+			} else {
+				this.events.push({
+					el: element,
+					handlers: [handler],
+					events: [event]
+				});
+			}
+			element.addEventListener(event, handler);
+		}
+	}
+
     /**
      * Adds events to the dom
      */
     attachEvents () : void {
-        window.addEventListener('resize', MintEvent.throttleEvent(this.eHandleResize.bind(this), MintSettings.delay.default));
-        window.addEventListener('scroll', MintEvent.throttleEvent(this.eHandleScroll.bind(this), MintSettings.delay.default, { trailing: false }));
+		this.attachEvent(window, 'resize', MintEvent.throttleEvent(this.eHandleResize.bind(this), MintSettings.delay.default));
+		this.attachEvent(window, 'scroll', MintEvent.throttleEvent(this.eHandleScroll.bind(this), MintSettings.delay.default, { trailing: false }));
 
-        let focusables = this.el.header?.querySelectorAll(MintSelectors.focusable),
+        let focusables = this.el.header?.querySelectorAll(MintSelectors.focusable) as NodeListOf<HTMLElement> | null,
             lastFocusable = focusables?.[focusables?.length - 1];
-        lastFocusable?.addEventListener('keydown', MintEvent.throttleEvent(this.eWrapTab.bind(this)));
+		this.attachEvent(lastFocusable, 'keydown', MintEvent.throttleEvent(this.eWrapTab.bind(this)));
         focusables?.forEach((focusable) => {
-            focusable.addEventListener('keydown', MintEvent.throttleEvent(this.eHandleKeypress.bind(this)));
+			this.attachEvent(focusable, 'keydown', MintEvent.throttleEvent(this.eHandleKeypress.bind(this)));
         });
 
-        let menuButtons = this.el.wrapper?.querySelectorAll(MintSelectors.controls());
+        let menuButtons = this.el.wrapper?.querySelectorAll(MintSelectors.controls()) as NodeListOf<HTMLElement> | null;
         menuButtons?.forEach((menuButton) => {
-            menuButton.addEventListener('click', MintEvent.throttleEvent(this.eToggleMenu.bind(this), MintSettings.delay.slow, { trailing: false }));
+            this.attachEvent(menuButton, 'click', MintEvent.throttleEvent(this.eToggleMenu.bind(this), MintSettings.delay.slow, { trailing: false }));
         });
 
-        this.el.mobileButton?.addEventListener('click', MintEvent.throttleEvent(this.eToggleMobileMenu.bind(this), MintSettings.delay.slow, { trailing: false }));
-        this.el.wrapper?.addEventListener('transitionend', this.eTransitionEnd.bind(this));
+        this.attachEvent(this.el.mobileButton, 'click', MintEvent.throttleEvent(this.eToggleMobileMenu.bind(this), MintSettings.delay.slow, { trailing: false }));
+        this.attachEvent(this.el.wrapper, 'transitionend', this.eTransitionEnd.bind(this));
     }
 
     /**

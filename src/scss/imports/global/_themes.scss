@@ -117,7 +117,7 @@ a {
 		}
 	}
 
-	@include states(hover, focus, active) {
+	@include states(hover, focus, active, mint-active) {
 		color: css-var($link-color-hover);
 
 		.fa-facebook,

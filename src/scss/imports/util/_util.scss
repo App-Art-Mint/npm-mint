@@ -767,25 +767,27 @@ $bootstrap5: false !default;
 		@error 'The fluid mixin requires width and size arguments with the same units.';
 	}
 
-	@if ($base) {
-		#{$prop}: calc($base + $min-size);
-
-		@media (min-width: $min-vw) {
-			#{$prop}: calc($base + #{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-		}
-
-		@media (min-width: $max-vw) {
-			#{$prop}: calc($base + $max-size);
-		}
-	} @else {
-		#{$prop}: $min-size;
-
-		@media (min-width: $min-vw) {
-			#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-		}
-
-		@media (min-width: $max-vw) {
-			#{$prop}: $max-size;
+	& {
+		@if ($base) {
+			#{$prop}: calc($base + $min-size);
+	
+			@media (min-width: $min-vw) {
+				#{$prop}: calc($base + #{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+			}
+	
+			@media (min-width: $max-vw) {
+				#{$prop}: calc($base + $max-size);
+			}
+		} @else {
+			#{$prop}: $min-size;
+	
+			@media (min-width: $min-vw) {
+				#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+			}
+	
+			@media (min-width: $max-vw) {
+				#{$prop}: $max-size;
+			}
 		}
 	}
 }
@@ -808,6 +810,7 @@ $bootstrap5: false !default;
 	$padding-min-vw: map.get($break, $pad-min-vw) * 1px;
 	$padding-max-vw: map.get($break, $pad-max-vw) * 1px;
 	@include fluid(top, $padding-min-vw, $padding-max-vw, $pad-min-size * -1, $pad-max-size * -1);
+	@include fluid(left, $padding-min-vw, $padding-max-vw, $pad-min-size * -1, $pad-max-size * -1);
 	@include fluid(width, $padding-min-vw, $padding-max-vw, $pad-min-size * 2, $pad-max-size * 2, 100%);
 }
 
@@ -931,7 +934,12 @@ $bootstrap5: false !default;
 
 	@if (list.index($states, 'active') != null) {
 
-		&:active,
+		&:active {
+			@content;
+		}
+	}
+
+	@if (list.index($states, 'mint-active') != null) {
 		&#{class(active)} {
 			@content;
 		}
