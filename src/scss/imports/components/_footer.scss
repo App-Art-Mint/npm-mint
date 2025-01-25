@@ -96,6 +96,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
+		gap: 0.5rem;
 		padding: 0.4rem 1rem;
         color: css-var($footer-heel-fore);
 		background: css-var($footer-heel-back);
@@ -104,6 +105,23 @@
 		@include break(sm) {
 			flex-direction: row;
 		}
+		
+		& > * {
+			width: 100%;
+		}
+
+		p {
+			@include break(sm) {
+				text-align: left;
+			}
+		}
+	}
+
+	&-social {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
 	}
 
 	&-message {
@@ -114,6 +132,10 @@
 
 		@include break(xs) {
 			flex-wrap: nowrap;
+		}
+
+		@include break(sm) {
+			justify-content: flex-end;
 		}
 
 		&>#{class(pill)} {
