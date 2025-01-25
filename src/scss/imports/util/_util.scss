@@ -524,14 +524,15 @@ $bootstrap5: false !default;
 		@error 'The break-max mixin requires one or two of the following values: #{map-keys($break)}';
 	}
 
+	$break-max: break($max) - 1px;
 	@if (map.has-key($break, $min)) {
-		@media (min-width: break($min)) and (max-width: break($max)) {
+		@media (min-width: break($min)) and (max-width: $break-max) {
 			@content;
 		}
 	}
 
 	@else {
-		@media (max-width: break($max)) {
+		@media (max-width: $break-max) {
 			@content;
 		}
 	}

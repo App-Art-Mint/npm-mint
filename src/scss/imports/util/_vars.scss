@@ -125,15 +125,6 @@ $image-shadow-size: 0.5rem !default;
 $link-color: brand-4 !default;
 $link-color-hover: accent-2 !default;
 
-$menu-bar-height: 0.4rem !default;
-$menu-bar-width: $menu-bar-height * 8 !default;
-$menu-btn-height: $menu-bar-height * 8 !default;
-$menu-btn-padding: $menu-bar-height * 1.5 !default;
-$menu-bar-color: fore !default;
-$menu-btn-color: shadow-6 !default;
-$menu-btn-shadow-color: $shadow-color !default;
-$menu-btn-shadow-size: $shadow-size !default;
-
 $btn-radius: $border-radius !default;
 $btn-fore: fore !default;
 $btn-fore-alt: $btn-fore !default;
@@ -267,3 +258,15 @@ $amp-font-error: $amp-font-error-default !default;
 	$amp-font-secondary: if($amp-font-secondary != $amp-font-secondary-default, $amp-font-secondary, brand-0);
 	$amp-font-error: if($amp-font-error != $amp-font-error-default, $amp-font-error, danger-4);
 }
+
+/// Menu button
+$menu-bar-height: 0.4rem !default;
+$menu-bar-width: $menu-bar-height * 8 !default;
+$menu-btn-height: $menu-bar-height * 8 !default;
+$menu-btn-padding: $menu-bar-height * 1.5 !default;
+$menu-bar-color: fore !default;
+$menu-bar-color-hover: $header-link-fore-hover !default;
+$menu-btn-color: shadow-6 !default;
+$menu-btn-color-hover: $header-link-back-hover !default;
+$menu-btn-shadow-color: $shadow-color !default;
+$menu-btn-shadow-size: $shadow-size !default;

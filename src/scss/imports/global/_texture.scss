@@ -11,6 +11,7 @@
 /// Texture Mixin
 @mixin mint-texture () {
     position: relative;
+	background-color: css-var(back);
     
     &::before, &::after {
         content: '';

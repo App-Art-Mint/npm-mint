@@ -72,6 +72,7 @@ export class MintHeader {
         this.el.header = document.getElementById('mint-header');
         this.el.mobileButton = this.el.header?.querySelector(MintSelectors.controls('mint-wrapper')) || null;
         this.el.wrapper = document.getElementById('mint-wrapper');
+		this.el.main = document.getElementsByTagName('main')[0];
     }
 
 	/**
@@ -103,6 +104,7 @@ export class MintHeader {
     attachEvents () : void {
 		this.attachEvent(window, 'resize', MintEvent.throttleEvent(this.eHandleResize.bind(this), MintSettings.delay.default));
 		this.attachEvent(window, 'scroll', MintEvent.throttleEvent(this.eHandleScroll.bind(this), MintSettings.delay.default, { trailing: false }));
+		this.attachEvent(this.el.main, 'click', MintEvent.throttleEvent(this.eCloseMobileMenu.bind(this), MintSettings.delay.default, { trailing: false }));
 
         let focusables = this.el.header?.querySelectorAll(MintSelectors.focusable) as NodeListOf<HTMLElement> | null,
             lastFocusable = focusables?.[focusables?.length - 1];
@@ -317,9 +319,21 @@ export class MintHeader {
      * Closes the mobile menu when the window resizes
      */
     eHandleResize () : void {
-        let isOpen = this.el.mobileButton?.getAttribute('aria-expanded')?.toLowerCase() === 'true',
-            isMobile = MintWindow.width() <= MintSettings.break.sm,
-            overflow = 'auto';
+		
+		const isMobile = MintWindow.width() <= MintSettings.break.sm;
+		let closeMenu = true;
+		if (this.el.header?.classList.contains('mint-tray')) {
+			closeMenu = false;
+		} else if (!this.el.header?.classList.contains('mint-expand')) {
+			closeMenu = false;
+		}
+		
+		if (!isMobile && closeMenu) {
+			this.setMobileMenu(false);
+		}
+
+        const isOpen = this.el.mobileButton?.getAttribute('aria-expanded')?.toLowerCase() === 'true';
+		let overflow = 'auto';
         
         if (isOpen) {
             if (this.settings.tray) {
@@ -431,6 +445,13 @@ export class MintHeader {
     eToggleMobileMenu () : void {
         this.toggleMobileMenu();
     }
+
+	/**
+	 * Closes the mobile menu
+	 */
+	eCloseMobileMenu () : void {
+		this.setMobileMenu(false);
+	}
 
     /**
      * Toggles the clicked submenu

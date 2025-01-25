@@ -167,7 +167,7 @@
 					&+ul {
 						display: flex !important;
 						height: auto !important;
-						margin-bottom: 3rem !important;
+						margin-bottom: 3rem;
 
 						&>li:first-child {
 							font-size: 1.5em;
@@ -312,14 +312,14 @@
 		z-index: 1000;
 
 		@include states(hover) {
-			background: css-var($header-link-back-hover);
+			background: css-var($menu-btn-color-hover);
 
 			#{class(menu-icon)} {
 
 				&,
 				&::before,
 				&::after {
-					background-color: css-var($header-link-fore-hover);
+					background-color: css-var($menu-bar-color-hover);
 				}
 			}
 		}
@@ -456,7 +456,7 @@
 					margin-bottom: 0;
 
 					ul {
-						margin-bottom: 0;
+						margin-bottom: 0 !important;
 					}
 				}
 			}
