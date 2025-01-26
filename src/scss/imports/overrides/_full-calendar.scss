@@ -10,6 +10,7 @@
 /// FullCalendar Styles
 .fc {
 	--fc-page-bg-color: #{css-var(brand-6)};
+
 	.fc-toolbar {
 		flex-wrap: wrap;
 		justify-content: space-around;
@@ -21,6 +22,7 @@
 			}
 		}
 	}
+
 	.fc-timegrid {
 		&-divider {
 			padding: 0;
@@ -29,6 +31,7 @@
 			border-top-style: groove;
 		}
 	}
+
 	.fc-list-table {
 		--fc-list-event-hover-bg-color: #{css-var(brand-4)};
 
@@ -40,6 +43,14 @@
 			@include break-max(xs) {
 				white-space: normal;
 
+			}
+		}
+	}
+
+	.fc-v-event {
+		.fc-event-title {
+			@include break(sm) {
+				font-size: 0.8em;
 			}
 		}
 	}
