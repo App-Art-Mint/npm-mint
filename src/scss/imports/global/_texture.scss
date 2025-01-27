@@ -5,6 +5,7 @@
 @charset 'utf-8';
 
 /// Imports
+@use 'sass:list';
 @use 'sass:math';
 @use '../util' as *;
 
@@ -103,12 +104,12 @@
 }
 
 /// Alt Texture Styles
-@if $texture-alt-bg and $texture-alt-num {
-    @for $num from 1 through $texture-alt-num {
+@if list.length($texture-alt-bg) {
+    @for $num from 1 through list.length($texture-alt-bg) {
         #{class(texture-#{$num})} {
             #{class(content)} {
                 &::after {
-                    background-image: url('#{$texture-alt-bg}#{$num}.jpg');
+                    background-image: url('#{list.nth($texture-alt-bg, $num)}');
                 }
             }
         }
