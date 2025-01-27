@@ -55,6 +55,7 @@ export class MintHeader {
 	 * Destroys the header
 	 */
 	destroy () : void {
+        console.log('npm destroy', this.events);
 		this.events.forEach(event => {
 			event.handlers.forEach((handler, index) => {
 				event.el?.removeEventListener(event.events[index], handler);
