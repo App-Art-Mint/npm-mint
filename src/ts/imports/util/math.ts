@@ -13,5 +13,15 @@ export abstract class MintMath {
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min) + min);
     }
-};
-export default MintMath;
+
+	/**
+	 * Return a number between min and max
+	 * @param num - the number to clamp
+	 * @param min - the minimum value
+	 * @param max - the maximum value
+	 * @returns a number between min and max
+	 */
+	public static clamp(num: number | undefined | null, min: number, max: number): number {
+		return Math.max(Math.min(num ?? min, max), min);
+	}
+}
