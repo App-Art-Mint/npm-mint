@@ -6,8 +6,8 @@
 
 /// Imports
 @use '../util' as *;
-@use '../components/buttons';
-@use '../components/cards';
+@use '../components/widget/button';
+@use '../components/widget/card';
 
 /// Amplify Styles
 :root:root {

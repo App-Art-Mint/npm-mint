@@ -5,13 +5,6 @@
 @charset 'utf-8';
 
 /// Imports
-@use './backgrounds';
-@use './buttons';
-@use './cards';
-@use './footer';
-@use './header';
-@use './image';
-@use './landing';
-@use './recaptcha';
-@use './tables';
-@use './video';
+@use './partial';
+@use './section';
+@use './widget';

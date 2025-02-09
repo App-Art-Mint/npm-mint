@@ -154,5 +154,12 @@ export abstract class MintText {
 	static generateId(length: number = 10): string {
 		return Math.random().toString(36).substring(2, length + 2);
 	}
+
+	/**
+	 * Check if the given string is an image url
+	 */
+	static isImage (src?: string) {
+		return src?.match(/\.(jpe?g|png|webp|gif|svg)$/i)?.length;
+	}
 };
 export default MintText;

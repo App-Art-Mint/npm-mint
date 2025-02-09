@@ -1,0 +1,42 @@
+/// _video.scss - Video styles
+/// @author App Art Mint LLC
+///
+/// @group Video
+@charset 'utf-8';
+
+/// Imports
+@use 'sass:map';
+@use '../../util' as *;
+
+/// Video Styles
+#{class(section-full)} {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+	flex-direction: row;
+	min-height: calc(100vh - css-var(header-height) + 10rem);
+	gap: 2rem;
+	position: relative;
+	@include exit-padding;
+	@include fluid-padding;
+
+	iframe, video, #{class(image)}, #{class(embed)} {
+		position: absolute;
+		top: 0;
+		padding: 0;
+		width: 100%;
+		height: calc(100vh - css-var(header-height));
+		border: none;
+		object-fit: cover;
+		pointer-events: none;
+	}
+
+	#{class(image)} {
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}

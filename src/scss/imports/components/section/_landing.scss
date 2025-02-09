@@ -6,7 +6,7 @@
 
 /// Imports
 @use 'sass:map';
-@use '../util' as *;
+@use '../../util' as *;
 
 /// Landing Styles
 :root {
@@ -24,7 +24,7 @@
 #{class(landing)} {
 	@include exit-padding;	
 
-	#{class(video-bg)} {
+	#{class(section-full)} {
 		align-items: center;
 		top: 0;
 		left: 0;
