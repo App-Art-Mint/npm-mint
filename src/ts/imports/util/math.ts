@@ -21,7 +21,7 @@ export abstract class MintMath {
 	 * @param max - the maximum value
 	 * @returns a number between min and max
 	 */
-	public static clamp(num: number | undefined | null, min: number, max: number): number {
+	static clamp(num: number | undefined | null, min: number, max: number): number {
 		return Math.max(Math.min(num ?? min, max), min);
 	}
 
@@ -30,9 +30,9 @@ export abstract class MintMath {
 	 * @param num - the number to validate
 	 * @returns a valid header number
 	 */
-	private static readonly headerMin = 1;
-	private static readonly headerMax = 6;
-	public static headerLevel(num?: number | null): number {
+	static readonly headerMin = 1;
+	static readonly headerMax = 6;
+	static headerLevel(num?: number | null): number {
 		return this.clamp(num, this.headerMin, this.headerMax);
 	}
 }
