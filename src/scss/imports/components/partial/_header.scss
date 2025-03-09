@@ -24,41 +24,6 @@
 	z-index: 10000;
 	height: css-var(header-height);
 
-	&#{class(right)} {
-		#{id(wrapper)} {
-			top: css-var(header-height);
-			right: -100%;
-			left: unset;
-
-			&#{class(open)} {
-				right: 0;
-			}
-		}
-	}
-
-	&#{class(bottom)} {
-		#{id(wrapper)} {
-			top: unset;
-			bottom: -100%;
-
-			&#{class(open)} {
-				top: unset;
-				bottom: 0;
-			}
-		}
-	}
-
-	&#{class(left)} {
-		#{id(wrapper)} {
-			top: css-var(header-height);
-			left: -100%;
-
-			&#{class(open)} {
-				left: 0;
-			}
-		}
-	}
-
 	&#{class(expand)} {
 		@include break($header-break) {
 			#{class(buttons)} {
@@ -199,13 +164,6 @@
 
 	&#{class(tray)} {
 		#{id(wrapper)} {
-			gap: 1.5rem;
-			font-size: 0.5em;
-
-			@include break(sm) {
-				max-width: 512px;
-			}
-
 			a, button {
 				padding: 0.75rem;
 				margin: 0.25rem 0;
@@ -292,7 +250,12 @@
 		white-space: nowrap;
 
 		span {
+			display: none;
 			margin: 0;
+
+			@include break(xs) {
+				display: inline;
+			}
 		}
 
 		img {
@@ -368,24 +331,6 @@
 	}
 
 	#{id(wrapper)} {
-		display: flex;
-		flex-direction: column;
-		position: fixed;
-		top: -100%;
-		left: 0;
-		width: 100%;
-		height: calc(100vh - css-var(header-height));
-		height: calc(100dvh - css-var(header-height));
-		z-index: -2;
-		background: css-var(header-back);
-		transition-duration: css-var(delay-default);
-		transition-property: top, right, bottom, left;
-		overflow: auto;
-
-		&#{class(open)} {
-			top: css-var(header-height);
-		}
-
 		nav {
 			flex-grow: 1;
 			height: auto;

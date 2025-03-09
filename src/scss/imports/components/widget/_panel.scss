@@ -1,0 +1,95 @@
+/// _panel.scss - Panel styles
+/// @author App Art Mint LLC
+///
+/// @group Components
+@charset 'utf-8';
+
+/// Imports
+@use 'sass:math';
+@use '../../util' as *;
+
+/// Panel Styles
+#{class(panel)} {
+	&#{class(right)} {
+		#{class(panel-wrapper)} {
+			top: css-var(header-height);
+			right: -100%;
+			left: unset;
+
+			&#{class(open)} {
+				right: 0;
+			}
+		}
+	}
+
+	&#{class(bottom)} {
+		#{class(panel-wrapper)} {
+			top: unset;
+			bottom: -100%;
+
+			&#{class(open)} {
+				top: unset;
+				bottom: 0;
+			}
+		}
+	}
+
+	&#{class(left)} {
+		#{class(panel-wrapper)} {
+			top: css-var(header-height);
+			left: -100%;
+
+			&#{class(open)} {
+				left: 0;
+			}
+		}
+	}
+
+	&#{class(tray)} {
+		#{class(panel-wrapper)} {
+			gap: 1.5rem;
+			font-size: 0.5em;
+
+			@include break(sm) {
+				max-width: 512px;
+			}
+		}
+	}
+
+	#{class(panel-wrapper)} {
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height: calc(100vh - css-var(header-height));
+		height: calc(100dvh - css-var(header-height));
+		z-index: -2;
+		background: css-var(header-back);
+		transition-duration: css-var(delay-default);
+		transition-property: top, right, bottom, left;
+		overflow: auto;
+
+		&#{class(open)} {
+			top: css-var(header-height);
+		}
+
+		nav {
+			flex-grow: 1;
+			height: auto;
+			overflow: visible;
+			background: css-var(back);
+
+			@include break(xl) {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			&> :last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
