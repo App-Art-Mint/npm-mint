@@ -3,3 +3,5 @@
  */
 export * from './grid';
 export * from './header';
+export * from './menu';
+export * from './tray';

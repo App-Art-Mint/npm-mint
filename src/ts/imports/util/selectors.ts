@@ -153,7 +153,7 @@ export abstract class MintSelectors {
      * @param el - the element whose focusable children will be returned
      * @returns - the elements within the given element that are focusable
      */
-    static getFocusables (el?: HTMLElement) : HTMLElement[] {
+    static getFocusables (el?: HTMLElement | null) : HTMLElement[] {
         let focusables: HTMLElement[];
         if (el) {
             focusables = Array.from(el.querySelectorAll<HTMLElement>(this.focusable));
