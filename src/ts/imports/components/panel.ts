@@ -69,14 +69,17 @@ export class MintPanel extends MintAttachesEvents {
     attachEvents () : void {
 		this.attachEvent(window, 'resize', MintEvent.throttleEvent(this.eHandleResize.bind(this), MintSettings.delay.default));
 		this.attachEvent(this.el.main, 'click', MintEvent.throttleEvent(this.eClose.bind(this), MintSettings.delay.default, { trailing: false }));
+        this.attachEvent(this.el.wrapper, 'transitionend', this.eTransitionEnd.bind(this));
 
         const focusables = MintSelectors.getFocusables(this.el.panel);
         focusables?.forEach(focusable => {
             this.attachEvent(focusable, 'keydown', MintEvent.throttleEvent(this.eWrapTab.bind(this)));
         });
 
-        this.attachEvent(this.el.toggleButton, 'click', MintEvent.throttleEvent(this.eToggle.bind(this), MintSettings.delay.slow, { trailing: false }));
-        this.attachEvent(this.el.wrapper, 'transitionend', this.eTransitionEnd.bind(this));
+		const toggleButtons = this.el.panel?.querySelectorAll(MintSelectors.controls(this.settings.wrapperId)) as NodeListOf<HTMLElement>;
+		toggleButtons?.forEach(toggleButton => {
+			this.attachEvent(toggleButton, 'click', MintEvent.throttleEvent(this.eToggle.bind(this), MintSettings.delay.slow, { trailing: false }));
+		});
     }
 
     /**
@@ -133,7 +136,6 @@ export class MintPanel extends MintAttachesEvents {
                     } else {
                         overflow = 'hidden';
                     }
-					console.log('Overflow', overflow, isMobile, this.settings.tray);
                     this.el.html.style.overflow = overflow;
                 }
             }, this.settings.from === EMintSide.Left ? MintSettings.delay.default : MintSettings.delay.instant);

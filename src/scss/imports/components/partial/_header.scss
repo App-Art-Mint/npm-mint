@@ -21,7 +21,7 @@
 	width: 100%;
 	color: css-var(header-fore);
 	background-color: css-var(header-back);
-	z-index: 10000;
+	z-index: 1000;
 	height: css-var(header-height);
 
 	&#{class(expand)} {
@@ -162,18 +162,19 @@
 		}
 	}
 
-	&#{class(tray)} {
+	#{class(tray)} {
 		#{id(wrapper)} {
+
 			a, button {
 				padding: 0.75rem;
 				margin: 0.25rem 0;
 				line-height: 1;
-				font-size: 4em;
+				font-size: 2em;
 				width: 100%;
 			}
 
 			button {
-				font-size: 6em;
+				font-size: 3em;
 			}
 
 			nav {
@@ -206,38 +207,10 @@
 		z-index: -1;
 	}
 
-	nav {
-		&>ul {
-			display: flex;
-			flex-direction: column;
-		}
-	}
-
-	ul {
-		list-style: none;
-		margin-top: 0;
-		margin-bottom: 1rem;
-		padding-left: 0;
-	}
-
-	a,
-	button {
-		margin: 0;
-		border: 0;
-		color: css-var($header-link-fore);
-		background: css-var(trans);
-		transition-property: color, background;
-		transition-duration: css-var(delay-default);
-
-		@include states(hover) {
-			color: css-var($header-link-fore-hover);
-		}
-	}
-
 	#{id(navbar)} {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: flex-end;
 		height: 100%;
 	}
 
@@ -348,6 +321,8 @@
 			}
 
 			&>ul {
+				display: flex;
+				flex-direction: column;
 				height: 100%;
 				overflow: visible;
 
@@ -368,7 +343,6 @@
 
 		a,
 		button {
-			//display: flex;
 			align-items: center;
 			justify-content: center;
 			font-family: $font-secondary, $font-backups !important;
@@ -377,6 +351,10 @@
 			margin: 0.5rem 0;
 			text-align: center;
 			border-radius: $header-link-border-radius;
+			color: css-var($header-link-fore);
+			background: css-var(trans);
+			transition-property: color, background;
+			transition-duration: css-var(delay-default);
 
 			@include break(xs) {
 				padding: 1rem 1.5rem;
@@ -397,6 +375,11 @@
 		}
 
 		ul {
+			list-style: none;
+			margin-top: 0;
+			margin-bottom: 1rem;
+			padding-left: 0;
+
 			li {
 				&:last-child {
 					margin-bottom: 0;
@@ -414,15 +397,6 @@
 		flex-shrink: 0;
 		justify-content: flex-end;
 		margin-left: auto;
-
-		a,
-		button {
-			&#{neg(controls(wrapper))} {
-				display: flex;
-				width: auto;
-				padding: 0.5rem;
-			}
-		}
 	}
 
 	#{class(dropdown)} {

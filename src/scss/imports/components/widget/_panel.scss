@@ -48,7 +48,6 @@
 	&#{class(tray)} {
 		#{class(panel-wrapper)} {
 			gap: 1.5rem;
-			font-size: 0.5em;
 
 			@include break(sm) {
 				max-width: 512px;
@@ -91,5 +90,11 @@
 				margin-bottom: 0;
 			}
 		}
+	}
+
+	#{class(title)} {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
 	}
 }

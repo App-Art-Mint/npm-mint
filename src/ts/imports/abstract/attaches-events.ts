@@ -8,7 +8,7 @@ import { MintModelEvent } from '../models';
 
 /**
  * Attaches Events
- * @description Extended by classes that attach and detach events
+ * @remarks Extended by classes that attach and detach events
  */
 export abstract class MintAttachesEvents {
 
