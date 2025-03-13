@@ -15,8 +15,6 @@
 	justify-content: flex-end;
 	position: relative;
 	gap: 1rem;
-	padding: 1rem;
-	background: rgba(0, 0, 0, 0.8);
 	min-height: calc(100vh - $header-height);
 	min-height: calc(100dvh - $header-height);
 
@@ -31,7 +29,6 @@
 		left: 0;
 		width: 100%;
 		height: calc(100% - 75px);
-		padding: 1rem;
 		overflow-y: auto;
 	}
 
