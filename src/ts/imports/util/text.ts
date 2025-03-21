@@ -158,8 +158,14 @@ export abstract class MintText {
 	/**
 	 * Check if the given string is an image url
 	 */
-	static isImage (src?: string) {
-		return src?.match(/\.(jpe?g|png|webp|gif|svg)$/i)?.length;
+	static isImage (src?: string): boolean {
+		return !!src?.match(/\.(jpe?g|png|webp|gif|svg)$/i);
 	}
-};
-export default MintText;
+
+	/**
+	 * Check if the given string is a video url
+	 */
+	static isVideo (src?: string): boolean {
+		return !!src?.match(/\.(mp4|webm|ogg)$/i);
+	}
+}
