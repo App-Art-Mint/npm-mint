@@ -103,6 +103,7 @@
 /// Default buttons
 #{class(btn)} {
     padding: $btn-padding-v $btn-padding-h + $btn-padding-adjust;
+	cursor: pointer;
 
 	/// Icon buttons
 	&-icon {

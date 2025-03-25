@@ -27,6 +27,14 @@
 		}
 	}
 
+	&:has(#{prefix(widget-carousel)}) {
+		box-shadow: none;
+
+		#{class(content)} {
+			box-shadow: $card-shadow-size #{css-var($card-shadow-color)};
+		}
+	}
+
 	&#{class(center)} {
 		
 		@mixin title {
