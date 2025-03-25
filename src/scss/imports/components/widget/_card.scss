@@ -216,6 +216,64 @@
 			text-align: left;
 		}
 	}
+
+	&-grid {
+		position: relative;
+		background: css-var($card-bg-color);
+
+		&:has(#{class(image)}) {
+			#{class(content)} {
+				margin-top: 25%;
+				padding-top: 25%;
+				background: none;
+				border: none;
+
+				&::before {
+					opacity: 0;
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					opacity: 0.75;
+					background: linear-gradient(0deg, black, rgba(0,0,0,70%) 66%, css-var(shadow-0));
+					transition: opacity delay(default) ease-in-out;
+					z-index: -1;
+				}
+			}
+		}
+	
+		@include states(hover) {
+			#{class(content)} {
+				&::after {
+					opacity: 1;
+				}
+			}
+		}
+	
+		#{class(image)} {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	
+		#{class(content)} {
+			justify-content: flex-end;
+			background: css-var(shadow-0);
+
+			#{class(buttons)} {
+				margin-top: 0 !important;
+			}
+		}
+
+	}
 }
 
 #{class(grid)}#{class('3')},
