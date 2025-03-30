@@ -150,27 +150,29 @@
 		padding: 0;
 		transition: all css-var(delay-default);
 
+		& > * {
+			&:first-child {
+				&, & button {
+					padding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;
+					border-top-left-radius: $pill-radius;
+					border-bottom-left-radius: $pill-radius;
+				}
+			}
+
+			&:last-child {
+				&, & button {
+					padding: $btn-padding-v $btn-padding-h $btn-padding-v 0;
+					border-top-right-radius: $pill-radius;
+					border-bottom-right-radius: $pill-radius;
+				}
+			}
+		}
+
 		button {
 			width: 100%;
 			border: none;
 			color: inherit;
 			background: transparent;
-
-			&:first-child {
-				padding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;
-				border-top-left-radius: $pill-radius;
-				border-bottom-left-radius: $pill-radius;
-			}
-
-			&:last-child {
-				padding: $btn-padding-v $btn-padding-h $btn-padding-v 0;
-				border-top-right-radius: $pill-radius;
-				border-bottom-right-radius: $pill-radius;
-			}
-
-			&[disabled] {
-				pointer-events: none;
-			}
 
 			@include states(hover, focus, active, mint-active) {
 				background: css-var(brand-5);

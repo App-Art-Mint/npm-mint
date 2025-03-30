@@ -248,6 +248,7 @@
 					width: 100%;
 					height: 100%;
 					opacity: 0.75;
+					mask-image: none;
 					background: linear-gradient(0deg, black, rgba(0,0,0,70%) 66%, css-var(shadow-0));
 					transition: opacity delay(default) ease-in-out;
 					z-index: -1;
@@ -269,7 +270,11 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			object-fit: cover;
+
+			img {
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 	
 		#{class(content)} {
@@ -280,7 +285,6 @@
 				margin-top: 0 !important;
 			}
 		}
-
 	}
 }
 
