@@ -398,6 +398,7 @@
 		flex-shrink: 0;
 		justify-content: flex-end;
 		margin-left: auto;
+		overflow: visible;
 	}
 
 	#{class(dropdown)} {

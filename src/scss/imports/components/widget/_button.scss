@@ -146,8 +146,10 @@
 	&-group {
 		display: flex;
 		width: fit-content;
+		max-width: 100%;
 		margin: auto;
 		padding: 0;
+		overflow: visible;
 		transition: all css-var(delay-default);
 
 		& > * {
@@ -212,6 +214,7 @@ p {
 	justify-content: center;
 	flex-wrap: wrap;
 	gap: 1rem;
+	overflow: hidden;
 
 	@include break(xs) {
 		justify-content: flex-start;
