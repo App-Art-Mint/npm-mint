@@ -207,26 +207,68 @@ export abstract class MintObject {
 	/**
 	 * Create a deep copy of an object
 	 */
-	static deepClone(object: any): any {
+	static deepClone<T>(object: T): T {
 
-		// Clone every property
-		const clone: any = {};
-		for (const key in object) {
+		// Only clone objects
+		if (typeof object !== 'object' || object === null) {
+			return object;
+		}
 
-			// Functions
-			if (typeof object[key] === 'function') {
-				clone[key] = object[key].bind(clone);
+		// Track object references to avoid circular references
+		const seen = new WeakMap<object, any>();
 
-			// Objects
-			} else if (object[key] && typeof object[key] === 'object') {
-				clone[key] = this.deepClone(object[key]);
+		// Track clone tasks in a stack
+		type CloneTask = [source: any, clone: any, key?: string | number];
+		const stack: CloneTask[] = [[object, Array.isArray(object) ? [] : {}]];
+
+		// Run clone tasks
+		while (stack.length) {
+			const [source, clone, key] = stack.pop()!;
+
+			if (key !== undefined) {
+				const value = source[key];
+
+				// Bind functions
+				if (typeof value === 'function') {
+					clone[key] = value.bind(clone);
+					continue;
+				}
+
+				// Primitives
+				if (typeof value !== 'object' || value === null) {
+					clone[key] = value;
+					continue;
+				}
+
+				// Circular references
+				if (seen.has(value)) {
+					clone[key] = seen.get(value);
+					continue;
+				}
+
+				// Object / Array
+				clone[key] = Array.isArray(value) ? [] : {};
+				seen.set(value, clone[key]);
+				stack.push([value, clone[key]]);
 			
-			// Primitives
+			// No key, process full object
 			} else {
-				clone[key] = object[key];
+				seen.set(source, clone);
+
+				if (Array.isArray(source)) {
+					source.forEach((_, index) => {
+						stack.push([source, clone, index]);
+					});
+					continue;
+				}
+
+				Object.keys(source).forEach((key) => {
+					stack.push([source, clone, key]);
+				});
 			}
 		}
-		return clone;
+
+		return seen.get(object) as T;
 	}
 };
 export default MintObject;
