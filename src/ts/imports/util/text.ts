@@ -4,6 +4,13 @@
 export abstract class MintText {
 
 	/**
+	 * Shorten a string to the given length
+	 */
+	static truncate (text: string, length: number = 100): string {
+		return text.length > length ? text.slice(0, length).trim() + '...' : text;
+	}
+
+	/**
 	 * Generate a slug from a string
 	 * @param text - The string to slugify
 	 * @returns The slugified string

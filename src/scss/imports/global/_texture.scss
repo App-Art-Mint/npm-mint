@@ -101,6 +101,13 @@
 	#{class(content)} {
 		@extend #{class(border)};
 	}
+
+    &-grid {
+        #{class(image)} {
+            @extend #{class(border)};
+            position: absolute;
+        }
+    }
 }
 
 /// Alt Texture Styles

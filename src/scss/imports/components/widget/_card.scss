@@ -95,7 +95,6 @@
 				height: fit-content;
 				margin-right: $card-padding * -2;
 				border-radius: $card-radius;
-				box-shadow: $card-shadow-size #{css-var($card-shadow-color)};
 
 				img {
 					height: 100%;
@@ -273,7 +272,7 @@
 
 			img {
 				height: 100%;
-				object-fit: cover;
+				object-fit: contain;
 			}
 		}
 	
