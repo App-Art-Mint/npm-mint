@@ -32,6 +32,8 @@ textarea {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
+	width: fit-content;
+	cursor: pointer;
 	
 	div {
 		display: flex;
