@@ -48,6 +48,10 @@ body {
 	}
 }
 
+router-outlet {
+	display: none;
+}
+
 app-root {
 	display: block;
 	position: relative;
