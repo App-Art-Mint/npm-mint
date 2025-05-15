@@ -12,11 +12,11 @@ export abstract class MintEvent {
      */
     static debounce (func: Function, wait: number = MintSettings.delay.default) : Function {
         let timer: number;
-        return function (e: any) {
+        return function (...args: any[]) {
             if (timer) {
                 clearTimeout(timer);
             }
-            timer = setTimeout(func, wait, e);
+            timer = setTimeout(func, wait, ...args);
         }
     }
 
