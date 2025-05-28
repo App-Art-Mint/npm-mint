@@ -212,6 +212,13 @@
 		align-items: center;
 		justify-content: flex-end;
 		height: 100%;
+
+		& > :not(#{class(buttons)}) {
+			a {
+				color: css-var(header-link-fore);
+				text-decoration: none;
+			}
+		}
 	}
 
 	#{class(logo)} {
