@@ -22,7 +22,9 @@
 }
 
 #{class(landing)} {
-	@include exit-padding;
+	top: $pad-exit;
+	left: $pad-exit;
+	width: $pad-exit-width;
 
 	#{class(border)}, #{class(frame)} {
 		border: none;
@@ -36,10 +38,8 @@
 		width: 100%;
 		margin: 0;
 		min-height: calc(100vh - css-var(header-height));
-		$padding-min-vw: map.get($break, $pad-min-vw) * 1px;
-		$padding-max-vw: map.get($break, $pad-max-vw) * 1px;
-		@include fluid(padding, $padding-min-vw, $padding-max-vw, $pad-min-size * 4, $pad-max-size * 4);
-		
+		padding: $pad-clamp;
+
 		iframe, video {
 			position: absolute;
 

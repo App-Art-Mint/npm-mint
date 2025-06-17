@@ -15,11 +15,13 @@
 	align-items: flex-end;
 	justify-content: center;
 	flex-direction: row;
-	min-height: calc(100vh - css-var(header-height) + 10rem);
 	gap: 2rem;
 	position: relative;
-	@include exit-padding;
-	@include fluid-padding;
+	top: $pad-exit;
+	left: $pad-exit;
+	width: $pad-exit-width;
+	min-height: calc(100vh - css-var(header-height) + 10rem);
+	padding: $pad-clamp;
 
 	iframe, video, #{class(image)}, #{class(embed)} {
 		position: absolute;

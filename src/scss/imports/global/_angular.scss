@@ -33,8 +33,7 @@ app-root {
 				justify-content: center;
 				flex-grow: 1;
 				width: 100%;
-				padding: 0.25rem;
-				@include fluid-padding;
+				padding: $pad-clamp;
 
 				&+:not(#{prefix(partial-footer)}) {
 					height: 0;

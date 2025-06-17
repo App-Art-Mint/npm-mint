@@ -728,100 +728,13 @@ $bootstrap5: false !default;
 	}
 }
 
-
-/// Generates a property with a fluid value between specified screen sizes
-/// @group Mixins
-///
-/// @example scss - fluid mixin
-///     @include fluid(font-size, 480px, 1024px, 18px, 16px);   // ->   & {
-///                                                             //          font-size: 16px;
-///                                                             //          @media (min-width: 480px) {
-///                                                             //              font-size: calc(16px + 2 * ((100vw - 480px) / 544));
-///                                                             //          }
-///                                                             //          @media (min-width: 1024px) {
-///                                                             //              font-size: 18px;
-///                                                             //          }
-///                                                             //      }
-///
-/// @param {String} $prop - the property whose value will be fluid
-/// @param {String} $min-vw - the minimum screen width of the fluid property
-/// @param {String} $max-vw - the maximum screen width of the fluid property
-/// @param {String} $min-size - the minimum value of the fluid property
-/// @param {String} $max-size - the maximum value of the fluid property
-/// @param {String} $base - the base value of the fluid property
-/// @output the definitions for the property at different screen sizes
-@mixin fluid ($prop, $min-vw, $max-vw, $min-size, $max-size, $base: null) {
-	$u1: math.unit($min-vw);
-	$u2: math.unit($max-vw);
-	$u3: math.unit($min-size);
-	$u4: math.unit($max-size);
-
-	@if (meta.type-of($prop) !='string') {
-		@error 'The fluid mixin requires a string for the $prop argument.';
-	}
-
-	@if not(meta.type-of($u1) == 'string' and meta.type-of($u2) == 'string' and meta.type-of($u3) == 'string' and meta.type-of($u4) == 'string') {
-		@error 'The fluid mixin requires numbers with units for the width and size arguments.';
-	}
-
-	@if not($u1 == $u2 and $u1 == $u3 and $u1 == $u4) {
-		@error 'The fluid mixin requires width and size arguments with the same units.';
-	}
-
-	& {
-		@if ($base) {
-			#{$prop}: calc($base + $min-size);
-	
-			@media (min-width: $min-vw) {
-				#{$prop}: calc($base + #{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-			}
-	
-			@media (min-width: $max-vw) {
-				#{$prop}: calc($base + $max-size);
-			}
-		} @else {
-			#{$prop}: $min-size;
-	
-			@media (min-width: $min-vw) {
-				#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-			}
-	
-			@media (min-width: $max-vw) {
-				#{$prop}: $max-size;
-			}
-		}
-	}
-}
-
-/// Gives a container fluid padding
-/// @group Mixins
-///
-///
-@mixin fluid-padding {
-	$padding-min-vw: map.get($break, $pad-min-vw) * 1px;
-	$padding-max-vw: map.get($break, $pad-max-vw) * 1px;
-	@include fluid(padding, $padding-min-vw, $padding-max-vw, $pad-min-size, $pad-max-size);
-}
-
-/// Negates a page's padding
-/// @group Mixins
-///
-///
-@mixin exit-padding {
-	$padding-min-vw: map.get($break, $pad-min-vw) * 1px;
-	$padding-max-vw: map.get($break, $pad-max-vw) * 1px;
-	@include fluid(top, $padding-min-vw, $padding-max-vw, $pad-min-size * -1, $pad-max-size * -1);
-	@include fluid(left, $padding-min-vw, $padding-max-vw, $pad-min-size * -1, $pad-max-size * -1);
-	@include fluid(width, $padding-min-vw, $padding-max-vw, $pad-min-size * 2, $pad-max-size * 2, 100%);
-}
-
 /// Generates css varibles for lighter, darker, or both variations
 /// @group Mixins
 ///
 /// @param {String} $name - the name of the color
 /// @param {Color} $color - the color to generate variations for
 /// @param {String} $type - the type of variation to generate
-/// @param {Number} $number - the number of variations to generate
+/// @param {Number} $number - the number of variations to geerate
 /// @param {String} $amount - the amount to vary the color by
 /// @param {Boolean} $alpha - whether to generate alpha variations
 /// @output css variables for different shades of the source color
@@ -831,7 +744,7 @@ $bootstrap5: false !default;
 	}
 
 	@if (meta.type-of($color) != 'color') {
-		@error 'The shades mixin requires a color for the $color argument.';
+		@error 'The shades mixin requires a color for the $colnor argument.';
 	}
 
 	@if not($type == lighten or $type == darken or $type == both) {

@@ -89,10 +89,12 @@ $font-size-desktop: (
 
 /// Structure
 $grid-gap: 2rem !default;
-$pad-min-vw: xs !default;
-$pad-max-vw: sm !default;
-$pad-min-size: 4px !default;
-$pad-max-size: 16px !default;
+$pad-min: 0.25rem !default;
+$pad-max: 2rem !default;
+$pad-val: 1vw !default;
+$pad-clamp: clamp($pad-min, $pad-val, $pad-max) !default;
+$pad-exit: clamp($pad-min * -1, $pad-val * -1, $pad-max * -1) !default;
+$pad-exit-width: clamp(calc(100% + $pad-min * 2), calc(100% + $pad-val * 2), calc(100% + $pad-max * 2)) !default;
 
 /// Outline width
 $border-width: 0.125rem !default;

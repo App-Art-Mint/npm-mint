@@ -42,9 +42,10 @@ main {
 	width: 100%;
 	min-height: calc(100vh - css-var(header-height));
 	min-height: calc(100dvh - css-var(header-height));
+	padding-left: $pad-clamp;
+	padding-right: $pad-clamp;
 	overflow: hidden;
 	z-index: 999;
-	@include fluid-padding;
 
 	@if (meta.type-of($root-bg-image) == 'string') {
 		&::before {
