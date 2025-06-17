@@ -542,9 +542,7 @@ $bootstrap5: false !default;
 /// @group Mixins
 ///
 /// @example scss- break-util mixin
-///     @include break-util(display, flex);     // ->   & {
-///                                             //          display: flex;
-///                                             //
+///     @include break-util(display, flex);     // ->       display: flex;
 ///                                             //          &-xs {
 ///                                             //              display: none;
 ///                                             //              @include break(xs) {
@@ -570,7 +568,6 @@ $bootstrap5: false !default;
 ///                                             //                  display: none;
 ///                                             //              }
 ///                                             //          }
-///                                             //      }
 ///
 /// @param {String} $prop - the property to toggle
 /// @param {Any} $val - the active value of the property
@@ -581,25 +578,23 @@ $bootstrap5: false !default;
 		@error 'The break-util mixin requires a string for the $prop argument.';
 	}
 
-	& {
-		#{$prop}: #{$val};
+	#{$prop}: #{$val};
 
-		@each $key,
-		$width in $break {
-			&-#{$key} {
-				#{$prop}: #{$none};
+	@each $key,
+	$width in $break {
+		&-#{$key} {
+			#{$prop}: #{$none};
 
-				@include break($key) {
-					#{$prop}: #{$val};
-				}
-			}
-
-			&-to-#{$key} {
+			@include break($key) {
 				#{$prop}: #{$val};
+			}
+		}
 
-				@include break($key) {
-					#{$prop}: #{$none};
-				}
+		&-to-#{$key} {
+			#{$prop}: #{$val};
+
+			@include break($key) {
+				#{$prop}: #{$none};
 			}
 		}
 	}
@@ -607,10 +602,6 @@ $bootstrap5: false !default;
 
 /// Creates utility selectors for a box model property
 /// @group Mixins
-/// 
-/// @example scss - box-util mixin
-///    @include box-util(margin, 1rem, 0);    // ->   & {
-/// 
 @mixin box-util ($prop, $val) {
 	@if (meta.type-of($prop) != 'string') {
 		@error 'The box-util mixin requires a string for the $prop argument.';
@@ -733,15 +724,13 @@ $bootstrap5: false !default;
 /// @group Mixins
 ///
 /// @example scss - fluid mixin
-///     @include fluid(font-size, 480px, 1024px, 18px, 16px);   // ->   & {
-///                                                             //          font-size: 16px;
+///     @include fluid(font-size, 480px, 1024px, 18px, 16px);   // ->       font-size: 16px;
 ///                                                             //          @media (min-width: 480px) {
 ///                                                             //              font-size: calc(16px + 2 * ((100vw - 480px) / 544));
 ///                                                             //          }
 ///                                                             //          @media (min-width: 1024px) {
 ///                                                             //              font-size: 18px;
 ///                                                             //          }
-///                                                             //      }
 ///
 /// @param {String} $prop - the property whose value will be fluid
 /// @param {String} $min-vw - the minimum screen width of the fluid property
@@ -768,27 +757,25 @@ $bootstrap5: false !default;
 		@error 'The fluid mixin requires width and size arguments with the same units.';
 	}
 
-	& {
-		@if ($base) {
-			#{$prop}: calc($base + $min-size);
-	
-			@media (min-width: $min-vw) {
-				#{$prop}: calc($base + #{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-			}
-	
-			@media (min-width: $max-vw) {
-				#{$prop}: calc($base + $max-size);
-			}
-		} @else {
-			#{$prop}: $min-size;
-	
-			@media (min-width: $min-vw) {
-				#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-			}
-	
-			@media (min-width: $max-vw) {
-				#{$prop}: $max-size;
-			}
+	@if ($base) {
+		#{$prop}: calc($base + $min-size);
+
+		@media (min-width: $min-vw) {
+			#{$prop}: calc($base + #{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+		}
+
+		@media (min-width: $max-vw) {
+			#{$prop}: calc($base + $max-size);
+		}
+	} @else {
+		#{$prop}: $min-size;
+
+		@media (min-width: $min-vw) {
+			#{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+		}
+
+		@media (min-width: $max-vw) {
+			#{$prop}: $max-size;
 		}
 	}
 }
@@ -970,31 +957,29 @@ $bootstrap5: false !default;
 ///
 ///
 @mixin flex-util () {
-	& {
-		display: flex;
-		align-items: center;
-		justify-content: flex-start;
-		flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
 
-		&#{class(center)} {
-			justify-content: center;
-		}
+	&#{class(center)} {
+		justify-content: center;
+	}
 
-		&#{class(end)} {
-			justify-content: flex-end;
-		}
+	&#{class(end)} {
+		justify-content: flex-end;
+	}
 
-		&#{class(between)} {
-			justify-content: space-between;
-		}
+	&#{class(between)} {
+		justify-content: space-between;
+	}
 
-		&#{class(around)} {
-			justify-content: space-around;
-		}
+	&#{class(around)} {
+		justify-content: space-around;
+	}
 
-		&#{class(even)} {
-			justify-content: space-evenly;
-		}
+	&#{class(even)} {
+		justify-content: space-evenly;
 	}
 }
 
@@ -1048,23 +1033,21 @@ $transitions: (
 	$this: map.get($animations, &);
 	$animation: '';
 
-	& {
-		@each $item in $this {
-			@if (list.index($this, $item) != 1) {
-				$animation: #{$animation},
-				;
-			}
-
-			$animation: #{$animation}#{$item};
+	@each $item in $this {
+		@if (list.index($this, $item) != 1) {
+			$animation: #{$animation},
+			;
 		}
 
-		animation: $animation;
+		$animation: #{$animation}#{$item};
+	}
 
-		@each $name,
-		$items in $animations {
-			&#{class($name)} {
-				animation: $animation;
-			}
+	animation: $animation;
+
+	@each $name,
+	$items in $animations {
+		&#{class($name)} {
+			animation: $animation;
 		}
 	}
 }
