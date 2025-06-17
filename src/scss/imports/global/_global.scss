@@ -1,11 +1,9 @@
 /// Imports
-@use 'sass:map';
 @use 'sass:meta';
 @use '../util' as *;
 
 /// Global styles
 * {
-
 	&,
 	&::before,
 	&::after {
@@ -29,35 +27,23 @@ body {
 
 body {
 	&#{class(fixed)} {
-		#{id(header)} {
-			position: fixed;
-			top: 0;
-			left: 0;
-		}
-
 		main {
-			min-height: 100vh;
-			padding-top: css-var(header-height);
-		}
-	}
-
-	&#{class(ready)} {
-		app-root {
-			opacity: 1;
+			margin-top: css-var(header-height);
 		}
 	}
 }
 
-router-outlet {
-	display: none;
-}
-
-app-root {
-	display: block;
+main {
+	@include fluid-padding;
+	display: flex;
+	flex-direction: column;
 	position: relative;
-	opacity: 0;
-	transition: opacity 750ms ease-in;
-	
+	width: 100%;
+	min-height: calc(100vh - css-var(header-height));
+	min-height: calc(100dvh - css-var(header-height));
+	overflow: hidden;
+	z-index: 999;
+
 	@if (meta.type-of($root-bg-image) == 'string') {
 		&::before {
 			content: '';
@@ -83,47 +69,6 @@ app-root {
 	}
 }
 
-main {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	width: 100%;
-	min-height: calc(100vh - css-var(header-height));
-	overflow: hidden;
-	z-index: 999;
-
-	&>router-outlet {
-		flex-grow: 0;
-	}
-}
-
-:root {
-	main {
-		& > router-outlet {
-			& + * {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				flex-grow: 1;
-				width: 100%;
-				padding: 0.25rem;
-
-				@include fluid-padding;
-
-				&+:not(#{prefix(partial-footer)}) {
-					height: 0;
-					overflow: hidden;
-				}
-			}
-
-			& + #{prefix(partial-footer)} {
-				transform: translateY(100vh);
-			}
-		}
-	}
-}
-
 nav {
 	a {
 		display: block;
@@ -143,7 +88,6 @@ nav {
 }
 
 a {
-
 	&[href^='mailto:'],
 	&[href^='tel:'],
 	&[href^='sms:'] {

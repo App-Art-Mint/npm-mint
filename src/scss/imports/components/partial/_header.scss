@@ -16,6 +16,16 @@
 }
 
 /// Header Styles
+body {
+	&#{class(fixed)} {
+		#{id(header)} {
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
 #{id(header)} {
 	position: relative;
 	width: 100%;
