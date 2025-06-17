@@ -36,7 +36,6 @@ body {
 }
 
 main {
-	@include fluid-padding;
 	display: flex;
 	flex-direction: column;
 	position: relative;
@@ -45,6 +44,7 @@ main {
 	min-height: calc(100dvh - css-var(header-height));
 	overflow: hidden;
 	z-index: 999;
+	@include fluid-padding;
 
 	@if (meta.type-of($root-bg-image) == 'string') {
 		&::before {

@@ -17,12 +17,12 @@
 	@include css-var-ref(--amplify-colors-font-hover, $amp-font-hover);
 	@include css-var-ref(--amplify-colors-font-interactive, $amp-font-interactive);
 	@include css-var-ref(--amplify-colors-font-primary, $amp-font-primary);
-	@include css-var-ref(--amplify-components-fieldcontrol-color, --amplify-colors-font-primary);
 	@include css-var-ref(--amplify-colors-font-secondary, $amp-font-secondary);
 	@include css-var-ref(--amplify-colors-font-error, $amp-font-error);
 	@include css-var-ref(--amplify-colors-font-warning, $amp-font-warning);
 	@include css-var-ref(--amplify-colors-font-success, $amp-font-success);
 	@include css-var-ref(--amplify-colors-font-info, $amp-font-info);
+	@include css-var-ref(--amplify-components-fieldcontrol-color, --amplify-colors-font-primary);
 
 	@include css-var(--amplify-border-widths-small, $amp-border-width);
 
