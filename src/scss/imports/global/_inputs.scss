@@ -18,7 +18,8 @@ textarea {
 }
 
 input {
-	&[type="file"] {
+	&[type="file"],
+	&::file-selector-button {
 		cursor: pointer;
 	}
 }
