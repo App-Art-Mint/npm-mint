@@ -10,7 +10,6 @@
 @use 'sass:math';
 @use 'sass:meta';
 @use 'sass:string';
-@use 'vars' as *;
 
 /// Library name
 /// @group Variables
@@ -607,10 +606,6 @@ $bootstrap5: false !default;
 
 /// Creates utility selectors for a box model property
 /// @group Mixins
-/// 
-/// @example scss - box-util mixin
-///    @include box-util(margin, 1rem, 0);    // ->   & {
-/// 
 @mixin box-util ($prop, $val) {
 	@if (meta.type-of($prop) != 'string') {
 		@error 'The box-util mixin requires a string for the $prop argument.';
@@ -880,8 +875,6 @@ $bootstrap5: false !default;
 
 /// Generates flex utility classes
 /// @group Mixins
-///
-///
 @mixin flex-util () {
 	& {
 		display: flex;
@@ -913,8 +906,6 @@ $bootstrap5: false !default;
 
 /// Selector for all headers
 /// @group Mixins
-///
-///
 @mixin headers () {
 	@for $i from 1 through 6 {
 		h#{$i},
@@ -927,8 +918,6 @@ $bootstrap5: false !default;
 
 /// Background clip text
 /// @group Mixins
-///
-///
 @mixin background-clip ($color) {
 	color: $color;
 
