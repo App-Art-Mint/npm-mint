@@ -11,6 +11,16 @@
 @use '../util' as *;
 
 /// Animations
+@keyframes #{prefix(spin)} {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 @keyframes #{prefix(stretch-in)} {
 	0% {
 		transform: scale(1);
@@ -120,6 +130,10 @@
         background: linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
         transition: transform delay(med-fast) ease-out;
     }
+}
+
+#{class(spin)} {
+	animation: #{prefix(spin)} 0.75s linear infinite;
 }
 
 #{class(stretch)} {
