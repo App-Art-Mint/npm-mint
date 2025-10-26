@@ -21,6 +21,30 @@
 	}
 }
 
+@keyframes #{prefix(spin-centered)} {
+	0% {
+		transform: rotate(0deg) translate(-50%, -50%);
+	}
+
+	100% {
+		transform: rotate(360deg) translate(-50%, -50%);
+	}
+}
+
+@keyframes #{prefix(pulse)} {
+	0% {
+		opacity: 0;
+	}
+
+	75% {
+		opacity: 0.75;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
 @keyframes #{prefix(stretch-in)} {
 	0% {
 		transform: scale(1);
@@ -133,7 +157,17 @@
 }
 
 #{class(spin)} {
-	animation: #{prefix(spin)} 0.75s linear infinite;
+	animation: #{prefix(spin)} 1s linear infinite;
+
+	@for $i from 1 through 5 {
+		&-#{$i} {
+			animation-duration: #{$i}s;
+		}
+	}
+}
+
+#{class(pulse-out)} {
+	animation: #{prefix(pulse)} 0.75s ease-in-out forwards;
 }
 
 #{class(stretch)} {
