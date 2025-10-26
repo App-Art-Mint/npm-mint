@@ -8,7 +8,6 @@
 @use '../../util' as *;
 
 #{class(tooltip)} {
-    display: none;
     position: absolute;
     max-width: css-var(tooltip-max-width);
     border-radius: css-var(tooltip-radius);
@@ -20,6 +19,8 @@
     font-size: css-var(tooltip-font-size);
     line-height: css-var(tooltip-line-height);
     transition: opacity 0.3s;
+	user-select: none;
+	pointer-events: none;
     white-space: nowrap;
 
     &#{class(top)}, &#{class(bottom)} {
@@ -96,7 +97,6 @@
 
         @include states(hover) {
             #{class(tooltip)} {
-                display: block;
                 opacity: 1;
             }
         }
