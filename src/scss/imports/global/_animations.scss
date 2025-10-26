@@ -172,7 +172,9 @@
 
 		&-icon {
 			@include states(hover, focus) {
-				animation: #{prefix(spin)} 1.5s ease-in-out forwards;
+				i {
+					animation: #{prefix(spin)} 1.5s ease-in-out forwards;
+				}
 			}
 		}
 	}
