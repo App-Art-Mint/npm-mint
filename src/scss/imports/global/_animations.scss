@@ -164,6 +164,18 @@
 			animation-duration: #{$i}s;
 		}
 	}
+
+	&-hover {
+		@include states(hover, focus) {
+			animation: #{prefix(spin)} 1.5s ease-in-out forwards;
+		}
+
+		&-icon {
+			@include states(hover, focus) {
+				animation: #{prefix(spin)} 1.5s ease-in-out forwards;
+			}
+		}
+	}
 }
 
 #{class(pulse-out)} {
