@@ -41,7 +41,7 @@ export abstract class MintList {
 	 * @param list - the list to unique
 	 * @returns - the unique list
 	 */
-	static unique<T extends string | number | boolean> (list: T[]): T[] {
+	static unique<T> (list: T[]): T[] {
 		return [...new Set(list)];
 	}
 };

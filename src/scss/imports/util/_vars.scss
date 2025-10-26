@@ -134,12 +134,11 @@ $btn-fore-hover: back !default;
 $btn-fore-alt-hover: $btn-fore-hover !default;
 $btn-back-alt: trans !default;
 $btn-back-alt-hover: accent-2 !default;
-
-$btn-padding-v: 0.5rem !default;
-$btn-padding-h: 1rem !default;
-$btn-padding-adjust: 0.75rem !default;
+$btn-pad-v: 0.5rem !default;
+$btn-pad-h: 1rem !default;
 
 $pill-radius: $border-radius !default;
+$pill-pad-h: 0.75rem !default;
 
 /// Cards
 $card-bg-color: back !default;

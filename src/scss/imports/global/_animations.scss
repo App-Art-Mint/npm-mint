@@ -47,6 +47,21 @@
 	}
 }
 
+@keyframes #{prefix(stretch-tilt-in)} {
+    0% {
+        transform: scale(0.5);
+        rotate: -15deg;
+    }
+    90% {
+        transform: scale(1.25);
+        rotate: 5deg;
+    }
+    100% {
+        transform: scale(1);
+		rotate: 0deg;
+    }
+}
+
 
 /// CSS variables
 :root {
@@ -139,5 +154,9 @@
 
 	&-in {
 		animation: #{prefix(stretch-out)} 0.5s ease forwards;
+	}
+
+	&-tilt-in {
+		animation: #{prefix(stretch-tilt-in)} 0.75s ease-in-out forwards;
 	}
 }

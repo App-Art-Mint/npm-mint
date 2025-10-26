@@ -36,6 +36,10 @@ button,
 		&:last-child {
 			margin-left: 0.5em;
 		}
+
+		&:only-child {
+			margin: 0;
+		}
 	}
 }
 
@@ -134,7 +138,7 @@ button,
 
 /// Default buttons
 #{class(btn)} {
-    padding: $btn-padding-v $btn-padding-h + $btn-padding-adjust;
+    padding: $btn-pad-v $btn-pad-h;
 	cursor: pointer;
 
 	/// Icon buttons
@@ -187,7 +191,7 @@ button,
 		& > * {
 			&:first-child {
 				&, & button {
-					padding: $btn-padding-v 0 $btn-padding-v $btn-padding-h;
+					padding: $btn-pad-v 0 $btn-pad-v $btn-pad-h;
 					border-top-left-radius: $pill-radius;
 					border-bottom-left-radius: $pill-radius;
 				}
@@ -195,7 +199,7 @@ button,
 
 			&:last-child {
 				&, & button {
-					padding: $btn-padding-v $btn-padding-h $btn-padding-v 0;
+					padding: $btn-pad-v $btn-pad-h $btn-pad-v 0;
 					border-top-right-radius: $pill-radius;
 					border-bottom-right-radius: $pill-radius;
 				}
@@ -213,6 +217,18 @@ button,
 			}
 		}
 	}
+
+	/// Submit buttons
+    &-submit {
+        &#{class(success)} {
+            &#{$disabled} {
+                filter: none !important;
+            }
+        }
+        i.fa-check {
+            animation: submit-success 750ms ease-in-out;
+        }
+    }
 }
 
 /// Select button
@@ -222,7 +238,7 @@ button,
 
 /// Pill buttons
 #{class(pill)} {
-    padding: 0 $btn-padding-adjust;
+    padding: 0 $pill-pad-h;
     line-height: 2;
 }
 
