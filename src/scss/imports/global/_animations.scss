@@ -166,14 +166,15 @@
 	}
 
 	&-hover {
+		$animation: #{prefix(spin)} 1s ease-in-out forwards;
 		@include states(hover, focus) {
-			animation: #{prefix(spin)} 1s ease-in-out forwards;
+			animation: $animation;
 		}
 
 		&-icon {
 			@include states(hover, focus) {
 				i {
-					animation: #{prefix(spin)} 1s ease-in-out forwards;
+					animation: $animation;
 				}
 			}
 		}
