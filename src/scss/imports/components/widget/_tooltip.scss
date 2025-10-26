@@ -1,0 +1,104 @@
+/// _tooltip.scss - Tooltip styles
+/// @author App Art Mint LLC
+///
+/// @group Widgets
+@charset 'utf-8';
+
+/// Imports
+@use '../../util' as *;
+
+#{class(tooltip)} {
+    display: none;
+    position: absolute;
+    max-width: css-var(tooltip-max-width);
+    border-radius: css-var(tooltip-radius);
+    padding: css-var(tooltip-padding);
+    opacity: 0;
+    color: css-var(tooltip-fore);
+    background: css-var(tooltip-back);
+    box-shadow: css-var(tooltip-shadow-color) css-var(tooltip-shadow-size);
+    font-size: css-var(tooltip-font-size);
+    line-height: css-var(tooltip-line-height);
+    transition: opacity 0.3s;
+    white-space: nowrap;
+
+    &#{class(top)}, &#{class(bottom)} {
+        &::after {
+            border-left: solid css-var(tooltip-arrow-size) transparent;
+            border-right: solid css-var(tooltip-arrow-size) transparent;
+        }
+    }
+    &#{class(left)}, &#{class(right)} {
+        &::after {
+            border-top: solid css-var(tooltip-arrow-size) transparent;
+            border-bottom: solid css-var(tooltip-arrow-size) transparent;
+        }
+    }
+
+    &#{class(top)} {
+        bottom: calc(100% + css-var(tooltip-arrow-size) + css-var(tooltip-distance));
+        left: 50%;
+        transform: translateX(-50%);
+
+        &::after {
+            bottom: calc(-1 * css-var(tooltip-arrow-size) + 1px);
+            left: 50%;
+            transform: translateX(-50%);
+            border-top: solid css-var(tooltip-arrow-size) css-var(tooltip-back);
+        }
+    }
+    &#{class(left)} {
+        right: calc(100% + css-var(tooltip-arrow-size) + css-var(tooltip-distance));
+        top: 50%;
+        transform: translateY(-50%);
+
+        &::after {
+            right: calc(-1 * css-var(tooltip-arrow-size) + 1px);
+            top: 50%;
+            transform: translateY(-50%);
+            border-left: solid css-var(tooltip-arrow-size) css-var(tooltip-back);
+        }
+    }
+    &#{class(bottom)} {
+        top: calc(100% + css-var(tooltip-arrow-size) + css-var(tooltip-distance));
+        left: 50%;
+        transform: translateX(-50%);
+
+        &::after {
+            top: calc(-1 * css-var(tooltip-arrow-size) + 1px);
+            left: 50%;
+            transform: translateX(-50%);
+            border-bottom: solid css-var(tooltip-arrow-size) css-var(tooltip-back);
+        }
+    }
+    &#{class(right)} {
+        left: calc(100% + css-var(tooltip-arrow-size) + css-var(tooltip-distance));
+        top: 50%;
+        transform: translateY(-50%);
+
+        &::after {
+            left: calc(-1 * css-var(tooltip-arrow-size) + 1px);
+            top: 50%;
+            transform: translateY(-50%);
+            border-right: solid css-var(tooltip-arrow-size) css-var(tooltip-back);
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+
+    &ped {
+        position: relative;
+
+        @include states(hover) {
+            #{class(tooltip)} {
+                display: block;
+                opacity: 1;
+            }
+        }
+    }
+}
