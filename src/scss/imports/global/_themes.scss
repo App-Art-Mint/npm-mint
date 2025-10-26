@@ -49,6 +49,20 @@
 	@include shades(danger, $danger);
 	@include shades(warning, $warning);
 	@include shades(info, $info);
+
+	/// Tooltips
+	@include css-var-ref(tooltip-fore, fore);
+	@include css-var-ref(tooltip-back, black-2);
+	@include css-var(tooltip-radius, $border-radius);
+	@include css-var(tooltip-shadow-color, $shadow-color);
+	@include css-var(tooltip-shadow-size, $shadow-size);
+	@include css-var(tooltip-padding, 0.5rem 1rem);
+	@include css-var(tooltip-distance, 0.5rem);
+	@include css-var(tooltip-max-width, 90vw);
+	@include css-var(tooltip-line-height, 1.5);
+	@include css-var(tooltip-font-size, 1rem);
+	@include css-var(tooltip-arrow-size, 0.5rem);
+
 }
 
 /// Light theme

@@ -35,5 +35,14 @@ export abstract class MintList {
 		list.length = newLength;
 		return list;
 	}
+
+	/**
+	 * Returns a copy of the provided list with unique items
+	 * @param list - the list to unique
+	 * @returns - the unique list
+	 */
+	static unique<T> (list: T[]): T[] {
+		return [...new Set(list)];
+	}
 };
 export default MintList;
