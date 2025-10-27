@@ -1,14 +1,14 @@
-/// _video.scss - Video styles
+/// _full.scss - Full section styles
 /// @author App Art Mint LLC
 ///
-/// @group Video
+/// @group Section
 @charset 'utf-8';
 
 /// Imports
 @use 'sass:map';
 @use '../../util' as *;
 
-/// Video Styles
+/// Full Section Styles
 #{class(section-full)} {
 	display: flex;
 	flex-direction: column;

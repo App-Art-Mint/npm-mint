@@ -873,36 +873,6 @@ $bootstrap5: false !default;
 	}
 }
 
-/// Generates flex utility classes
-/// @group Mixins
-@mixin flex-util () {
-	& {
-		display: flex;
-		align-items: center;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-
-		&#{class(center)} {
-			justify-content: center;
-		}
-
-		&#{class(end)} {
-			justify-content: flex-end;
-		}
-
-		&#{class(between)} {
-			justify-content: space-between;
-		}
-
-		&#{class(around)} {
-			justify-content: space-around;
-		}
-
-		&#{class(even)} {
-			justify-content: space-evenly;
-		}
-	}
-}
 
 /// Selector for all headers
 /// @group Mixins

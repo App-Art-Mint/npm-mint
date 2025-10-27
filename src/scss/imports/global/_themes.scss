@@ -48,6 +48,10 @@
 	@include shades(warning, $warning);
 	@include shades(info, $info);
 
+	/// Structure
+	@include css-var(spacing, 0.25rem);
+	@include css-var(flex-gap, calc(css-var(spacing) * 2));
+
 	/// Tooltips
 	@include css-var-ref(tooltip-fore, fore);
 	@include css-var-ref(tooltip-back, black-2);
