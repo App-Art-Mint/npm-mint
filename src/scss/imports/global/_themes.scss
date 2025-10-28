@@ -5,6 +5,7 @@
 @charset 'utf-8';
 
 /// Imports
+@use 'sass:meta';
 @use '../util' as *;
 
 /// Global theme
@@ -51,6 +52,19 @@
 	/// Structure
 	@include css-var(spacing, 0.25rem);
 	@include css-var(flex-gap, calc(css-var(spacing) * 2));
+
+	/// Cards
+	@include css-var(card-padding, $card-padding);
+	@include css-var(card-radius, $card-radius);
+	@include css-var(card-shadow-color, $card-shadow-color);
+	@include css-var(card-shadow-size, $card-shadow-size);
+	@include css-var(card-logo-size, $card-logo-size);
+
+	@if (meta.type-of($card-back) == 'color') {
+		@include css-var(card-back, $card-back);
+	} @else {
+		@include css-var-ref(card-back, $card-back);
+	}
 
 	/// Tooltips
 	@include css-var-ref(tooltip-fore, fore);

@@ -16,8 +16,8 @@
 	height: 100%;
 	max-width: 100%;
 	margin: 0;
-	border-radius: $card-radius;
-	box-shadow: $card-shadow-size #{css-var($card-shadow-color)};
+	border-radius: css-var(card-radius);
+	box-shadow: css-var(card-shadow-size) css-var(card-shadow-color);
 	overflow: hidden;
 
 	@include break(sm) {
@@ -32,7 +32,7 @@
 		box-shadow: none;
 
 		#{class(content)} {
-			box-shadow: $card-shadow-size #{css-var($card-shadow-color)};
+			box-shadow: css-var(card-shadow-size) css-var(card-shadow-color);
 		}
 	}
 
@@ -91,10 +91,10 @@
 			overflow: visible;
 
 			& > #{class(image)} {
-				width: calc(50% + $card-padding);
+				width: calc(50% + css-var(card-padding));
 				height: fit-content;
-				margin-right: $card-padding * -2;
-				border-radius: $card-radius;
+				margin-right: calc(css-var(card-padding) * -2);
+				border-radius: css-var(card-radius);
 
 				img {
 					height: 100%;
@@ -103,11 +103,11 @@
 			}
 
 			& > #{class(content)} {
-				width: calc(50% + $card-padding);
 				height: fit-content;
-				margin-top: $card-padding * 2;
-				border-radius: $card-radius;
-				box-shadow: $card-shadow-size #{css-var($card-shadow-color)};
+				width: calc(50% + css-var(card-padding));
+				margin-top: calc(2 * css-var(card-padding));
+				border-radius: css-var(card-radius);
+				box-shadow: css-var(card-shadow-size) css-var(card-shadow-color);
 			}
 		}
 
@@ -117,7 +117,7 @@
 
 				& > #{class(image)} {
 					margin-right: 0;
-					margin-left: $card-padding * -2;
+					margin-left: calc(css-var(card-padding) * -2);
 				}
 			}
 		}
@@ -146,8 +146,8 @@
 		flex-direction: column;
 		gap: math.div($grid-gap, 2);
 		position: relative;
-		padding: $card-padding;
-		background: css-var($card-bg-color);
+		padding: css-var(card-padding);
+		background: css-var(card-back);
 		width: 100%;
 		overflow: hidden;
 
@@ -162,7 +162,7 @@
 		flex-direction: column;
 		align-items: center;
 		height: fit-content;
-		gap: $card-padding;
+		gap: css-var(card-padding);
 		text-align: center;
 
 		@include break(xs) {
@@ -177,12 +177,12 @@
 		& > #{class(image)} {
 			width: 100%;
 			height: 100%;
-			max-width: $card-logo-size;
-			max-height: $card-logo-size;
+			max-width: css-var(card-logo-size);
+			max-height: css-var(card-logo-size);
 
 			&#{class(large)} {
-				max-width: $card-logo-size * 2;
-				max-height: $card-logo-size * 2;
+				max-width: calc(2 * css-var(card-logo-size));
+				max-height: calc(2 * css-var(card-logo-size));
 			}
 
 			img {
@@ -197,10 +197,10 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			min-width: $card-logo-size;
-			max-width: $card-logo-size;
+			min-width: css-var(card-logo-size);
+			max-width: css-var(card-logo-size);
 			margin: 0;
-			font-size: calc($card-logo-size - 1rem);
+			font-size: calc(css-var(card-logo-size) - 1rem);
 		}
 
 		& > div {
@@ -222,7 +222,7 @@
 
 	&-grid {
 		position: relative;
-		background: css-var($card-bg-color);
+		background: css-var(card-back);
 
 		&:has(#{class(image)}) {
 			#{class(content)} {

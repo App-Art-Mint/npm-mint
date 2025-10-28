@@ -87,7 +87,7 @@
 
 #{class(frame)} {
     height: fit-content;
-	background-color: css-var($card-bg-color);
+	background-color: css-var(card-back);
 
     @extend #{class(border)};
     @if $texture-border-image {
