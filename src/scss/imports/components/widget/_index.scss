@@ -1,9 +1,10 @@
 /// _index.scss - Widgets
 /// @author App Art Mint LLC
 ///
-/// @group Widgets
+/// @group Widget
 @charset 'utf-8';
 
+@use './accordion';
 @use './button';
 @use './card';
 @use './image';

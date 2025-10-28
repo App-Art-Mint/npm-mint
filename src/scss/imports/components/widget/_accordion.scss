@@ -1,0 +1,20 @@
+/// _accordion.scss - Accordion styles
+/// @author App Art Mint LLC
+///
+/// @group Widget
+@charset 'utf-8';
+
+/// Imports
+@use '../../util' as *;
+
+/// Accordion styles
+#{class(accordion)} {
+    #{class(item)} {
+        cursor: pointer;
+
+        #{class(wrapper)} {
+            transition: height 0.3s ease;
+            overflow: hidden;
+        }
+    }
+}
