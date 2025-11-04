@@ -282,6 +282,13 @@
 			}
 		}
 	}
+
+	&-actions {
+		#{class(content)} {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
 }
 
 #{class(grid)}#{class('3')},
