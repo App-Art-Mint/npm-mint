@@ -18,11 +18,10 @@
         }
     }
 
-    &-toggle {
+    #{class(btns)} {
         display: flex;
         align-items: center;
         justify-content: flex-end;
         gap: 0.5rem;
-        margin-bottom: 1rem;
     }
 }
