@@ -164,6 +164,7 @@
 		height: fit-content;
 		gap: css-var(card-padding);
 		text-align: center;
+		width: 100%;
 
 		@include break(xs) {
 			flex-direction: row;
