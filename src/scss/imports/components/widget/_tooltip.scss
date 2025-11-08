@@ -93,6 +93,7 @@
     }
 
     &ped {
+        display: inline-flex;
         position: relative;
 
         @include states(hover) {
