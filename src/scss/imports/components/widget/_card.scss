@@ -28,6 +28,10 @@
 		}
 	}
 
+	@include break(md) {
+		align-items: flex-start;
+	}
+
 	&:has(#{class(carousel)}) {
 		box-shadow: none;
 

@@ -295,3 +295,16 @@ p {
 		}
 	}
 }
+
+#{class(link)} {
+	border: none;
+	background: none;
+	text-decoration: underline;
+	color: css-var($link-color);
+	transition: color 0.3s ease;
+	cursor: pointer;
+
+	@include states(hover, focus, active, mint-active) {
+		color: css-var($link-color-hover);
+	}
+}

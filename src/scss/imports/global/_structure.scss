@@ -87,3 +87,10 @@
 	min-height: calc(100vh - css-var(header-height));
 	min-height: calc(100dvh - css-var(header-height));
 }
+
+#{class(display)} {
+	&-block {
+		@include break-util(display, block);
+	}
+}
+
