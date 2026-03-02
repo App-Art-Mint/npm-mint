@@ -36,12 +36,8 @@ body {
 
 	#{class(expand)} {
 		@include break($header-break) {
-			#{class(buttons)} {
-				width: auto;
-
-				#{controls(wrapper)} {
-					display: none;
-				}
+			#{controls(wrapper)} {
+				display: none;
 			}
 
 			#{id(wrapper)} {
