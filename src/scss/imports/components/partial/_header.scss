@@ -71,6 +71,7 @@ body {
 						justify-content: flex-end;
 						flex-wrap: nowrap;
 						overflow: visible;
+						gap: 1rem;
 
 						&>li {
 							position: relative;
@@ -99,14 +100,14 @@ body {
 									font-size: $arrow-size;
 									position: absolute;
 									top: 50%;
-									transform: translateY(-50%);
+									transform: translate(-50%, -50%);
 									margin-left: $arrow-margin;
 									transition: transform css-var(delay-default);
 								}
 
 								@include states(hover, focus, expanded) {
 									&::after {
-										transform: translateY(-50%) rotate(90deg);
+										transform: translate(-50%, -50%) rotate(90deg);
 									}
 								}
 							}
