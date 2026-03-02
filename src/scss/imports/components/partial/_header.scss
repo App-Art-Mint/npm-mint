@@ -34,7 +34,7 @@ body {
 	z-index: 1000;
 	height: css-var(header-height);
 
-	&#{class(expand)} {
+	#{class(expand)} {
 		@include break($header-break) {
 			#{class(buttons)} {
 				width: auto;
@@ -133,7 +133,7 @@ body {
 		}
 	}
 
-	&#{class(spread)} {
+	#{class(spread)} {
 		@include break-max($header-break) {
 			#{id(wrapper)} {
 				#{$has-controls} {
