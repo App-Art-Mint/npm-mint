@@ -11,7 +11,7 @@
 #{class(footer)} {
 	display: flex;
 	flex-direction: column;
-	max-width: 100%;
+	margin: 0 $pad-exit;
     background: css-var($footer-back);
 	transition: transform 300ms;
 	z-index: 999;
