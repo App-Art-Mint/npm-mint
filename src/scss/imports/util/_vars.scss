@@ -91,7 +91,7 @@ $pad-min: 0.25rem !default;
 $pad-max: 2rem !default;
 $pad-val: 1vw !default;
 $pad-clamp: clamp($pad-min, $pad-val, $pad-max) !default;
-$pad-exit: clamp($pad-min * -1, $pad-val * -1, $pad-max * -1) !default;
+$pad-exit: clamp($pad-max * -1, $pad-val * -1, $pad-min * -1) !default;
 $pad-exit-width: clamp(calc(100% + $pad-min * 2), calc(100% + $pad-val * 2), calc(100% + $pad-max * 2)) !default;
 
 /// Outline width
