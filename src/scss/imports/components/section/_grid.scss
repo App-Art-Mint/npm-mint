@@ -56,58 +56,44 @@
 		& > :last-child:nth-child(#{'3n+1'}),
 		& > :last-child:nth-child(#{'3n+2'}),
 		& > :nth-last-child(2):nth-child(#{'3n+1'}) {
-			#{class(card)} {
-				grid-column: span 1;
-				width: 100%;
-			}
+			grid-column: span 1;
+			width: 100%;
 		}
 
 		& > :last-child:nth-child(#{'4n+1'}) {
-			#{class(card)} {
-				grid-column: 2 / span 2;
-				width: 50%;
-				margin-left: auto;
-				margin-right: auto;
-			}
+			grid-column: 2 / span 2;
+			width: 50%;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		& > :last-child:nth-child(#{'4n+2'}) {
-			#{class(card)} {
-				grid-column: 3 / span 2;
-				width: 50%;
-				margin-left: auto;
-				margin-right: auto;
-			}
+			grid-column: 3 / span 2;
+			width: 50%;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		& > :nth-last-child(2):nth-child(#{'4n+1'}) {
-			#{class(card)} {
-				grid-column: 1 / span 2;
-				width: 50%;
-				margin-left: auto;
-				margin-right: auto;
-			}
+			grid-column: 1 / span 2;
+			width: 50%;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		& > :last-child:nth-child(#{'4n+3'}) {
-			#{class(card)} {
-				grid-column: 4;
-			}
+			grid-column: 4;
 		}
 
 		& > :nth-last-child(2):nth-child(#{'4n+2'}) {
-			#{class(card)} {
-				grid-column: 2 / span 2;
-				width: 50%;
-				margin-left: auto;
-				margin-right: auto;
-			}
+			grid-column: 2 / span 2;
+			width: 50%;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		& > :nth-last-child(3):nth-child(#{'4n+1'}) {
-			#{class(card)} {
-				grid-column: 1;
-			}
+			grid-column: 1;
 		}
 	}
 
@@ -137,11 +123,11 @@
 		@include grid-4;
 	}
 
-	#{class(portrait)} {
+	& > :has(#{class(portrait)}) {
 		grid-row: span 2;
 	}
 
-	#{class(landscape)} {
+	& > :has(#{class(landscape)}) {
 		@include break(sm) {
 			grid-column: span 2;
 		}
