@@ -6,12 +6,12 @@
 	@include break(sm) {
 		grid-template-columns: repeat(2, 1fr);
 		
-		/*& > :last-child:nth-child(odd) {
+		& > :last-child:nth-child(odd) {
 			grid-column: span 2;
 			width: 50%;
 			margin-left: auto;
 			margin-right: auto;
-		}*/
+		}
 	}
 }
 
@@ -19,7 +19,7 @@
 	@include break(lg) {
 		grid-template-columns: repeat(3, 1fr);
 
-		/*& > :last-child:nth-child(odd) {
+		& > :last-child:nth-child(odd) {
 			grid-column: span 1;
 			width: 100%;
 		}
@@ -34,7 +34,7 @@
 
 		& > :nth-last-child(2):nth-child(#{'3n+1'}) {
 			grid-column: 1;
-		}*/
+		}
 	}
 }
 
@@ -42,7 +42,7 @@
 	@include break(xl) {
 		grid-template-columns: repeat(4, 1fr);
 
-		/*& > :last-child:nth-child(odd),
+		& > :last-child:nth-child(odd),
 		& > :last-child:nth-child(#{'3n+1'}),
 		& > :last-child:nth-child(#{'3n+2'}),
 		& > :nth-last-child(2):nth-child(#{'3n+1'}) {
@@ -84,7 +84,7 @@
 
 		& > :nth-last-child(3):nth-child(#{'4n+1'}) {
 			grid-column: 1;
-		}*/
+		}
 	}
 
 }
