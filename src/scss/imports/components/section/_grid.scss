@@ -24,7 +24,7 @@
 			width: 100%;
 		}
 
-		& > :last-child:nth-child(#{'3n+1'}) {
+		& > :last-child:nth-child(#{'3n'}) {
 			grid-column: 2;
 		}
 
