@@ -258,6 +258,7 @@ body {
 			img {
 				padding-top: $texture-border-width;
 				padding-bottom: $texture-border-width;
+				object-fit: contain;
 			}
 		}
 	}
