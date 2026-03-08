@@ -253,6 +253,15 @@ body {
 		}
 	}
 
+	&#{class(border)} {
+		#{class(logo)} {
+			img {
+				padding-top: $border-width;
+				padding-bottom: $border-width;
+			}
+		}
+	}
+
 	#{controls(wrapper)} {
 		display: inline-block;
 		position: relative;
