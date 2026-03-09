@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App Art Mint LLC",
-  "version": "4.2.4",
+  "version": "4.2.5",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [
@@ -42,7 +42,7 @@
     "watch": "npm run build -- --watch",
     "watch:prod": "cross-env NODE_ENV=production npm run watch",
     "watch:tsdoc": "npm run build:tsdoc -- --watch",
-    "test": "echo-cli \"\\nRun tests here!\\n\""
+    "publish:link": "yalc publish"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
@@ -59,6 +59,7 @@
     "typescript": "^5.5.4",
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
-    "webpack-remove-empty-scripts": "^1.0.4"
+    "webpack-remove-empty-scripts": "^1.0.4",
+    "yalc": "^1.0.0-pre.53"
   }
 }
