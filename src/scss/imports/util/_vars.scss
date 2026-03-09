@@ -237,24 +237,24 @@ $amp-font-error: $amp-font-error-default !default;
 @if ($theme-default == dark) {
 
     /// Buttons
-    $btn-back: if($btn-back != $btn-back-default, $btn-back, brand-5);
-    $btn-border: if($btn-border != $btn-border-default, $btn-border, brand-2);
+    $btn-back: if(sass($btn-back != $btn-back-default): $btn-back; else: brand-5);
+    $btn-border: if(sass($btn-border != $btn-border-default): $btn-border; else: brand-2);
 
     /// Header
-    $header-back: if($header-back != $header-back-default, $header-back, brand-4);
-    $header-fore: if($header-fore != $header-fore-default, $header-fore, back);
-    $header-link-back-hover: if($header-link-back-hover != $header-link-back-hover-default, $header-link-back-hover, glow-5);
+    $header-back: if(sass($header-back != $header-back-default): $header-back; else: brand-4);
+    $header-fore: if(sass($header-fore != $header-fore-default): $header-fore; else: back);
+    $header-link-back-hover: if(sass($header-link-back-hover != $header-link-back-hover-default): $header-link-back-hover; else: glow-5);
 
     /// Footer
-    $footer-heel-fore: if($footer-heel-fore != $footer-heel-fore-default, $footer-heel-fore, fore);
+    $footer-heel-fore: if(sass($footer-heel-fore != $footer-heel-fore-default): $footer-heel-fore; else: fore);
 
 	/// Amplify
-	$amp-border-primary: if($amp-border-primary != $amp-border-primary-default, $amp-border-primary, brand-1);
-	$amp-border-focus: if($amp-border-focus != $amp-border-focus-default, $amp-border-focus, brand-3);
-	$amp-font-hover: if($amp-font-hover != $amp-font-hover-default, $amp-font-hover, brand-0);
-	$amp-font-interactive: if($amp-font-interactive != $amp-font-interactive-default, $amp-font-interactive, brand-1);
-	$amp-font-secondary: if($amp-font-secondary != $amp-font-secondary-default, $amp-font-secondary, brand-0);
-	$amp-font-error: if($amp-font-error != $amp-font-error-default, $amp-font-error, danger-4);
+	$amp-border-primary: if(sass($amp-border-primary != $amp-border-primary-default): $amp-border-primary; else: brand-1);
+	$amp-border-focus: if(sass($amp-border-focus != $amp-border-focus-default): $amp-border-focus; else: brand-3);
+	$amp-font-hover: if(sass($amp-font-hover != $amp-font-hover-default): $amp-font-hover; else: brand-0);
+	$amp-font-interactive: if(sass($amp-font-interactive != $amp-font-interactive-default): $amp-font-interactive; else: brand-1);
+	$amp-font-secondary: if(sass($amp-font-secondary != $amp-font-secondary-default): $amp-font-secondary; else: brand-0);
+	$amp-font-error: if(sass($amp-font-error != $amp-font-error-default): $amp-font-error; else: danger-4);
 }
 
 /// Menu button

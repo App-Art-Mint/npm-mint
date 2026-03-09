@@ -86,7 +86,6 @@
 			grid-column: 1;
 		}
 	}
-
 }
 
 /// Grid styles
@@ -124,5 +123,11 @@
 		@include break(lg) {
 			grid-column: span 3;
 		}
+	}
+
+	&-fit {
+		display: grid;
+		grid-template-columns: repeat(minmax(min(css-var(grid-fit-w), 100%), 1fr));
+		gap: css-var(grid-gap);
 	}
 }
