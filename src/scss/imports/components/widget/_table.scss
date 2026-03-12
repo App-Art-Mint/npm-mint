@@ -9,6 +9,12 @@
 
 /// Table
 #{class(table)} {
+	&-widget {
+		#{class(content)} {
+			overflow-x: auto;
+		}
+	}
+
 	&-wrap {
 		max-height: 50vh;
 		overflow-y: auto;
