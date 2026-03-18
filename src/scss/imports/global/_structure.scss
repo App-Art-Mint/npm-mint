@@ -3,6 +3,12 @@
 @use '../util' as *;
 
 /// Structure styles
+:root {
+	@each $size, $value in $break {
+		@include css-var(#{$size}, #{$value}px);
+	}
+}
+
 #{class(pad)} {
 	@include box-util(padding, 1rem);
 	@include break-util(padding, 0.5rem, 0);
