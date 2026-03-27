@@ -148,12 +148,4 @@ textarea {
 	align-items: flex-start;
 	justify-content: flex-end;
 	gap: 0.5rem;
-
-	:first-child {
-		flex-grow: 1;
-	}
-
-	:last-child {
-		flex-shrink: 0;
-	}
 }
