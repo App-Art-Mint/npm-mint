@@ -17,8 +17,13 @@
 	@include css-var(--mat-paginator-container-text-color, $mat-table-fore);
 }
 
-.cdk-overlay-container {
-	.mat-mdc-select-panel {
-		background: css-var($mat-select-bg);
+.cdk {
+	&-overlay-container {
+		.mat-mdc-select-panel {
+			background: css-var($mat-select-bg);
+		}
+	}
+	&-overlay-pane {
+		pointer-events: none;
 	}
 }
