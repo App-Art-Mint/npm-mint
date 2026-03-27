@@ -11,6 +11,14 @@
 	@include css-var-ref(modal-w, sm);
 }
 
+html {
+	&#{class(modal)} {
+		&-open {
+			overflow: hidden;
+		}
+	} 
+}
+
 #{class(modal)} {
 	position: fixed;
 	top: 50%;
