@@ -334,7 +334,6 @@ body {
 			flex-grow: 1;
 			height: auto;
 			overflow: visible;
-			background: css-var(back);
 
 			@include break(xl) {
 				display: flex;

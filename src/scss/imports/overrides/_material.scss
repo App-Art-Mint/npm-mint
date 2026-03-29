@@ -23,7 +23,8 @@
 			background: css-var($mat-select-bg);
 		}
 	}
+
 	&-overlay-pane {
-		pointer-events: none;
+		pointer-events: none !important;
 	}
 }
