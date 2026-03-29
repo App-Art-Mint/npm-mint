@@ -9,6 +9,10 @@
 @use '../../util' as *;
 
 /// Panel Styles
+html#{class(panel-open)} {
+	overflow: hidden;
+}
+
 #{class(panel)} {
 	&#{class(right)} {
 		#{class(panel-wrapper)} {
