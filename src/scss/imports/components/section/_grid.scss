@@ -89,6 +89,10 @@
 }
 
 /// Grid styles
+:root {
+	@include css-var(grid-fit-w, break(xs) * 1px);
+}
+
 #{class(grid)} {
 	display: grid;
 	grid-template-columns: 1fr;
