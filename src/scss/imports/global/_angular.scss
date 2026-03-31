@@ -2,6 +2,23 @@
 @use '../util' as *;
 
 /// Angular styles
+:root:root {
+	@include css-var(--mat-table-background-color, $mat-table-bg);
+	@include css-var(--mat-paginator-container-background-color, $mat-table-bg);
+	@include css-var(--mat-table-row-item-label-text-color, $mat-table-fore);
+	@include css-var(--mat-table-header-headline-color, $mat-table-fore);
+	@include css-var(--mat-table-header-subheadline-color, $mat-table-fore);
+	@include css-var(--mat-paginator-container-text-color, $mat-table-fore);
+}
+
+.cdk {
+	&-overlay-container {
+		.mat-mdc-select-panel {
+			background: css-var($mat-select-bg);
+		}
+	}
+}
+
 body {
 	&#{class(ready)} {
 		app-root {
