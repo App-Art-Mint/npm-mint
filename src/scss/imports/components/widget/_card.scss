@@ -242,6 +242,22 @@
 		}
 	}
 
+	&#{class(center)} {
+		&, &-title {
+			#{prefix(widget-title)} {
+				width: auto;
+			}
+
+			#{prefix(section-flex)} {
+				& > #{prefix(section)} {
+					& > div {
+						justify-content: center;
+					}
+				}
+			}
+		}
+	}
+
 	#{class(date)} {
 		text-align: center;
 
