@@ -36,6 +36,10 @@ body {
 
 	#{class(expand)} {
 		@include break($header-break) {
+			#{class(scroller)} {
+				display: contents;
+			}
+
 			#{controls(wrapper)} {
 				display: none;
 			}
