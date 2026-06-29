@@ -334,6 +334,8 @@ body {
 	}
 
 	#{id(wrapper)} {
+		background: css-var($card-back);
+
 		nav {
 			flex-grow: 1;
 			height: auto;
