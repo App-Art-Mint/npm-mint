@@ -33,27 +33,5 @@ $arrows-size: 2rem;
 				padding: $arrows-offset + $arrows-size;
 			}
 		}
-	
-		&-button {
-			&-prev,
-			&-next {
-				&::after {
-					font-family: "Font Awesome 6 Pro";
-					font-weight: 900;
-				}
-			}
-	
-			&-prev {
-				&::after {
-					content: '\f053';
-				}
-			}
-	
-			&-next {
-				&::after {
-					content: '\f054';
-				}
-			}
-		}
 	}
 }

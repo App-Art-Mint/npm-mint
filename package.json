@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App Art Mint LLC",
-  "version": "4.2.34",
+  "version": "5.0.0",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [
@@ -42,7 +42,7 @@
     "watch": "npm run build -- --watch",
     "watch:prod": "cross-env NODE_ENV=production npm run watch",
     "watch:tsdoc": "npm run build:tsdoc -- --watch",
-    "publish:link": "yalc publish",
+    "yalc": "yalc publish",
     "check:updates": "npm-check-updates"
   },
   "devDependencies": {
