@@ -1,7 +1,8 @@
 {
   "name": "@appartmint/mint",
   "author": "App Art Mint LLC",
-  "version": "5.0.2",
+  "version": "5.0.3",
+  "type": "module",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [
@@ -19,22 +20,21 @@
   "bugs": {
     "url": "https://github.com/App-Art-Mint/npm-mint/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/js/index.min.js",
   "types": "dist/js/index.d.ts",
-  "type": "module",
   "files": [
     "src/**/*.scss",
     "dist/**/*.{css,js,d.ts,map}"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "version": "npm i && git add -A",
     "postversion": "git push && git push --tags && cross-replace gh release create \"v$npm_package_version\" --generate-notes",
-    "prepare": "npm-run-all clean bundle",
+    "prepare": "run-s clean bundle",
     "clean": "rimraf dist doc",
-    "bundle": "npm-run-all build build:**",
+    "bundle": "run-s build build:**",
     "build": "webpack --config config/webpack.config.js",
     "build:prod": "cross-env NODE_ENV=production npm run build",
     "build:tsdoc": "typedoc",
@@ -54,7 +54,7 @@
     "echo-cli": "^2.0.0",
     "mini-css-extract-plugin": "^2.10.2",
     "npm-check-updates": "^22.2.9",
-    "npm-run-all": "^4.1.5",
+    "npm-run-all2": "^9.0.2",
     "rimraf": "^6.1.3",
     "sass": "^1.101.0",
     "sass-loader": "^17.0.0",
