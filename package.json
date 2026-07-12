@@ -1,72 +1,78 @@
 {
-  "name": "@appartmint/mint",
-  "author": "App Art Mint LLC",
-  "version": "5.0.3",
-  "type": "module",
-  "license": "MIT",
-  "description": "The front-end TS/SCSS framework of App Art Mint",
-  "keywords": [
-    "appartmint",
-    "app-art-mint",
-    "framework",
-    "frontend",
-    "mint"
-  ],
-  "homepage": "https://github.com/App-Art-Mint/npm-mint#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/App-Art-Mint/npm-mint.git"
-  },
-  "bugs": {
-    "url": "https://github.com/App-Art-Mint/npm-mint/issues"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "main": "dist/js/index.min.js",
-  "types": "dist/js/index.d.ts",
-  "files": [
-    "src/**/*.scss",
-    "dist/**/*.{css,js,d.ts,map}"
-  ],
-  "scripts": {
-    "version": "npm i && git add -A",
-    "postversion": "git push && git push --tags && cross-replace gh release create \"v$npm_package_version\" --generate-notes",
-    "prepare": "run-s clean build",
-    "clean": "rimraf dist docs",
-    "build": "run-s build:**",
-    "build:dev": "webpack --config config/webpack.config.js",
-    "build:prod": "cross-env NODE_ENV=production npm run build:dev",
-    "build:tsdoc": "typedoc --tsconfig tsconfig.lib.json",
-    "test": "run-p test:*",
-    "test:deps": "depcruise src",
-    "lint": "eslint --fix .",
-    "yalc:publish": "yalc publish",
-    "check:updates": "npm-check-updates"
-  },
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "cross-env": "^10.1.0",
-    "cross-replace": "^0.2.0",
-    "css-loader": "^7.1.4",
-    "dependency-cruiser": "^18.0.0",
-    "echo-cli": "^2.0.0",
-    "eslint": "^10.7.0",
-    "globals": "^17.7.0",
-    "jiti": "^2.7.0",
-    "mini-css-extract-plugin": "^2.10.2",
-    "npm-check-updates": "^22.2.9",
-    "npm-run-all2": "^9.0.2",
-    "rimraf": "^6.1.3",
-    "sass": "^1.101.0",
-    "sass-loader": "^17.0.0",
-    "ts-loader": "^9.6.2",
-    "typedoc": "^0.28.20",
-    "typescript": "^6.0.3",
-    "typescript-eslint": "^8.63.0",
-    "webpack": "^5.108.4",
-    "webpack-cli": "^7.2.1",
-    "webpack-remove-empty-scripts": "^1.1.1",
-    "yalc": "^1.0.0-pre.53"
-  }
+	"name": "@appartmint/mint",
+	"author": "App Art Mint LLC",
+	"version": "5.0.3",
+	"type": "module",
+	"license": "MIT",
+	"description": "The front-end TS/SCSS framework of App Art Mint",
+	"keywords": [
+		"appartmint",
+		"app-art-mint",
+		"framework",
+		"frontend",
+		"mint"
+	],
+	"homepage": "https://github.com/App-Art-Mint/npm-mint#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/App-Art-Mint/npm-mint.git"
+	},
+	"bugs": {
+		"url": "https://github.com/App-Art-Mint/npm-mint/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"src/**/*.scss",
+		"dist/**/*.{css,js,d.ts,map}"
+	],
+	"exports": {
+		"./*": {
+			"types": "./dist/*.d.ts",
+			"import": "./dist/*.es.js",
+			"require": "./dist/*.cjs.js",
+			"default": "./dist/*.es.js"
+		},
+		"./css/*": "./dist/*.css",
+		"./scss/*": "./src/scss/*.scss",
+		"./scss/*/": "./src/scss/*/index.scss"
+	},
+	"scripts": {
+		"version": "npm i && git add -A",
+		"postversion": "git push && git push --tags && cross-replace gh release create \"v$npm_package_version\" --generate-notes",
+		"prepare": "run-s clean lint test build",
+		"clean": "rimraf dist docs",
+		"build": "run-s build:**",
+		"build:prod": "vite build",
+		"build:css:dev": "sass src/scss/mint.scss dist/mint.css && sass src/scss/noscript.scss dist/noscript.css",
+		"build:css:prod": "sass src/scss/mint.scss dist/mint.min.css --style compressed && sass src/scss/noscript.scss dist/noscript.min.css --style compressed",
+		"build:tsdoc": "typedoc --tsconfig tsconfig.lib.json",
+		"test": "run-p test:*",
+		"test:types": "tsc -b",
+		"test:deps": "depcruise src",
+		"lint": "eslint --fix .",
+		"yalc:publish": "yalc publish",
+		"check:updates": "npm-check-updates"
+	},
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"@types/node": "^26.1.1",
+		"cross-replace": "^0.2.0",
+		"dependency-cruiser": "^18.0.0",
+		"eslint": "^10.7.0",
+		"glob": "^13.0.6",
+		"globals": "^17.7.0",
+		"jiti": "^2.7.0",
+		"npm-check-updates": "^22.2.9",
+		"npm-run-all2": "^9.0.2",
+		"rimraf": "^6.1.3",
+		"sass": "^1.101.0",
+		"typedoc": "^0.28.20",
+		"typescript": "^6.0.3",
+		"typescript-eslint": "^8.63.0",
+		"vite": "^7.3.1",
+		"vite-plugin-dts": "^4.5.4",
+		"yalc": "^1.0.0-pre.53"
+	}
 }

@@ -49,10 +49,9 @@ export const MintIcon = {
 	},
 
 	/**
-	 * Removes the given icon from the given selector
-	 * @param icon - the icon to remove
+	 * Removes the icon from the given selector
 	 */
-	remove(icon: string, selector: string): void {
+	remove(selector: string): void {
 		const items: NodeListOf<HTMLElement> = document.querySelectorAll(selector);
 		items.forEach((item: HTMLElement) => {
 			const iconElement: HTMLElement | null = item.querySelector('i');
