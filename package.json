@@ -1,7 +1,7 @@
 {
 	"name": "@appartmint/mint",
 	"author": "App Art Mint LLC",
-	"version": "5.0.4",
+	"version": "5.0.5",
 	"type": "module",
 	"license": "MIT",
 	"description": "The front-end TS/SCSS framework of App Art Mint",
@@ -27,16 +27,25 @@
 		"src/**/*.scss",
 		"dist/**/*.{css,js,d.ts,map}"
 	],
+	"main": "dist/index.esm.js",
+	"types": "dist/index.d.ts",
 	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.esm.js",
+			"require": "./dist/index.cjs.js",
+			"default": "./dist/index.esm.js"
+		},
 		"./*": {
 			"types": "./dist/*.d.ts",
-			"import": "./dist/*.es.js",
+			"import": "./dist/*.esm.js",
 			"require": "./dist/*.cjs.js",
-			"default": "./dist/*.es.js"
+			"default": "./dist/*.esm.js"
 		},
 		"./css/*": "./dist/*.css",
-		"./scss/*": "./src/scss/*.scss",
-		"./scss/*/": "./src/scss/*/index.scss"
+		"./scss/*": "./src/scss/_*.scss",
+		"./scss/*/": "./src/scss/*/_index.scss",
+		"./scss/entry/*": "./src/scss/*.scss"
 	},
 	"scripts": {
 		"version": "npm i && git add -A",
@@ -56,6 +65,7 @@
 		"check:updates": "npm-check-updates"
 	},
 	"devDependencies": {
+		"@appartmint/tsm-scripts": "^0.3.2",
 		"@eslint/js": "^10.0.1",
 		"@types/node": "^26.1.1",
 		"cross-replace": "^0.2.0",

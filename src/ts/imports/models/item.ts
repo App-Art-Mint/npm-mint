@@ -1,3 +1,5 @@
+import type { Callback } from '../util/event';
+
 /**
  * A generic item
  * 
@@ -69,6 +71,6 @@ export class MintItem {
 	/**
 	 * Item functions
 	 */
-	click?: (...args: unknown[]) => unknown;
+	click?: Callback;
 };
 export default MintItem;
