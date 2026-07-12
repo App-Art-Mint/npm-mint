@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App Art Mint LLC",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [
@@ -34,7 +34,6 @@
     "postversion": "git push && git push --tags && cross-replace gh release create \"v$npm_package_version\" --generate-notes",
     "prepare": "npm-run-all clean bundle",
     "clean": "rimraf dist doc",
-    "clear": "npm run clean",
     "bundle": "npm-run-all build build:**",
     "build": "webpack --config config/webpack.config.js",
     "build:prod": "cross-env NODE_ENV=production npm run build",
@@ -42,8 +41,9 @@
     "watch": "npm run build -- --watch",
     "watch:prod": "cross-env NODE_ENV=production npm run watch",
     "watch:tsdoc": "npm run build:tsdoc -- --watch",
+    "test": "run-p test:*",
     "test:deps": "depcruise src",
-    "yalc": "yalc publish",
+    "yalc:publish": "yalc publish",
     "check:updates": "npm-check-updates"
   },
   "devDependencies": {
