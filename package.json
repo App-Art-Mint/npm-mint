@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App Art Mint LLC",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [
@@ -58,7 +58,7 @@
     "rimraf": "^6.1.3",
     "sass": "^1.101.0",
     "sass-loader": "^17.0.0",
-    "ts-loader": "^9.5.4",
+    "ts-loader": "^9.6.2",
     "typedoc": "^0.28.20",
     "typescript": "^6.0.3",
     "webpack": "^5.108.4",
