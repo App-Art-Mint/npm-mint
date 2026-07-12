@@ -1,67 +1,65 @@
 /**
- * Imports
- */
-import mintObject from "./object";
-
-/**
  * Icon helper functions
  */
-export abstract class MintIcon {
-    /**
-     * Default icons
-     */
-    static icons: {[key: string]: string} = {
-        'a[href^="mailto:"]': 'far fa-envelope',
-        'a[href^="tel:"]': 'fas fa-phone-flip',
-        'a[href^="sms:"]': 'far fa-message',
-        'a[href^="https://maps"]': 'fas fa-map-location-dot',
-        'a[href^="http"]': 'fas fa-up-right-from-square'
-    };
+export const MintIcon = {
+	/**
+	 * Default icons
+	 */
+	icons: {
+		'a[href^="mailto:"]': 'far fa-envelope',
+		'a[href^="tel:"]': 'fas fa-phone-flip',
+		'a[href^="sms:"]': 'far fa-message',
+		'a[href^="https://maps"]': 'fas fa-map-location-dot',
+		'a[href^="http"]': 'fas fa-up-right-from-square',
+	} as Record<string, string>,
 
-    /**
-     * Appends the given icon to the given selector if there is not already an icon appended
-     */
-    static append (icon: string, selector: string): void {
-        let items: NodeListOf<HTMLElement> = document.querySelectorAll(selector);
-        items.forEach((item: HTMLElement) => {
-            let iconElement: HTMLElement = document.createElement('i');
-            iconElement.classList.add(...icon.split(' '));
-            if (!item.querySelector('i')) {
-                item.appendChild(iconElement);
-            }
+	/**
+	 * Appends the given icon to the given selector if there is not already an icon appended
+	 */
+	append(icon: string, selector: string): void {
+		const items: NodeListOf<HTMLElement> = document.querySelectorAll(selector);
+		items.forEach((item: HTMLElement) => {
+			const iconElement: HTMLElement = document.createElement('i');
+			iconElement.classList.add(...icon.split(' '));
+			if (!item.querySelector('i')) {
+				item.appendChild(iconElement);
+			}
 			if (iconElement.classList.contains('fa-up-right-from-square')) {
 				item.setAttribute('target', '_blank');
 			}
-        });
-    }
+		});
+	},
 
-    /**
-     * Updates the icons
-     * @param icons - the icons to update
-     */
-    static update (icons?: {[key: string]: string | false}): void {
-        let activeIcons: {[key: string]: string} = mintObject.removeValues({
-            ...this.icons,
-            ...icons
-        }, [false]);
+	/**
+	 * Updates the icons
+	 * @param icons - the icons to update
+	 */
+	update(icons?: Record<string, string | false>): void {
+		const merged: Record<string, string | false> = {
+			...MintIcon.icons,
+			...icons,
+		};
+		const activeIcons: Record<string, string> = Object.fromEntries(
+			Object.entries(merged).filter((entry): entry is [string, string] => entry[1] !== false)
+		);
 
-        Object.keys(activeIcons).forEach((selector: string) => {
-            this.append(activeIcons[selector], selector);
-        });
-    }
+		Object.keys(activeIcons).forEach((selector: string) => {
+			MintIcon.append(activeIcons[selector], selector);
+		});
+	},
 
-    /**
-     * Removes the given icon from the given selector
-     * @param icon - the icon to remove
-     */
-    static remove (icon: string, selector: string): void {
-        let items: NodeListOf<HTMLElement> = document.querySelectorAll(selector);
-        items.forEach((item: HTMLElement) => {
-            let iconElement: HTMLElement | null = item.querySelector('i');
-            if (iconElement) {
-                iconElement.remove();
-            }
-        });
-    }
+	/**
+	 * Removes the given icon from the given selector
+	 * @param icon - the icon to remove
+	 */
+	remove(icon: string, selector: string): void {
+		const items: NodeListOf<HTMLElement> = document.querySelectorAll(selector);
+		items.forEach((item: HTMLElement) => {
+			const iconElement: HTMLElement | null = item.querySelector('i');
+			if (iconElement) {
+				iconElement.remove();
+			}
+		});
+	},
 };
 export default MintIcon;

@@ -8,6 +8,17 @@ import { MintMenu } from "./menu";
 
 
 /**
+ * Header settings
+ */
+export interface MintHeaderSettings {
+	id: string;
+	wrapperId: string;
+	title: string;
+	fixed: boolean;
+}
+
+
+/**
  * Main header functionality
  * @public
  */
@@ -16,7 +27,7 @@ export class MintHeader {
 	/**
 	 * Navbar settings
 	 */
-	settings: { [key: string]: any } = {
+	settings: MintHeaderSettings = {
 		id: 'mint-menu',
 		wrapperId: 'mint-wrapper',
 		title: 'menu',
@@ -26,7 +37,7 @@ export class MintHeader {
 	/**
 	 * Frequently-referenced elements
 	 */
-	el: { [key: string]: HTMLElement | null } = {};
+	el: Record<string, HTMLElement | null> = {};
 
 	/**
 	 * Navigation functionality
@@ -38,7 +49,7 @@ export class MintHeader {
 	/**
 	 * Initializes and closes the menu
 	 */
-	constructor(settings?: { [key: string]: any }) {
+	constructor(settings?: Partial<MintHeaderSettings>) {
 		this.settings = { ...this.settings, ...settings };
 
 		this.panel = new MintPanel(this.settings);

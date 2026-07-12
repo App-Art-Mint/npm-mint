@@ -1,213 +1,220 @@
 /**
  * Object functions for the util library
  */
-export abstract class MintObject {
-    /**
-     * Returns true if the provided objects have the same entries
-     */
-     static isSimilar (obj1: any, obj2: any) : boolean {
-        let keys: string[] = Object.keys(obj1);
-        if (keys.length !== Object.keys(obj2).length) {
-            return false;
-        }
-        let isSimilar: boolean = true;
-        keys.forEach((key: string) => {
-            if (obj1[key] !== obj2[key]) {
-                isSimilar = false;
-            }
-        });
-        return isSimilar;
-    }
+export const MintObject = {
+	/**
+	 * Returns true if the provided objects have the same entries
+	 */
+	isSimilar(obj1: Record<string, unknown>, obj2: Record<string, unknown>): boolean {
+		const keys: string[] = Object.keys(obj1);
+		if (keys.length !== Object.keys(obj2).length) {
+			return false;
+		}
+		let similar = true;
+		keys.forEach((key: string) => {
+			if (obj1[key] !== obj2[key]) {
+				similar = false;
+			}
+		});
+		return similar;
+	},
 
-    /**
-     * Returns true if the first object has at least the same
-     * entries as the second object
-     * @param superset - the object to check
-     * @param subset - the object whose entries are required
-     * @returns - true if the first object is a superset of the second
-     */
-    static isSuperset (superset: any, subset: any) : boolean {
-        let isSuperset: boolean = true;
-        
-        // Base case - if the objects are equal, it is a superset
-        if (superset === subset) {
-            return isSuperset;
-        }
+	/**
+	 * Returns true if the first object has at least the same
+	 * entries as the second object
+	 * @param superset - the object to check
+	 * @param subset - the object whose entries are required
+	 * @returns - true if the first object is a superset of the second
+	 */
+	isSuperset(superset: unknown, subset: unknown): boolean {
+		let result = true;
 
-        // If the subset isn't an object or array, and doesn't
-        // satisfy the base case, it isn't a superset
-        try {
-            if (Object.keys(subset).length === 0) {
-                return !isSuperset;
-            }
-        }
-        // If the subset is null or undefined, and doesn't satisfy
-        // the base case, it isn't a superset
-        // TODO: Check if other exceptions could occur
-        catch (e) {
-            return !isSuperset;
-        }
+		// Base case - if the objects are equal, it is a superset
+		if (superset === subset) {
+			return result;
+		}
 
-        // If the children of the subset are subsets of the
-        // respective children of the superset, it is a superset
-        Object.keys(subset).forEach((key: string) => {
-            isSuperset = isSuperset && MintObject.isSuperset(superset[key], subset[key]);
-        });
-        return isSuperset;
-    }
+		// If the subset isn't an object or array, and doesn't
+		// satisfy the base case, it isn't a superset
+		try {
+			if (Object.keys(subset as object).length === 0) {
+				return !result;
+			}
+		}
+		// If the subset is null or undefined, and doesn't satisfy
+		// the base case, it isn't a superset
+		// TODO: Check if other exceptions could occur
+		catch {
+			return !result;
+		}
 
-    /**
-     * Removes object entries by key
-     * @see mintObject.removeKeys
-     * @param object - the object to remove entries from
-     * @param keys - the keys to remove
-     */
-    static remove (object: any, keys: string[]) : Object {
-        return this.removeKeys(object, keys);
-    }
+		// If the children of the subset are subsets of the
+		// respective children of the superset, it is a superset
+		const subsetRecord = subset as Record<string, unknown>;
+		const supersetRecord = (superset ?? {}) as Record<string, unknown>;
+		Object.keys(subsetRecord).forEach((key: string) => {
+			result = result && MintObject.isSuperset(supersetRecord[key], subsetRecord[key]);
+		});
+		return result;
+	},
 
-    /**
-     * Removes object entries by key
-     * @param object - the object to remove entries from
-     * @param keys - the keys to remove
-     */
-    static removeKeys (object: any, keys: string[]) : any {
-        return Object.keys(object).reduce((obj: any, key: string) => {
-            if (!keys.includes(key)) {
-                obj[key] = object[key];
-            }
-            return obj;
-        }, {});
-    }
+	/**
+	 * Removes object entries by key
+	 * @see mintObject.removeKeys
+	 * @param object - the object to remove entries from
+	 * @param keys - the keys to remove
+	 */
+	remove(object: Record<string, unknown>, keys: string[]): Record<string, unknown> {
+		return MintObject.removeKeys(object, keys);
+	},
 
-    /**
-     * Removes object entries by value
-     */
-    static removeValues (object: any, values: any[]) : any {
-        return Object.keys(object).reduce((obj: any, key: string) => {
-            if (!values.includes(object[key])) {
-                obj[key] = object[key];
-            }
-            return obj;
-        }, {});
-    }
-    
-    /**
-     * Sorts an object's entries alphabetically by key
-     */
-    static sort (object: any, compareFn?: (a: string, b: string) => number) : any {
-        return this.sortKeys(object, compareFn);
-    }
+	/**
+	 * Removes object entries by key
+	 * @param object - the object to remove entries from
+	 * @param keys - the keys to remove
+	 */
+	removeKeys(object: Record<string, unknown>, keys: string[]): Record<string, unknown> {
+		return Object.keys(object).reduce<Record<string, unknown>>((obj, key) => {
+			if (!keys.includes(key)) {
+				obj[key] = object[key];
+			}
+			return obj;
+		}, {});
+	},
 
-    /**
-     * Sorts an object's entries alphabetically by key
-     */
-    static sortKeys (object: any, compareFn?: (a: string, b: string) => number) : any {
-        return Object.keys(object).sort(compareFn).reduce((obj: any, key: string) => {
-            obj[key] = object[key];
-            return obj;
-        }, {});
-    }
+	/**
+	 * Removes object entries by value
+	 */
+	removeValues(object: Record<string, unknown>, values: unknown[]): Record<string, unknown> {
+		return Object.keys(object).reduce<Record<string, unknown>>((obj, key) => {
+			if (!values.includes(object[key])) {
+				obj[key] = object[key];
+			}
+			return obj;
+		}, {});
+	},
 
-    /**
-     * Sorts an object's entries alphabetically by value
-     */
-    static sortValues (object: any, compareFn: (a: any, b: any) => number) : any {
-        return Object.keys(object).sort((a: string, b: string) => compareFn(object[a], object[b])).reduce((obj: any, key: string) => {
-            obj[key] = object[key];
-            return obj;
-        }, {});
-    }
+	/**
+	 * Sorts an object's entries alphabetically by key
+	 */
+	sort(object: Record<string, unknown>, compareFn?: (a: string, b: string) => number): Record<string, unknown> {
+		return MintObject.sortKeys(object, compareFn);
+	},
 
-    /**
-     * @see mintObject.filterKeys
-     */
-    static filter (object: any, keys: string[]) : Object {
-        return this.filterKeys(object, keys);
-    }
+	/**
+	 * Sorts an object's entries alphabetically by key
+	 */
+	sortKeys(object: Record<string, unknown>, compareFn?: (a: string, b: string) => number): Record<string, unknown> {
+		return Object.keys(object).sort(compareFn).reduce<Record<string, unknown>>((obj, key) => {
+			obj[key] = object[key];
+			return obj;
+		}, {});
+	},
 
-    /**
-     * Filters an object by its keys
-     * @param object - the object to filter
-     * @param keys - the keys to keep
-     * @returns - the filtered object
-     */
-    static filterKeys (object: any, keys: string[]) : Object {
-        return keys.reduce((obj: any, key: string) => {
-            obj[key] = object[key];
-            return obj;
-        }, {});
-    }
+	/**
+	 * Sorts an object's entries alphabetically by value
+	 */
+	sortValues(
+		object: Record<string, unknown>,
+		compareFn: (a: unknown, b: unknown) => number
+	): Record<string, unknown> {
+		return Object.keys(object)
+			.sort((a: string, b: string) => compareFn(object[a], object[b]))
+			.reduce<Record<string, unknown>>((obj, key) => {
+				obj[key] = object[key];
+				return obj;
+			}, {});
+	},
 
-    /**
-     * Filters an object by its values
-     * @param object - the object to filter
-     * @param values - the values to keep
-     * @returns - the filtered object
-     */
-    static filterValues (object: any, values: any[]) : Object {
-        return Object.keys(object).reduce((obj: any, key: string) => {
-            if (values.includes(object[key])) {
-                obj[key] = object[key];
-            }
-            return obj;
-        }, {});
-    }
+	/**
+	 * @see mintObject.filterKeys
+	 */
+	filter(object: Record<string, unknown>, keys: string[]): Record<string, unknown> {
+		return MintObject.filterKeys(object, keys);
+	},
 
-    /**
-     * Update two sets of objects
-     * @param original - the original object
-     * @param update - the object to update the original with
-     * @returns - the original objects with updated data from the update
-     */
-    static updateArray (original: any[], update?: any[], key = 'id') : any {
-        
-        // If there are no originals, push the updates
-        if (!update?.length) {
-            update?.forEach((object) => original.push(object));
-        
-        // If there are existing objects
-        } else {
+	/**
+	 * Filters an object by its keys
+	 * @param object - the object to filter
+	 * @param keys - the keys to keep
+	 * @returns - the filtered object
+	 */
+	filterKeys(object: Record<string, unknown>, keys: string[]): Record<string, unknown> {
+		return keys.reduce<Record<string, unknown>>((obj, key) => {
+			obj[key] = object[key];
+			return obj;
+		}, {});
+	},
 
-            // Create a dictionary of the updated objects
-            const updateObjects = update.reduce<{ [key: string]: Object }>((objects, object) => ({
-                ...objects,
-                [object?.[key] ?? '']: object
-            }), {});
+	/**
+	 * Filters an object by its values
+	 * @param object - the object to filter
+	 * @param values - the values to keep
+	 * @returns - the filtered object
+	 */
+	filterValues(object: Record<string, unknown>, values: unknown[]): Record<string, unknown> {
+		return Object.keys(object).reduce<Record<string, unknown>>((obj, key) => {
+			if (values.includes(object[key])) {
+				obj[key] = object[key];
+			}
+			return obj;
+		}, {});
+	},
 
-            // Remove any objects that aren't in the updated objects
-            const missingObjects = original.filter((object) => !updateObjects[object?.[key] ?? '']);
-            missingObjects?.forEach((object) => {
-                const index = original.indexOf(object);
-                if (typeof index == 'number' && index !== -1) {
-                    original.splice(index, 1);
-                }
-            });
+	/**
+	 * Update two sets of objects
+	 * @param original - the original object
+	 * @param update - the object to update the original with
+	 * @returns - the original objects with updated data from the update
+	 */
+	updateArray(original: Record<string, unknown>[], update?: Record<string, unknown>[], key = 'id'): void {
+		const toKey = (value: unknown): string =>
+			typeof value === 'string' || typeof value === 'number' ? String(value) : '';
 
-            // Update the existing objects with updates
-            original.forEach((object) => {
-                if (updateObjects[object?.[key] ?? '']) {
-                    Object.assign(object, updateObjects[object?.[key] ?? '']);
-                }
-            });
-        }
+		// If there are no updates, nothing to apply
+		if (!update?.length) {
+			return;
+		}
 
-        // Push any new objects
-        const newObjects = update?.filter((object) => !original.some((existingObject) => existingObject?.[key] === object?.[key]));
-        newObjects?.forEach(newObject => original.push(newObject));
-    }
+		// Create a dictionary of the updated objects
+		const updateObjects = update.reduce<Record<string, Record<string, unknown>>>((objects, object) => ({
+			...objects,
+			[toKey(object[key])]: object
+		}), {});
+
+		// Remove any objects that aren't in the updated objects
+		const missingObjects = original.filter((object) => !(toKey(object[key]) in updateObjects));
+		missingObjects.forEach((object) => {
+			const index = original.indexOf(object);
+			if (index !== -1) {
+				original.splice(index, 1);
+			}
+		});
+
+		// Update the existing objects with updates
+		original.forEach((object) => {
+			const id = toKey(object[key]);
+			if (id in updateObjects) {
+				Object.assign(object, updateObjects[id]);
+			}
+		});
+
+		// Push any new objects
+		const newObjects = update.filter((object) => !original.some((existingObject) => existingObject[key] === object[key]));
+		newObjects.forEach(newObject => original.push(newObject));
+	},
 
 	/**
 	 * Get an object's key by value
 	 */
-	static getKeyByValue(object: any, value: any): string | undefined {
+	getKeyByValue(object: Record<string, unknown>, value: unknown): string | undefined {
 		return Object.keys(object).find((key) => object[key] === value);
-	}
+	},
 
 	/**
 	 * Create a deep copy of an object
 	 */
-	static deepClone<T>(object: T): T {
+	deepClone<T>(object: T): T {
 
 		// Only clone objects
 		if (typeof object !== 'object' || object === null) {
@@ -215,18 +222,22 @@ export abstract class MintObject {
 		}
 
 		// Track object references to avoid circular references
-		const seen = new WeakMap<object, any>();
+		const seen = new WeakMap<object, object>();
 
 		// Track clone tasks in a stack
-		type CloneTask = [source: any, clone: any, key?: string | number];
-		const stack: CloneTask[] = [[object, Array.isArray(object) ? [] : {}]];
+		type CloneTask = [source: object, clone: Record<string | number, unknown>, key?: string | number];
+		const stack: CloneTask[] = [[object, (Array.isArray(object) ? [] : {}) as Record<string | number, unknown>]];
 
 		// Run clone tasks
 		while (stack.length) {
-			const [source, clone, key] = stack.pop()!;
+			const task = stack.pop();
+			if (!task) {
+				break;
+			}
+			const [source, clone, key] = task;
 
 			if (key !== undefined) {
-				const value = source[key];
+				const value = (source as Record<string | number, unknown>)[key];
 
 				// Bind functions
 				if (typeof value === 'function') {
@@ -248,9 +259,9 @@ export abstract class MintObject {
 
 				// Object / Array
 				clone[key] = Array.isArray(value) ? [] : {};
-				seen.set(value, clone[key]);
-				stack.push([value, clone[key]]);
-			
+				seen.set(value, clone[key] as object);
+				stack.push([value, clone[key] as Record<string | number, unknown>]);
+
 			// No key, process full object
 			} else {
 				seen.set(source, clone);
@@ -262,13 +273,13 @@ export abstract class MintObject {
 					continue;
 				}
 
-				Object.keys(source).forEach((key) => {
-					stack.push([source, clone, key]);
+				Object.keys(source).forEach((sourceKey) => {
+					stack.push([source, clone, sourceKey]);
 				});
 			}
 		}
 
 		return seen.get(object) as T;
-	}
+	},
 };
 export default MintObject;

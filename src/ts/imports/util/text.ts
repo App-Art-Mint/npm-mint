@@ -1,21 +1,21 @@
 /**
  * Functions for analyzing and manipulating text.
  */
-export abstract class MintText {
+export const MintText = {
 
 	/**
 	 * Shorten a string to the given length
 	 */
-	static truncate (text: string, length: number = 100): string {
+	truncate(text: string, length = 100): string {
 		return text.length > length ? text.slice(0, length).trim() + '...' : text;
-	}
+	},
 
 	/**
 	 * Generate a slug from a string
 	 * @param text - The string to slugify
 	 * @returns The slugified string
 	 */
-	static slug (text?: string): string {
+	slug(text?: string): string {
 		return text?.trim()
 			.toLowerCase()
 			.replace(/'/g, '')
@@ -23,29 +23,29 @@ export abstract class MintText {
 			.replace(/-+/g, '-')
 			.replace(/^-+|-+$/g, '')
 			.replace(/^\/+|\/+$/g, '') ?? '';
-	}
+	},
 
 	/**
 	 * Generate a title from a slug
 	 * @param slug - The slug to generate a title from
 	 * @returns The title
 	 */
-	static unslug (slug: string): string {
-		return this.titleCase(slug.replace(/[-/]+/g, ' '));
-	}
+	unslug(slug: string): string {
+		return MintText.titleCase(slug.replace(/[-/]+/g, ' '));
+	},
 
 	/**
 	 * Format a phone number
 	 * @param phone - The phone number to format
 	 * @returns The formatted phone number
 	 */
-	static phone (phone?: string | number): string {
+	phone(phone?: string | number): string {
 		const given = phone?.toString().trim() ?? '';
 		if (given === '(' || given === '') {
 			return given;
 		}
 
-		let numbers = given.replace(/\D/g, '') ?? '',
+		let numbers = given.replace(/\D/g, ''),
 			formatted = '';
 
 		if (numbers.length > 10) {
@@ -53,7 +53,8 @@ export abstract class MintText {
 			numbers = numbers.slice(numbers.length - 10);
 		}
 
-		for (var i = 0; i < numbers.length; i++) {
+		let i = 0;
+		for (; i < numbers.length; i++) {
 			switch (i) {
 				case 0:
 					formatted += '(';
@@ -82,12 +83,12 @@ export abstract class MintText {
 		}
 
 		return formatted;
-	}
+	},
 
 	/**
 	 * Pluralize the given word
 	 */
-	static plural (word: string): string {
+	plural(word: string): string {
 		if (word.endsWith('ies') ||
 			word.endsWith('es') ||
 			(word.endsWith('s') && !word.endsWith('us') && !word.endsWith('is') && !word.endsWith('ss'))) {
@@ -103,31 +104,31 @@ export abstract class MintText {
 		}
 
 		return word + 's';
-	}
+	},
 
 	/**
 	 * Capitalize the first letter of the given word
 	 */
-	static titleCase (text: string): string {
+	titleCase(text: string): string {
 		return text
 			.toLowerCase()
 			.replace(/(?:^|\s)\S/g, a => a.toUpperCase());
-	}
+	},
 
 	/**
-     * Copies the provided text to the clipboard
-     * @param text - the text to copy
-     * @returns - true if the text was successfully copied to the clipboard; else false
-     */
-    static copyText (text: string) : boolean {
-        let textArea: HTMLTextAreaElement = document.createElement('textarea');
+	 * Copies the provided text to the clipboard
+	 * @param text - the text to copy
+	 * @returns - true if the text was successfully copied to the clipboard; else false
+	 */
+	copyText(text: string): boolean {
+		if (!text) {
+			return false;
+		}
 
-        if (!text || !textArea) {
-            return false;
-        }
+		const textArea: HTMLTextAreaElement = document.createElement('textarea');
 
-        textArea.value = text;
-        textArea.style.cssText = `
+		textArea.value = text;
+		textArea.style.cssText = `
             position: fixed;
             top: 0;
             left: 0;
@@ -136,43 +137,49 @@ export abstract class MintText {
             z-index: -1;
         `;
 
-        document.body.appendChild(textArea);
-        textArea.select();
-        textArea.setSelectionRange(0, 99999);
-        navigator.clipboard.writeText(textArea.value);
-        document.body.removeChild(textArea);
+		document.body.appendChild(textArea);
+		textArea.select();
+		textArea.setSelectionRange(0, 99999);
+		navigator.clipboard.writeText(textArea.value).then(() => {
+			document.body.removeChild(textArea);
+		}).catch(() => {
+			document.body.removeChild(textArea);
+			return false;
+		});
 
-        return true;
-    }
+		return true;
+	},
 
-    /**
-     * Tests the validity of an email address
-     * @see {@link https://stackoverflow.com/questions/201323/how-can-i-validate-an-email-address-using-a-regular-expression}
-     * @param text - the string to test
-     * @returns - true if the given string is an email address; false if not
-     */
-    static isEmail (text: string) : boolean {
-        return null !== text.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/);
-    }
+	/**
+	 * Tests the validity of an email address
+	 * @see {@link https://stackoverflow.com/questions/201323/how-can-i-validate-an-email-address-using-a-regular-expression}
+	 * @param text - the string to test
+	 * @returns - true if the given string is an email address; false if not
+	 */
+	isEmail(text: string): boolean {
+		// Control chars are intentional for the RFC 5322 email validation pattern.
+		// eslint-disable-next-line no-control-regex -- RFC email pattern includes control-character ranges
+		return null !== (/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.exec(text));
+	},
 
 	/**
 	 * Generate a random string [a-z0-9]
 	 */
-	static generateId(length: number = 10): string {
+	generateId(length = 10): string {
 		return Math.random().toString(36).substring(2, length + 2);
-	}
+	},
 
 	/**
 	 * Check if the given string is an image url
 	 */
-	static isImage (src?: string): boolean {
+	isImage(src?: string): boolean {
 		return !!src?.match(/\.(jpe?g|png|webp|gif|svg)$/i);
-	}
+	},
 
 	/**
 	 * Check if the given string is a video url
 	 */
-	static isVideo (src?: string): boolean {
+	isVideo(src?: string): boolean {
 		return !!src?.match(/\.(mp4|webm|ogg)$/i);
-	}
-}
+	},
+};

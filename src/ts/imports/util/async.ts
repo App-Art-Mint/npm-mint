@@ -1,12 +1,12 @@
 /**
  * Handles asynchronous operations
  */
-export abstract class MintAsync {
+export const MintAsync = {
 	/**
 	 * Wait n milliseconds
 	 */
-	static wait(ms: number): Promise<void> {
+	wait(ms: number): Promise<void> {
 		return new Promise((resolve) => setTimeout(resolve, ms));
-	}
+	},
 };
 export default MintAsync;

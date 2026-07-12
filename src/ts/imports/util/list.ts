@@ -1,20 +1,20 @@
 /**
  * List functions for the util library
  */
-export abstract class MintList {
+export const MintList = {
 	/**
 	 * Returns a copy of the provided list with the items in random order
 	 * @param list - the list to shuffle
 	 * @returns - the shuffled list
 	 */
-	static shuffleCopy (list: any[]): any[] {
-		let copy = [...list];
+	shuffleCopy<T>(list: T[]): T[] {
+		const copy = [...list];
 		for (let i = copy.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
 			[copy[i], copy[j]] = [copy[j], copy[i]];
 		}
 		return copy;
-	}
+	},
 
 	/**
 	 * Filters the array in place based on a test condition and returns the filtered array.
@@ -25,24 +25,24 @@ export abstract class MintList {
 	 * @param {(item: T) => boolean} test A function that tests each element of the array. Return `true` to keep the element, `false` otherwise.
 	 * @returns {T[]} The original array with only the elements that passed the test.
 	 */
-	static filter<T> (list: T[], test: (item: T) => boolean): T[] {
-		let newLength = 0;
-		for (let i = 0; i < list.length; i++) {
-			if (test(list[i])) {
-				list[newLength++] = list[i];
+	filter<T>(list: T[], test: (item: T) => boolean): T[] {
+		let writeIndex = 0;
+		for (const item of list.slice()) {
+			if (test(item)) {
+				list[writeIndex++] = item;
 			}
 		}
-		list.length = newLength;
+		list.length = writeIndex;
 		return list;
-	}
+	},
 
 	/**
 	 * Returns a copy of the provided list with unique items
 	 * @param list - the list to unique
 	 * @returns - the unique list
 	 */
-	static unique<T> (list: T[]): T[] {
+	unique<T>(list: T[]): T[] {
 		return [...new Set(list)];
-	}
+	},
 };
 export default MintList;

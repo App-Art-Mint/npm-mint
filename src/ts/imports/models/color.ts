@@ -1,12 +1,12 @@
 export class mintColor {
-    protected static hexBase: number = 16
-    protected static hexMax: string = 'FF'
+    protected static hexBase = 16
+    protected static hexMax = 'FF'
     public r: number
     public g: number
     public b: number
     public a: number
 
-    constructor (args: {[key: string]: number | string}) {
+    constructor (args: Record<string, number | string>) {
         this.r = typeof args.r === 'number' ? Math.max(Math.min(args.r, mintColor.hexBase ** 2 - 1), 0) : 0
         this.g = typeof args.g === 'number' ? Math.max(Math.min(args.g, mintColor.hexBase ** 2 - 1), 0) : 0
         this.b = typeof args.b === 'number' ? Math.max(Math.min(args.b, mintColor.hexBase ** 2 - 1), 0) : 0
@@ -59,7 +59,7 @@ export class mintColor {
     }
 
     protected rgbConstructor (rgb: string) : void {
-        let match: RegExpMatchArray | null = rgb.match(/rgba?\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)?(?:, ?(\d(?:\.\d*)?)\))?/)
+        const match: RegExpMatchArray | null = /rgba?\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)?(?:, ?(\d(?:\.\d*)?)\))?/.exec(rgb)
         if (match) {
             this.r = parseInt(match[1])
             this.g = parseInt(match[2])

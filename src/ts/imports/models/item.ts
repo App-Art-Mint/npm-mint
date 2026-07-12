@@ -52,10 +52,10 @@ export class MintItem {
 	/**
 	 * Item data
 	 */
-	attr?: { [key: string]: string } = {};
-	params?: { [key: string]: string } = {};
-	options?: { [key: string]: string } = {};
-	lists?: { [key: string]: string[] } = {};
+	attr?: Record<string, string> = {};
+	params?: Record<string, string> = {};
+	options?: Record<string, string> = {};
+	lists?: Record<string, string[]> = {};
 
 	/**
 	 * Item lists
@@ -69,6 +69,6 @@ export class MintItem {
 	/**
 	 * Item functions
 	 */
-	click?: Function;
+	click?: (...args: unknown[]) => unknown;
 };
 export default MintItem;

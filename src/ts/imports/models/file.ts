@@ -10,7 +10,7 @@ export interface IMintFile {
 	error?: boolean;
 	fetched?: boolean;
 	empty?: boolean;
-	files?: { [key: string]: IMintFile }
-	metadata?: { [key: string]: string }
+	files?: Record<string, IMintFile>
+	metadata?: Record<string, string>
 }
 export default IMintFile;

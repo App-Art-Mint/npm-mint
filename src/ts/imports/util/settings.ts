@@ -2,84 +2,91 @@
  * Settings management
  * @public
  */
-export abstract class MintSettings {
-    /**
-     * Value added to all delay variables
-     */
-    static delayBase: number = 0;
+export interface MintSettingsUpdate {
+	delayBase?: number;
+	delayStep?: number;
+	delay?: Record<string, number>;
+	break?: Record<string, number>;
+}
 
-    /**
-     * Value multiplied by delay variable index
-     */
-    static delayStep: number = 100;
+export const MintSettings = {
+	/**
+	 * Value added to all delay variables
+	 */
+	delayBase: 0,
 
-    /**
-     * Delay variables
-     */
-    static delay: {[key: string]: number} = {
-        instant: this.delayBase + this.delayStep * 0,
-        fast: this.delayBase + this.delayStep * 1,
-        medFast: this.delayBase + this.delayStep * 2,
-        default: this.delayBase + this.delayStep * 3,
-        medSlow: this.delayBase + this.delayStep * 4,
-        slow: this.delayBase + this.delayStep * 5
-    };
+	/**
+	 * Value multiplied by delay variable index
+	 */
+	delayStep: 100,
 
-    /**
-     * Breakpoint variables
-     */
-    static break: {[key: string]: number} = {
-        z: 0,
-        xs: 480,
-        sm: 768,
-        md: 1024,
-        lg: 1200,
-        xl: 1440
-    };
+	/**
+	 * Delay variables
+	 */
+	delay: {
+		instant: 0,
+		fast: 100,
+		medFast: 200,
+		default: 300,
+		medSlow: 400,
+		slow: 500,
+	} as Record<string, number>,
 
-    /**
-     * Update the provided settings variables
-     * @param settings - Object of settings variables to update
-     */
-    static set (settings: {[key: string]: any}) : void {
-        let newDelay: boolean = false;
-        if (typeof settings.delayBase === 'number') {
-            this.delayBase = settings.delayBase;
-            newDelay = true;
-        }
-        if (typeof settings.delayStep === 'number') {
-            this.delayStep = settings.delayStep;
-            newDelay = true;
-        }
-        if (newDelay) {
-            this.setDelay();
-        }
+	/**
+	 * Breakpoint variables
+	 */
+	break: {
+		z: 0,
+		xs: 480,
+		sm: 768,
+		md: 1024,
+		lg: 1200,
+		xl: 1440,
+	} as Record<string, number>,
 
-        if (settings.delay && Object.keys(settings.delay).length) {
-            if (Object.values(settings.delay).reduce((prev: any, next: any) => prev && typeof next === 'number', true)) {
-                this.delay = {...this.delay, ...settings.delay};
-            }
-        }
+	/**
+	 * Update the provided settings variables
+	 * @param settings - Object of settings variables to update
+	 */
+	set(settings: MintSettingsUpdate): void {
+		let newDelay = false;
+		if (typeof settings.delayBase === 'number') {
+			MintSettings.delayBase = settings.delayBase;
+			newDelay = true;
+		}
+		if (typeof settings.delayStep === 'number') {
+			MintSettings.delayStep = settings.delayStep;
+			newDelay = true;
+		}
+		if (newDelay) {
+			MintSettings.setDelay();
+		}
 
-        if (settings.break && Object.keys(settings.break).length) {
-            if (Object.values(settings.break).reduce((prev: any, next: any) => prev && typeof next === 'number', true)) {
-                this.break = {...this.break, ...settings.break};
-            }
-        }
-    }
+		if (settings.delay && Object.keys(settings.delay).length) {
+			if (Object.values(settings.delay).every((value) => typeof value === 'number')) {
+				MintSettings.delay = { ...MintSettings.delay, ...settings.delay };
+			}
+		}
 
-    /**
-     * Updates the delay variables based on `this.delayBase` and `this.delayStep`
-     */
-    protected static setDelay () : void {
-        this.delay = {
-            instant: this.delayBase + this.delayStep * 0,
-            fast: this.delayBase + this.delayStep * 1,
-            medFast: this.delayBase + this.delayStep * 2,
-            default: this.delayBase + this.delayStep * 3,
-            medSlow: this.delayBase + this.delayStep * 4,
-            slow: this.delayBase + this.delayStep * 5
-        };
-    }
+		if (settings.break && Object.keys(settings.break).length) {
+			if (Object.values(settings.break).every((value) => typeof value === 'number')) {
+				MintSettings.break = { ...MintSettings.break, ...settings.break };
+			}
+		}
+	},
+
+	/**
+	 * Updates the delay variables based on `delayBase` and `delayStep`
+	 */
+	setDelay(): void {
+		MintSettings.delay = {
+			instant: MintSettings.delayBase + MintSettings.delayStep * 0,
+			fast: MintSettings.delayBase + MintSettings.delayStep * 1,
+			medFast: MintSettings.delayBase + MintSettings.delayStep * 2,
+			default: MintSettings.delayBase + MintSettings.delayStep * 3,
+			medSlow: MintSettings.delayBase + MintSettings.delayStep * 4,
+			slow: MintSettings.delayBase + MintSettings.delayStep * 5,
+		};
+	},
 };
 export default MintSettings;
