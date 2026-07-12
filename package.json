@@ -57,7 +57,7 @@
 		"build:css:dev": "sass src/scss/mint.scss dist/mint.css && sass src/scss/noscript.scss dist/noscript.css",
 		"build:css:prod": "sass src/scss/mint.scss dist/mint.min.css --style compressed && sass src/scss/noscript.scss dist/noscript.min.css --style compressed",
 		"build:tsdoc": "typedoc --tsconfig tsconfig.lib.json",
-		"test": "run-p test:*",
+		"test": "run-p test:**",
 		"test:types": "tsc -b",
 		"test:deps": "depcruise src",
 		"lint": "eslint --fix .",
