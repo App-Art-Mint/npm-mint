@@ -1,8 +1,3 @@
-/**
- * Imports
- */
-
-// Mint
 import { MintModelEvent } from '../models';
 
 

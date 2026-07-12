@@ -1,14 +1,6 @@
-/**
- * Imports
- */
-import { EMintSide } from '../enums/side';
 import { MintAttachesEvents } from '../abstract';
-import {
-	MintEvent,
-	MintSelectors,
-	MintSettings,
-	MintWindow
-} from '../util';
+import { EMintSide } from '../enums/side';
+import { MintEvent, MintSelectors, MintSettings, MintWindow } from '../util';
 
 
 /**

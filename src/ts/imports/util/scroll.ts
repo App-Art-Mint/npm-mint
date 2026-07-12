@@ -1,6 +1,3 @@
-/**
- * Imports
- */
 import MintEvent from './event';
 
 /**

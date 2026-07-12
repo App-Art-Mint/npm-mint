@@ -1,6 +1,3 @@
-/**
- * Imports
- */
 import { MintMath } from '../util/math';
 
 

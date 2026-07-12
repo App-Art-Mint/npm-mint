@@ -1,6 +1,3 @@
-/**
- * Imports
- */
 import MintItem from "./item";
 
 

@@ -1,10 +1,5 @@
-/**
- * Imports
- */
-
-// Mint
-import { MintPanel } from "./panel";
 import { MintMenu } from "./menu";
+import { MintPanel } from "./panel";
 
 
 /**

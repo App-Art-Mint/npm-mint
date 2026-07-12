@@ -1,15 +1,5 @@
-/**
- * Imports
- */
-
-// Mint
 import { MintAttachesEvents } from '../abstract';
-import {
-	MintDisplay,
-	MintEvent,
-	MintSelectors,
-	MintSettings,
-} from '../util';
+import { MintDisplay, MintEvent, MintSelectors, MintSettings } from '../util';
 
 
 /**

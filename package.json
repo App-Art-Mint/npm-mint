@@ -1,7 +1,7 @@
 {
 	"name": "@appartmint/mint",
 	"author": "App Art Mint LLC",
-	"version": "5.0.5",
+	"version": "5.0.6",
 	"type": "module",
 	"license": "MIT",
 	"description": "The front-end TS/SCSS framework of App Art Mint",
@@ -61,6 +61,8 @@
 		"test:types": "tsc -b",
 		"test:deps": "depcruise src",
 		"lint": "eslint --fix .",
+		"format": "run-s format:**",
+		"format:imports": "npm run format:imports --prefix ./node_modules/@appartmint/tsm-scripts",
 		"yalc:publish": "yalc publish",
 		"check:updates": "npm-check-updates"
 	},
@@ -78,6 +80,7 @@
 		"npm-run-all2": "^9.0.2",
 		"rimraf": "^6.1.3",
 		"sass": "^1.101.0",
+		"tsx": "^4.23.0",
 		"typedoc": "^0.28.20",
 		"typescript": "^6.0.3",
 		"typescript-eslint": "^8.63.0",
