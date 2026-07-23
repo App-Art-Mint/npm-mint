@@ -71,6 +71,6 @@ export class MintItem {
 	/**
 	 * Item functions
 	 */
-	click?: Callback;
+	click?: Function; // eslint-disable-line @typescript-eslint/no-unsafe-function-type
 };
 export default MintItem;
