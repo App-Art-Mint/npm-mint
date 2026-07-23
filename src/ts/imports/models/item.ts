@@ -1,4 +1,4 @@
-import type { Callback } from '../util/event';
+export type Callback<T extends unknown[] = []> = (...args: T) => unknown;
 
 /**
  * A generic item

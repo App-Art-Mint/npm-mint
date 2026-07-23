@@ -1,7 +1,7 @@
 import MintSettings from "./settings";
 
 /** Accepts any function; `never[]` is the safe "any callback" parameter type. */
-export type Callback = (...args: never[]) => unknown;
+type Callback = (...args: never[]) => unknown;
 
 /**
  * Event helper functions
