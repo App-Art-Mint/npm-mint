@@ -1,13 +1,9 @@
-/// _chat.scss - Chatbot styles
-/// @author App Art Mint LLC
-///
-/// @group Components
-@charset 'utf-8';
-
-/// Imports
 @use '../../util' as *;
 
-/// Chatbot styles
+$message-user: #e1e5e6;
+$message-assistant: css-var(brand-1);
+$message-error: css-var(danger-6);
+
 #{class(chatbot)} {
 	display: flex;
 	flex-direction: column;
@@ -29,6 +25,7 @@
 	}
 
 	#{class(chat)} {
+
 		display: flex;
 		flex-direction: column;
 		gap: 0;
@@ -42,9 +39,10 @@
 			content: '';
 			flex-grow: 1;
 		}
-
-		$message-user: #e1e5e6;
-		$message-assistant: css-var(brand-1);
+		
+		&-error {
+			color: $message-error;
+		}
 
 		p {
 			align-self: flex-start;
