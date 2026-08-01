@@ -8,6 +8,7 @@
 @use '../util' as *;
 
 /// FullCalendar Styles
+/// THESE DONT WORK ANYMORE IN FULLCALENDAR 7
 .fc {
 	--fc-page-bg-color: #{css-var(brand-6)};
 

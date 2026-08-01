@@ -29,8 +29,8 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	z-index: 0;
-	filter: opacity(0) blur(10vw);
-	transition: filter 1000ms ease-out;
+	filter: opacity(0) blur(2vw);
+	transition: filter 500ms ease-out;
 	pointer-events: none;
 
 	&.active {
