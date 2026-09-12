@@ -37,16 +37,8 @@
 	}
 
 	&#{class(responsive)} {
-		// Match viewport aspect, but never wider than 16:9
-		$available-height-vh: calc(100vh - $header-height - $pad-clamp * 2);
-		$available-height-dvh: calc(100dvh - $header-height - $pad-clamp * 2);
-		$ratio-16-9: math.div(9, 16) * 100%;
-
-		padding-top: #{max($ratio-16-9, calc(100% * tan(atan2($available-height-vh, 100vw))))} !important;
-		padding-top: #{max($ratio-16-9, calc(100% * tan(atan2($available-height-dvh, 100dvw))))} !important;
-		max-width: calc($available-height-vh * 16 / 9);
-		max-width: calc($available-height-dvh * 16 / 9);
-		margin: auto;
+		padding-top: #{calc(100% * tan(atan2(100vh - $header-height - $pad-clamp * 2, 100vw)))} !important;
+		padding-top: #{calc(100% * tan(atan2(100dvh - $header-height - $pad-clamp * 2, 100dvw)))} !important;
 	}
 	
 	iframe, video {
